@@ -17,4 +17,8 @@
     Private Sub lblAltaCliente_Click(sender As Object, e As EventArgs) Handles lblAltaCliente.Click
 
     End Sub
+
+    Private Sub TextBox1_TextChanged(sender As Object, e As EventArgs) Handles DniTextBox.TextChanged
+
+    End Sub
 End Class
