@@ -6,7 +6,7 @@ Imports System.Data.DataTable
 Imports System.Data
 Imports System.Text.RegularExpressions
 
-
+'probando
 
 Public Class Empleados
 
