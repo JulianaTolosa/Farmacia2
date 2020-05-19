@@ -52,4 +52,46 @@
 
         Return _Retorno
     End Function
+
+    Public Function ExisteCliente(DNI As Integer) As Boolean
+        Dim _Retorno As Boolean = False
+
+        Dim _Consulta As New ConsultaSQL
+        _Consulta.Consulta = "SELECT * FROM Clientes WHERE DNI=@DNI"
+        _Consulta.AgregarParametro("@DNI", DNI)
+        Dim _Resultado As DataTable = _Consulta.ObtenerTabla()
+        If _Resultado.Rows.Count > 0 Then
+            _Retorno = True
+        End If
+
+        Return _Retorno
+    End Function
+
+    Public Function AgregarCliente(_Cliente As Cliente) As Boolean
+        Dim _Retorno As Boolean = True
+
+        Try
+            Dim _Consulta As New ConsultaSQL
+            _Consulta.Consulta = "  INSERT INTO Clientes"
+            _Consulta.Consulta &= " (Nombre, Apellido, Direccion, DNI, Telefono, Celular, Fecha_Naci, Localidad, Provincia, IdObraSocial)"
+            _Consulta.Consulta &= " VALUES"
+            _Consulta.Consulta &= " (@Nombre, @Ape, @Dire, @DNI, @Tel, @Cel, @Naci, @Locali, @Prov, @Obra)"
+            _Consulta.AgregarParametro("@Nombre", _Cliente._Nombre)
+            _Consulta.AgregarParametro("@Ape", _Cliente._Apellido)
+            _Consulta.AgregarParametro("@Dire", _Cliente._Direccion)
+            _Consulta.AgregarParametro("@DNI", _Cliente._DNI)
+            _Consulta.AgregarParametro("@Tel", _Cliente._Telefono)
+            _Consulta.AgregarParametro("@Cel", _Cliente._Celular)
+            _Consulta.AgregarParametro("@Naci", _Cliente._FechaNacimiento)
+            _Consulta.AgregarParametro("@Locali", _Cliente._Localidad)
+            _Consulta.AgregarParametro("@Prov", _Cliente._Provincia)
+            _Consulta.AgregarParametro("@Obra", _Cliente._IdObraSocial)
+
+            _Consulta.Ejecutar()
+        Catch ex As Exception
+            _Retorno = False
+        End Try
+
+        Return _Retorno
+    End Function
 End Module

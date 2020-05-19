@@ -26,13 +26,13 @@ Partial Class AltaCliente
         Dim ApellidoLabel As System.Windows.Forms.Label
         Dim DireccionLabel As System.Windows.Forms.Label
         Dim TelefonoLabel As System.Windows.Forms.Label
-        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(AltaCliente))
         Dim Label1 As System.Windows.Forms.Label
         Dim Label2 As System.Windows.Forms.Label
         Dim Label3 As System.Windows.Forms.Label
         Dim Label4 As System.Windows.Forms.Label
         Dim Label5 As System.Windows.Forms.Label
         Dim Label6 As System.Windows.Forms.Label
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(AltaCliente))
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.btnCerrarForm = New System.Windows.Forms.PictureBox()
         Me.lblAltaCliente = New System.Windows.Forms.Label()
@@ -102,6 +102,66 @@ Partial Class AltaCliente
         TelefonoLabel.TabIndex = 23
         TelefonoLabel.Text = "Telefono:"
         '
+        'Label1
+        '
+        Label1.AutoSize = True
+        Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Label1.Location = New System.Drawing.Point(12, 60)
+        Label1.Name = "Label1"
+        Label1.Size = New System.Drawing.Size(123, 24)
+        Label1.TabIndex = 25
+        Label1.Text = "Documento:"
+        '
+        'Label2
+        '
+        Label2.AutoSize = True
+        Label2.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Label2.Location = New System.Drawing.Point(12, 192)
+        Label2.Name = "Label2"
+        Label2.Size = New System.Drawing.Size(82, 24)
+        Label2.TabIndex = 27
+        Label2.Text = "Celular:"
+        '
+        'Label3
+        '
+        Label3.AutoSize = True
+        Label3.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Label3.Location = New System.Drawing.Point(250, 192)
+        Label3.Name = "Label3"
+        Label3.Size = New System.Drawing.Size(106, 24)
+        Label3.TabIndex = 29
+        Label3.Text = "Localidad:"
+        '
+        'Label4
+        '
+        Label4.AutoSize = True
+        Label4.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Label4.Location = New System.Drawing.Point(506, 192)
+        Label4.Name = "Label4"
+        Label4.Size = New System.Drawing.Size(102, 24)
+        Label4.TabIndex = 31
+        Label4.Text = "Provincia:"
+        '
+        'Label5
+        '
+        Label5.AutoSize = True
+        Label5.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Label5.Location = New System.Drawing.Point(12, 126)
+        Label5.Name = "Label5"
+        Label5.Size = New System.Drawing.Size(186, 24)
+        Label5.TabIndex = 33
+        Label5.Text = "Fecha Nacimiento:"
+        '
+        'Label6
+        '
+        Label6.AutoSize = True
+        Label6.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Label6.Location = New System.Drawing.Point(12, 263)
+        Label6.Name = "Label6"
+        Label6.Size = New System.Drawing.Size(125, 24)
+        Label6.TabIndex = 35
+        Label6.Text = "Obra Social:"
+        '
         'Panel1
         '
         Me.Panel1.Controls.Add(Me.btnCerrarForm)
@@ -110,7 +170,7 @@ Partial Class AltaCliente
         Me.Panel1.Location = New System.Drawing.Point(0, 0)
         Me.Panel1.Name = "Panel1"
         Me.Panel1.Size = New System.Drawing.Size(737, 45)
-        Me.Panel1.TabIndex = 3
+        Me.Panel1.TabIndex = 20
         '
         'btnCerrarForm
         '
@@ -161,130 +221,70 @@ Partial Class AltaCliente
         Me.NombreTextBox.Location = New System.Drawing.Point(254, 90)
         Me.NombreTextBox.Name = "NombreTextBox"
         Me.NombreTextBox.Size = New System.Drawing.Size(210, 20)
-        Me.NombreTextBox.TabIndex = 18
+        Me.NombreTextBox.TabIndex = 2
         '
         'ApellidoTextBox
         '
         Me.ApellidoTextBox.Location = New System.Drawing.Point(510, 90)
         Me.ApellidoTextBox.Name = "ApellidoTextBox"
         Me.ApellidoTextBox.Size = New System.Drawing.Size(210, 20)
-        Me.ApellidoTextBox.TabIndex = 20
+        Me.ApellidoTextBox.TabIndex = 3
         '
         'DireccionTextBox
         '
         Me.DireccionTextBox.Location = New System.Drawing.Point(254, 153)
         Me.DireccionTextBox.Name = "DireccionTextBox"
         Me.DireccionTextBox.Size = New System.Drawing.Size(210, 20)
-        Me.DireccionTextBox.TabIndex = 22
+        Me.DireccionTextBox.TabIndex = 5
         '
         'TelefonoTextBox
         '
         Me.TelefonoTextBox.Location = New System.Drawing.Point(510, 153)
         Me.TelefonoTextBox.Name = "TelefonoTextBox"
         Me.TelefonoTextBox.Size = New System.Drawing.Size(210, 20)
-        Me.TelefonoTextBox.TabIndex = 24
-        '
-        'Label1
-        '
-        Label1.AutoSize = True
-        Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Label1.Location = New System.Drawing.Point(12, 60)
-        Label1.Name = "Label1"
-        Label1.Size = New System.Drawing.Size(123, 24)
-        Label1.TabIndex = 25
-        Label1.Text = "Documento:"
+        Me.TelefonoTextBox.TabIndex = 6
         '
         'DniTextBox
         '
         Me.DniTextBox.Location = New System.Drawing.Point(10, 90)
         Me.DniTextBox.Name = "DniTextBox"
         Me.DniTextBox.Size = New System.Drawing.Size(210, 20)
-        Me.DniTextBox.TabIndex = 26
-        '
-        'Label2
-        '
-        Label2.AutoSize = True
-        Label2.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Label2.Location = New System.Drawing.Point(12, 192)
-        Label2.Name = "Label2"
-        Label2.Size = New System.Drawing.Size(82, 24)
-        Label2.TabIndex = 27
-        Label2.Text = "Celular:"
+        Me.DniTextBox.TabIndex = 1
         '
         'CelularTextBox
         '
         Me.CelularTextBox.Location = New System.Drawing.Point(16, 219)
         Me.CelularTextBox.Name = "CelularTextBox"
         Me.CelularTextBox.Size = New System.Drawing.Size(210, 20)
-        Me.CelularTextBox.TabIndex = 28
-        '
-        'Label3
-        '
-        Label3.AutoSize = True
-        Label3.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Label3.Location = New System.Drawing.Point(250, 192)
-        Label3.Name = "Label3"
-        Label3.Size = New System.Drawing.Size(106, 24)
-        Label3.TabIndex = 29
-        Label3.Text = "Localidad:"
+        Me.CelularTextBox.TabIndex = 7
         '
         'LocalidadTextBox
         '
         Me.LocalidadTextBox.Location = New System.Drawing.Point(254, 219)
         Me.LocalidadTextBox.Name = "LocalidadTextBox"
         Me.LocalidadTextBox.Size = New System.Drawing.Size(210, 20)
-        Me.LocalidadTextBox.TabIndex = 30
-        '
-        'Label4
-        '
-        Label4.AutoSize = True
-        Label4.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Label4.Location = New System.Drawing.Point(506, 192)
-        Label4.Name = "Label4"
-        Label4.Size = New System.Drawing.Size(102, 24)
-        Label4.TabIndex = 31
-        Label4.Text = "Provincia:"
+        Me.LocalidadTextBox.TabIndex = 8
         '
         'ProvinciaTextBox
         '
         Me.ProvinciaTextBox.Location = New System.Drawing.Point(510, 219)
         Me.ProvinciaTextBox.Name = "ProvinciaTextBox"
         Me.ProvinciaTextBox.Size = New System.Drawing.Size(210, 20)
-        Me.ProvinciaTextBox.TabIndex = 32
-        '
-        'Label5
-        '
-        Label5.AutoSize = True
-        Label5.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Label5.Location = New System.Drawing.Point(12, 126)
-        Label5.Name = "Label5"
-        Label5.Size = New System.Drawing.Size(186, 24)
-        Label5.TabIndex = 33
-        Label5.Text = "Fecha Nacimiento:"
+        Me.ProvinciaTextBox.TabIndex = 9
         '
         'NacimientoTextBox
         '
         Me.NacimientoTextBox.Location = New System.Drawing.Point(10, 153)
         Me.NacimientoTextBox.Name = "NacimientoTextBox"
         Me.NacimientoTextBox.Size = New System.Drawing.Size(210, 20)
-        Me.NacimientoTextBox.TabIndex = 34
-        '
-        'Label6
-        '
-        Label6.AutoSize = True
-        Label6.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Label6.Location = New System.Drawing.Point(12, 263)
-        Label6.Name = "Label6"
-        Label6.Size = New System.Drawing.Size(125, 24)
-        Label6.TabIndex = 35
-        Label6.Text = "Obra Social:"
+        Me.NacimientoTextBox.TabIndex = 4
         '
         'ObraSocialTextBox
         '
         Me.ObraSocialTextBox.Location = New System.Drawing.Point(16, 290)
         Me.ObraSocialTextBox.Name = "ObraSocialTextBox"
         Me.ObraSocialTextBox.Size = New System.Drawing.Size(210, 20)
-        Me.ObraSocialTextBox.TabIndex = 36
+        Me.ObraSocialTextBox.TabIndex = 11
         '
         'AltaCliente
         '
