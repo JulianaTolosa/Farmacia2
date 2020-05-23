@@ -7,7 +7,7 @@ Public Class ConsultaSQL
     Private _Tabla As DataTable
     Private _Parametro As SqlParameter
     'Public Shared _Conexion As String = "Data Source=Juli-PC;Initial Catalog=Tesis;Integrated Security=True"
-    Public Shared _Conexion As String = "Data Source=Leo-PC;Initial Catalog=Tesis;Integrated Security=True"
+    Public Shared _Conexion As String = "Data Source=LEO-PC;Initial Catalog=Tesis;Integrated Security=True"
     Private _Consulta As String = ""
 
 

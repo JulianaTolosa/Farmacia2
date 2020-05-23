@@ -31,7 +31,7 @@ Partial Class FormWelcome
         Me.lblUsername = New System.Windows.Forms.Label()
         Me.Timer1 = New System.Windows.Forms.Timer(Me.components)
         Me.Timer2 = New System.Windows.Forms.Timer(Me.components)
-        Me.ProgressBar1 = New System.Windows.Forms.ProgressBar()
+        Me.CircularProgressBar1 = New CircularProgressBar.CircularProgressBar()
         Me.Panel1.SuspendLayout()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
@@ -74,7 +74,7 @@ Partial Class FormWelcome
         Me.Label2.BackColor = System.Drawing.Color.Transparent
         Me.Label2.Font = New System.Drawing.Font("Microsoft Sans Serif", 30.0!, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label2.ForeColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(102, Byte), Integer), CType(CType(204, Byte), Integer))
-        Me.Label2.Location = New System.Drawing.Point(200, 109)
+        Me.Label2.Location = New System.Drawing.Point(184, 93)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(277, 46)
         Me.Label2.TabIndex = 2
@@ -85,7 +85,7 @@ Partial Class FormWelcome
         '
         Me.lblUsername.AutoSize = True
         Me.lblUsername.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblUsername.Location = New System.Drawing.Point(285, 184)
+        Me.lblUsername.Location = New System.Drawing.Point(278, 153)
         Me.lblUsername.Name = "lblUsername"
         Me.lblUsername.Size = New System.Drawing.Size(97, 24)
         Me.lblUsername.TabIndex = 2
@@ -99,24 +99,46 @@ Partial Class FormWelcome
         '
         Me.Timer2.Interval = 30
         '
-        'ProgressBar1
+        'CircularProgressBar1
         '
-        Me.ProgressBar1.ForeColor = System.Drawing.Color.FromArgb(CType(CType(128, Byte), Integer), CType(CType(128, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.ProgressBar1.Location = New System.Drawing.Point(105, 250)
-        Me.ProgressBar1.Name = "ProgressBar1"
-        Me.ProgressBar1.Size = New System.Drawing.Size(450, 23)
-        Me.ProgressBar1.Step = 100
-        Me.ProgressBar1.Style = System.Windows.Forms.ProgressBarStyle.Continuous
-        Me.ProgressBar1.TabIndex = 3
-        Me.ProgressBar1.Value = 60
+        Me.CircularProgressBar1.AnimationFunction = WinFormAnimation.KnownAnimationFunctions.Liner
+        Me.CircularProgressBar1.AnimationSpeed = 500
+        Me.CircularProgressBar1.BackColor = System.Drawing.Color.Transparent
+        Me.CircularProgressBar1.Font = New System.Drawing.Font("Microsoft Sans Serif", 35.0!, System.Drawing.FontStyle.Bold)
+        Me.CircularProgressBar1.ForeColor = System.Drawing.Color.FromArgb(CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer))
+        Me.CircularProgressBar1.InnerColor = System.Drawing.Color.FromArgb(CType(CType(42, Byte), Integer), CType(CType(52, Byte), Integer), CType(CType(93, Byte), Integer))
+        Me.CircularProgressBar1.InnerMargin = 2
+        Me.CircularProgressBar1.InnerWidth = -1
+        Me.CircularProgressBar1.Location = New System.Drawing.Point(250, 205)
+        Me.CircularProgressBar1.MarqueeAnimationSpeed = 2000
+        Me.CircularProgressBar1.Name = "CircularProgressBar1"
+        Me.CircularProgressBar1.OuterColor = System.Drawing.Color.FromArgb(CType(CType(29, Byte), Integer), CType(CType(38, Byte), Integer), CType(CType(69, Byte), Integer))
+        Me.CircularProgressBar1.OuterMargin = -25
+        Me.CircularProgressBar1.OuterWidth = 25
+        Me.CircularProgressBar1.ProgressColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(102, Byte), Integer), CType(CType(204, Byte), Integer))
+        Me.CircularProgressBar1.ProgressWidth = 20
+        Me.CircularProgressBar1.SecondaryFont = New System.Drawing.Font("Microsoft Sans Serif", 20.0!)
+        Me.CircularProgressBar1.Size = New System.Drawing.Size(150, 150)
+        Me.CircularProgressBar1.StartAngle = 270
+        Me.CircularProgressBar1.Style = System.Windows.Forms.ProgressBarStyle.Marquee
+        Me.CircularProgressBar1.SubscriptColor = System.Drawing.Color.FromArgb(CType(CType(166, Byte), Integer), CType(CType(166, Byte), Integer), CType(CType(166, Byte), Integer))
+        Me.CircularProgressBar1.SubscriptMargin = New System.Windows.Forms.Padding(10, -35, 0, 0)
+        Me.CircularProgressBar1.SubscriptText = "%"
+        Me.CircularProgressBar1.SuperscriptColor = System.Drawing.Color.FromArgb(CType(CType(166, Byte), Integer), CType(CType(166, Byte), Integer), CType(CType(166, Byte), Integer))
+        Me.CircularProgressBar1.SuperscriptMargin = New System.Windows.Forms.Padding(10, 35, 0, 0)
+        Me.CircularProgressBar1.SuperscriptText = ""
+        Me.CircularProgressBar1.TabIndex = 4
+        Me.CircularProgressBar1.Text = "0"
+        Me.CircularProgressBar1.TextMargin = New System.Windows.Forms.Padding(8, 8, 0, 0)
+        Me.CircularProgressBar1.Value = 68
         '
         'FormWelcome
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(42, Byte), Integer), CType(CType(52, Byte), Integer), CType(CType(93, Byte), Integer))
-        Me.ClientSize = New System.Drawing.Size(650, 350)
-        Me.Controls.Add(Me.ProgressBar1)
+        Me.ClientSize = New System.Drawing.Size(650, 371)
+        Me.Controls.Add(Me.CircularProgressBar1)
         Me.Controls.Add(Me.lblUsername)
         Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.Panel1)
@@ -140,5 +162,5 @@ Partial Class FormWelcome
     Friend WithEvents lblUsername As System.Windows.Forms.Label
     Friend WithEvents Timer1 As System.Windows.Forms.Timer
     Friend WithEvents Timer2 As System.Windows.Forms.Timer
-    Friend WithEvents ProgressBar1 As System.Windows.Forms.ProgressBar
+    Friend WithEvents CircularProgressBar1 As CircularProgressBar.CircularProgressBar
 End Class
