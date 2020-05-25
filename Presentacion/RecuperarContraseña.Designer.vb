@@ -70,7 +70,8 @@ Partial Class RecuperarContraseña
         'lblresult
         '
         Me.lblresult.Anchor = System.Windows.Forms.AnchorStyles.Left
-        Me.lblresult.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblresult.Font = New System.Drawing.Font("Ebrima", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblresult.ForeColor = System.Drawing.Color.Red
         Me.lblresult.Location = New System.Drawing.Point(15, 216)
         Me.lblresult.Name = "lblresult"
         Me.lblresult.Size = New System.Drawing.Size(613, 75)

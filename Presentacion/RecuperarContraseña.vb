@@ -24,13 +24,13 @@ Public Class RecuperarContraseña
 
             Dim _Asunto As String = "SYSTEM: Solicitud de recuperacion de contraseña"
             Dim _Cuerpo As String = "Hola, " & _Usuario._NombreUsuario & " solicita recuperar su contraseña." & vbNewLine & _
-                "Tu contraseña actual es: " & _Usuario._Contraseña & vbNewLine & _
-                "Sin embargo, le pedimos que cambia su contraseña inmediatamente una vez que ingrese al sistema."
+                "Su contraseña actual es: " & _Usuario._Contraseña & vbNewLine & _
+                "Sin embargo, le pedimos que cambie su contraseña inmediatamente una vez que ingrese al sistema."
             Dim _Destintarios As New List(Of String)
             _Destintarios.Add(_Usuario._Correo)
             If Mailing.EnviarCorreo(_Asunto, _Cuerpo, _Destintarios) Then
-                lblresult.Text = "Hemos enviado un Correo(a " & _Usuario._Correo & ") con tu contraseña actual." & vbNewLine &
-                                     "Le pedimos que cambia su contraseña inmediatamente una vez que ingrese al sistema."
+                lblresult.Text = "Hemos enviado un Correo(a " & _Usuario._Correo & ") con su contraseña actual." & vbNewLine &
+                                     "Le pedimos que cambie su contraseña inmediatamente una vez que ingrese al sistema."
             Else
                 lblresult.Text = "Error al enviar el correo."
             End If
