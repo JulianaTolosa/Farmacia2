@@ -15,10 +15,36 @@ Public Class RecuperarContraseña
     
 
     Private Sub btnSend_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnSend.Click
-        Dim user As New user
-        Dim result = user.recoryPassword(TextBox1.Text)
+        Try
+            Dim _Usuario As Usuario = Datos.ObtenerUsuario(TextBox1.Text)
+            If _Usuario Is Nothing Then
+                MsgBox("El Usuario no Existe")
+                Exit Sub
+            End If
 
-        lblresult.Text = result
+            Dim _Asunto As String = "SYSTEM: Solicitud de recuperacion de contraseña"
+            Dim _Cuerpo As String = "Hola, " & _Usuario._NombreUsuario & " solicita recuperar su contraseña." & vbNewLine & _
+                "Tu contraseña actual es: " & _Usuario._Contraseña & vbNewLine & _
+                "Sin embargo, le pedimos que cambia su contraseña inmediatamente una vez que ingrese al sistema."
+            Dim _Destintarios As New List(Of String)
+            _Destintarios.Add(_Usuario._Correo)
+            If Mailing.EnviarCorreo(_Asunto, _Cuerpo, _Destintarios) Then
+                lblresult.Text = "Hemos enviado un Correo(a " & _Usuario._Correo & ") con tu contraseña actual." & vbNewLine &
+                                     "Le pedimos que cambia su contraseña inmediatamente una vez que ingrese al sistema."
+            Else
+                lblresult.Text = "Error al enviar el correo."
+            End If
+        Catch ex As Exception
+
+        End Try
+
+
+
+
+        'Dim user As New user
+        'Dim result = user.recoryPassword(TextBox1.Text)
+
+        'lblresult.Text = result
     End Sub
 
 

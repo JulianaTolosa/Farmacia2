@@ -30,6 +30,18 @@ Public Class Login
         SendMessage(Me.Handle, &H112&, &HF012&, 0)
     End Sub
 
+    Private Sub Login_KeyDown(sender As Object, e As KeyEventArgs) Handles Me.KeyDown
+        If e.KeyCode = Keys.Enter Then
+            IntentarLogin()
+        End If
+    End Sub
+
+   
+
+    Private Sub Login_Load(sender As Object, e As EventArgs) Handles Me.Load
+      
+    End Sub
+
     Private Sub Login_MouseMove(sender As Object, e As MouseEventArgs) Handles MyBase.MouseMove
         ReleaseCapture()
         SendMessage(Me.Handle, &H112&, &HF012&, 0)
@@ -65,23 +77,37 @@ Public Class Login
 
     
     Private Sub btnIngresar_Click(sender As Object, e As EventArgs) Handles btnIngresar.Click
-        Dim user As New user()
-        Dim validlogin = user.Login(txtUsuario.Text, txtcontraseña.Text)
-        If validlogin = True Then
-            Me.Hide()
-            Dim formWelcome As New FormWelcome
-            formWelcome.ShowDialog()
-            Dim frm As New FormPrincipal()
-            frm.Show()
-            AddHandler frm.FormClosed, AddressOf Me.Logout
-
-        Else
-            MessageBox.Show("Usuario o Contraseña Incorrecta." + vbNewLine + "Por Favor intente nuevamente")
-            txtcontraseña.Clear()
-            txtcontraseña.Focus()
-        End If
+        IntentarLogin()
     End Sub
+    Private Sub IntentarLogin()
 
+        Try
+            Dim _Nombre As String = txtUsuario.Text
+            Dim _Pass As String = txtcontraseña.Text
+            If _Nombre.Length < 3 Or _Pass.Length < 3 Then
+                MsgBox("Usuario y Contraseña deben tener al menos 3 caracteres")
+                Exit Sub
+            End If
+
+            Dim _Usuario As Usuario = Datos.Login(_Nombre, _Pass)
+            If _Usuario Is Nothing Then
+                MsgBox("Contraseña Incorrecta. Intente nuevamente")
+                txtcontraseña.Text = ""
+                Exit Sub
+            End If
+
+            Utilidades._UsuarioLogueado = _Usuario
+            If Checkremember.Checked Then
+                Utilidades.SetearIdDeMySettings(_Usuario._Id)
+            End If
+            Me.Hide()
+            FormPrincipal.Show()
+
+
+        Catch ex As Exception
+
+        End Try
+    End Sub
     Private Sub Logout(sender As Object, e As FormClosedEventArgs)
         txtUsuario.Clear()
         txtcontraseña.Clear()
@@ -95,18 +121,7 @@ Public Class Login
 
     End Sub
 
-    'VER BIEN ESTO QUE NO ME ACUERDO QUE ES!!!
-    'Private Sub Checkremember_CheckedChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Checkremember.CheckedChanged
-    '    If Checkremember.Checked = True Then
-    '        My.Settings.username = txtUsuario.Text
-    '        My.Settings.password = txtcontraseña.Text
-    '        My.Settings.Save()
-    '        My.Settings.Reload()
-    '    End If
-    'End Sub
+    Private Sub Login_Validating(sender As Object, e As System.ComponentModel.CancelEventArgs) Handles Me.Validating
 
-    'Private Sub Login_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
-    '    txtUsuario.Text = My.Settings.username
-    '    txtcontraseña.Text = My.Settings.password
-    'End Sub
+    End Sub
 End Class

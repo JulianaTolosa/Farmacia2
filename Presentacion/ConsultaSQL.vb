@@ -6,7 +6,7 @@ Public Class ConsultaSQL
     Private _Lector As SqlDataReader
     Private _Tabla As DataTable
     Private _Parametro As SqlParameter
-    'Public Shared _Conexion As String = "Data Source=Juli-PC;Initial Catalog=Tesis;Integrated Security=True"
+
     Public Shared _Conexion As String = "Data Source=LEO-PC;Initial Catalog=Tesis;Integrated Security=True"
     Private _Consulta As String = ""
 
@@ -35,8 +35,13 @@ Public Class ConsultaSQL
 
     Private Function ObtenerConexion() As SqlConnection
         Dim sqlConnection As New SqlConnection()
-        sqlConnection.ConnectionString = _Conexion
-        Return sqlConnection
+        Try
+            sqlConnection.ConnectionString = _Conexion
+        Catch ex As Exception
+
+        End Try
+
+        Return SqlConnection
     End Function
 
     Public Sub New(Consulta As String)

@@ -63,20 +63,19 @@ Partial Class RecuperarContraseña
         Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Underline), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label1.Location = New System.Drawing.Point(123, 59)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(384, 24)
+        Me.Label1.Size = New System.Drawing.Size(296, 24)
         Me.Label1.TabIndex = 2
-        Me.Label1.Text = "Ingresa tu Nombre de Usuario o Correo:"
+        Me.Label1.Text = "Ingresa tu Nombre de Usuario:"
         '
         'lblresult
         '
         Me.lblresult.Anchor = System.Windows.Forms.AnchorStyles.Left
-        Me.lblresult.AutoSize = True
         Me.lblresult.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblresult.Location = New System.Drawing.Point(15, 216)
         Me.lblresult.Name = "lblresult"
-        Me.lblresult.Size = New System.Drawing.Size(79, 18)
+        Me.lblresult.Size = New System.Drawing.Size(613, 75)
         Me.lblresult.TabIndex = 1
-        Me.lblresult.Text = "Resultado:"
+        Me.lblresult.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
         'PanelBarraTitulo
         '

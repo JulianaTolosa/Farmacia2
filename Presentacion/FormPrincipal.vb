@@ -144,6 +144,9 @@ Public Class FormPrincipal
 
 
     Private Sub FormPrincipal_Load(ByVal sender As Object, ByVal e As EventArgs) Handles MyBase.Load
+
+        Utilidades.SetearCadenaConexion()
+
         managePermissions()
         'security()
         loadUser()
@@ -152,35 +155,35 @@ Public Class FormPrincipal
 
     'DATOS DE USUARIO EN EL FORM PRINCIPAL
     Private Sub loadUser()
-        lblNombre.Text = ActiveUser.Nombre + " " + ActiveUser.Apellido
-        lblCorreo.Text = ActiveUser.Correo
-        lblPosicion.Text = ActiveUser.Posicion
+        lblNombre.Text = Utilidades._UsuarioLogueado._Nombre + " " + Utilidades._UsuarioLogueado._Apellido
+        lblCorreo.Text = Utilidades._UsuarioLogueado._Correo
+        lblPosicion.Text = Utilidades._UsuarioLogueado._Posicion
     End Sub
 
     'CHEQUEO DE INICIO DE SESION DESDE FORMULARIO PRINCIPAL Y NO DEL LOGIN
-    Private Sub security()
-        Dim user As New user()
+    'Private Sub security()
+    '    Dim user As New user()
 
-        If user.anyMethod(ActiveUser.idusuario) = False Then
-            MessageBox.Show("¡Error!", " ADVERTENCIA ")
-            Me.Close()
-        End If
-    End Sub
+    '    If user.anyMethod(ActiveUser.idusuario) = False Then
+    '        MessageBox.Show("¡Error!", " ADVERTENCIA ")
+    '        Me.Close()
+    '    End If
+    'End Sub
 
     ' HABILITACION DE BOTONES SEGUN EL CARGO
     Private Sub managePermissions()
-        If ActiveUser.Posicion = Positions.Encargado Then
+        If Utilidades._UsuarioLogueado._Posicion = Positions.Encargado Then
             btnClientes.Enabled = True
             btnDepositos.Enabled = False
             btnEmpleados.Enabled = True
 
         End If
 
-        If ActiveUser.Posicion = Positions.Vendedor Then
+        If Utilidades._UsuarioLogueado._Posicion = Positions.Vendedor Then
             btnClientes.Enabled = True
             btnDepositos.Enabled = False
             btnEmpleados.Enabled = True
-            
+
         End If
     End Sub
 
@@ -280,7 +283,9 @@ Public Class FormPrincipal
     Private Sub btnSalir_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnSalir.Click
         If MessageBox.Show("Esta seguro que desea cerrar sesion?", "ADVERTENCIA",
            MessageBoxButtons.YesNo, MessageBoxIcon.Warning) = DialogResult.Yes Then
-            Me.Close()
+            Me.Hide()
+            Utilidades.SetearIdDeMySettings(0)
+            Login.Show()
         End If
     End Sub
 
@@ -306,9 +311,9 @@ Public Class FormPrincipal
         hideSubmenu()
     End Sub
 
-    
+
     Private Sub btnEmpleados_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnEmpleados.Click
-        openChildForm(New Empleados())
+        openChildForm(Empleados)
     End Sub
 
     Private Sub btnVentas_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnVentas.Click
@@ -341,8 +346,8 @@ Public Class FormPrincipal
         lblfecha.Text = DateTime.Now.ToLongDateString
     End Sub
 
-    
-   
+
+
     Private Sub PanelFormularios_Paint(ByVal sender As System.Object, ByVal e As System.Windows.Forms.PaintEventArgs) Handles PanelFormularios.Paint
 
     End Sub

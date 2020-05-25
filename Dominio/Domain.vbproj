@@ -119,10 +119,6 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\AccesoDatos\AccesoDatos.vbproj">
-      <Project>{b6718e4a-8d58-400a-89ed-c5be680630e6}</Project>
-      <Name>AccesoDatos</Name>
-    </ProjectReference>
     <ProjectReference Include="..\CapaComun\CapaComun.vbproj">
       <Project>{f4e99de6-e840-4eb2-823f-db7c65d6b515}</Project>
       <Name>CapaComun</Name>

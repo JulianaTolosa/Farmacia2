@@ -17,7 +17,7 @@ Public Class FormWelcome
     End Sub
 
     Private Sub Bienvenida_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
-        lblUsername.Text = ActiveUser.Nombre & " " & ActiveUser.Apellido
+        lblUsername.Text = Utilidades._UsuarioLogueado._Nombre & " " & Utilidades._UsuarioLogueado._Apellido
         CircularProgressBar1.Value = 0
         Me.Opacity = 0
         Timer1.Start()

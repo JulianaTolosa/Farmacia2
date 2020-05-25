@@ -9,6 +9,7 @@ Imports System.Text.RegularExpressions
 'prueba2
 
 Public Class Empleados
+    Private _IdUsuarioSeleccionado As Integer = 0
 
     Private Sub btnCerrarForm_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnCerrarForm.Click
         Me.Close()
@@ -23,7 +24,7 @@ Public Class Empleados
     " por favor seleccione un correo valido", "Validación de correo electronico", MessageBoxButtons.OK)
             Txtcorreo.Focus()
             Txtcorreo.SelectAll()
-        ElseIf Utilidades.ExisteUsuario(Txtnombreusuario.Text) Then
+        ElseIf Datos.ExisteUsuario(Txtnombreusuario.Text) Then
             MessageBox.Show("El usuario ya esta registrado, por favor intente nuevamente")
             limpiar()
         Else
@@ -42,7 +43,7 @@ Public Class Empleados
             _Usuario._Posicion = cmbposicion.Text
             _Usuario._Correo = Txtcorreo.Text
 
-            If Utilidades.AgregarUsuario(_Usuario) Then
+            If Datos.AgregarUsuario(_Usuario) Then
                 RefrescarListaEmpleados()
                 MsgBox("Usuario creado correctamente!")
             Else
@@ -108,6 +109,11 @@ Public Class Empleados
         Return Regex.IsMatch(Smail, "^[_a-z0-9-]+(\.[_a-z0-9-]+)*@[a-z0-9-]+(\.[a-z0-9:-]+)*(\.[a-z]{2,4})$")
     End Function
 
+    Private Sub Empleados_FormClosing(sender As Object, e As FormClosingEventArgs) Handles Me.FormClosing
+        Me.Hide()
+        e.Cancel = True
+    End Sub
+
 
 
 
@@ -118,12 +124,13 @@ Public Class Empleados
         'Me.dtUsuario = Me.taUsuario.GetData()
         'DgEmpleados.DataSource = Me.dtUsuario
         'bindata()
+        _IdUsuarioSeleccionado = 0
         RefrescarListaEmpleados()
 
     End Sub
 
     Public Sub RefrescarListaEmpleados()
-        DgEmpleados.DataSource = Utilidades.ObtenerDataTableEmpleados()
+        DgEmpleados.DataSource = Datos.ObtenerDataTableEmpleados()
     End Sub
 
     'Public Sub ExportarDatosPDF(ByVal document As Document)
@@ -205,8 +212,30 @@ Public Class Empleados
     End Sub
 
     Private Sub BtnEditar_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles BtnEditar.Click
-        Editarempleado.Show()
+        'Editarempleado.Show()
+        If _IdUsuarioSeleccionado <= 0 Then
+            MsgBox("Debe seleccioar un Usuario")
+            Exit Sub
+        End If
+
+        'Cargo el formulario Editar
+        Editarempleado.Mostrar(Datos.ObtenerUsuario(_IdUsuarioSeleccionado))
+    End Sub
+
+    Private Sub DgEmpleados_CellClick(sender As Object, e As DataGridViewCellEventArgs) Handles DgEmpleados.CellClick
+        Try
+            If e.RowIndex >= 0 Then
+                Dim Row As DataGridViewRow = DgEmpleados.Rows(e.RowIndex)
+                'MsgBox(Row.Cells(0).Value)
+                _IdUsuarioSeleccionado = CInt(Row.Cells(0).Value)
+            End If
+        Catch ex As Exception
+
+        End Try
     End Sub
 
 
+    Private Sub DgEmpleados_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles DgEmpleados.CellDoubleClick
+        Editarempleado.Mostrar(Datos.ObtenerUsuario(_IdUsuarioSeleccionado))
+    End Sub
 End Class

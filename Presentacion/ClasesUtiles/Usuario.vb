@@ -1,4 +1,5 @@
 ﻿Public Class Usuario
+    Public _Id As Integer
     Public _NombreUsuario As String
     Public _Contraseña As String
     Public _Nombre As String
@@ -12,7 +13,15 @@
     'Sub New()
     'End Sub
 
+    Public Function Guardar() As Boolean
+        Dim _Retorno As Boolean = False
+        Try
+            _Retorno = Datos.GuardarUsuario(Me)
+        Catch ex As Exception
 
+        End Try
+        Return _Retorno
+    End Function
 
 
 

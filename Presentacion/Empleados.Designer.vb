@@ -281,8 +281,11 @@ Partial Class Empleados
         'DgEmpleados
         '
         Me.DgEmpleados.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.DgEmpleados.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically
         Me.DgEmpleados.Location = New System.Drawing.Point(20, 290)
+        Me.DgEmpleados.MultiSelect = False
         Me.DgEmpleados.Name = "DgEmpleados"
+        Me.DgEmpleados.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
         Me.DgEmpleados.Size = New System.Drawing.Size(729, 230)
         Me.DgEmpleados.TabIndex = 2
         '

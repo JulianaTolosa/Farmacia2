@@ -204,6 +204,7 @@ Partial Class Login
         Me.Controls.Add(Me.ShapeContainer1)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
+        Me.KeyPreview = True
         Me.Name = "Login"
         Me.Opacity = 0.85R
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
