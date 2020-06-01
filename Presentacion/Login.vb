@@ -91,7 +91,7 @@ Public Class Login
 
             Dim _Usuario As Usuario = Datos.Login(_Nombre, _Pass)
             If _Usuario Is Nothing Then
-                MsgBox("Contraseña Incorrecta. Intente nuevamente")
+                MsgBox("Usuario o Contraseña Incorrecta. Intente nuevamente")
                 txtcontraseña.Text = ""
                 Exit Sub
             End If

@@ -286,6 +286,9 @@ Public Class FormPrincipal
             Me.Hide()
             Utilidades.SetearIdDeMySettings(0)
             Login.Show()
+            'lblNombre.Text = " "
+            'lblCorreo.Text = " "
+            'lblPosicion.Text = " "
         End If
     End Sub
 
@@ -355,6 +358,5 @@ Public Class FormPrincipal
     Protected Overrides Sub Finalize()
         MyBase.Finalize()
     End Sub
-
 End Class
 
