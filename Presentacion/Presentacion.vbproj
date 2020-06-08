@@ -131,6 +131,7 @@
     <Compile Include="ClasesUtiles\Mailing.vb" />
     <Compile Include="ClasesUtiles\OSocial.vb" />
     <Compile Include="ClasesUtiles\Producto.vb" />
+    <Compile Include="ClasesUtiles\Proveedor.vb" />
     <Compile Include="ClasesUtiles\Usuario.vb" />
     <Compile Include="ConsultaSQL.vb" />
     <Compile Include="Datos.vb" />

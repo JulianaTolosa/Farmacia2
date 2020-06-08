@@ -101,7 +101,7 @@ Public Class Login
                 Utilidades.SetearIdDeMySettings(_Usuario._Id)
             End If
             Me.Hide()
-            FormPrincipal.Show()
+            FormWelcome.Show()
 
 
         Catch ex As Exception
