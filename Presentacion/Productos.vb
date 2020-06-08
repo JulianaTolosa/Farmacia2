@@ -9,21 +9,35 @@
     End Sub
 
     Private Sub Btnagregar_Click(sender As Object, e As EventArgs) Handles Btnagregar.Click
-        If (String.IsNullOrEmpty(Txtnombreprod.Text) Or String.IsNullOrEmpty(Txtprecioven.Text) Or String.IsNullOrEmpty(Txtpreciocomp.Text) Or String.IsNullOrEmpty(Txtdescripcion.Text) Or String.IsNullOrEmpty(cmbtipoprod.Text) then
+        If (String.IsNullOrEmpty(Txtnombreprod.Text) Or String.IsNullOrEmpty(Txtprecioven.Text) Or String.IsNullOrEmpty(Txtpreciocomp.Text) Or String.IsNullOrEmpty(Txtdescripcion.Text) Or String.IsNullOrEmpty(cmbtipoprod.Text)) Then
             MsgBox("Por Favor, rellene los campos vacios")
-        ElseIf 
-            limpiar()
         Else
-            Dim Nombre As String = NombreTextBox.Text
-            Dim Apellido As String = ApellidoTextBox.Text
-            Dim Direccion As String = DireccionTextBox.Text
-            Dim DNI As Integer = CInt(DniTextBox.Text)
-            Dim Telefono As String = TelefonoTextBox.Text
-            Dim Celular As String = CelularTextBox.Text
-            Dim FechaNacimiento As Date = CDate(NacimientoTextBox.Text)
-            Dim Localidad As String = LocalidadTextBox.Text
-            Dim Provincia As String = ProvinciaTextBox.Text
-            Dim IdObraSocial As String = ObraSocialTextBox.Text
+            limpiar()
+            Dim Nombre As String = Txtnombreprod.Text
+            Dim precioven As Double = CDbl(Txtprecioven.Text)
+            Dim preciocomp As Double = CDbl(Txtpreciocomp.Text)
+            Dim Descripcion As String = Txtdescripcion.Text
 
+            Dim _Producto As New Producto()
+            _Producto._nombre = Txtnombreprod.Text
+            _Producto._precioven = CDbl(Txtprecioven.Text)
+            _Producto._preciocomp = CDbl(Txtpreciocomp.Text)
+            _Producto._descripcion = Txtdescripcion.Text
+
+
+            If Datos.AgregarProducto(_Producto) Then
+                MsgBox("Producto agregado correctamente!")
+            Else
+                MsgBox("Error al agregar Producto!")
+            End If
+        End If
+    End Sub
+
+    Public Sub limpiar()
+        Txtnombreprod.Text = ""
+        Txtprecioven.Text = ""
+        Txtpreciocomp.Text = ""
+        Txtdescripcion.Text = ""
+        Txtnombreprod.Focus()
     End Sub
 End Class

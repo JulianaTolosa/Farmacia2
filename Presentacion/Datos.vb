@@ -149,6 +149,33 @@
         Return _Retorno
     End Function
 
+    Public Function AgregarProducto(_Producto As Producto) As Boolean
+        Dim _Retorno As Boolean = True
+
+
+        'If IsNothing(_Usuario) Then
+        '    Return False
+        'End If
+        Try
+            Dim _Consulta As New ConsultaSQL
+            _Consulta.Consulta = "  INSERT INTO Producto"
+            _Consulta.Consulta &= " (nombreprod, precioven, preciocomp,descripcion)"
+            _Consulta.Consulta &= " VALUES"
+            _Consulta.Consulta &= " (@nombreprod, @precioven, @preciocomp, @descrip)"
+            _Consulta.AgregarParametro("@NombreUsuario", _Producto._nombre)
+            _Consulta.AgregarParametro("@precioven", _Producto._precioven)
+            _Consulta.AgregarParametro("@preciocomp", _Producto._preciocomp)
+            _Consulta.AgregarParametro("@descrip", _Producto._descripcion)
+            
+
+            _Consulta.Ejecutar()
+        Catch ex As Exception
+            _Retorno = False
+        End Try
+
+        Return _Retorno
+    End Function
+
 #Region "DatosUsuarios"
 
     ''' <summary>
