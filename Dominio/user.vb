@@ -1,4 +1,4 @@
-﻿Imports AccesoDatos
+﻿
 Imports CapaComun
 
 'Public Class user

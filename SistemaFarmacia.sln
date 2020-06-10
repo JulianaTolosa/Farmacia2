@@ -1,8 +1,6 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 2013
-VisualStudioVersion = 12.0.21005.1
-MinimumVisualStudioVersion = 10.0.40219.1
+# Visual Studio 2012
 Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "Presentacion", "Presentacion\Presentacion.vbproj", "{108EE934-02E4-428A-8A91-5B6780606B2E}"
 EndProject
 Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "Domain", "Dominio\Domain.vbproj", "{5E56EBD6-079F-402D-8621-EF015A709440}"
