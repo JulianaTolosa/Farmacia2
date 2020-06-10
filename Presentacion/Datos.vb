@@ -151,21 +151,19 @@
 
     Public Function AgregarProducto(_Producto As Producto) As Boolean
         Dim _Retorno As Boolean = True
-
-
-        'If IsNothing(_Usuario) Then
-        '    Return False
-        'End If
+        
         Try
             Dim _Consulta As New ConsultaSQL
             _Consulta.Consulta = "  INSERT INTO Producto"
-            _Consulta.Consulta &= " (nombreprod, precioven, preciocomp,descripcion)"
+            _Consulta.Consulta &= " (nombre,precioven, preciocomp,cantidad,tipoprod,descripcion)"
             _Consulta.Consulta &= " VALUES"
-            _Consulta.Consulta &= " (@nombreprod, @precioven, @preciocomp, @descrip)"
-            _Consulta.AgregarParametro("@NombreUsuario", _Producto._nombre)
+            _Consulta.Consulta &= " (@nombre, @precioven, @preciocomp,@canti,@tipoprod,@descripcion)"
+            _Consulta.AgregarParametro("@nombre", _Producto._nombre)
             _Consulta.AgregarParametro("@precioven", _Producto._precioven)
             _Consulta.AgregarParametro("@preciocomp", _Producto._preciocomp)
-            _Consulta.AgregarParametro("@descrip", _Producto._descripcion)
+            _Consulta.AgregarParametro("@canti", _Producto._cantidad)
+            _Consulta.AgregarParametro("@tipoprod", _Producto._tipoprod)
+            _Consulta.AgregarParametro("@descripcion", _Producto._descripcion)
             
 
             _Consulta.Ejecutar()

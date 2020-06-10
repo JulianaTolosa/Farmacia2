@@ -23,7 +23,6 @@ Partial Class Productos
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Productos))
-        Dim lblPosicion As System.Windows.Forms.Label
         Me.btnCerrarForm = New System.Windows.Forms.PictureBox()
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.lbLProductos = New System.Windows.Forms.Label()
@@ -31,17 +30,21 @@ Partial Class Productos
         Me.Lblprecioven = New System.Windows.Forms.Label()
         Me.Lbldescripcion = New System.Windows.Forms.Label()
         Me.Lblnombreproducto = New System.Windows.Forms.Label()
-        Me.Txtnombreprod = New System.Windows.Forms.TextBox()
-        Me.Txtprecioven = New System.Windows.Forms.TextBox()
-        Me.cmbtipoprod = New System.Windows.Forms.ComboBox()
-        Me.Txtpreciocomp = New System.Windows.Forms.TextBox()
+        Me.nombreprod = New System.Windows.Forms.TextBox()
+        Me.precioventa = New System.Windows.Forms.TextBox()
+        Me.preciocompra = New System.Windows.Forms.TextBox()
         Me.Btnborrar = New System.Windows.Forms.Button()
         Me.BtnEditar = New System.Windows.Forms.Button()
         Me.Btnagregar = New System.Windows.Forms.Button()
-        Me.Txtdescripcion = New System.Windows.Forms.TextBox()
-        lblPosicion = New System.Windows.Forms.Label()
+        Me.Dgproducto = New System.Windows.Forms.DataGridView()
+        Me.Lblcantidad = New System.Windows.Forms.Label()
+        Me.txtcantidad = New System.Windows.Forms.TextBox()
+        Me.Lbltipoprod = New System.Windows.Forms.Label()
+        Me.Cmbtipoproducto = New System.Windows.Forms.ComboBox()
+        Me.txtdescripcion = New System.Windows.Forms.TextBox()
         CType(Me.btnCerrarForm, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel1.SuspendLayout()
+        CType(Me.Dgproducto, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'btnCerrarForm
@@ -102,7 +105,7 @@ Partial Class Productos
         '
         Me.Lbldescripcion.AutoSize = True
         Me.Lbldescripcion.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Lbldescripcion.Location = New System.Drawing.Point(42, 222)
+        Me.Lbldescripcion.Location = New System.Drawing.Point(42, 267)
         Me.Lbldescripcion.Name = "Lbldescripcion"
         Me.Lbldescripcion.Size = New System.Drawing.Size(96, 20)
         Me.Lbldescripcion.TabIndex = 36
@@ -118,64 +121,42 @@ Partial Class Productos
         Me.Lblnombreproducto.TabIndex = 35
         Me.Lblnombreproducto.Text = "Nombre:"
         '
-        'Txtnombreprod
+        'nombreprod
         '
-        Me.Txtnombreprod.BorderStyle = System.Windows.Forms.BorderStyle.None
-        Me.Txtnombreprod.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.Txtnombreprod.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Txtnombreprod.Location = New System.Drawing.Point(162, 62)
-        Me.Txtnombreprod.Name = "Txtnombreprod"
-        Me.Txtnombreprod.Size = New System.Drawing.Size(150, 19)
-        Me.Txtnombreprod.TabIndex = 24
+        Me.nombreprod.BorderStyle = System.Windows.Forms.BorderStyle.None
+        Me.nombreprod.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.nombreprod.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.nombreprod.Location = New System.Drawing.Point(162, 62)
+        Me.nombreprod.Name = "nombreprod"
+        Me.nombreprod.Size = New System.Drawing.Size(480, 19)
+        Me.nombreprod.TabIndex = 24
         '
-        'Txtprecioven
+        'precioventa
         '
-        Me.Txtprecioven.BorderStyle = System.Windows.Forms.BorderStyle.None
-        Me.Txtprecioven.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.Txtprecioven.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Txtprecioven.Location = New System.Drawing.Point(162, 98)
-        Me.Txtprecioven.Name = "Txtprecioven"
-        Me.Txtprecioven.Size = New System.Drawing.Size(250, 19)
-        Me.Txtprecioven.TabIndex = 27
+        Me.precioventa.BorderStyle = System.Windows.Forms.BorderStyle.None
+        Me.precioventa.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.precioventa.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.precioventa.Location = New System.Drawing.Point(162, 98)
+        Me.precioventa.Name = "precioventa"
+        Me.precioventa.Size = New System.Drawing.Size(115, 19)
+        Me.precioventa.TabIndex = 27
         '
-        'lblPosicion
+        'preciocompra
         '
-        lblPosicion.AutoSize = True
-        lblPosicion.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        lblPosicion.Location = New System.Drawing.Point(42, 184)
-        lblPosicion.Name = "lblPosicion"
-        lblPosicion.Size = New System.Drawing.Size(43, 20)
-        lblPosicion.TabIndex = 34
-        lblPosicion.Text = "Tipo:"
-        '
-        'cmbtipoprod
-        '
-        Me.cmbtipoprod.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.cmbtipoprod.FlatStyle = System.Windows.Forms.FlatStyle.Popup
-        Me.cmbtipoprod.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.cmbtipoprod.FormattingEnabled = True
-        Me.cmbtipoprod.Items.AddRange(New Object() {"Comprimidos", "inyectables"})
-        Me.cmbtipoprod.Location = New System.Drawing.Point(162, 176)
-        Me.cmbtipoprod.Name = "cmbtipoprod"
-        Me.cmbtipoprod.Size = New System.Drawing.Size(150, 28)
-        Me.cmbtipoprod.TabIndex = 29
-        '
-        'Txtpreciocomp
-        '
-        Me.Txtpreciocomp.BorderStyle = System.Windows.Forms.BorderStyle.None
-        Me.Txtpreciocomp.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.Txtpreciocomp.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Txtpreciocomp.Location = New System.Drawing.Point(162, 135)
-        Me.Txtpreciocomp.Name = "Txtpreciocomp"
-        Me.Txtpreciocomp.Size = New System.Drawing.Size(250, 19)
-        Me.Txtpreciocomp.TabIndex = 28
+        Me.preciocompra.BorderStyle = System.Windows.Forms.BorderStyle.None
+        Me.preciocompra.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.preciocompra.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.preciocompra.Location = New System.Drawing.Point(162, 135)
+        Me.preciocompra.Name = "preciocompra"
+        Me.preciocompra.Size = New System.Drawing.Size(115, 19)
+        Me.preciocompra.TabIndex = 28
         '
         'Btnborrar
         '
         Me.Btnborrar.Anchor = System.Windows.Forms.AnchorStyles.None
         Me.Btnborrar.Cursor = System.Windows.Forms.Cursors.Hand
         Me.Btnborrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Btnborrar.Location = New System.Drawing.Point(562, 164)
+        Me.Btnborrar.Location = New System.Drawing.Point(800, 162)
         Me.Btnborrar.Name = "Btnborrar"
         Me.Btnborrar.Size = New System.Drawing.Size(90, 40)
         Me.Btnborrar.TabIndex = 32
@@ -187,7 +168,7 @@ Partial Class Productos
         Me.BtnEditar.Anchor = System.Windows.Forms.AnchorStyles.None
         Me.BtnEditar.Cursor = System.Windows.Forms.Cursors.Hand
         Me.BtnEditar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.BtnEditar.Location = New System.Drawing.Point(562, 114)
+        Me.BtnEditar.Location = New System.Drawing.Point(800, 112)
         Me.BtnEditar.Name = "BtnEditar"
         Me.BtnEditar.Size = New System.Drawing.Size(90, 40)
         Me.BtnEditar.TabIndex = 31
@@ -199,23 +180,71 @@ Partial Class Productos
         Me.Btnagregar.Anchor = System.Windows.Forms.AnchorStyles.None
         Me.Btnagregar.Cursor = System.Windows.Forms.Cursors.Hand
         Me.Btnagregar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Btnagregar.Location = New System.Drawing.Point(562, 64)
+        Me.Btnagregar.Location = New System.Drawing.Point(800, 62)
         Me.Btnagregar.Name = "Btnagregar"
         Me.Btnagregar.Size = New System.Drawing.Size(90, 40)
         Me.Btnagregar.TabIndex = 30
         Me.Btnagregar.Text = "AGREGAR"
         Me.Btnagregar.UseVisualStyleBackColor = True
         '
-        'Txtdescripcion
+        'Dgproducto
         '
-        Me.Txtdescripcion.BorderStyle = System.Windows.Forms.BorderStyle.None
-        Me.Txtdescripcion.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.Txtdescripcion.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Txtdescripcion.Location = New System.Drawing.Point(162, 222)
-        Me.Txtdescripcion.Multiline = True
-        Me.Txtdescripcion.Name = "Txtdescripcion"
-        Me.Txtdescripcion.Size = New System.Drawing.Size(328, 111)
-        Me.Txtdescripcion.TabIndex = 40
+        Me.Dgproducto.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.Dgproducto.Location = New System.Drawing.Point(46, 360)
+        Me.Dgproducto.Name = "Dgproducto"
+        Me.Dgproducto.Size = New System.Drawing.Size(700, 150)
+        Me.Dgproducto.TabIndex = 41
+        '
+        'Lblcantidad
+        '
+        Me.Lblcantidad.AccessibleName = ""
+        Me.Lblcantidad.AutoSize = True
+        Me.Lblcantidad.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Lblcantidad.Location = New System.Drawing.Point(42, 173)
+        Me.Lblcantidad.Name = "Lblcantidad"
+        Me.Lblcantidad.Size = New System.Drawing.Size(77, 20)
+        Me.Lblcantidad.TabIndex = 43
+        Me.Lblcantidad.Text = "Cantidad:"
+        '
+        'txtcantidad
+        '
+        Me.txtcantidad.BorderStyle = System.Windows.Forms.BorderStyle.None
+        Me.txtcantidad.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.txtcantidad.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtcantidad.Location = New System.Drawing.Point(162, 173)
+        Me.txtcantidad.Name = "txtcantidad"
+        Me.txtcantidad.Size = New System.Drawing.Size(115, 19)
+        Me.txtcantidad.TabIndex = 42
+        '
+        'Lbltipoprod
+        '
+        Me.Lbltipoprod.AutoSize = True
+        Me.Lbltipoprod.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Lbltipoprod.Location = New System.Drawing.Point(42, 215)
+        Me.Lbltipoprod.Name = "Lbltipoprod"
+        Me.Lbltipoprod.Size = New System.Drawing.Size(43, 20)
+        Me.Lbltipoprod.TabIndex = 45
+        Me.Lbltipoprod.Text = "Tipo:"
+        '
+        'Cmbtipoproducto
+        '
+        Me.Cmbtipoproducto.FormattingEnabled = True
+        Me.Cmbtipoproducto.Items.AddRange(New Object() {"Comprimidos", "Inyectables"})
+        Me.Cmbtipoproducto.Location = New System.Drawing.Point(162, 213)
+        Me.Cmbtipoproducto.Name = "Cmbtipoproducto"
+        Me.Cmbtipoproducto.Size = New System.Drawing.Size(198, 21)
+        Me.Cmbtipoproducto.TabIndex = 46
+        '
+        'txtdescripcion
+        '
+        Me.txtdescripcion.BorderStyle = System.Windows.Forms.BorderStyle.None
+        Me.txtdescripcion.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.txtdescripcion.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtdescripcion.Location = New System.Drawing.Point(162, 268)
+        Me.txtdescripcion.Multiline = True
+        Me.txtdescripcion.Name = "txtdescripcion"
+        Me.txtdescripcion.Size = New System.Drawing.Size(480, 74)
+        Me.txtdescripcion.TabIndex = 47
         '
         'Productos
         '
@@ -223,16 +252,19 @@ Partial Class Productos
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(128, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.ClientSize = New System.Drawing.Size(922, 572)
-        Me.Controls.Add(Me.Txtdescripcion)
+        Me.Controls.Add(Me.txtdescripcion)
+        Me.Controls.Add(Me.Cmbtipoproducto)
+        Me.Controls.Add(Me.Lbltipoprod)
+        Me.Controls.Add(Me.Lblcantidad)
+        Me.Controls.Add(Me.txtcantidad)
+        Me.Controls.Add(Me.Dgproducto)
         Me.Controls.Add(Me.Lblpreciocom)
         Me.Controls.Add(Me.Lblprecioven)
         Me.Controls.Add(Me.Lbldescripcion)
         Me.Controls.Add(Me.Lblnombreproducto)
-        Me.Controls.Add(Me.Txtnombreprod)
-        Me.Controls.Add(Me.Txtprecioven)
-        Me.Controls.Add(lblPosicion)
-        Me.Controls.Add(Me.cmbtipoprod)
-        Me.Controls.Add(Me.Txtpreciocomp)
+        Me.Controls.Add(Me.nombreprod)
+        Me.Controls.Add(Me.precioventa)
+        Me.Controls.Add(Me.preciocompra)
         Me.Controls.Add(Me.Btnborrar)
         Me.Controls.Add(Me.BtnEditar)
         Me.Controls.Add(Me.Btnagregar)
@@ -243,6 +275,7 @@ Partial Class Productos
         CType(Me.btnCerrarForm, System.ComponentModel.ISupportInitialize).EndInit()
         Me.Panel1.ResumeLayout(False)
         Me.Panel1.PerformLayout()
+        CType(Me.Dgproducto, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -254,12 +287,16 @@ Partial Class Productos
     Friend WithEvents Lblprecioven As System.Windows.Forms.Label
     Friend WithEvents Lbldescripcion As System.Windows.Forms.Label
     Friend WithEvents Lblnombreproducto As System.Windows.Forms.Label
-    Friend WithEvents Txtnombreprod As System.Windows.Forms.TextBox
-    Friend WithEvents Txtprecioven As System.Windows.Forms.TextBox
-    Friend WithEvents cmbtipoprod As System.Windows.Forms.ComboBox
-    Friend WithEvents Txtpreciocomp As System.Windows.Forms.TextBox
+    Friend WithEvents nombreprod As System.Windows.Forms.TextBox
+    Friend WithEvents precioventa As System.Windows.Forms.TextBox
+    Friend WithEvents preciocompra As System.Windows.Forms.TextBox
     Friend WithEvents Btnborrar As System.Windows.Forms.Button
     Friend WithEvents BtnEditar As System.Windows.Forms.Button
     Friend WithEvents Btnagregar As System.Windows.Forms.Button
-    Friend WithEvents Txtdescripcion As System.Windows.Forms.TextBox
+    Friend WithEvents Dgproducto As System.Windows.Forms.DataGridView
+    Friend WithEvents Lblcantidad As System.Windows.Forms.Label
+    Friend WithEvents txtcantidad As System.Windows.Forms.TextBox
+    Friend WithEvents Lbltipoprod As System.Windows.Forms.Label
+    Friend WithEvents Cmbtipoproducto As System.Windows.Forms.ComboBox
+    Friend WithEvents txtdescripcion As System.Windows.Forms.TextBox
 End Class
