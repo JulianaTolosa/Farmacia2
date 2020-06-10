@@ -1,5 +1,5 @@
 ﻿Module Datos
-    'pruebankjhjkhknk
+    'pruebank
 
     Public Function ExisteUsuario(NombreUsuario As String) As Boolean
         Dim _Retorno As Boolean = False
