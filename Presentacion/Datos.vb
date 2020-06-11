@@ -155,13 +155,13 @@
         Try
             Dim _Consulta As New ConsultaSQL
             _Consulta.Consulta = "  INSERT INTO Producto"
-            _Consulta.Consulta &= " (nombre,precioven, preciocomp,cantidad,tipoprod,descripcion)"
+            _Consulta.Consulta &= " (nombre,precio_venta, precio_compra,idtipoprod,descripcion)"
             _Consulta.Consulta &= " VALUES"
-            _Consulta.Consulta &= " (@nombre, @precioven, @preciocomp,@canti,@tipoprod,@descripcion)"
+            _Consulta.Consulta &= " (@nombre, @precioven, @preciocomp,@tipoprod,@descripcion)"
             _Consulta.AgregarParametro("@nombre", _Producto._nombre)
             _Consulta.AgregarParametro("@precioven", _Producto._precioven)
             _Consulta.AgregarParametro("@preciocomp", _Producto._preciocomp)
-            _Consulta.AgregarParametro("@canti", _Producto._cantidad)
+            ' _Consulta.AgregarParametro("@canti", _Producto._cantidad)
             _Consulta.AgregarParametro("@tipoprod", _Producto._tipoprod)
             _Consulta.AgregarParametro("@descripcion", _Producto._descripcion)
             
