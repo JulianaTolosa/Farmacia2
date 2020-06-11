@@ -129,7 +129,7 @@ Partial Class Productos
         Me.nombreprod.Location = New System.Drawing.Point(162, 62)
         Me.nombreprod.Name = "nombreprod"
         Me.nombreprod.Size = New System.Drawing.Size(480, 19)
-        Me.nombreprod.TabIndex = 24
+        Me.nombreprod.TabIndex = 0
         '
         'precioventa
         '
@@ -139,7 +139,7 @@ Partial Class Productos
         Me.precioventa.Location = New System.Drawing.Point(162, 98)
         Me.precioventa.Name = "precioventa"
         Me.precioventa.Size = New System.Drawing.Size(115, 19)
-        Me.precioventa.TabIndex = 27
+        Me.precioventa.TabIndex = 1
         '
         'preciocompra
         '
@@ -149,7 +149,7 @@ Partial Class Productos
         Me.preciocompra.Location = New System.Drawing.Point(162, 135)
         Me.preciocompra.Name = "preciocompra"
         Me.preciocompra.Size = New System.Drawing.Size(115, 19)
-        Me.preciocompra.TabIndex = 28
+        Me.preciocompra.TabIndex = 2
         '
         'Btnborrar
         '
@@ -159,7 +159,7 @@ Partial Class Productos
         Me.Btnborrar.Location = New System.Drawing.Point(800, 162)
         Me.Btnborrar.Name = "Btnborrar"
         Me.Btnborrar.Size = New System.Drawing.Size(90, 40)
-        Me.Btnborrar.TabIndex = 32
+        Me.Btnborrar.TabIndex = 8
         Me.Btnborrar.Text = "BORRAR"
         Me.Btnborrar.UseVisualStyleBackColor = True
         '
@@ -171,7 +171,7 @@ Partial Class Productos
         Me.BtnEditar.Location = New System.Drawing.Point(800, 112)
         Me.BtnEditar.Name = "BtnEditar"
         Me.BtnEditar.Size = New System.Drawing.Size(90, 40)
-        Me.BtnEditar.TabIndex = 31
+        Me.BtnEditar.TabIndex = 7
         Me.BtnEditar.Text = "EDITAR"
         Me.BtnEditar.UseVisualStyleBackColor = True
         '
@@ -183,7 +183,7 @@ Partial Class Productos
         Me.Btnagregar.Location = New System.Drawing.Point(800, 62)
         Me.Btnagregar.Name = "Btnagregar"
         Me.Btnagregar.Size = New System.Drawing.Size(90, 40)
-        Me.Btnagregar.TabIndex = 30
+        Me.Btnagregar.TabIndex = 6
         Me.Btnagregar.Text = "AGREGAR"
         Me.Btnagregar.UseVisualStyleBackColor = True
         '
@@ -214,7 +214,7 @@ Partial Class Productos
         Me.txtcantidad.Location = New System.Drawing.Point(162, 173)
         Me.txtcantidad.Name = "txtcantidad"
         Me.txtcantidad.Size = New System.Drawing.Size(115, 19)
-        Me.txtcantidad.TabIndex = 42
+        Me.txtcantidad.TabIndex = 3
         '
         'Lbltipoprod
         '
@@ -233,18 +233,21 @@ Partial Class Productos
         Me.Cmbtipoproducto.Location = New System.Drawing.Point(162, 213)
         Me.Cmbtipoproducto.Name = "Cmbtipoproducto"
         Me.Cmbtipoproducto.Size = New System.Drawing.Size(198, 21)
-        Me.Cmbtipoproducto.TabIndex = 46
+        Me.Cmbtipoproducto.TabIndex = 4
         '
         'txtdescripcion
         '
+        Me.txtdescripcion.AccessibleDescription = ""
         Me.txtdescripcion.BorderStyle = System.Windows.Forms.BorderStyle.None
         Me.txtdescripcion.Cursor = System.Windows.Forms.Cursors.Hand
         Me.txtdescripcion.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtdescripcion.Location = New System.Drawing.Point(162, 268)
         Me.txtdescripcion.Multiline = True
         Me.txtdescripcion.Name = "txtdescripcion"
-        Me.txtdescripcion.Size = New System.Drawing.Size(480, 74)
-        Me.txtdescripcion.TabIndex = 47
+        Me.txtdescripcion.Size = New System.Drawing.Size(480, 71)
+        Me.txtdescripcion.TabIndex = 5
+        Me.txtdescripcion.Tag = ""
+        Me.txtdescripcion.Text = "Maximo 50 caracteres"
         '
         'Productos
         '
