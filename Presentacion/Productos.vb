@@ -18,10 +18,10 @@ Public Class Productos
             MsgBox("Por Favor, rellene los campos vacios")
         Else
             limpiar()
-            Dim Nombre As String = nombreprod.Text
+            Dim nombre As String = nombreprod.Text
             Dim precioven As Double = Val(precioventa.Text)
             Dim preciocomp As Double = Val((preciocompra.Text))
-            Dim cantidad As Integer = CInt(Val((txtcantidad.Text)))
+            Dim cantidad As Integer = CInt((Val((txtcantidad.Text))))
             Dim tipoprod As String = (Cmbtipoproducto.Text)
             Dim descripcion As String = txtdescripcion.Text
 

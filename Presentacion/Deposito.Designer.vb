@@ -24,8 +24,8 @@ Partial Class Deposito
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Deposito))
         Me.Panel1 = New System.Windows.Forms.Panel()
-        Me.lblDeposito1 = New System.Windows.Forms.Label()
         Me.btnCerrarForm = New System.Windows.Forms.PictureBox()
+        Me.lblDeposito1 = New System.Windows.Forms.Label()
         Me.Panel1.SuspendLayout()
         CType(Me.btnCerrarForm, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
@@ -37,38 +37,38 @@ Partial Class Deposito
         Me.Panel1.Dock = System.Windows.Forms.DockStyle.Top
         Me.Panel1.Location = New System.Drawing.Point(0, 0)
         Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(702, 45)
+        Me.Panel1.Size = New System.Drawing.Size(911, 45)
         Me.Panel1.TabIndex = 0
-        '
-        'lblDeposito1
-        '
-        Me.lblDeposito1.Anchor = System.Windows.Forms.AnchorStyles.Top
-        Me.lblDeposito1.AutoSize = True
-        Me.lblDeposito1.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblDeposito1.Location = New System.Drawing.Point(319, 9)
-        Me.lblDeposito1.Name = "lblDeposito1"
-        Me.lblDeposito1.Size = New System.Drawing.Size(121, 24)
-        Me.lblDeposito1.TabIndex = 2
-        Me.lblDeposito1.Text = "DEPOSITO 1"
-        Me.lblDeposito1.TextAlign = System.Drawing.ContentAlignment.TopCenter
         '
         'btnCerrarForm
         '
         Me.btnCerrarForm.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.btnCerrarForm.Cursor = System.Windows.Forms.Cursors.Hand
         Me.btnCerrarForm.Image = CType(resources.GetObject("btnCerrarForm.Image"), System.Drawing.Image)
-        Me.btnCerrarForm.Location = New System.Drawing.Point(674, 12)
+        Me.btnCerrarForm.Location = New System.Drawing.Point(883, 12)
         Me.btnCerrarForm.Name = "btnCerrarForm"
         Me.btnCerrarForm.Size = New System.Drawing.Size(16, 16)
         Me.btnCerrarForm.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize
         Me.btnCerrarForm.TabIndex = 14
         Me.btnCerrarForm.TabStop = False
         '
+        'lblDeposito1
+        '
+        Me.lblDeposito1.Anchor = System.Windows.Forms.AnchorStyles.Top
+        Me.lblDeposito1.AutoSize = True
+        Me.lblDeposito1.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblDeposito1.Location = New System.Drawing.Point(423, 9)
+        Me.lblDeposito1.Name = "lblDeposito1"
+        Me.lblDeposito1.Size = New System.Drawing.Size(121, 24)
+        Me.lblDeposito1.TabIndex = 2
+        Me.lblDeposito1.Text = "DEPOSITO 1"
+        Me.lblDeposito1.TextAlign = System.Drawing.ContentAlignment.TopCenter
+        '
         'Deposito
         '
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Inherit
         Me.AutoSize = True
-        Me.ClientSize = New System.Drawing.Size(702, 572)
+        Me.ClientSize = New System.Drawing.Size(911, 572)
         Me.Controls.Add(Me.Panel1)
         Me.Cursor = System.Windows.Forms.Cursors.Hand
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None

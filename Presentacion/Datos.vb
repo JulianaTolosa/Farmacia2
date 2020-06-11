@@ -155,16 +155,39 @@
         Try
             Dim _Consulta As New ConsultaSQL
             _Consulta.Consulta = "  INSERT INTO Producto"
-            _Consulta.Consulta &= " (nombre,precioven, preciocomp,cantidad,tipoprod,descripcion)"
+            _Consulta.Consulta &= " (nombre,descripcion,precio_venta,precio_compra,idtipoprod,cantidad)"
             _Consulta.Consulta &= " VALUES"
-            _Consulta.Consulta &= " (@nombre, @precioven, @preciocomp,@canti,@tipoprod,@descripcion)"
+            _Consulta.Consulta &= " (@nombre,@descripcion,@precioven,@preciocomp,@idtipoprod,@canti)"
             _Consulta.AgregarParametro("@nombre", _Producto._nombre)
+            _Consulta.AgregarParametro("@descripcion", _Producto._descripcion)
             _Consulta.AgregarParametro("@precioven", _Producto._precioven)
             _Consulta.AgregarParametro("@preciocomp", _Producto._preciocomp)
+            _Consulta.AgregarParametro("@idtipoprod", _Producto._tipoprod)
             _Consulta.AgregarParametro("@canti", _Producto._cantidad)
-            _Consulta.AgregarParametro("@tipoprod", _Producto._tipoprod)
-            _Consulta.AgregarParametro("@descripcion", _Producto._descripcion)
-            
+
+            _Consulta.Ejecutar()
+        Catch ex As Exception
+            _Retorno = False
+        End Try
+
+        Return _Retorno
+    End Function
+
+    Public Function AgregarOSocial(_OSocial As OSocial) As Boolean
+        Dim _Retorno As Boolean = True
+
+        Try
+            Dim _Consulta As New ConsultaSQL
+            _Consulta.Consulta = "  INSERT INTO ObraSocial"
+            _Consulta.Consulta &= " (nombre,direccion,telefono)"
+            _Consulta.Consulta &= " VALUES"
+            _Consulta.Consulta &= " (@nombre,@direccion,@telefono)"
+            _Consulta.AgregarParametro("@nombre", _OSocial._nombre)
+            _Consulta.AgregarParametro("@direccion", _OSocial._direccion)
+            _Consulta.AgregarParametro("@telefono", _OSocial._telefono)
+            '_Consulta.AgregarParametro("@preciocomp", _Producto._preciocomp)
+            '_Consulta.AgregarParametro("@idtipoprod", _Producto._tipoprod)
+            '_Consulta.AgregarParametro("@canti", _Producto._cantidad)
 
             _Consulta.Ejecutar()
         Catch ex As Exception
