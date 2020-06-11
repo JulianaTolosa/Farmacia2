@@ -21,7 +21,7 @@ Public Class Productos
             Dim Nombre As String = nombreprod.Text
             Dim precioven As Double = Val(precioventa.Text)
             Dim preciocomp As Double = Val((preciocompra.Text))
-            Dim cantidad As Integer = CInt(Val((txtcantidad.Text)))
+            ' Dim cantidad As Integer = CInt(Val((txtcantidad.Text)))
             Dim tipoprod As String = (Cmbtipoproducto.Text)
             Dim descripcion As String = txtdescripcion.Text
 
@@ -29,7 +29,7 @@ Public Class Productos
             _Producto._nombre = nombreprod.Text
             _Producto._precioven = Val(precioventa.Text)
             _Producto._preciocomp = Val(preciocompra.Text)
-            _Producto._cantidad = CInt(Val((txtcantidad.Text)))
+            '_Producto._cantidad = CInt(Val((txtcantidad.Text)))
             _Producto._tipoprod = (Cmbtipoproducto.Text)
             _Producto._descripcion = txtdescripcion.Text
 
