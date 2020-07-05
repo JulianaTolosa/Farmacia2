@@ -188,13 +188,13 @@ Public Class FormPrincipal
     End Sub
 
 
-    Private Sub btnDepo1_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnDepo1.Click
-        openChildForm(New Deposito())
+    Private Sub btnIngreso_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btningreso.Click
+        openChildForm(New Ingreso())
         hideSubmenu()
     End Sub
 
-    Private Sub btnDepo2_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnDepo2.Click
-        openChildForm(New Deposito())
+    Private Sub btnConsultas_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnconsultastock.Click
+        openChildForm(New ConsultaStock())
         hideSubmenu()
     End Sub
 
@@ -236,12 +236,12 @@ Public Class FormPrincipal
             btnClientes.Text = ""
             btnEmpleados.Text = ""
             btnDepositos.Text = ""
-            btnDepo1.Text = ""
-            btnDepo2.Text = ""
+            btningreso.Text = ""
+            btnconsultastock.Text = ""
             btnVentas.Text = ""
-            btnReportes.Text = ""
-            btnReporte1.Text = ""
-            btnReporte2.Text = ""
+            btnVentas.Text = ""
+            btnfacturacion.Text = ""
+            btnconsultaventa.Text = ""
             btnProductos.Text = ""
             btnOSocial.Text = ""
             btnMediospago.Text = ""
@@ -259,12 +259,12 @@ Public Class FormPrincipal
             btnClientes.Text = "CLIENTES"
             btnEmpleados.Text = "EMPLEADOS"
             btnDepositos.Text = "DEPOSITOS"
-            btnDepo1.Text = "DEPOSITO 1"
-            btnDepo2.Text = "DEPOSITO 2"
+            btningreso.Text = "DEPOSITO 1"
+            btnconsultastock.Text = "DEPOSITO 2"
             btnVentas.Text = "VENTAS"
-            btnReportes.Text = "REPORTES"
-            btnReporte1.Text = "REPORTE 1"
-            btnReporte2.Text = "REPORTE 2"
+            btnVentas.Text = "REPORTES"
+            btnfacturacion.Text = "REPORTE 1"
+            btnconsultaventa.Text = "REPORTE 2"
             btnProductos.Text = "PRODUCTOS"
             btnOSocial.Text = "OBRA SOCIAL"
             btnMediospago.Text = "MEDIOS DE PAGO"
@@ -293,16 +293,16 @@ Public Class FormPrincipal
     End Sub
 
 
-    Private Sub btnReportes_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnReportes.Click
+    Private Sub btnReportes_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnVentas.Click
         showSubmenu(PanelsubmenuReportes)
     End Sub
 
-    Private Sub btnReporte1_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnReporte1.Click
+    Private Sub btnReporte1_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnfacturacion.Click
         openChildForm(New Reporte1())
         hideSubmenu()
     End Sub
 
-    Private Sub btnReporte2_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnReporte2.Click
+    Private Sub btnReporte2_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnconsultaventa.Click
         openChildForm(New Reporte2())
         hideSubmenu()
     End Sub
@@ -319,7 +319,7 @@ Public Class FormPrincipal
         openChildForm(Empleados)
     End Sub
 
-    Private Sub btnVentas_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnVentas.Click
+    Private Sub btnVentas_Click(ByVal sender As System.Object, ByVal e As System.EventArgs)
         openChildForm(New Ventas())
         hideSubmenu()
     End Sub

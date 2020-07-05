@@ -78,7 +78,7 @@ Public Class Empleados
 
     Public Sub bindata()
         Dim query As String = "select * from Usuario"
-        Using con As SqlConnection = New SqlConnection("Data Source=Juli-PC\Juli;Initial Catalog=Tesis;Integrated Security=True")
+        Using con As SqlConnection = New SqlConnection("Data Source=LEO-PC;Initial Catalog=Tesis;Integrated Security=True")
             Using cmd As SqlCommand = New SqlCommand(query, con)
                 Using da As New SqlDataAdapter()
                     da.SelectCommand = cmd
@@ -197,7 +197,7 @@ Public Class Empleados
     Private Sub Btnborrar_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Btnborrar.Click
         Dim nombreusuario As String = Txtnombreusuario.Text
         Dim query As String = "delete Usuario where nombreusuario = @nombreusuario"
-        Using con As SqlConnection = New SqlConnection("Data Source=Juli-PC\Juli;Initial Catalog=Tesis;Integrated Security=True")
+        Using con As SqlConnection = New SqlConnection("Data Source=LEO-PC;Initial Catalog=Tesis;Integrated Security=True")
             Using cmd As SqlCommand = New SqlCommand(query, con)
                 cmd.Parameters.AddWithValue("@nombreusuario", nombreusuario)
                 con.Open()
@@ -238,4 +238,6 @@ Public Class Empleados
     Private Sub DgEmpleados_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles DgEmpleados.CellDoubleClick
         Editarempleado.Mostrar(Datos.ObtenerUsuario(_IdUsuarioSeleccionado))
     End Sub
+
+    
 End Class

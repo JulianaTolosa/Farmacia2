@@ -10,7 +10,7 @@
         If (String.IsNullOrEmpty(txtnombre.Text) Or String.IsNullOrEmpty(txtdireccion.Text) Or String.IsNullOrEmpty(txttelefono.Text)) Then
             MsgBox("Por Favor, rellene los campos vacios")
         Else
-            limpiar()
+            'limpiar()
             Dim nombre As String = txtnombre.Text
             'Dim precioven As Double = Val(precioventa.Text)
             'Dim preciocomp As Double = Val((preciocompra.Text))

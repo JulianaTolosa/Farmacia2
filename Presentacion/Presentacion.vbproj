@@ -134,6 +134,12 @@
     <Compile Include="ClasesUtiles\Proveedor.vb" />
     <Compile Include="ClasesUtiles\Usuario.vb" />
     <Compile Include="ConsultaSQL.vb" />
+    <Compile Include="ConsultaStock.Designer.vb">
+      <DependentUpon>ConsultaStock.vb</DependentUpon>
+    </Compile>
+    <Compile Include="ConsultaStock.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Datos.vb" />
     <Compile Include="Droguerias.Designer.vb">
       <DependentUpon>Droguerias.vb</DependentUpon>
@@ -165,10 +171,10 @@
     <Compile Include="Clientes.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Deposito.Designer.vb">
-      <DependentUpon>Deposito.vb</DependentUpon>
+    <Compile Include="Ingreso.Designer.vb">
+      <DependentUpon>Ingreso.vb</DependentUpon>
     </Compile>
-    <Compile Include="Deposito.vb">
+    <Compile Include="Ingreso.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Inicio.Designer.vb">
@@ -262,6 +268,9 @@
     <EmbeddedResource Include="AltaEmpleado.resx">
       <DependentUpon>AltaEmpleado.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="ConsultaStock.resx">
+      <DependentUpon>ConsultaStock.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Droguerias.resx">
       <DependentUpon>Droguerias.vb</DependentUpon>
     </EmbeddedResource>
@@ -277,8 +286,8 @@
     <EmbeddedResource Include="Clientes.resx">
       <DependentUpon>Clientes.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Deposito.resx">
-      <DependentUpon>Deposito.vb</DependentUpon>
+    <EmbeddedResource Include="Ingreso.resx">
+      <DependentUpon>Ingreso.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Inicio.resx">
       <DependentUpon>Inicio.vb</DependentUpon>
