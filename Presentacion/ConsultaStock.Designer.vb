@@ -26,13 +26,17 @@ Partial Class ConsultaStock
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.btnCerrarForm = New System.Windows.Forms.PictureBox()
         Me.lblconsultastock = New System.Windows.Forms.Label()
-        Me.Button1 = New System.Windows.Forms.Button()
-        Me.TextBox1 = New System.Windows.Forms.TextBox()
+        Me.Btnbuscar = New System.Windows.Forms.Button()
+        Me.Txtbuscar = New System.Windows.Forms.TextBox()
         Me.Label1 = New System.Windows.Forms.Label()
-        Me.DataGridView1 = New System.Windows.Forms.DataGridView()
+        Me.DgProducto = New System.Windows.Forms.DataGridView()
+        Me.GroupBox1 = New System.Windows.Forms.GroupBox()
+        Me.RBnombre = New System.Windows.Forms.RadioButton()
+        Me.RBid = New System.Windows.Forms.RadioButton()
         Me.Panel1.SuspendLayout()
         CType(Me.btnCerrarForm, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.DgProducto, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.GroupBox1.SuspendLayout()
         Me.SuspendLayout()
         '
         'Panel1
@@ -69,48 +73,84 @@ Partial Class ConsultaStock
         Me.lblconsultastock.Text = "CONSULTAS "
         Me.lblconsultastock.TextAlign = System.Drawing.ContentAlignment.TopCenter
         '
-        'Button1
+        'Btnbuscar
         '
-        Me.Button1.Location = New System.Drawing.Point(628, 73)
-        Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(75, 23)
-        Me.Button1.TabIndex = 12
-        Me.Button1.Text = "Button1"
-        Me.Button1.UseVisualStyleBackColor = True
+        Me.Btnbuscar.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.Btnbuscar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Btnbuscar.Location = New System.Drawing.Point(628, 109)
+        Me.Btnbuscar.Name = "Btnbuscar"
+        Me.Btnbuscar.Size = New System.Drawing.Size(96, 23)
+        Me.Btnbuscar.TabIndex = 12
+        Me.Btnbuscar.Text = "BUSCAR"
+        Me.Btnbuscar.UseVisualStyleBackColor = True
         '
-        'TextBox1
+        'Txtbuscar
         '
-        Me.TextBox1.Location = New System.Drawing.Point(101, 77)
-        Me.TextBox1.Name = "TextBox1"
-        Me.TextBox1.Size = New System.Drawing.Size(329, 20)
-        Me.TextBox1.TabIndex = 11
+        Me.Txtbuscar.Location = New System.Drawing.Point(106, 43)
+        Me.Txtbuscar.Name = "Txtbuscar"
+        Me.Txtbuscar.Size = New System.Drawing.Size(427, 20)
+        Me.Txtbuscar.TabIndex = 11
         '
         'Label1
         '
         Me.Label1.AutoSize = True
-        Me.Label1.Location = New System.Drawing.Point(33, 85)
+        Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label1.Location = New System.Drawing.Point(12, 43)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(39, 13)
+        Me.Label1.Size = New System.Drawing.Size(88, 20)
         Me.Label1.TabIndex = 10
-        Me.Label1.Text = "Label1"
+        Me.Label1.Text = "BUSCAR:"
         '
-        'DataGridView1
+        'DgProducto
         '
-        Me.DataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.DataGridView1.Location = New System.Drawing.Point(36, 136)
-        Me.DataGridView1.Name = "DataGridView1"
-        Me.DataGridView1.Size = New System.Drawing.Size(667, 243)
-        Me.DataGridView1.TabIndex = 13
+        Me.DgProducto.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.DgProducto.Location = New System.Drawing.Point(36, 225)
+        Me.DgProducto.Name = "DgProducto"
+        Me.DgProducto.Size = New System.Drawing.Size(667, 232)
+        Me.DgProducto.TabIndex = 13
+        '
+        'GroupBox1
+        '
+        Me.GroupBox1.Controls.Add(Me.RBnombre)
+        Me.GroupBox1.Controls.Add(Me.RBid)
+        Me.GroupBox1.Controls.Add(Me.Label1)
+        Me.GroupBox1.Controls.Add(Me.Txtbuscar)
+        Me.GroupBox1.Location = New System.Drawing.Point(36, 69)
+        Me.GroupBox1.Name = "GroupBox1"
+        Me.GroupBox1.Size = New System.Drawing.Size(571, 130)
+        Me.GroupBox1.TabIndex = 14
+        Me.GroupBox1.TabStop = False
+        '
+        'RBnombre
+        '
+        Me.RBnombre.AutoSize = True
+        Me.RBnombre.Location = New System.Drawing.Point(223, 91)
+        Me.RBnombre.Name = "RBnombre"
+        Me.RBnombre.Size = New System.Drawing.Size(101, 17)
+        Me.RBnombre.TabIndex = 13
+        Me.RBnombre.TabStop = True
+        Me.RBnombre.Text = "POR NOMBRE:"
+        Me.RBnombre.UseVisualStyleBackColor = True
+        '
+        'RBid
+        '
+        Me.RBid.AutoSize = True
+        Me.RBid.Location = New System.Drawing.Point(106, 91)
+        Me.RBid.Name = "RBid"
+        Me.RBid.Size = New System.Drawing.Size(65, 17)
+        Me.RBid.TabIndex = 12
+        Me.RBid.TabStop = True
+        Me.RBid.Text = "POR ID:"
+        Me.RBid.UseVisualStyleBackColor = True
         '
         'ConsultaStock
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(736, 445)
-        Me.Controls.Add(Me.DataGridView1)
-        Me.Controls.Add(Me.Button1)
-        Me.Controls.Add(Me.TextBox1)
-        Me.Controls.Add(Me.Label1)
+        Me.ClientSize = New System.Drawing.Size(736, 491)
+        Me.Controls.Add(Me.GroupBox1)
+        Me.Controls.Add(Me.DgProducto)
+        Me.Controls.Add(Me.Btnbuscar)
         Me.Controls.Add(Me.Panel1)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
@@ -120,16 +160,20 @@ Partial Class ConsultaStock
         Me.Panel1.ResumeLayout(False)
         Me.Panel1.PerformLayout()
         CType(Me.btnCerrarForm, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.DgProducto, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.GroupBox1.ResumeLayout(False)
+        Me.GroupBox1.PerformLayout()
         Me.ResumeLayout(False)
-        Me.PerformLayout()
 
     End Sub
     Friend WithEvents Panel1 As System.Windows.Forms.Panel
     Friend WithEvents btnCerrarForm As System.Windows.Forms.PictureBox
     Friend WithEvents lblconsultastock As System.Windows.Forms.Label
-    Friend WithEvents Button1 As System.Windows.Forms.Button
-    Friend WithEvents TextBox1 As System.Windows.Forms.TextBox
+    Friend WithEvents Btnbuscar As System.Windows.Forms.Button
+    Friend WithEvents Txtbuscar As System.Windows.Forms.TextBox
     Friend WithEvents Label1 As System.Windows.Forms.Label
-    Friend WithEvents DataGridView1 As System.Windows.Forms.DataGridView
+    Friend WithEvents DgProducto As System.Windows.Forms.DataGridView
+    Friend WithEvents GroupBox1 As System.Windows.Forms.GroupBox
+    Friend WithEvents RBnombre As System.Windows.Forms.RadioButton
+    Friend WithEvents RBid As System.Windows.Forms.RadioButton
 End Class

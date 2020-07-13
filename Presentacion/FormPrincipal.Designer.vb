@@ -273,7 +273,7 @@ Partial Class FormPrincipal
         Me.btnconsultaventa.TabIndex = 3
         Me.btnconsultaventa.Text = "CONSULTA"
         Me.btnconsultaventa.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
-        Me.ToolTip9.SetToolTip(Me.btnconsultaventa, "REPORTE 2")
+        Me.ToolTip9.SetToolTip(Me.btnconsultaventa, "CONSULTA VENTA")
         Me.btnconsultaventa.UseVisualStyleBackColor = True
         '
         'btnfacturacion
@@ -290,7 +290,7 @@ Partial Class FormPrincipal
         Me.btnfacturacion.TabIndex = 2
         Me.btnfacturacion.Text = "  FACTURACION"
         Me.btnfacturacion.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
-        Me.ToolTip8.SetToolTip(Me.btnfacturacion, "REPORTE 1")
+        Me.ToolTip8.SetToolTip(Me.btnfacturacion, "FACTURACION VENTA")
         Me.btnfacturacion.UseVisualStyleBackColor = True
         '
         'btnVentas
@@ -356,7 +356,7 @@ Partial Class FormPrincipal
         Me.btnconsultastock.TabIndex = 1
         Me.btnconsultastock.Text = "CONSULTA"
         Me.btnconsultastock.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
-        Me.ToolTip5.SetToolTip(Me.btnconsultastock, "DEPOSITO 2")
+        Me.ToolTip5.SetToolTip(Me.btnconsultastock, "CONSULTA STOCK")
         Me.btnconsultastock.UseVisualStyleBackColor = True
         '
         'btningreso
@@ -372,7 +372,7 @@ Partial Class FormPrincipal
         Me.btningreso.TabIndex = 0
         Me.btningreso.Text = "INGRESOS"
         Me.btningreso.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
-        Me.ToolTip4.SetToolTip(Me.btningreso, "DEPOSITO 1")
+        Me.ToolTip4.SetToolTip(Me.btningreso, "INGRESO STOCK")
         Me.btningreso.UseVisualStyleBackColor = True
         '
         'btnDepositos
@@ -391,7 +391,7 @@ Partial Class FormPrincipal
         Me.btnDepositos.Text = "   STOCK"
         Me.btnDepositos.TextAlign = System.Drawing.ContentAlignment.MiddleRight
         Me.btnDepositos.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
-        Me.ToolTip3.SetToolTip(Me.btnDepositos, "DEPOSITO")
+        Me.ToolTip3.SetToolTip(Me.btnDepositos, "STOCK")
         Me.btnDepositos.UseCompatibleTextRendering = True
         Me.btnDepositos.UseVisualStyleBackColor = True
         '
@@ -598,6 +598,9 @@ Partial Class FormPrincipal
         'tmMostrarMenu
         '
         Me.tmMostrarMenu.Interval = 2
+        '
+        'ToolTip10
+        '
         '
         'horafecha
         '

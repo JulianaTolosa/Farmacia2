@@ -53,7 +53,7 @@ Partial Class Clientes
         Me.lblClientes.AutoSize = True
         Me.lblClientes.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblClientes.ForeColor = System.Drawing.Color.White
-        Me.lblClientes.Location = New System.Drawing.Point(316, 9)
+        Me.lblClientes.Location = New System.Drawing.Point(357, 9)
         Me.lblClientes.Name = "lblClientes"
         Me.lblClientes.Size = New System.Drawing.Size(101, 24)
         Me.lblClientes.TabIndex = 0
@@ -68,7 +68,7 @@ Partial Class Clientes
         Me.Paneltitulo.Dock = System.Windows.Forms.DockStyle.Top
         Me.Paneltitulo.Location = New System.Drawing.Point(0, 0)
         Me.Paneltitulo.Name = "Paneltitulo"
-        Me.Paneltitulo.Size = New System.Drawing.Size(741, 45)
+        Me.Paneltitulo.Size = New System.Drawing.Size(823, 45)
         Me.Paneltitulo.TabIndex = 9
         '
         'btnCerrarForm
@@ -77,7 +77,7 @@ Partial Class Clientes
         Me.btnCerrarForm.BackColor = System.Drawing.Color.Transparent
         Me.btnCerrarForm.Cursor = System.Windows.Forms.Cursors.Hand
         Me.btnCerrarForm.Image = CType(resources.GetObject("btnCerrarForm.Image"), System.Drawing.Image)
-        Me.btnCerrarForm.Location = New System.Drawing.Point(713, 12)
+        Me.btnCerrarForm.Location = New System.Drawing.Point(795, 12)
         Me.btnCerrarForm.Name = "btnCerrarForm"
         Me.btnCerrarForm.Size = New System.Drawing.Size(16, 16)
         Me.btnCerrarForm.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize
@@ -91,7 +91,7 @@ Partial Class Clientes
         Me.btnNuevo.Cursor = System.Windows.Forms.Cursors.Hand
         Me.btnNuevo.FlatAppearance.BorderSize = 0
         Me.btnNuevo.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnNuevo.Location = New System.Drawing.Point(639, 140)
+        Me.btnNuevo.Location = New System.Drawing.Point(721, 84)
         Me.btnNuevo.Name = "btnNuevo"
         Me.btnNuevo.Size = New System.Drawing.Size(90, 40)
         Me.btnNuevo.TabIndex = 18
@@ -105,7 +105,7 @@ Partial Class Clientes
         Me.btnModificar.Cursor = System.Windows.Forms.Cursors.Hand
         Me.btnModificar.FlatAppearance.BorderSize = 0
         Me.btnModificar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnModificar.Location = New System.Drawing.Point(639, 191)
+        Me.btnModificar.Location = New System.Drawing.Point(721, 159)
         Me.btnModificar.Name = "btnModificar"
         Me.btnModificar.Size = New System.Drawing.Size(90, 40)
         Me.btnModificar.TabIndex = 19
@@ -119,7 +119,7 @@ Partial Class Clientes
         Me.btnEliminar.Cursor = System.Windows.Forms.Cursors.Hand
         Me.btnEliminar.FlatAppearance.BorderSize = 0
         Me.btnEliminar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnEliminar.Location = New System.Drawing.Point(639, 244)
+        Me.btnEliminar.Location = New System.Drawing.Point(721, 235)
         Me.btnEliminar.Name = "btnEliminar"
         Me.btnEliminar.Size = New System.Drawing.Size(90, 40)
         Me.btnEliminar.TabIndex = 20
@@ -131,7 +131,7 @@ Partial Class Clientes
         Me.Panel2.Controls.Add(Me.DgClientes)
         Me.Panel2.Location = New System.Drawing.Point(12, 66)
         Me.Panel2.Name = "Panel2"
-        Me.Panel2.Size = New System.Drawing.Size(621, 331)
+        Me.Panel2.Size = New System.Drawing.Size(657, 331)
         Me.Panel2.TabIndex = 21
         '
         'DgClientes
@@ -139,7 +139,7 @@ Partial Class Clientes
         Me.DgClientes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.DgClientes.Location = New System.Drawing.Point(14, 18)
         Me.DgClientes.Name = "DgClientes"
-        Me.DgClientes.Size = New System.Drawing.Size(544, 270)
+        Me.DgClientes.Size = New System.Drawing.Size(609, 270)
         Me.DgClientes.TabIndex = 0
         '
         'Label1
@@ -244,7 +244,7 @@ Partial Class Clientes
         'Clientes
         '
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None
-        Me.ClientSize = New System.Drawing.Size(741, 572)
+        Me.ClientSize = New System.Drawing.Size(823, 572)
         Me.Controls.Add(Me.Panel3)
         Me.Controls.Add(Me.Panel2)
         Me.Controls.Add(Me.btnEliminar)
