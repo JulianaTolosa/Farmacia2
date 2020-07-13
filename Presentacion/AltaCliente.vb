@@ -64,6 +64,8 @@ Public Class AltaCliente
         DireccionTextBox.Text = ""
         DniTextBox.Text = ""
         NacimientoTextBox.Text = ""
+        CelularTextBox.Text = ""
+        TelefonoTextBox.Text = ""
         LocalidadTextBox.Text = ""
         ProvinciaTextBox.Text = ""
         ObraSocialTextBox.Text = ""

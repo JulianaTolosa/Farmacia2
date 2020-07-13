@@ -102,6 +102,7 @@ Public Class Login
             End If
             Me.Hide()
             FormWelcome.Show()
+            'FormPrincipal.Show()
 
 
         Catch ex As Exception

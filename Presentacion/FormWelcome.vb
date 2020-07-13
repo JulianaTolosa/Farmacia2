@@ -28,6 +28,7 @@ Public Class FormWelcome
         If Me.Opacity = 0 Then
             Timer2.Stop()
             Me.Close()
+            FormPrincipal.Show()
         End If
     End Sub
 

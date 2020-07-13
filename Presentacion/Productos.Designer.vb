@@ -247,7 +247,7 @@ Partial Class Productos
         Me.txtdescripcion.Size = New System.Drawing.Size(480, 71)
         Me.txtdescripcion.TabIndex = 5
         Me.txtdescripcion.Tag = ""
-        Me.txtdescripcion.Text = "Maximo 50 caracteres"
+        Me.txtdescripcion.Text = " "
         '
         'Productos
         '

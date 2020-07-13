@@ -155,27 +155,15 @@
         Try
             Dim _Consulta As New ConsultaSQL
             _Consulta.Consulta = "  INSERT INTO Producto"
-<<<<<<< HEAD
             _Consulta.Consulta &= " (nombre,precio_venta, precio_compra,idtipoprod,descripcion)"
             _Consulta.Consulta &= " VALUES"
-            _Consulta.Consulta &= " (@nombre, @precioven, @preciocomp,@tipoprod,@descripcion)"
-=======
-            _Consulta.Consulta &= " (nombre,descripcion,precio_venta,precio_compra,idtipoprod,cantidad)"
-            _Consulta.Consulta &= " VALUES"
-            _Consulta.Consulta &= " (@nombre,@descripcion,@precioven,@preciocomp,@idtipoprod,@canti)"
->>>>>>> 017dcb5d3d2a7793ca11ec876d4c55ef61c81ee5
+            _Consulta.Consulta &= " (@nombre,@precioven,@preciocomp,@idtipoprod,@descripcion)"
             _Consulta.AgregarParametro("@nombre", _Producto._nombre)
             _Consulta.AgregarParametro("@descripcion", _Producto._descripcion)
             _Consulta.AgregarParametro("@precioven", _Producto._precioven)
             _Consulta.AgregarParametro("@preciocomp", _Producto._preciocomp)
-<<<<<<< HEAD
             ' _Consulta.AgregarParametro("@canti", _Producto._cantidad)
-            _Consulta.AgregarParametro("@tipoprod", _Producto._tipoprod)
-            _Consulta.AgregarParametro("@descripcion", _Producto._descripcion)
-
-=======
             _Consulta.AgregarParametro("@idtipoprod", _Producto._tipoprod)
-            _Consulta.AgregarParametro("@canti", _Producto._cantidad)
 
             _Consulta.Ejecutar()
         Catch ex As Exception
@@ -200,7 +188,6 @@
             '_Consulta.AgregarParametro("@preciocomp", _Producto._preciocomp)
             '_Consulta.AgregarParametro("@idtipoprod", _Producto._tipoprod)
             '_Consulta.AgregarParametro("@canti", _Producto._cantidad)
->>>>>>> 017dcb5d3d2a7793ca11ec876d4c55ef61c81ee5
 
             _Consulta.Ejecutar()
         Catch ex As Exception

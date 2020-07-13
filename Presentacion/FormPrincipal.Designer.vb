@@ -273,7 +273,7 @@ Partial Class FormPrincipal
         Me.btnReporte2.Name = "btnReporte2"
         Me.btnReporte2.Size = New System.Drawing.Size(213, 50)
         Me.btnReporte2.TabIndex = 3
-        Me.btnReporte2.Text = "REPORTE 2"
+        Me.btnReporte2.Text = "CONSULTAS FACTURACION"
         Me.btnReporte2.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
         Me.ToolTip9.SetToolTip(Me.btnReporte2, "REPORTE 2")
         Me.btnReporte2.UseVisualStyleBackColor = True
@@ -290,7 +290,7 @@ Partial Class FormPrincipal
         Me.btnReporte1.Name = "btnReporte1"
         Me.btnReporte1.Size = New System.Drawing.Size(213, 50)
         Me.btnReporte1.TabIndex = 2
-        Me.btnReporte1.Text = "REPORTE 1"
+        Me.btnReporte1.Text = "FACTURACION"
         Me.btnReporte1.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
         Me.ToolTip8.SetToolTip(Me.btnReporte1, "REPORTE 1")
         Me.btnReporte1.UseVisualStyleBackColor = True
@@ -308,7 +308,7 @@ Partial Class FormPrincipal
         Me.btnReportes.Name = "btnReportes"
         Me.btnReportes.Size = New System.Drawing.Size(213, 50)
         Me.btnReportes.TabIndex = 4
-        Me.btnReportes.Text = "   REPORTES"
+        Me.btnReportes.Text = " VENTAS"
         Me.btnReportes.TextAlign = System.Drawing.ContentAlignment.MiddleRight
         Me.btnReportes.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
         Me.ToolTip7.SetToolTip(Me.btnReportes, "REPORTES")
@@ -376,7 +376,7 @@ Partial Class FormPrincipal
         Me.btnDepo2.Name = "btnDepo2"
         Me.btnDepo2.Size = New System.Drawing.Size(220, 50)
         Me.btnDepo2.TabIndex = 1
-        Me.btnDepo2.Text = "DEPOSITO 2"
+        Me.btnDepo2.Text = "CONSULTAS STOCK"
         Me.btnDepo2.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
         Me.ToolTip5.SetToolTip(Me.btnDepo2, "DEPOSITO 2")
         Me.btnDepo2.UseVisualStyleBackColor = True
@@ -392,7 +392,7 @@ Partial Class FormPrincipal
         Me.btnDepo1.Name = "btnDepo1"
         Me.btnDepo1.Size = New System.Drawing.Size(220, 50)
         Me.btnDepo1.TabIndex = 0
-        Me.btnDepo1.Text = "DEPOSITO 1"
+        Me.btnDepo1.Text = "INGRESOS"
         Me.btnDepo1.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
         Me.ToolTip4.SetToolTip(Me.btnDepo1, "DEPOSITO 1")
         Me.btnDepo1.UseVisualStyleBackColor = True
@@ -410,7 +410,7 @@ Partial Class FormPrincipal
         Me.btnDepositos.Name = "btnDepositos"
         Me.btnDepositos.Size = New System.Drawing.Size(213, 50)
         Me.btnDepositos.TabIndex = 3
-        Me.btnDepositos.Text = "   DEPOSITO"
+        Me.btnDepositos.Text = "STOCK"
         Me.btnDepositos.TextAlign = System.Drawing.ContentAlignment.MiddleRight
         Me.btnDepositos.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
         Me.ToolTip3.SetToolTip(Me.btnDepositos, "DEPOSITO")
