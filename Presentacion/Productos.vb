@@ -17,7 +17,10 @@ Public Class Productos
         If (String.IsNullOrEmpty(nombreprod.Text) Or String.IsNullOrEmpty(precioventa.Text) Or String.IsNullOrEmpty(preciocompra.Text) Or String.IsNullOrEmpty(txtcantidad.Text) Or String.IsNullOrEmpty(Cmbtipoproducto.Text) Or String.IsNullOrEmpty(txtdescripcion.Text)) Then
             MsgBox("Por Favor, rellene los campos vacios")
         Else
+<<<<<<< HEAD
             'limpiar()
+=======
+>>>>>>> 26825a9a2ba68b03607d6355a8f26ce3ba8771a9
             Dim nombre As String = nombreprod.Text
             Dim precioven As Double = Val(precioventa.Text)
             Dim preciocomp As Double = Val((preciocompra.Text))
@@ -42,6 +45,7 @@ Public Class Productos
             Else
                 MsgBox("Error al agregar Producto!")
             End If
+            'limpiar()
         End If
     End Sub
 
@@ -56,4 +60,11 @@ Public Class Productos
     End Sub
 
     
+   
+   
+
+    
+    Private Sub Btnborrar_Click(sender As Object, e As EventArgs) Handles Btnborrar.Click
+
+    End Sub
 End Class

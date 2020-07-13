@@ -1,5 +1,5 @@
 ﻿Module Datos
-    'pruebank
+    'pruebankjhjkhknk
 
     Public Function ExisteUsuario(NombreUsuario As String) As Boolean
         Dim _Retorno As Boolean = False
@@ -155,15 +155,15 @@
         Try
             Dim _Consulta As New ConsultaSQL
             _Consulta.Consulta = "  INSERT INTO Producto"
-            _Consulta.Consulta &= " (nombre,precio_venta, precio_compra,idtipoprod,descripcion)"
+            _Consulta.Consulta &= " (nombre,descripcion,precio_venta,precio_compra,idtipoprod,cantidad)"
             _Consulta.Consulta &= " VALUES"
-            _Consulta.Consulta &= " (@nombre,@precioven,@preciocomp,@idtipoprod,@descripcion)"
+            _Consulta.Consulta &= " (@nombre,@descripcion,@precioven,@preciocomp,@idtipoprod,@canti)"
             _Consulta.AgregarParametro("@nombre", _Producto._nombre)
             _Consulta.AgregarParametro("@descripcion", _Producto._descripcion)
             _Consulta.AgregarParametro("@precioven", _Producto._precioven)
             _Consulta.AgregarParametro("@preciocomp", _Producto._preciocomp)
-            ' _Consulta.AgregarParametro("@canti", _Producto._cantidad)
             _Consulta.AgregarParametro("@idtipoprod", _Producto._tipoprod)
+            '_Consulta.AgregarParametro("@canti", _Producto._cantidad)
 
             _Consulta.Ejecutar()
         Catch ex As Exception
@@ -192,6 +192,32 @@
             _Consulta.Ejecutar()
         Catch ex As Exception
             _Retorno = False
+        End Try
+
+        Return _Retorno
+    End Function
+
+    Public Function Obtenerproducto(Id As Integer, nombre As String) As Producto
+        Dim _Retorno As Producto = Nothing
+
+        Try
+            Dim _Consulta As New ConsultaSQL
+            _Consulta.Consulta = "SELECT * FROM Producto WHERE idproducto=@ID AND nombre=@nombre"
+            _Consulta.AgregarParametro("@ID", Id)
+            _Consulta.AgregarParametro("@nombre", nombre)
+            Dim _Resultado As DataTable = _Consulta.ObtenerTabla()
+            If _Resultado.Rows.Count > 0 Then
+                Dim _Row As DataRow = _Resultado.Rows(0)
+                _Retorno = New Producto
+                _Retorno._idproducto = Convert.ToInt32(_Row("idproducto"))
+                _Retorno._nombre = Convert.ToString(_Row("nombre"))
+                _Retorno._descripcion = Convert.ToString(_Row("descripcion"))
+                _Retorno._precioven = Convert.ToDouble(_Row("preciovent"))
+                _Retorno._preciocomp = Convert.ToDouble(_Row("preciocomp"))
+                _Retorno._tipoprod = Convert.ToString(_Row("tipoprod"))
+            End If
+        Catch ex As Exception
+            _Retorno = Nothing
         End Try
 
         Return _Retorno

@@ -35,14 +35,13 @@ Partial Class FormPrincipal
         Me.btnOSocial = New System.Windows.Forms.Button()
         Me.btnProductos = New System.Windows.Forms.Button()
         Me.PanelsubmenuReportes = New System.Windows.Forms.Panel()
-        Me.btnReporte2 = New System.Windows.Forms.Button()
-        Me.btnReporte1 = New System.Windows.Forms.Button()
-        Me.btnReportes = New System.Windows.Forms.Button()
-        Me.btnSalir = New System.Windows.Forms.Button()
+        Me.btnconsultaventa = New System.Windows.Forms.Button()
+        Me.btnfacturacion = New System.Windows.Forms.Button()
         Me.btnVentas = New System.Windows.Forms.Button()
+        Me.btnSalir = New System.Windows.Forms.Button()
         Me.PanelsubmenuDepositos = New System.Windows.Forms.Panel()
-        Me.btnDepo2 = New System.Windows.Forms.Button()
-        Me.btnDepo1 = New System.Windows.Forms.Button()
+        Me.btnconsultastock = New System.Windows.Forms.Button()
+        Me.btningreso = New System.Windows.Forms.Button()
         Me.btnDepositos = New System.Windows.Forms.Button()
         Me.btnEmpleados = New System.Windows.Forms.Button()
         Me.btnClientes = New System.Windows.Forms.Button()
@@ -158,9 +157,8 @@ Partial Class FormPrincipal
         Me.Panelbotones.Controls.Add(Me.btnOSocial)
         Me.Panelbotones.Controls.Add(Me.btnProductos)
         Me.Panelbotones.Controls.Add(Me.PanelsubmenuReportes)
-        Me.Panelbotones.Controls.Add(Me.btnReportes)
-        Me.Panelbotones.Controls.Add(Me.btnSalir)
         Me.Panelbotones.Controls.Add(Me.btnVentas)
+        Me.Panelbotones.Controls.Add(Me.btnSalir)
         Me.Panelbotones.Controls.Add(Me.PanelsubmenuDepositos)
         Me.Panelbotones.Controls.Add(Me.btnDepositos)
         Me.Panelbotones.Controls.Add(Me.btnEmpleados)
@@ -180,7 +178,7 @@ Partial Class FormPrincipal
         Me.btnDrogueria.ForeColor = System.Drawing.Color.Gainsboro
         Me.btnDrogueria.Image = CType(resources.GetObject("btnDrogueria.Image"), System.Drawing.Image)
         Me.btnDrogueria.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.btnDrogueria.Location = New System.Drawing.Point(0, 600)
+        Me.btnDrogueria.Location = New System.Drawing.Point(0, 550)
         Me.btnDrogueria.Name = "btnDrogueria"
         Me.btnDrogueria.Size = New System.Drawing.Size(213, 50)
         Me.btnDrogueria.TabIndex = 8
@@ -200,7 +198,7 @@ Partial Class FormPrincipal
         Me.btnMediospago.ForeColor = System.Drawing.Color.Gainsboro
         Me.btnMediospago.Image = CType(resources.GetObject("btnMediospago.Image"), System.Drawing.Image)
         Me.btnMediospago.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.btnMediospago.Location = New System.Drawing.Point(0, 550)
+        Me.btnMediospago.Location = New System.Drawing.Point(0, 500)
         Me.btnMediospago.Name = "btnMediospago"
         Me.btnMediospago.Size = New System.Drawing.Size(213, 50)
         Me.btnMediospago.TabIndex = 7
@@ -220,7 +218,7 @@ Partial Class FormPrincipal
         Me.btnOSocial.ForeColor = System.Drawing.Color.Gainsboro
         Me.btnOSocial.Image = CType(resources.GetObject("btnOSocial.Image"), System.Drawing.Image)
         Me.btnOSocial.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.btnOSocial.Location = New System.Drawing.Point(0, 500)
+        Me.btnOSocial.Location = New System.Drawing.Point(0, 450)
         Me.btnOSocial.Name = "btnOSocial"
         Me.btnOSocial.Size = New System.Drawing.Size(213, 50)
         Me.btnOSocial.TabIndex = 6
@@ -240,7 +238,7 @@ Partial Class FormPrincipal
         Me.btnProductos.ForeColor = System.Drawing.Color.Gainsboro
         Me.btnProductos.Image = CType(resources.GetObject("btnProductos.Image"), System.Drawing.Image)
         Me.btnProductos.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.btnProductos.Location = New System.Drawing.Point(0, 450)
+        Me.btnProductos.Location = New System.Drawing.Point(0, 400)
         Me.btnProductos.Name = "btnProductos"
         Me.btnProductos.Size = New System.Drawing.Size(213, 50)
         Me.btnProductos.TabIndex = 5
@@ -253,87 +251,47 @@ Partial Class FormPrincipal
         '
         'PanelsubmenuReportes
         '
-        Me.PanelsubmenuReportes.Controls.Add(Me.btnReporte2)
-        Me.PanelsubmenuReportes.Controls.Add(Me.btnReporte1)
+        Me.PanelsubmenuReportes.Controls.Add(Me.btnconsultaventa)
+        Me.PanelsubmenuReportes.Controls.Add(Me.btnfacturacion)
         Me.PanelsubmenuReportes.Dock = System.Windows.Forms.DockStyle.Top
-        Me.PanelsubmenuReportes.Location = New System.Drawing.Point(0, 350)
+        Me.PanelsubmenuReportes.Location = New System.Drawing.Point(0, 300)
         Me.PanelsubmenuReportes.Name = "PanelsubmenuReportes"
         Me.PanelsubmenuReportes.Size = New System.Drawing.Size(213, 100)
         Me.PanelsubmenuReportes.TabIndex = 0
         '
-        'btnReporte2
+        'btnconsultaventa
         '
-        Me.btnReporte2.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.btnReporte2.Dock = System.Windows.Forms.DockStyle.Top
-        Me.btnReporte2.FlatAppearance.BorderSize = 0
-        Me.btnReporte2.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnReporte2.ForeColor = System.Drawing.Color.Gainsboro
-        Me.btnReporte2.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.btnReporte2.Location = New System.Drawing.Point(0, 50)
-        Me.btnReporte2.Name = "btnReporte2"
-        Me.btnReporte2.Size = New System.Drawing.Size(213, 50)
-        Me.btnReporte2.TabIndex = 3
-        Me.btnReporte2.Text = "CONSULTAS FACTURACION"
-        Me.btnReporte2.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
-        Me.ToolTip9.SetToolTip(Me.btnReporte2, "REPORTE 2")
-        Me.btnReporte2.UseVisualStyleBackColor = True
+        Me.btnconsultaventa.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.btnconsultaventa.Dock = System.Windows.Forms.DockStyle.Top
+        Me.btnconsultaventa.FlatAppearance.BorderSize = 0
+        Me.btnconsultaventa.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnconsultaventa.ForeColor = System.Drawing.Color.Gainsboro
+        Me.btnconsultaventa.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.btnconsultaventa.Location = New System.Drawing.Point(0, 50)
+        Me.btnconsultaventa.Name = "btnconsultaventa"
+        Me.btnconsultaventa.Size = New System.Drawing.Size(213, 50)
+        Me.btnconsultaventa.TabIndex = 3
+        Me.btnconsultaventa.Text = "CONSULTA"
+        Me.btnconsultaventa.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
+        Me.ToolTip9.SetToolTip(Me.btnconsultaventa, "CONSULTA VENTA")
+        Me.btnconsultaventa.UseVisualStyleBackColor = True
         '
-        'btnReporte1
+        'btnfacturacion
         '
-        Me.btnReporte1.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.btnReporte1.Dock = System.Windows.Forms.DockStyle.Top
-        Me.btnReporte1.FlatAppearance.BorderSize = 0
-        Me.btnReporte1.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnReporte1.ForeColor = System.Drawing.Color.Gainsboro
-        Me.btnReporte1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.btnReporte1.Location = New System.Drawing.Point(0, 0)
-        Me.btnReporte1.Name = "btnReporte1"
-        Me.btnReporte1.Size = New System.Drawing.Size(213, 50)
-        Me.btnReporte1.TabIndex = 2
-        Me.btnReporte1.Text = "FACTURACION"
-        Me.btnReporte1.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
-        Me.ToolTip8.SetToolTip(Me.btnReporte1, "REPORTE 1")
-        Me.btnReporte1.UseVisualStyleBackColor = True
-        '
-        'btnReportes
-        '
-        Me.btnReportes.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.btnReportes.Dock = System.Windows.Forms.DockStyle.Top
-        Me.btnReportes.FlatAppearance.BorderSize = 0
-        Me.btnReportes.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnReportes.ForeColor = System.Drawing.Color.Gainsboro
-        Me.btnReportes.Image = CType(resources.GetObject("btnReportes.Image"), System.Drawing.Image)
-        Me.btnReportes.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.btnReportes.Location = New System.Drawing.Point(0, 300)
-        Me.btnReportes.Name = "btnReportes"
-        Me.btnReportes.Size = New System.Drawing.Size(213, 50)
-        Me.btnReportes.TabIndex = 4
-        Me.btnReportes.Text = " VENTAS"
-        Me.btnReportes.TextAlign = System.Drawing.ContentAlignment.MiddleRight
-        Me.btnReportes.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
-        Me.ToolTip7.SetToolTip(Me.btnReportes, "REPORTES")
-        Me.btnReportes.UseCompatibleTextRendering = True
-        Me.btnReportes.UseVisualStyleBackColor = True
-        '
-        'btnSalir
-        '
-        Me.btnSalir.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.btnSalir.Dock = System.Windows.Forms.DockStyle.Bottom
-        Me.btnSalir.FlatAppearance.BorderSize = 0
-        Me.btnSalir.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnSalir.ForeColor = System.Drawing.Color.Gainsboro
-        Me.btnSalir.Image = CType(resources.GetObject("btnSalir.Image"), System.Drawing.Image)
-        Me.btnSalir.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.btnSalir.Location = New System.Drawing.Point(0, 650)
-        Me.btnSalir.Name = "btnSalir"
-        Me.btnSalir.Size = New System.Drawing.Size(213, 50)
-        Me.btnSalir.TabIndex = 1
-        Me.btnSalir.Text = "SALIR"
-        Me.btnSalir.TextAlign = System.Drawing.ContentAlignment.MiddleRight
-        Me.btnSalir.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
-        Me.ToolTip14.SetToolTip(Me.btnSalir, "SALIR")
-        Me.btnSalir.UseCompatibleTextRendering = True
-        Me.btnSalir.UseVisualStyleBackColor = True
+        Me.btnfacturacion.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.btnfacturacion.Dock = System.Windows.Forms.DockStyle.Top
+        Me.btnfacturacion.FlatAppearance.BorderSize = 0
+        Me.btnfacturacion.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnfacturacion.ForeColor = System.Drawing.Color.Gainsboro
+        Me.btnfacturacion.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.btnfacturacion.Location = New System.Drawing.Point(0, 0)
+        Me.btnfacturacion.Name = "btnfacturacion"
+        Me.btnfacturacion.Size = New System.Drawing.Size(213, 50)
+        Me.btnfacturacion.TabIndex = 2
+        Me.btnfacturacion.Text = "  FACTURACION"
+        Me.btnfacturacion.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
+        Me.ToolTip8.SetToolTip(Me.btnfacturacion, "FACTURACION VENTA")
+        Me.btnfacturacion.UseVisualStyleBackColor = True
         '
         'btnVentas
         '
@@ -347,55 +305,75 @@ Partial Class FormPrincipal
         Me.btnVentas.Location = New System.Drawing.Point(0, 250)
         Me.btnVentas.Name = "btnVentas"
         Me.btnVentas.Size = New System.Drawing.Size(213, 50)
-        Me.btnVentas.TabIndex = 1
+        Me.btnVentas.TabIndex = 4
         Me.btnVentas.Text = "   VENTAS"
         Me.btnVentas.TextAlign = System.Drawing.ContentAlignment.MiddleRight
         Me.btnVentas.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
-        Me.ToolTip6.SetToolTip(Me.btnVentas, "VENTAS")
+        Me.ToolTip7.SetToolTip(Me.btnVentas, "REPORTES")
         Me.btnVentas.UseCompatibleTextRendering = True
         Me.btnVentas.UseVisualStyleBackColor = True
         '
+        'btnSalir
+        '
+        Me.btnSalir.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.btnSalir.Dock = System.Windows.Forms.DockStyle.Bottom
+        Me.btnSalir.FlatAppearance.BorderSize = 0
+        Me.btnSalir.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnSalir.ForeColor = System.Drawing.Color.Gainsboro
+        Me.btnSalir.Image = CType(resources.GetObject("btnSalir.Image"), System.Drawing.Image)
+        Me.btnSalir.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.btnSalir.Location = New System.Drawing.Point(0, 600)
+        Me.btnSalir.Name = "btnSalir"
+        Me.btnSalir.Size = New System.Drawing.Size(213, 50)
+        Me.btnSalir.TabIndex = 1
+        Me.btnSalir.Text = "SALIR"
+        Me.btnSalir.TextAlign = System.Drawing.ContentAlignment.MiddleRight
+        Me.btnSalir.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
+        Me.ToolTip14.SetToolTip(Me.btnSalir, "SALIR")
+        Me.btnSalir.UseCompatibleTextRendering = True
+        Me.btnSalir.UseVisualStyleBackColor = True
+        '
         'PanelsubmenuDepositos
         '
-        Me.PanelsubmenuDepositos.Controls.Add(Me.btnDepo2)
-        Me.PanelsubmenuDepositos.Controls.Add(Me.btnDepo1)
+        Me.PanelsubmenuDepositos.Controls.Add(Me.btnconsultastock)
+        Me.PanelsubmenuDepositos.Controls.Add(Me.btningreso)
         Me.PanelsubmenuDepositos.Dock = System.Windows.Forms.DockStyle.Top
         Me.PanelsubmenuDepositos.Location = New System.Drawing.Point(0, 150)
         Me.PanelsubmenuDepositos.Name = "PanelsubmenuDepositos"
         Me.PanelsubmenuDepositos.Size = New System.Drawing.Size(213, 100)
         Me.PanelsubmenuDepositos.TabIndex = 0
         '
-        'btnDepo2
+        'btnconsultastock
         '
-        Me.btnDepo2.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.btnDepo2.FlatAppearance.BorderSize = 0
-        Me.btnDepo2.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnDepo2.ForeColor = System.Drawing.Color.Gainsboro
-        Me.btnDepo2.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.btnDepo2.Location = New System.Drawing.Point(0, 50)
-        Me.btnDepo2.Name = "btnDepo2"
-        Me.btnDepo2.Size = New System.Drawing.Size(220, 50)
-        Me.btnDepo2.TabIndex = 1
-        Me.btnDepo2.Text = "CONSULTAS STOCK"
-        Me.btnDepo2.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
-        Me.ToolTip5.SetToolTip(Me.btnDepo2, "DEPOSITO 2")
-        Me.btnDepo2.UseVisualStyleBackColor = True
+        Me.btnconsultastock.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.btnconsultastock.FlatAppearance.BorderSize = 0
+        Me.btnconsultastock.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnconsultastock.ForeColor = System.Drawing.Color.Gainsboro
+        Me.btnconsultastock.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.btnconsultastock.Location = New System.Drawing.Point(0, 50)
+        Me.btnconsultastock.Name = "btnconsultastock"
+        Me.btnconsultastock.Size = New System.Drawing.Size(220, 50)
+        Me.btnconsultastock.TabIndex = 1
+        Me.btnconsultastock.Text = "CONSULTA"
+        Me.btnconsultastock.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
+        Me.ToolTip5.SetToolTip(Me.btnconsultastock, "CONSULTA STOCK")
+        Me.btnconsultastock.UseVisualStyleBackColor = True
         '
-        'btnDepo1
+        'btningreso
         '
-        Me.btnDepo1.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.btnDepo1.FlatAppearance.BorderSize = 0
-        Me.btnDepo1.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnDepo1.ForeColor = System.Drawing.Color.Gainsboro
-        Me.btnDepo1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.btnDepo1.Location = New System.Drawing.Point(0, 0)
-        Me.btnDepo1.Name = "btnDepo1"
-        Me.btnDepo1.Size = New System.Drawing.Size(220, 50)
-        Me.btnDepo1.TabIndex = 0
-        Me.btnDepo1.Text = "INGRESOS"
-        Me.btnDepo1.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
-        Me.ToolTip4.SetToolTip(Me.btnDepo1, "DEPOSITO 1")
-        Me.btnDepo1.UseVisualStyleBackColor = True
+        Me.btningreso.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.btningreso.FlatAppearance.BorderSize = 0
+        Me.btningreso.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btningreso.ForeColor = System.Drawing.Color.Gainsboro
+        Me.btningreso.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.btningreso.Location = New System.Drawing.Point(0, 0)
+        Me.btningreso.Name = "btningreso"
+        Me.btningreso.Size = New System.Drawing.Size(220, 50)
+        Me.btningreso.TabIndex = 0
+        Me.btningreso.Text = "INGRESOS"
+        Me.btningreso.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
+        Me.ToolTip4.SetToolTip(Me.btningreso, "INGRESO STOCK")
+        Me.btningreso.UseVisualStyleBackColor = True
         '
         'btnDepositos
         '
@@ -410,10 +388,10 @@ Partial Class FormPrincipal
         Me.btnDepositos.Name = "btnDepositos"
         Me.btnDepositos.Size = New System.Drawing.Size(213, 50)
         Me.btnDepositos.TabIndex = 3
-        Me.btnDepositos.Text = "STOCK"
+        Me.btnDepositos.Text = "   STOCK"
         Me.btnDepositos.TextAlign = System.Drawing.ContentAlignment.MiddleRight
         Me.btnDepositos.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
-        Me.ToolTip3.SetToolTip(Me.btnDepositos, "DEPOSITO")
+        Me.ToolTip3.SetToolTip(Me.btnDepositos, "STOCK")
         Me.btnDepositos.UseCompatibleTextRendering = True
         Me.btnDepositos.UseVisualStyleBackColor = True
         '
@@ -430,7 +408,7 @@ Partial Class FormPrincipal
         Me.btnEmpleados.Name = "btnEmpleados"
         Me.btnEmpleados.Size = New System.Drawing.Size(213, 50)
         Me.btnEmpleados.TabIndex = 2
-        Me.btnEmpleados.Text = "   EMPLEADOS"
+        Me.btnEmpleados.Text = "  EMPLEADOS"
         Me.btnEmpleados.TextAlign = System.Drawing.ContentAlignment.MiddleRight
         Me.btnEmpleados.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
         Me.ToolTip2.SetToolTip(Me.btnEmpleados, "EMPLEADOS")
@@ -621,6 +599,9 @@ Partial Class FormPrincipal
         '
         Me.tmMostrarMenu.Interval = 2
         '
+        'ToolTip10
+        '
+        '
         'horafecha
         '
         Me.horafecha.Enabled = True
@@ -676,19 +657,18 @@ Partial Class FormPrincipal
     Friend WithEvents btnmenu As System.Windows.Forms.PictureBox
     Friend WithEvents btnEmpleados As System.Windows.Forms.Button
     Friend WithEvents PanelsubmenuDepositos As System.Windows.Forms.Panel
-    Friend WithEvents btnDepo2 As System.Windows.Forms.Button
-    Friend WithEvents btnDepo1 As System.Windows.Forms.Button
+    Friend WithEvents btnconsultastock As System.Windows.Forms.Button
+    Friend WithEvents btningreso As System.Windows.Forms.Button
     Friend WithEvents TmOcultarMenu As System.Windows.Forms.Timer
     Friend WithEvents tmMostrarMenu As System.Windows.Forms.Timer
-    Friend WithEvents btnVentas As System.Windows.Forms.Button
     Friend WithEvents btnDepositos As System.Windows.Forms.Button
     Friend WithEvents PictureBox2 As System.Windows.Forms.PictureBox
     Friend WithEvents Label1 As System.Windows.Forms.Label
     Friend WithEvents btnSalir As System.Windows.Forms.Button
-    Friend WithEvents btnReportes As System.Windows.Forms.Button
+    Friend WithEvents btnVentas As System.Windows.Forms.Button
     Friend WithEvents PanelsubmenuReportes As System.Windows.Forms.Panel
-    Friend WithEvents btnReporte2 As System.Windows.Forms.Button
-    Friend WithEvents btnReporte1 As System.Windows.Forms.Button
+    Friend WithEvents btnconsultaventa As System.Windows.Forms.Button
+    Friend WithEvents btnfacturacion As System.Windows.Forms.Button
     Friend WithEvents ToolTip1 As System.Windows.Forms.ToolTip
     Friend WithEvents ToolTip3 As System.Windows.Forms.ToolTip
     Friend WithEvents ToolTip2 As System.Windows.Forms.ToolTip

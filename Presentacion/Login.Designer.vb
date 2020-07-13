@@ -87,55 +87,56 @@ Partial Class Login
         '
         Me.txtUsuario.BackColor = System.Drawing.Color.FromArgb(CType(CType(80, Byte), Integer), CType(CType(94, Byte), Integer), CType(CType(129, Byte), Integer))
         Me.txtUsuario.BorderStyle = System.Windows.Forms.BorderStyle.None
-        Me.txtUsuario.Font = New System.Drawing.Font("Century Gothic", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtUsuario.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtUsuario.ForeColor = System.Drawing.Color.White
         Me.txtUsuario.Location = New System.Drawing.Point(64, 188)
         Me.txtUsuario.Name = "txtUsuario"
-        Me.txtUsuario.Size = New System.Drawing.Size(350, 20)
+        Me.txtUsuario.Size = New System.Drawing.Size(350, 19)
         Me.txtUsuario.TabIndex = 2
         '
         'txtcontraseña
         '
         Me.txtcontraseña.BackColor = System.Drawing.Color.FromArgb(CType(CType(80, Byte), Integer), CType(CType(94, Byte), Integer), CType(CType(129, Byte), Integer))
         Me.txtcontraseña.BorderStyle = System.Windows.Forms.BorderStyle.None
-        Me.txtcontraseña.Font = New System.Drawing.Font("Century Gothic", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtcontraseña.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtcontraseña.ForeColor = System.Drawing.Color.White
         Me.txtcontraseña.Location = New System.Drawing.Point(64, 293)
         Me.txtcontraseña.Name = "txtcontraseña"
-        Me.txtcontraseña.Size = New System.Drawing.Size(350, 20)
+        Me.txtcontraseña.Size = New System.Drawing.Size(350, 19)
         Me.txtcontraseña.TabIndex = 3
         '
         'Label1
         '
         Me.Label1.AutoSize = True
-        Me.Label1.Font = New System.Drawing.Font("Century Gothic", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label1.ForeColor = System.Drawing.Color.Silver
         Me.Label1.Location = New System.Drawing.Point(60, 138)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(70, 21)
+        Me.Label1.Size = New System.Drawing.Size(68, 20)
         Me.Label1.TabIndex = 4
         Me.Label1.Text = "Usuario:"
         '
         'Label2
         '
         Me.Label2.AutoSize = True
-        Me.Label2.Font = New System.Drawing.Font("Century Gothic", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label2.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label2.ForeColor = System.Drawing.Color.Silver
         Me.Label2.Location = New System.Drawing.Point(60, 252)
         Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(107, 21)
+        Me.Label2.Size = New System.Drawing.Size(96, 20)
         Me.Label2.TabIndex = 5
         Me.Label2.Text = "Contraseña:"
         '
         'Checkremember
         '
         Me.Checkremember.AutoSize = True
+        Me.Checkremember.Cursor = System.Windows.Forms.Cursors.Hand
         Me.Checkremember.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Checkremember.Font = New System.Drawing.Font("Century Gothic", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Checkremember.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Checkremember.ForeColor = System.Drawing.Color.Transparent
         Me.Checkremember.Location = New System.Drawing.Point(64, 347)
         Me.Checkremember.Name = "Checkremember"
-        Me.Checkremember.Size = New System.Drawing.Size(121, 24)
+        Me.Checkremember.Size = New System.Drawing.Size(109, 22)
         Me.Checkremember.TabIndex = 6
         Me.Checkremember.Text = "Recuerdame"
         Me.Checkremember.UseVisualStyleBackColor = False
@@ -143,9 +144,10 @@ Partial Class Login
         'btnIngresar
         '
         Me.btnIngresar.BackColor = System.Drawing.Color.FromArgb(CType(CType(17, Byte), Integer), CType(CType(97, Byte), Integer), CType(CType(238, Byte), Integer))
+        Me.btnIngresar.Cursor = System.Windows.Forms.Cursors.Hand
         Me.btnIngresar.FlatAppearance.BorderSize = 0
         Me.btnIngresar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnIngresar.Font = New System.Drawing.Font("Century Gothic", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnIngresar.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnIngresar.ForeColor = System.Drawing.Color.White
         Me.btnIngresar.Location = New System.Drawing.Point(64, 406)
         Me.btnIngresar.Name = "btnIngresar"
@@ -177,11 +179,11 @@ Partial Class Login
         '
         Me.Lblolvidocontraseña.ActiveLinkColor = System.Drawing.Color.FromArgb(CType(CType(17, Byte), Integer), CType(CType(97, Byte), Integer), CType(CType(238, Byte), Integer))
         Me.Lblolvidocontraseña.AutoSize = True
-        Me.Lblolvidocontraseña.Font = New System.Drawing.Font("Century Gothic", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Lblolvidocontraseña.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Lblolvidocontraseña.LinkColor = System.Drawing.Color.Silver
         Me.Lblolvidocontraseña.Location = New System.Drawing.Point(144, 540)
         Me.Lblolvidocontraseña.Name = "Lblolvidocontraseña"
-        Me.Lblolvidocontraseña.Size = New System.Drawing.Size(174, 20)
+        Me.Lblolvidocontraseña.Size = New System.Drawing.Size(156, 18)
         Me.Lblolvidocontraseña.TabIndex = 9
         Me.Lblolvidocontraseña.TabStop = True
         Me.Lblolvidocontraseña.Text = "Olvido su contraseña?"

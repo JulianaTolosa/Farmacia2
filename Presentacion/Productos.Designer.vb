@@ -36,7 +36,7 @@ Partial Class Productos
         Me.Btnborrar = New System.Windows.Forms.Button()
         Me.BtnEditar = New System.Windows.Forms.Button()
         Me.Btnagregar = New System.Windows.Forms.Button()
-        Me.Dgproducto = New System.Windows.Forms.DataGridView()
+        Me.Dgproductos = New System.Windows.Forms.DataGridView()
         Me.Lblcantidad = New System.Windows.Forms.Label()
         Me.txtcantidad = New System.Windows.Forms.TextBox()
         Me.Lbltipoprod = New System.Windows.Forms.Label()
@@ -44,7 +44,7 @@ Partial Class Productos
         Me.txtdescripcion = New System.Windows.Forms.TextBox()
         CType(Me.btnCerrarForm, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel1.SuspendLayout()
-        CType(Me.Dgproducto, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.Dgproductos, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'btnCerrarForm
@@ -187,13 +187,13 @@ Partial Class Productos
         Me.Btnagregar.Text = "AGREGAR"
         Me.Btnagregar.UseVisualStyleBackColor = True
         '
-        'Dgproducto
+        'Dgproductos
         '
-        Me.Dgproducto.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.Dgproducto.Location = New System.Drawing.Point(46, 360)
-        Me.Dgproducto.Name = "Dgproducto"
-        Me.Dgproducto.Size = New System.Drawing.Size(700, 150)
-        Me.Dgproducto.TabIndex = 41
+        Me.Dgproductos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.Dgproductos.Location = New System.Drawing.Point(46, 360)
+        Me.Dgproductos.Name = "Dgproductos"
+        Me.Dgproductos.Size = New System.Drawing.Size(700, 167)
+        Me.Dgproductos.TabIndex = 41
         '
         'Lblcantidad
         '
@@ -202,9 +202,9 @@ Partial Class Productos
         Me.Lblcantidad.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Lblcantidad.Location = New System.Drawing.Point(42, 173)
         Me.Lblcantidad.Name = "Lblcantidad"
-        Me.Lblcantidad.Size = New System.Drawing.Size(77, 20)
+        Me.Lblcantidad.Size = New System.Drawing.Size(57, 20)
         Me.Lblcantidad.TabIndex = 43
-        Me.Lblcantidad.Text = "Cantidad:"
+        Me.Lblcantidad.Text = "Marca:"
         '
         'txtcantidad
         '
@@ -213,7 +213,7 @@ Partial Class Productos
         Me.txtcantidad.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtcantidad.Location = New System.Drawing.Point(162, 173)
         Me.txtcantidad.Name = "txtcantidad"
-        Me.txtcantidad.Size = New System.Drawing.Size(115, 19)
+        Me.txtcantidad.Size = New System.Drawing.Size(480, 19)
         Me.txtcantidad.TabIndex = 3
         '
         'Lbltipoprod
@@ -228,11 +228,12 @@ Partial Class Productos
         '
         'Cmbtipoproducto
         '
+        Me.Cmbtipoproducto.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Cmbtipoproducto.FormattingEnabled = True
         Me.Cmbtipoproducto.Items.AddRange(New Object() {"Comprimidos", "Inyectables"})
         Me.Cmbtipoproducto.Location = New System.Drawing.Point(162, 213)
         Me.Cmbtipoproducto.Name = "Cmbtipoproducto"
-        Me.Cmbtipoproducto.Size = New System.Drawing.Size(198, 21)
+        Me.Cmbtipoproducto.Size = New System.Drawing.Size(198, 28)
         Me.Cmbtipoproducto.TabIndex = 4
         '
         'txtdescripcion
@@ -247,7 +248,6 @@ Partial Class Productos
         Me.txtdescripcion.Size = New System.Drawing.Size(480, 71)
         Me.txtdescripcion.TabIndex = 5
         Me.txtdescripcion.Tag = ""
-        Me.txtdescripcion.Text = " "
         '
         'Productos
         '
@@ -260,7 +260,7 @@ Partial Class Productos
         Me.Controls.Add(Me.Lbltipoprod)
         Me.Controls.Add(Me.Lblcantidad)
         Me.Controls.Add(Me.txtcantidad)
-        Me.Controls.Add(Me.Dgproducto)
+        Me.Controls.Add(Me.Dgproductos)
         Me.Controls.Add(Me.Lblpreciocom)
         Me.Controls.Add(Me.Lblprecioven)
         Me.Controls.Add(Me.Lbldescripcion)
@@ -278,7 +278,7 @@ Partial Class Productos
         CType(Me.btnCerrarForm, System.ComponentModel.ISupportInitialize).EndInit()
         Me.Panel1.ResumeLayout(False)
         Me.Panel1.PerformLayout()
-        CType(Me.Dgproducto, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.Dgproductos, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -296,7 +296,7 @@ Partial Class Productos
     Friend WithEvents Btnborrar As System.Windows.Forms.Button
     Friend WithEvents BtnEditar As System.Windows.Forms.Button
     Friend WithEvents Btnagregar As System.Windows.Forms.Button
-    Friend WithEvents Dgproducto As System.Windows.Forms.DataGridView
+    Friend WithEvents Dgproductos As System.Windows.Forms.DataGridView
     Friend WithEvents Lblcantidad As System.Windows.Forms.Label
     Friend WithEvents txtcantidad As System.Windows.Forms.TextBox
     Friend WithEvents Lbltipoprod As System.Windows.Forms.Label
