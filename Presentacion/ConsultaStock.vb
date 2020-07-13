@@ -15,7 +15,7 @@ Public Class ConsultaStock
         If (String.IsNullOrEmpty(Txtbuscar.Text)) Then
             MsgBox("Por Favor, rellene los campos vacios")
         ElseIf RBid.Checked = True Then
-            Datos.Obtenerproducto()
+
 
 
 
