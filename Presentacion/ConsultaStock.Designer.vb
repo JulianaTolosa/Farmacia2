@@ -33,6 +33,7 @@ Partial Class ConsultaStock
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
         Me.RBnombre = New System.Windows.Forms.RadioButton()
         Me.RBid = New System.Windows.Forms.RadioButton()
+        Me.CheckBox1 = New System.Windows.Forms.CheckBox()
         Me.Panel1.SuspendLayout()
         CType(Me.btnCerrarForm, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.DgProducto, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -111,6 +112,7 @@ Partial Class ConsultaStock
         '
         'GroupBox1
         '
+        Me.GroupBox1.Controls.Add(Me.CheckBox1)
         Me.GroupBox1.Controls.Add(Me.RBnombre)
         Me.GroupBox1.Controls.Add(Me.RBid)
         Me.GroupBox1.Controls.Add(Me.Label1)
@@ -120,6 +122,7 @@ Partial Class ConsultaStock
         Me.GroupBox1.Size = New System.Drawing.Size(571, 130)
         Me.GroupBox1.TabIndex = 14
         Me.GroupBox1.TabStop = False
+        Me.GroupBox1.Text = "it"
         '
         'RBnombre
         '
@@ -142,6 +145,16 @@ Partial Class ConsultaStock
         Me.RBid.TabStop = True
         Me.RBid.Text = "POR ID:"
         Me.RBid.UseVisualStyleBackColor = True
+        '
+        'CheckBox1
+        '
+        Me.CheckBox1.AutoSize = True
+        Me.CheckBox1.Location = New System.Drawing.Point(365, 91)
+        Me.CheckBox1.Name = "CheckBox1"
+        Me.CheckBox1.Size = New System.Drawing.Size(81, 17)
+        Me.CheckBox1.TabIndex = 14
+        Me.CheckBox1.Text = "CheckBox1"
+        Me.CheckBox1.UseVisualStyleBackColor = True
         '
         'ConsultaStock
         '
@@ -176,4 +189,5 @@ Partial Class ConsultaStock
     Friend WithEvents GroupBox1 As System.Windows.Forms.GroupBox
     Friend WithEvents RBnombre As System.Windows.Forms.RadioButton
     Friend WithEvents RBid As System.Windows.Forms.RadioButton
+    Friend WithEvents CheckBox1 As System.Windows.Forms.CheckBox
 End Class
