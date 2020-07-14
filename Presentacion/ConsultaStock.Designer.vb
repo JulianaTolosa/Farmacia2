@@ -31,13 +31,14 @@ Partial Class ConsultaStock
         Me.Label1 = New System.Windows.Forms.Label()
         Me.DgProducto = New System.Windows.Forms.DataGridView()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
-        Me.RBnombre = New System.Windows.Forms.RadioButton()
-        Me.RBid = New System.Windows.Forms.RadioButton()
-        Me.CheckBox1 = New System.Windows.Forms.CheckBox()
+        Me.Label2 = New System.Windows.Forms.Label()
+        Me.Label3 = New System.Windows.Forms.Label()
+        Me.dgMovimientos = New System.Windows.Forms.DataGridView()
         Me.Panel1.SuspendLayout()
         CType(Me.btnCerrarForm, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.DgProducto, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupBox1.SuspendLayout()
+        CType(Me.dgMovimientos, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'Panel1
@@ -107,60 +108,54 @@ Partial Class ConsultaStock
         Me.DgProducto.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.DgProducto.Location = New System.Drawing.Point(36, 225)
         Me.DgProducto.Name = "DgProducto"
-        Me.DgProducto.Size = New System.Drawing.Size(667, 232)
+        Me.DgProducto.Size = New System.Drawing.Size(232, 232)
         Me.DgProducto.TabIndex = 13
         '
         'GroupBox1
         '
-        Me.GroupBox1.Controls.Add(Me.CheckBox1)
-        Me.GroupBox1.Controls.Add(Me.RBnombre)
-        Me.GroupBox1.Controls.Add(Me.RBid)
         Me.GroupBox1.Controls.Add(Me.Label1)
         Me.GroupBox1.Controls.Add(Me.Txtbuscar)
-        Me.GroupBox1.Location = New System.Drawing.Point(36, 69)
+        Me.GroupBox1.Location = New System.Drawing.Point(36, 70)
         Me.GroupBox1.Name = "GroupBox1"
-        Me.GroupBox1.Size = New System.Drawing.Size(571, 130)
+        Me.GroupBox1.Size = New System.Drawing.Size(571, 97)
         Me.GroupBox1.TabIndex = 14
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "it"
         '
-        'RBnombre
+        'Label2
         '
-        Me.RBnombre.AutoSize = True
-        Me.RBnombre.Location = New System.Drawing.Point(223, 91)
-        Me.RBnombre.Name = "RBnombre"
-        Me.RBnombre.Size = New System.Drawing.Size(101, 17)
-        Me.RBnombre.TabIndex = 13
-        Me.RBnombre.TabStop = True
-        Me.RBnombre.Text = "POR NOMBRE:"
-        Me.RBnombre.UseVisualStyleBackColor = True
+        Me.Label2.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label2.Location = New System.Drawing.Point(33, 202)
+        Me.Label2.Name = "Label2"
+        Me.Label2.Size = New System.Drawing.Size(228, 20)
+        Me.Label2.TabIndex = 12
+        Me.Label2.Text = "Listado Productos:"
         '
-        'RBid
+        'Label3
         '
-        Me.RBid.AutoSize = True
-        Me.RBid.Location = New System.Drawing.Point(106, 91)
-        Me.RBid.Name = "RBid"
-        Me.RBid.Size = New System.Drawing.Size(65, 17)
-        Me.RBid.TabIndex = 12
-        Me.RBid.TabStop = True
-        Me.RBid.Text = "POR ID:"
-        Me.RBid.UseVisualStyleBackColor = True
+        Me.Label3.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label3.Location = New System.Drawing.Point(294, 202)
+        Me.Label3.Name = "Label3"
+        Me.Label3.Size = New System.Drawing.Size(228, 20)
+        Me.Label3.TabIndex = 15
+        Me.Label3.Text = "Movimientos:"
         '
-        'CheckBox1
+        'dgMovimientos
         '
-        Me.CheckBox1.AutoSize = True
-        Me.CheckBox1.Location = New System.Drawing.Point(365, 91)
-        Me.CheckBox1.Name = "CheckBox1"
-        Me.CheckBox1.Size = New System.Drawing.Size(81, 17)
-        Me.CheckBox1.TabIndex = 14
-        Me.CheckBox1.Text = "CheckBox1"
-        Me.CheckBox1.UseVisualStyleBackColor = True
+        Me.dgMovimientos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.dgMovimientos.Location = New System.Drawing.Point(297, 225)
+        Me.dgMovimientos.Name = "dgMovimientos"
+        Me.dgMovimientos.Size = New System.Drawing.Size(427, 232)
+        Me.dgMovimientos.TabIndex = 16
         '
         'ConsultaStock
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(736, 491)
+        Me.Controls.Add(Me.Label3)
+        Me.Controls.Add(Me.dgMovimientos)
+        Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.GroupBox1)
         Me.Controls.Add(Me.DgProducto)
         Me.Controls.Add(Me.Btnbuscar)
@@ -176,6 +171,7 @@ Partial Class ConsultaStock
         CType(Me.DgProducto, System.ComponentModel.ISupportInitialize).EndInit()
         Me.GroupBox1.ResumeLayout(False)
         Me.GroupBox1.PerformLayout()
+        CType(Me.dgMovimientos, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
@@ -187,7 +183,7 @@ Partial Class ConsultaStock
     Friend WithEvents Label1 As System.Windows.Forms.Label
     Friend WithEvents DgProducto As System.Windows.Forms.DataGridView
     Friend WithEvents GroupBox1 As System.Windows.Forms.GroupBox
-    Friend WithEvents RBnombre As System.Windows.Forms.RadioButton
-    Friend WithEvents RBid As System.Windows.Forms.RadioButton
-    Friend WithEvents CheckBox1 As System.Windows.Forms.CheckBox
+    Friend WithEvents Label2 As System.Windows.Forms.Label
+    Friend WithEvents Label3 As System.Windows.Forms.Label
+    Friend WithEvents dgMovimientos As System.Windows.Forms.DataGridView
 End Class

@@ -17,10 +17,8 @@ Public Class Productos
         If (String.IsNullOrEmpty(nombreprod.Text) Or String.IsNullOrEmpty(precioventa.Text) Or String.IsNullOrEmpty(preciocompra.Text) Or String.IsNullOrEmpty(txtcantidad.Text) Or String.IsNullOrEmpty(Cmbtipoproducto.Text) Or String.IsNullOrEmpty(txtdescripcion.Text)) Then
             MsgBox("Por Favor, rellene los campos vacios")
         Else
-<<<<<<< HEAD
             'limpiar()
-=======
->>>>>>> 26825a9a2ba68b03607d6355a8f26ce3ba8771a9
+
             Dim nombre As String = nombreprod.Text
             Dim precioven As Double = Val(precioventa.Text)
             Dim preciocomp As Double = Val((preciocompra.Text))
@@ -33,8 +31,8 @@ Public Class Productos
 
             Dim _Producto As New Producto()
             _Producto._nombre = nombreprod.Text
-            _Producto._precioven = Val(precioventa.Text)
-            _Producto._preciocomp = Val(preciocompra.Text)
+            _Producto._PrecioVenta = Val(precioventa.Text)
+            _Producto._PrecioCompra = Val(preciocompra.Text)
             '_Producto._cantidad = CInt(Val((txtcantidad.Text)))
             _Producto._tipoprod = (Cmbtipoproducto.Text)
             _Producto._descripcion = txtdescripcion.Text

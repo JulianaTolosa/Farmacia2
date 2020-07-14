@@ -1,10 +1,10 @@
 ﻿Public Class Producto
-    Public _idproducto As Integer
-    Public _nombre As String
-    Public _precioven As Double
-    Public _preciocomp As Double
-    Public _descripcion As String
-    Public _tipoprod As String
+    Public _Idproducto As Integer
+    Public _Nombre As String
+    Public _PrecioVenta As Double
+    Public _PrecioCompra As Double
+    Public _Descripcion As String
+    Public _TipoProd As String
 
     'Public Function GuardarProducto() As Boolean
     '    Dim _Retorno As Boolean = False
@@ -15,5 +15,4 @@
     '    End Try
     '    Return _Retorno
     'End Function
-
 End Class

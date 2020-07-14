@@ -12,20 +12,12 @@ Public Class ConsultaStock
 
 
     Private Sub Btnbuscar_Click(sender As Object, e As EventArgs) Handles Btnbuscar.Click
-        If (String.IsNullOrEmpty(Txtbuscar.Text)) Then
-            MsgBox("Por Favor, rellene los campos vacios")
-        ElseIf RBid.Checked = True Then
+        Try
+            Dim _ListaProductos = Datos.ObtenerProductos(Txtbuscar.Text.Trim())
+            '_ListaProductos tiene la lista de productos buscados
+        Catch ex As Exception
 
-
-
-
-        ElseIf RBnombre.Checked = True Then
-            
-        End If
-
-
-
-
+        End Try
     End Sub
 
    
