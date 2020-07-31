@@ -68,11 +68,11 @@ Partial Class ConsultaStock
         Me.lblconsultastock.Anchor = System.Windows.Forms.AnchorStyles.Top
         Me.lblconsultastock.AutoSize = True
         Me.lblconsultastock.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblconsultastock.Location = New System.Drawing.Point(318, 12)
+        Me.lblconsultastock.Location = New System.Drawing.Point(284, 12)
         Me.lblconsultastock.Name = "lblconsultastock"
-        Me.lblconsultastock.Size = New System.Drawing.Size(129, 24)
+        Me.lblconsultastock.Size = New System.Drawing.Size(193, 24)
         Me.lblconsultastock.TabIndex = 2
-        Me.lblconsultastock.Text = "CONSULTAS "
+        Me.lblconsultastock.Text = "CONSULTAS STOCK"
         Me.lblconsultastock.TextAlign = System.Drawing.ContentAlignment.TopCenter
         '
         'Btnbuscar

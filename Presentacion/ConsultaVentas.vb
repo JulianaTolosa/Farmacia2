@@ -1,4 +1,4 @@
-﻿Public Class Ingreso
+﻿Public Class ConsultaVentas
 
     Private Sub btnCerrarForm_Click(sender As Object, e As EventArgs) Handles btnCerrarForm.Click
         Me.Close()

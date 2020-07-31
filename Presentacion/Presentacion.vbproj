@@ -74,7 +74,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="CircularProgressBar">
-      <HintPath>..\..\..\Users\Leo\Desktop\Nueva carpeta\Libraries\Libraries\CircularProgressBar.dll</HintPath>
+      <HintPath>..\..\..\Users\Leo\Desktop\progmsi\Libraries\Libraries\CircularProgressBar.dll</HintPath>
     </Reference>
     <Reference Include="CrystalDecisions.CrystalReports.Engine, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
     <Reference Include="CrystalDecisions.Enterprise.Viewing.ReportSource, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL">
@@ -83,7 +83,7 @@
     <Reference Include="CrystalDecisions.ReportSource, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
     <Reference Include="CrystalDecisions.Shared, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
     <Reference Include="itextsharp">
-      <HintPath>..\..\..\Users\Leo\Desktop\Nueva carpeta\itextsharp-all-5.5.10\itextsharp.xfaworker-dll-5.5.10\itextsharp.dll</HintPath>
+      <HintPath>..\..\..\Users\Leo\Desktop\progmsi\itextsharp-all-5.5.10\itextsharp.xfaworker-dll-5.5.10\itextsharp.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.VisualBasic.PowerPacks, Version=9.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
     <Reference Include="System" />
@@ -98,7 +98,7 @@
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="WinFormAnimation">
-      <HintPath>..\..\..\Users\Leo\Desktop\Nueva carpeta\Libraries\Libraries\WinFormAnimation.dll</HintPath>
+      <HintPath>..\..\..\Users\Leo\Desktop\progmsi\Libraries\Libraries\WinFormAnimation.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>
@@ -140,6 +140,12 @@
     <Compile Include="ConsultaStock.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="ConsultaVentas.Designer.vb">
+      <DependentUpon>ConsultaVentas.vb</DependentUpon>
+    </Compile>
+    <Compile Include="ConsultaVentas.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Datos.vb" />
     <Compile Include="Droguerias.Designer.vb">
       <DependentUpon>Droguerias.vb</DependentUpon>
@@ -157,6 +163,12 @@
       <DependentUpon>Empleados.vb</DependentUpon>
     </Compile>
     <Compile Include="Empleados.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Facturacion.Designer.vb">
+      <DependentUpon>Facturacion.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Facturacion.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="FormWelcome.Designer.vb">
@@ -271,6 +283,9 @@
     <EmbeddedResource Include="ConsultaStock.resx">
       <DependentUpon>ConsultaStock.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="ConsultaVentas.resx">
+      <DependentUpon>ConsultaVentas.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Droguerias.resx">
       <DependentUpon>Droguerias.vb</DependentUpon>
     </EmbeddedResource>
@@ -279,6 +294,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Empleados.resx">
       <DependentUpon>Empleados.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Facturacion.resx">
+      <DependentUpon>Facturacion.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormWelcome.resx">
       <DependentUpon>FormWelcome.vb</DependentUpon>
