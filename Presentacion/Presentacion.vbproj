@@ -183,12 +183,6 @@
     <Compile Include="Clientes.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Ingreso.Designer.vb">
-      <DependentUpon>Ingreso.vb</DependentUpon>
-    </Compile>
-    <Compile Include="Ingreso.vb">
-      <SubType>Form</SubType>
-    </Compile>
     <Compile Include="Inicio.Designer.vb">
       <DependentUpon>Inicio.vb</DependentUpon>
     </Compile>
@@ -303,9 +297,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Clientes.resx">
       <DependentUpon>Clientes.vb</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Ingreso.resx">
-      <DependentUpon>Ingreso.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Inicio.resx">
       <DependentUpon>Inicio.vb</DependentUpon>
