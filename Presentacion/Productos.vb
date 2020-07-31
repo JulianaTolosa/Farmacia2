@@ -65,4 +65,18 @@ Public Class Productos
     Private Sub Btnborrar_Click(sender As Object, e As EventArgs) Handles Btnborrar.Click
 
     End Sub
+
+    Private Sub Productos_Load(sender As Object, e As EventArgs) Handles Me.Load
+        Try
+            Cmbtipoproducto.Items.Clear()
+            Dim _Tipos As List(Of String) = Datos.ObtenerTiposProductos()
+            For Each _Tipo As String In _Tipos
+                Cmbtipoproducto.Items.Add(_Tipo)
+            Next
+
+
+        Catch ex As Exception
+
+        End Try
+    End Sub
 End Class

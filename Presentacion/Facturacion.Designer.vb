@@ -47,11 +47,14 @@ Partial Class Facturacion
         Me.Label10 = New System.Windows.Forms.Label()
         Me.DataGridView1 = New System.Windows.Forms.DataGridView()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
-        Me.Button2 = New System.Windows.Forms.Button()
-        Me.Button1 = New System.Windows.Forms.Button()
-        Me.ComboBox1 = New System.Windows.Forms.ComboBox()
-        Me.Label11 = New System.Windows.Forms.Label()
+        Me.ComboBox3 = New System.Windows.Forms.ComboBox()
+        Me.ComboBox2 = New System.Windows.Forms.ComboBox()
+        Me.TextBox11 = New System.Windows.Forms.TextBox()
         Me.Label12 = New System.Windows.Forms.Label()
+        Me.Label11 = New System.Windows.Forms.Label()
+        Me.Button2 = New System.Windows.Forms.Button()
+        Me.BtnAgregar = New System.Windows.Forms.Button()
+        Me.ComboBox1 = New System.Windows.Forms.ComboBox()
         Me.Panel1.SuspendLayout()
         CType(Me.btnCerrarForm, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -72,7 +75,6 @@ Partial Class Facturacion
         '
         Me.btnCerrarForm.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.btnCerrarForm.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.btnCerrarForm.Image = CType(resources.GetObject("btnCerrarForm.Image"), System.Drawing.Image)
         Me.btnCerrarForm.Location = New System.Drawing.Point(915, 12)
         Me.btnCerrarForm.Name = "btnCerrarForm"
         Me.btnCerrarForm.Size = New System.Drawing.Size(16, 16)
@@ -261,10 +263,13 @@ Partial Class Facturacion
         '
         'GroupBox1
         '
+        Me.GroupBox1.Controls.Add(Me.ComboBox3)
+        Me.GroupBox1.Controls.Add(Me.ComboBox2)
+        Me.GroupBox1.Controls.Add(Me.TextBox11)
         Me.GroupBox1.Controls.Add(Me.Label12)
         Me.GroupBox1.Controls.Add(Me.Label11)
         Me.GroupBox1.Controls.Add(Me.Button2)
-        Me.GroupBox1.Controls.Add(Me.Button1)
+        Me.GroupBox1.Controls.Add(Me.BtnAgregar)
         Me.GroupBox1.Controls.Add(Me.Label7)
         Me.GroupBox1.Controls.Add(Me.TextBox7)
         Me.GroupBox1.Controls.Add(Me.Label1)
@@ -284,30 +289,37 @@ Partial Class Facturacion
         Me.GroupBox1.TabIndex = 24
         Me.GroupBox1.TabStop = False
         '
-        'Button2
+        'ComboBox3
         '
-        Me.Button2.Location = New System.Drawing.Point(636, 167)
-        Me.Button2.Name = "Button2"
-        Me.Button2.Size = New System.Drawing.Size(113, 36)
-        Me.Button2.TabIndex = 19
-        Me.Button2.Text = "Button2"
-        Me.Button2.UseVisualStyleBackColor = True
+        Me.ComboBox3.FormattingEnabled = True
+        Me.ComboBox3.Location = New System.Drawing.Point(135, 218)
+        Me.ComboBox3.Name = "ComboBox3"
+        Me.ComboBox3.Size = New System.Drawing.Size(208, 21)
+        Me.ComboBox3.TabIndex = 25
         '
-        'Button1
+        'ComboBox2
         '
-        Me.Button1.Location = New System.Drawing.Point(506, 167)
-        Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(113, 36)
-        Me.Button1.TabIndex = 18
-        Me.Button1.UseVisualStyleBackColor = True
+        Me.ComboBox2.FormattingEnabled = True
+        Me.ComboBox2.Location = New System.Drawing.Point(108, 140)
+        Me.ComboBox2.Name = "ComboBox2"
+        Me.ComboBox2.Size = New System.Drawing.Size(208, 21)
+        Me.ComboBox2.TabIndex = 24
         '
-        'ComboBox1
+        'TextBox11
         '
-        Me.ComboBox1.FormattingEnabled = True
-        Me.ComboBox1.Location = New System.Drawing.Point(137, 347)
-        Me.ComboBox1.Name = "ComboBox1"
-        Me.ComboBox1.Size = New System.Drawing.Size(207, 21)
-        Me.ComboBox1.TabIndex = 17
+        Me.TextBox11.Location = New System.Drawing.Point(111, 187)
+        Me.TextBox11.Name = "TextBox11"
+        Me.TextBox11.Size = New System.Drawing.Size(207, 20)
+        Me.TextBox11.TabIndex = 23
+        '
+        'Label12
+        '
+        Me.Label12.AutoSize = True
+        Me.Label12.Location = New System.Drawing.Point(21, 226)
+        Me.Label12.Name = "Label12"
+        Me.Label12.Size = New System.Drawing.Size(108, 13)
+        Me.Label12.TabIndex = 21
+        Me.Label12.Text = "METODO DE PAGO:"
         '
         'Label11
         '
@@ -318,14 +330,31 @@ Partial Class Facturacion
         Me.Label11.TabIndex = 20
         Me.Label11.Text = "LOCALIDAD:"
         '
-        'Label12
+        'Button2
         '
-        Me.Label12.AutoSize = True
-        Me.Label12.Location = New System.Drawing.Point(21, 226)
-        Me.Label12.Name = "Label12"
-        Me.Label12.Size = New System.Drawing.Size(108, 13)
-        Me.Label12.TabIndex = 21
-        Me.Label12.Text = "METODO DE PAGO:"
+        Me.Button2.Location = New System.Drawing.Point(746, 203)
+        Me.Button2.Name = "Button2"
+        Me.Button2.Size = New System.Drawing.Size(113, 36)
+        Me.Button2.TabIndex = 19
+        Me.Button2.Text = "Button2"
+        Me.Button2.UseVisualStyleBackColor = True
+        '
+        'BtnAgregar
+        '
+        Me.BtnAgregar.Location = New System.Drawing.Point(609, 203)
+        Me.BtnAgregar.Name = "BtnAgregar"
+        Me.BtnAgregar.Size = New System.Drawing.Size(79, 36)
+        Me.BtnAgregar.TabIndex = 18
+        Me.BtnAgregar.Text = "AGREGAR:"
+        Me.BtnAgregar.UseVisualStyleBackColor = True
+        '
+        'ComboBox1
+        '
+        Me.ComboBox1.FormattingEnabled = True
+        Me.ComboBox1.Location = New System.Drawing.Point(137, 347)
+        Me.ComboBox1.Name = "ComboBox1"
+        Me.ComboBox1.Size = New System.Drawing.Size(207, 21)
+        Me.ComboBox1.TabIndex = 17
         '
         'Facturacion
         '
@@ -381,8 +410,11 @@ Partial Class Facturacion
     Friend WithEvents DataGridView1 As System.Windows.Forms.DataGridView
     Friend WithEvents GroupBox1 As System.Windows.Forms.GroupBox
     Friend WithEvents ComboBox1 As System.Windows.Forms.ComboBox
-    Friend WithEvents Button1 As System.Windows.Forms.Button
+    Friend WithEvents BtnAgregar As System.Windows.Forms.Button
     Friend WithEvents Button2 As System.Windows.Forms.Button
     Friend WithEvents Label12 As System.Windows.Forms.Label
     Friend WithEvents Label11 As System.Windows.Forms.Label
+    Friend WithEvents ComboBox3 As System.Windows.Forms.ComboBox
+    Friend WithEvents ComboBox2 As System.Windows.Forms.ComboBox
+    Friend WithEvents TextBox11 As System.Windows.Forms.TextBox
 End Class

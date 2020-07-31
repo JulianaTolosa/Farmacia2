@@ -192,7 +192,7 @@ Partial Class Productos
         Me.Dgproductos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.Dgproductos.Location = New System.Drawing.Point(46, 360)
         Me.Dgproductos.Name = "Dgproductos"
-        Me.Dgproductos.Size = New System.Drawing.Size(700, 167)
+        Me.Dgproductos.Size = New System.Drawing.Size(844, 167)
         Me.Dgproductos.TabIndex = 41
         '
         'Lblcantidad
