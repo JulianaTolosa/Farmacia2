@@ -125,8 +125,8 @@ Public Class FormPrincipal
 
     'METODO PARA OCULTAR SUBMENU
     Private Sub hideSubmenu()
-        PanelsubmenuDepositos.Visible = False
-        PanelsubmenuReportes.Visible = False
+        PanelsubmenuStock.Visible = False
+        PanelsubmenuVentas.Visible = False
         '    aca se pueden agregar mas submenus, solo copiar(lo mismo de arriba) y modificar que tipo de submenu es
     End Sub
 
@@ -199,7 +199,7 @@ Public Class FormPrincipal
     End Sub
 
     Private Sub btnDepositos_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnDepositos.Click
-        showSubmenu(PanelsubmenuDepositos)
+        showSubmenu(PanelsubmenuStock)
     End Sub
 
     Private currentForm As Form = Nothing
@@ -293,19 +293,9 @@ Public Class FormPrincipal
     End Sub
 
 
-    Private Sub btnReportes_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnVentas.Click
-        showSubmenu(PanelsubmenuReportes)
-    End Sub
 
-    Private Sub btnReporte1_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnfacturacion.Click
-        openChildForm(New Reporte1())
-        hideSubmenu()
-    End Sub
 
-    Private Sub btnReporte2_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnconsultaventa.Click
-        openChildForm(New Reporte2())
-        hideSubmenu()
-    End Sub
+
 
 
 
@@ -359,6 +349,19 @@ Public Class FormPrincipal
         MyBase.Finalize()
     End Sub
 
-    
+
+    Private Sub btnVentas_Click_1(sender As Object, e As EventArgs) Handles btnVentas.Click
+        showSubmenu(PanelsubmenuVentas)
+    End Sub
+
+    Private Sub btnfacturacion_Click(sender As Object, e As EventArgs) Handles btnfacturacion.Click
+        openChildForm(New Facturacion())
+        hideSubmenu()
+    End Sub
+
+    Private Sub btnconsultaventa_Click(sender As Object, e As EventArgs) Handles btnconsultaventa.Click
+        openChildForm(New ConsultaVentas())
+        hideSubmenu()
+    End Sub
 End Class
 

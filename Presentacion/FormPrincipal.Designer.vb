@@ -34,12 +34,12 @@ Partial Class FormPrincipal
         Me.btnMediospago = New System.Windows.Forms.Button()
         Me.btnOSocial = New System.Windows.Forms.Button()
         Me.btnProductos = New System.Windows.Forms.Button()
-        Me.PanelsubmenuReportes = New System.Windows.Forms.Panel()
+        Me.PanelsubmenuVentas = New System.Windows.Forms.Panel()
         Me.btnconsultaventa = New System.Windows.Forms.Button()
         Me.btnfacturacion = New System.Windows.Forms.Button()
         Me.btnVentas = New System.Windows.Forms.Button()
         Me.btnSalir = New System.Windows.Forms.Button()
-        Me.PanelsubmenuDepositos = New System.Windows.Forms.Panel()
+        Me.PanelsubmenuStock = New System.Windows.Forms.Panel()
         Me.btnconsultastock = New System.Windows.Forms.Button()
         Me.btningreso = New System.Windows.Forms.Button()
         Me.btnDepositos = New System.Windows.Forms.Button()
@@ -79,8 +79,8 @@ Partial Class FormPrincipal
         Me.PanelFormularios.SuspendLayout()
         Me.PanelLateral.SuspendLayout()
         Me.Panelbotones.SuspendLayout()
-        Me.PanelsubmenuReportes.SuspendLayout()
-        Me.PanelsubmenuDepositos.SuspendLayout()
+        Me.PanelsubmenuVentas.SuspendLayout()
+        Me.PanelsubmenuStock.SuspendLayout()
         Me.PanelUsuario.SuspendLayout()
         CType(Me.btnmenu, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -156,10 +156,10 @@ Partial Class FormPrincipal
         Me.Panelbotones.Controls.Add(Me.btnMediospago)
         Me.Panelbotones.Controls.Add(Me.btnOSocial)
         Me.Panelbotones.Controls.Add(Me.btnProductos)
-        Me.Panelbotones.Controls.Add(Me.PanelsubmenuReportes)
+        Me.Panelbotones.Controls.Add(Me.PanelsubmenuVentas)
         Me.Panelbotones.Controls.Add(Me.btnVentas)
         Me.Panelbotones.Controls.Add(Me.btnSalir)
-        Me.Panelbotones.Controls.Add(Me.PanelsubmenuDepositos)
+        Me.Panelbotones.Controls.Add(Me.PanelsubmenuStock)
         Me.Panelbotones.Controls.Add(Me.btnDepositos)
         Me.Panelbotones.Controls.Add(Me.btnEmpleados)
         Me.Panelbotones.Controls.Add(Me.btnClientes)
@@ -249,15 +249,15 @@ Partial Class FormPrincipal
         Me.btnProductos.UseCompatibleTextRendering = True
         Me.btnProductos.UseVisualStyleBackColor = True
         '
-        'PanelsubmenuReportes
+        'PanelsubmenuVentas
         '
-        Me.PanelsubmenuReportes.Controls.Add(Me.btnconsultaventa)
-        Me.PanelsubmenuReportes.Controls.Add(Me.btnfacturacion)
-        Me.PanelsubmenuReportes.Dock = System.Windows.Forms.DockStyle.Top
-        Me.PanelsubmenuReportes.Location = New System.Drawing.Point(0, 300)
-        Me.PanelsubmenuReportes.Name = "PanelsubmenuReportes"
-        Me.PanelsubmenuReportes.Size = New System.Drawing.Size(213, 100)
-        Me.PanelsubmenuReportes.TabIndex = 0
+        Me.PanelsubmenuVentas.Controls.Add(Me.btnconsultaventa)
+        Me.PanelsubmenuVentas.Controls.Add(Me.btnfacturacion)
+        Me.PanelsubmenuVentas.Dock = System.Windows.Forms.DockStyle.Top
+        Me.PanelsubmenuVentas.Location = New System.Drawing.Point(0, 300)
+        Me.PanelsubmenuVentas.Name = "PanelsubmenuVentas"
+        Me.PanelsubmenuVentas.Size = New System.Drawing.Size(213, 100)
+        Me.PanelsubmenuVentas.TabIndex = 0
         '
         'btnconsultaventa
         '
@@ -288,7 +288,7 @@ Partial Class FormPrincipal
         Me.btnfacturacion.Name = "btnfacturacion"
         Me.btnfacturacion.Size = New System.Drawing.Size(213, 50)
         Me.btnfacturacion.TabIndex = 2
-        Me.btnfacturacion.Text = "  FACTURACION"
+        Me.btnfacturacion.Text = "     FACTURACION"
         Me.btnfacturacion.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
         Me.ToolTip8.SetToolTip(Me.btnfacturacion, "FACTURACION VENTA")
         Me.btnfacturacion.UseVisualStyleBackColor = True
@@ -333,15 +333,15 @@ Partial Class FormPrincipal
         Me.btnSalir.UseCompatibleTextRendering = True
         Me.btnSalir.UseVisualStyleBackColor = True
         '
-        'PanelsubmenuDepositos
+        'PanelsubmenuStock
         '
-        Me.PanelsubmenuDepositos.Controls.Add(Me.btnconsultastock)
-        Me.PanelsubmenuDepositos.Controls.Add(Me.btningreso)
-        Me.PanelsubmenuDepositos.Dock = System.Windows.Forms.DockStyle.Top
-        Me.PanelsubmenuDepositos.Location = New System.Drawing.Point(0, 150)
-        Me.PanelsubmenuDepositos.Name = "PanelsubmenuDepositos"
-        Me.PanelsubmenuDepositos.Size = New System.Drawing.Size(213, 100)
-        Me.PanelsubmenuDepositos.TabIndex = 0
+        Me.PanelsubmenuStock.Controls.Add(Me.btnconsultastock)
+        Me.PanelsubmenuStock.Controls.Add(Me.btningreso)
+        Me.PanelsubmenuStock.Dock = System.Windows.Forms.DockStyle.Top
+        Me.PanelsubmenuStock.Location = New System.Drawing.Point(0, 150)
+        Me.PanelsubmenuStock.Name = "PanelsubmenuStock"
+        Me.PanelsubmenuStock.Size = New System.Drawing.Size(213, 100)
+        Me.PanelsubmenuStock.TabIndex = 0
         '
         'btnconsultastock
         '
@@ -599,9 +599,6 @@ Partial Class FormPrincipal
         '
         Me.tmMostrarMenu.Interval = 2
         '
-        'ToolTip10
-        '
-        '
         'horafecha
         '
         Me.horafecha.Enabled = True
@@ -623,8 +620,8 @@ Partial Class FormPrincipal
         Me.PanelFormularios.PerformLayout()
         Me.PanelLateral.ResumeLayout(False)
         Me.Panelbotones.ResumeLayout(False)
-        Me.PanelsubmenuReportes.ResumeLayout(False)
-        Me.PanelsubmenuDepositos.ResumeLayout(False)
+        Me.PanelsubmenuVentas.ResumeLayout(False)
+        Me.PanelsubmenuStock.ResumeLayout(False)
         Me.PanelUsuario.ResumeLayout(False)
         Me.PanelUsuario.PerformLayout()
         CType(Me.btnmenu, System.ComponentModel.ISupportInitialize).EndInit()
@@ -656,7 +653,7 @@ Partial Class FormPrincipal
     Friend WithEvents btnClientes As System.Windows.Forms.Button
     Friend WithEvents btnmenu As System.Windows.Forms.PictureBox
     Friend WithEvents btnEmpleados As System.Windows.Forms.Button
-    Friend WithEvents PanelsubmenuDepositos As System.Windows.Forms.Panel
+    Friend WithEvents PanelsubmenuStock As System.Windows.Forms.Panel
     Friend WithEvents btnconsultastock As System.Windows.Forms.Button
     Friend WithEvents btningreso As System.Windows.Forms.Button
     Friend WithEvents TmOcultarMenu As System.Windows.Forms.Timer
@@ -666,7 +663,7 @@ Partial Class FormPrincipal
     Friend WithEvents Label1 As System.Windows.Forms.Label
     Friend WithEvents btnSalir As System.Windows.Forms.Button
     Friend WithEvents btnVentas As System.Windows.Forms.Button
-    Friend WithEvents PanelsubmenuReportes As System.Windows.Forms.Panel
+    Friend WithEvents PanelsubmenuVentas As System.Windows.Forms.Panel
     Friend WithEvents btnconsultaventa As System.Windows.Forms.Button
     Friend WithEvents btnfacturacion As System.Windows.Forms.Button
     Friend WithEvents ToolTip1 As System.Windows.Forms.ToolTip
