@@ -230,7 +230,6 @@ Partial Class Productos
         '
         Me.Cmbtipoproducto.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Cmbtipoproducto.FormattingEnabled = True
-        Me.Cmbtipoproducto.Items.AddRange(New Object() {"Comprimidos", "Inyectables"})
         Me.Cmbtipoproducto.Location = New System.Drawing.Point(162, 213)
         Me.Cmbtipoproducto.Name = "Cmbtipoproducto"
         Me.Cmbtipoproducto.Size = New System.Drawing.Size(198, 28)
