@@ -138,6 +138,7 @@
     <Compile Include="ClasesUtiles\OSocial.vb" />
     <Compile Include="ClasesUtiles\Producto.vb" />
     <Compile Include="ClasesUtiles\Proveedor.vb" />
+    <Compile Include="ClasesUtiles\Tick_et.vb" />
     <Compile Include="ClasesUtiles\Usuario.vb" />
     <Compile Include="ConsultaSQL.vb" />
     <Compile Include="ConsultaStock.Designer.vb">
@@ -224,12 +225,6 @@
     </Compile>
     <Compile Include="Reporte2.vb">
       <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Ticket.vb">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Ticket.rpt</DependentUpon>
-      <SubType>Component</SubType>
     </Compile>
     <Compile Include="Utilidades.vb" />
     <Compile Include="Ventas.Designer.vb">
@@ -324,10 +319,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Reporte2.resx">
       <DependentUpon>Reporte2.vb</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Ticket.rpt">
-      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
-      <LastGenOutput>Ticket.vb</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="Ventas.resx">
       <DependentUpon>Ventas.vb</DependentUpon>

@@ -25,6 +25,7 @@ Partial Class Facturacion
         Me.components = New System.ComponentModel.Container()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Facturacion))
         Me.Panel1 = New System.Windows.Forms.Panel()
+        Me.btnCerrarForm = New System.Windows.Forms.PictureBox()
         Me.lblconsultastock = New System.Windows.Forms.Label()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.TextBox1 = New System.Windows.Forms.TextBox()
@@ -40,8 +41,10 @@ Partial Class Facturacion
         Me.Label9 = New System.Windows.Forms.Label()
         Me.TextBox10 = New System.Windows.Forms.TextBox()
         Me.Label10 = New System.Windows.Forms.Label()
-        Me.DataGridView1 = New System.Windows.Forms.DataGridView()
+        Me.DgVentas = New System.Windows.Forms.DataGridView()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
+        Me.lblhora = New System.Windows.Forms.Label()
+        Me.Label14 = New System.Windows.Forms.Label()
         Me.Lbldatefecha = New System.Windows.Forms.Label()
         Me.CmbMediopago = New System.Windows.Forms.ComboBox()
         Me.CmbObraSocial = New System.Windows.Forms.ComboBox()
@@ -49,20 +52,17 @@ Partial Class Facturacion
         Me.Label12 = New System.Windows.Forms.Label()
         Me.Label11 = New System.Windows.Forms.Label()
         Me.datelabel = New System.Windows.Forms.Timer(Me.components)
-        Me.btnCerrarForm = New System.Windows.Forms.PictureBox()
         Me.Label6 = New System.Windows.Forms.Label()
         Me.Label5 = New System.Windows.Forms.Label()
         Me.Cmbproducto = New System.Windows.Forms.ComboBox()
         Me.BtnAgregar = New System.Windows.Forms.Button()
-        Me.TextBox4 = New System.Windows.Forms.TextBox()
+        Me.txtcantidad = New System.Windows.Forms.TextBox()
         Me.GroupBox2 = New System.Windows.Forms.GroupBox()
         Me.Btncancelar = New System.Windows.Forms.Button()
-        Me.lblhora = New System.Windows.Forms.Label()
-        Me.Label14 = New System.Windows.Forms.Label()
         Me.Panel1.SuspendLayout()
-        CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.GroupBox1.SuspendLayout()
         CType(Me.btnCerrarForm, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.DgVentas, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.GroupBox1.SuspendLayout()
         Me.GroupBox2.SuspendLayout()
         Me.SuspendLayout()
         '
@@ -75,6 +75,18 @@ Partial Class Facturacion
         Me.Panel1.Name = "Panel1"
         Me.Panel1.Size = New System.Drawing.Size(1028, 45)
         Me.Panel1.TabIndex = 2
+        '
+        'btnCerrarForm
+        '
+        Me.btnCerrarForm.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.btnCerrarForm.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.btnCerrarForm.Image = CType(resources.GetObject("btnCerrarForm.Image"), System.Drawing.Image)
+        Me.btnCerrarForm.Location = New System.Drawing.Point(1000, 12)
+        Me.btnCerrarForm.Name = "btnCerrarForm"
+        Me.btnCerrarForm.Size = New System.Drawing.Size(16, 16)
+        Me.btnCerrarForm.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize
+        Me.btnCerrarForm.TabIndex = 14
+        Me.btnCerrarForm.TabStop = False
         '
         'lblconsultastock
         '
@@ -91,22 +103,23 @@ Partial Class Facturacion
         'Label1
         '
         Me.Label1.AutoSize = True
+        Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label1.Location = New System.Drawing.Point(21, 73)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(57, 13)
+        Me.Label1.Size = New System.Drawing.Size(70, 16)
         Me.Label1.TabIndex = 3
         Me.Label1.Text = "NOMBRE:"
         '
         'TextBox1
         '
-        Me.TextBox1.Location = New System.Drawing.Point(135, 21)
+        Me.TextBox1.Location = New System.Drawing.Point(157, 31)
         Me.TextBox1.Name = "TextBox1"
         Me.TextBox1.Size = New System.Drawing.Size(207, 20)
         Me.TextBox1.TabIndex = 4
         '
         'TextBox2
         '
-        Me.TextBox2.Location = New System.Drawing.Point(135, 66)
+        Me.TextBox2.Location = New System.Drawing.Point(157, 69)
         Me.TextBox2.Name = "TextBox2"
         Me.TextBox2.Size = New System.Drawing.Size(207, 20)
         Me.TextBox2.TabIndex = 6
@@ -114,15 +127,16 @@ Partial Class Facturacion
         'Label2
         '
         Me.Label2.AutoSize = True
-        Me.Label2.Location = New System.Drawing.Point(21, 111)
+        Me.Label2.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label2.Location = New System.Drawing.Point(18, 111)
         Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(62, 13)
+        Me.Label2.Size = New System.Drawing.Size(77, 16)
         Me.Label2.TabIndex = 5
-        Me.Label2.Text = "DOMICILIO"
+        Me.Label2.Text = "DOMICILIO:"
         '
         'TextBox3
         '
-        Me.TextBox3.Location = New System.Drawing.Point(136, 104)
+        Me.TextBox3.Location = New System.Drawing.Point(158, 107)
         Me.TextBox3.Name = "TextBox3"
         Me.TextBox3.Size = New System.Drawing.Size(207, 20)
         Me.TextBox3.TabIndex = 8
@@ -130,18 +144,20 @@ Partial Class Facturacion
         'Label3
         '
         Me.Label3.AutoSize = True
-        Me.Label3.Location = New System.Drawing.Point(21, 28)
+        Me.Label3.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label3.Location = New System.Drawing.Point(21, 35)
         Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(29, 13)
+        Me.Label3.Size = New System.Drawing.Size(34, 16)
         Me.Label3.TabIndex = 7
         Me.Label3.Text = "DNI:"
         '
         'Label4
         '
         Me.Label4.AutoSize = True
-        Me.Label4.Location = New System.Drawing.Point(21, 148)
+        Me.Label4.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label4.Location = New System.Drawing.Point(21, 143)
         Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(81, 13)
+        Me.Label4.Size = New System.Drawing.Size(99, 16)
         Me.Label4.TabIndex = 13
         Me.Label4.Text = "OBRA SOCIAL:"
         '
@@ -209,13 +225,13 @@ Partial Class Facturacion
         Me.Label10.TabIndex = 17
         Me.Label10.Text = "DESCUENTO:"
         '
-        'DataGridView1
+        'DgVentas
         '
-        Me.DataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.DataGridView1.Location = New System.Drawing.Point(48, 452)
-        Me.DataGridView1.Name = "DataGridView1"
-        Me.DataGridView1.Size = New System.Drawing.Size(960, 163)
-        Me.DataGridView1.TabIndex = 23
+        Me.DgVentas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.DgVentas.Location = New System.Drawing.Point(48, 452)
+        Me.DgVentas.Name = "DgVentas"
+        Me.DgVentas.Size = New System.Drawing.Size(960, 163)
+        Me.DgVentas.TabIndex = 23
         '
         'GroupBox1
         '
@@ -241,142 +257,6 @@ Partial Class Facturacion
         Me.GroupBox1.TabIndex = 24
         Me.GroupBox1.TabStop = False
         '
-        'Lbldatefecha
-        '
-        Me.Lbldatefecha.AutoSize = True
-        Me.Lbldatefecha.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Lbldatefecha.Location = New System.Drawing.Point(872, 12)
-        Me.Lbldatefecha.Name = "Lbldatefecha"
-        Me.Lbldatefecha.Size = New System.Drawing.Size(82, 20)
-        Me.Lbldatefecha.TabIndex = 26
-        Me.Lbldatefecha.Text = "labelfecha"
-        '
-        'CmbMediopago
-        '
-        Me.CmbMediopago.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.CmbMediopago.FormattingEnabled = True
-        Me.CmbMediopago.Location = New System.Drawing.Point(135, 218)
-        Me.CmbMediopago.Name = "CmbMediopago"
-        Me.CmbMediopago.Size = New System.Drawing.Size(208, 24)
-        Me.CmbMediopago.TabIndex = 25
-        '
-        'CmbObraSocial
-        '
-        Me.CmbObraSocial.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.CmbObraSocial.FormattingEnabled = True
-        Me.CmbObraSocial.Location = New System.Drawing.Point(135, 140)
-        Me.CmbObraSocial.Name = "CmbObraSocial"
-        Me.CmbObraSocial.Size = New System.Drawing.Size(472, 24)
-        Me.CmbObraSocial.TabIndex = 24
-        '
-        'TextBox11
-        '
-        Me.TextBox11.Location = New System.Drawing.Point(135, 180)
-        Me.TextBox11.Name = "TextBox11"
-        Me.TextBox11.Size = New System.Drawing.Size(207, 20)
-        Me.TextBox11.TabIndex = 23
-        '
-        'Label12
-        '
-        Me.Label12.AutoSize = True
-        Me.Label12.Location = New System.Drawing.Point(21, 226)
-        Me.Label12.Name = "Label12"
-        Me.Label12.Size = New System.Drawing.Size(108, 13)
-        Me.Label12.TabIndex = 21
-        Me.Label12.Text = "METODO DE PAGO:"
-        '
-        'Label11
-        '
-        Me.Label11.AutoSize = True
-        Me.Label11.Location = New System.Drawing.Point(21, 187)
-        Me.Label11.Name = "Label11"
-        Me.Label11.Size = New System.Drawing.Size(70, 13)
-        Me.Label11.TabIndex = 20
-        Me.Label11.Text = "LOCALIDAD:"
-        '
-        'datelabel
-        '
-        '
-        'btnCerrarForm
-        '
-        Me.btnCerrarForm.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.btnCerrarForm.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.btnCerrarForm.Image = CType(resources.GetObject("btnCerrarForm.Image"), System.Drawing.Image)
-        Me.btnCerrarForm.Location = New System.Drawing.Point(1000, 12)
-        Me.btnCerrarForm.Name = "btnCerrarForm"
-        Me.btnCerrarForm.Size = New System.Drawing.Size(16, 16)
-        Me.btnCerrarForm.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize
-        Me.btnCerrarForm.TabIndex = 14
-        Me.btnCerrarForm.TabStop = False
-        '
-        'Label6
-        '
-        Me.Label6.AutoSize = True
-        Me.Label6.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label6.Location = New System.Drawing.Point(6, 59)
-        Me.Label6.Name = "Label6"
-        Me.Label6.Size = New System.Drawing.Size(95, 20)
-        Me.Label6.TabIndex = 9
-        Me.Label6.Text = "CANTIDAD:"
-        '
-        'Label5
-        '
-        Me.Label5.AutoSize = True
-        Me.Label5.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label5.Location = New System.Drawing.Point(6, 16)
-        Me.Label5.Name = "Label5"
-        Me.Label5.Size = New System.Drawing.Size(103, 20)
-        Me.Label5.TabIndex = 11
-        Me.Label5.Text = "PRODUCTO:"
-        '
-        'Cmbproducto
-        '
-        Me.Cmbproducto.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Cmbproducto.FormattingEnabled = True
-        Me.Cmbproducto.Location = New System.Drawing.Point(135, 19)
-        Me.Cmbproducto.Name = "Cmbproducto"
-        Me.Cmbproducto.Size = New System.Drawing.Size(407, 24)
-        Me.Cmbproducto.TabIndex = 17
-        '
-        'BtnAgregar
-        '
-        Me.BtnAgregar.Location = New System.Drawing.Point(729, 32)
-        Me.BtnAgregar.Name = "BtnAgregar"
-        Me.BtnAgregar.Size = New System.Drawing.Size(79, 36)
-        Me.BtnAgregar.TabIndex = 18
-        Me.BtnAgregar.Text = "AGREGAR:"
-        Me.BtnAgregar.UseVisualStyleBackColor = True
-        '
-        'TextBox4
-        '
-        Me.TextBox4.Location = New System.Drawing.Point(135, 59)
-        Me.TextBox4.Name = "TextBox4"
-        Me.TextBox4.Size = New System.Drawing.Size(105, 20)
-        Me.TextBox4.TabIndex = 27
-        '
-        'GroupBox2
-        '
-        Me.GroupBox2.Controls.Add(Me.Btncancelar)
-        Me.GroupBox2.Controls.Add(Me.BtnAgregar)
-        Me.GroupBox2.Controls.Add(Me.Label5)
-        Me.GroupBox2.Controls.Add(Me.TextBox4)
-        Me.GroupBox2.Controls.Add(Me.Label6)
-        Me.GroupBox2.Controls.Add(Me.Cmbproducto)
-        Me.GroupBox2.Location = New System.Drawing.Point(48, 312)
-        Me.GroupBox2.Name = "GroupBox2"
-        Me.GroupBox2.Size = New System.Drawing.Size(960, 100)
-        Me.GroupBox2.TabIndex = 25
-        Me.GroupBox2.TabStop = False
-        '
-        'Btncancelar
-        '
-        Me.Btncancelar.Location = New System.Drawing.Point(836, 32)
-        Me.Btncancelar.Name = "Btncancelar"
-        Me.Btncancelar.Size = New System.Drawing.Size(79, 36)
-        Me.Btncancelar.TabIndex = 28
-        Me.Btncancelar.Text = "CANCELAR"
-        Me.Btncancelar.UseVisualStyleBackColor = True
-        '
         'lblhora
         '
         Me.lblhora.AutoSize = True
@@ -397,6 +277,132 @@ Partial Class Facturacion
         Me.Label14.TabIndex = 27
         Me.Label14.Text = "HORA:"
         '
+        'Lbldatefecha
+        '
+        Me.Lbldatefecha.AutoSize = True
+        Me.Lbldatefecha.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Lbldatefecha.Location = New System.Drawing.Point(872, 12)
+        Me.Lbldatefecha.Name = "Lbldatefecha"
+        Me.Lbldatefecha.Size = New System.Drawing.Size(82, 20)
+        Me.Lbldatefecha.TabIndex = 26
+        Me.Lbldatefecha.Text = "labelfecha"
+        '
+        'CmbMediopago
+        '
+        Me.CmbMediopago.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.CmbMediopago.FormattingEnabled = True
+        Me.CmbMediopago.Location = New System.Drawing.Point(158, 213)
+        Me.CmbMediopago.Name = "CmbMediopago"
+        Me.CmbMediopago.Size = New System.Drawing.Size(208, 24)
+        Me.CmbMediopago.TabIndex = 25
+        '
+        'CmbObraSocial
+        '
+        Me.CmbObraSocial.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.CmbObraSocial.FormattingEnabled = True
+        Me.CmbObraSocial.Location = New System.Drawing.Point(157, 143)
+        Me.CmbObraSocial.Name = "CmbObraSocial"
+        Me.CmbObraSocial.Size = New System.Drawing.Size(472, 24)
+        Me.CmbObraSocial.TabIndex = 24
+        '
+        'TextBox11
+        '
+        Me.TextBox11.Location = New System.Drawing.Point(158, 179)
+        Me.TextBox11.Name = "TextBox11"
+        Me.TextBox11.Size = New System.Drawing.Size(207, 20)
+        Me.TextBox11.TabIndex = 23
+        '
+        'Label12
+        '
+        Me.Label12.AutoSize = True
+        Me.Label12.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label12.Location = New System.Drawing.Point(21, 221)
+        Me.Label12.Name = "Label12"
+        Me.Label12.Size = New System.Drawing.Size(133, 16)
+        Me.Label12.TabIndex = 21
+        Me.Label12.Text = "METODO DE PAGO:"
+        '
+        'Label11
+        '
+        Me.Label11.AutoSize = True
+        Me.Label11.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label11.Location = New System.Drawing.Point(21, 183)
+        Me.Label11.Name = "Label11"
+        Me.Label11.Size = New System.Drawing.Size(85, 16)
+        Me.Label11.TabIndex = 20
+        Me.Label11.Text = "LOCALIDAD:"
+        '
+        'datelabel
+        '
+        '
+        'Label6
+        '
+        Me.Label6.AutoSize = True
+        Me.Label6.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label6.Location = New System.Drawing.Point(20, 59)
+        Me.Label6.Name = "Label6"
+        Me.Label6.Size = New System.Drawing.Size(80, 16)
+        Me.Label6.TabIndex = 9
+        Me.Label6.Text = "CANTIDAD:"
+        '
+        'Label5
+        '
+        Me.Label5.AutoSize = True
+        Me.Label5.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label5.Location = New System.Drawing.Point(20, 23)
+        Me.Label5.Name = "Label5"
+        Me.Label5.Size = New System.Drawing.Size(88, 16)
+        Me.Label5.TabIndex = 11
+        Me.Label5.Text = "PRODUCTO:"
+        '
+        'Cmbproducto
+        '
+        Me.Cmbproducto.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Cmbproducto.FormattingEnabled = True
+        Me.Cmbproducto.Location = New System.Drawing.Point(157, 19)
+        Me.Cmbproducto.Name = "Cmbproducto"
+        Me.Cmbproducto.Size = New System.Drawing.Size(407, 24)
+        Me.Cmbproducto.TabIndex = 17
+        '
+        'BtnAgregar
+        '
+        Me.BtnAgregar.Location = New System.Drawing.Point(729, 32)
+        Me.BtnAgregar.Name = "BtnAgregar"
+        Me.BtnAgregar.Size = New System.Drawing.Size(79, 36)
+        Me.BtnAgregar.TabIndex = 18
+        Me.BtnAgregar.Text = "AGREGAR"
+        Me.BtnAgregar.UseVisualStyleBackColor = True
+        '
+        'txtcantidad
+        '
+        Me.txtcantidad.Location = New System.Drawing.Point(157, 59)
+        Me.txtcantidad.Name = "txtcantidad"
+        Me.txtcantidad.Size = New System.Drawing.Size(105, 20)
+        Me.txtcantidad.TabIndex = 27
+        '
+        'GroupBox2
+        '
+        Me.GroupBox2.Controls.Add(Me.Btncancelar)
+        Me.GroupBox2.Controls.Add(Me.BtnAgregar)
+        Me.GroupBox2.Controls.Add(Me.Label5)
+        Me.GroupBox2.Controls.Add(Me.txtcantidad)
+        Me.GroupBox2.Controls.Add(Me.Label6)
+        Me.GroupBox2.Controls.Add(Me.Cmbproducto)
+        Me.GroupBox2.Location = New System.Drawing.Point(48, 312)
+        Me.GroupBox2.Name = "GroupBox2"
+        Me.GroupBox2.Size = New System.Drawing.Size(968, 100)
+        Me.GroupBox2.TabIndex = 25
+        Me.GroupBox2.TabStop = False
+        '
+        'Btncancelar
+        '
+        Me.Btncancelar.Location = New System.Drawing.Point(836, 32)
+        Me.Btncancelar.Name = "Btncancelar"
+        Me.Btncancelar.Size = New System.Drawing.Size(79, 36)
+        Me.Btncancelar.TabIndex = 28
+        Me.Btncancelar.Text = "CANCELAR"
+        Me.Btncancelar.UseVisualStyleBackColor = True
+        '
         'Facturacion
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -404,7 +410,7 @@ Partial Class Facturacion
         Me.ClientSize = New System.Drawing.Size(1028, 693)
         Me.Controls.Add(Me.GroupBox2)
         Me.Controls.Add(Me.GroupBox1)
-        Me.Controls.Add(Me.DataGridView1)
+        Me.Controls.Add(Me.DgVentas)
         Me.Controls.Add(Me.TextBox8)
         Me.Controls.Add(Me.Label8)
         Me.Controls.Add(Me.TextBox9)
@@ -418,10 +424,10 @@ Partial Class Facturacion
         Me.Text = "FACTURACION"
         Me.Panel1.ResumeLayout(False)
         Me.Panel1.PerformLayout()
-        CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.btnCerrarForm, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.DgVentas, System.ComponentModel.ISupportInitialize).EndInit()
         Me.GroupBox1.ResumeLayout(False)
         Me.GroupBox1.PerformLayout()
-        CType(Me.btnCerrarForm, System.ComponentModel.ISupportInitialize).EndInit()
         Me.GroupBox2.ResumeLayout(False)
         Me.GroupBox2.PerformLayout()
         Me.ResumeLayout(False)
@@ -444,7 +450,7 @@ Partial Class Facturacion
     Friend WithEvents Label9 As System.Windows.Forms.Label
     Friend WithEvents TextBox10 As System.Windows.Forms.TextBox
     Friend WithEvents Label10 As System.Windows.Forms.Label
-    Friend WithEvents DataGridView1 As System.Windows.Forms.DataGridView
+    Friend WithEvents DgVentas As System.Windows.Forms.DataGridView
     Friend WithEvents GroupBox1 As System.Windows.Forms.GroupBox
     Friend WithEvents Label12 As System.Windows.Forms.Label
     Friend WithEvents Label11 As System.Windows.Forms.Label
@@ -458,7 +464,7 @@ Partial Class Facturacion
     Friend WithEvents Label5 As System.Windows.Forms.Label
     Friend WithEvents Cmbproducto As System.Windows.Forms.ComboBox
     Friend WithEvents BtnAgregar As System.Windows.Forms.Button
-    Friend WithEvents TextBox4 As System.Windows.Forms.TextBox
+    Friend WithEvents txtcantidad As System.Windows.Forms.TextBox
     Friend WithEvents GroupBox2 As System.Windows.Forms.GroupBox
     Friend WithEvents Btncancelar As System.Windows.Forms.Button
     Friend WithEvents lblhora As System.Windows.Forms.Label

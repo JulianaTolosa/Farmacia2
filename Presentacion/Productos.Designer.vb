@@ -252,7 +252,7 @@ Partial Class Productos
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(128, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer))
         Me.ClientSize = New System.Drawing.Size(922, 572)
         Me.Controls.Add(Me.txtdescripcion)
         Me.Controls.Add(Me.Cmbtipoproducto)
@@ -272,6 +272,7 @@ Partial Class Productos
         Me.Controls.Add(Me.Btnagregar)
         Me.Controls.Add(Me.Panel1)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "Productos"
         Me.Text = "Productos"
         CType(Me.btnCerrarForm, System.ComponentModel.ISupportInitialize).EndInit()

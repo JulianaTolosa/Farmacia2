@@ -120,7 +120,6 @@ Partial Class ConsultaStock
         Me.GroupBox1.Size = New System.Drawing.Size(571, 97)
         Me.GroupBox1.TabIndex = 14
         Me.GroupBox1.TabStop = False
-        Me.GroupBox1.Text = "it"
         '
         'Label2
         '
