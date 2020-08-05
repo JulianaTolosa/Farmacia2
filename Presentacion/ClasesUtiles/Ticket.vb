@@ -1,4 +1,4 @@
-﻿Public Class Tick_et
+﻿Public Class Ticket
     Public _Dni As Integer
     Public _Nombre As String
     Public _Domicilio As String
