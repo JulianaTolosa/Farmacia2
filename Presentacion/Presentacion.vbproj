@@ -115,6 +115,12 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AgregarProducto.Designer.vb">
+      <DependentUpon>AgregarProducto.vb</DependentUpon>
+    </Compile>
+    <Compile Include="AgregarProducto.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="AltaCliente.Designer.vb">
       <DependentUpon>AltaCliente.vb</DependentUpon>
     </Compile>
@@ -183,6 +189,10 @@
     <Compile Include="Clientes.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Ingreso.Designer.vb">
+      <DependentUpon>Ingreso.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Ingreso.vb" />
     <Compile Include="Inicio.Designer.vb">
       <DependentUpon>Inicio.vb</DependentUpon>
     </Compile>
@@ -268,6 +278,9 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="AgregarProducto.resx">
+      <DependentUpon>AgregarProducto.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="AltaCliente.resx">
       <DependentUpon>AltaCliente.vb</DependentUpon>
     </EmbeddedResource>
@@ -297,6 +310,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Clientes.resx">
       <DependentUpon>Clientes.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Ingreso.resx">
+      <DependentUpon>Ingreso.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Inicio.resx">
       <DependentUpon>Inicio.vb</DependentUpon>

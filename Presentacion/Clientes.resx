@@ -120,15 +120,12 @@
   <metadata name="btnCerrarForm.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
-  <metadata name="btnCerrarForm.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="btnCerrarForm.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
-        YQUAAAAgY0hSTQAAeiYAAICEAAD6AAAAgOgAAHUwAADqYAAAOpgAABdwnLpRPAAAAAlwSFlzAAAN1QAA
-        DdUBPdZY8QAAANVJREFUOE+Vk1sOgyAQRdlQbfvf9xr63oMyw7b610X1vYjea6BRqyImxATmHO4EMIXI
+        YQUAAAAgY0hSTQAAeiYAAICEAAD6AAAAgOgAAHUwAADqYAAAOpgAABdwnLpRPAAAAAlwSFlzAAAN1AAA
+        DdQB75G6FQAAANVJREFUOE+Vk1sOgyAQRdlQbfvf9xr63oMyw7b610X1vYjea6BRqyImxATmHO4EMIXI
         VUQ2JvEjQ9YUzq2tyDtFwtoag4nVUMkfHJJ7yasvSSccJLnqEklaJVE4SKy1i6ZkMBwkqjqH5EkwGa4k
         mTEJxiflhH63AdAW8A0t3a3qOemaBBitjDggemDuNEhSwtzV2qzSTkZJoXrslbTBTQnEh1aJj/3InRt3
         7cI1n2Rfqwkw/pNYn6zhESPJrqz1MM88CleufSkha/AkL4g2je3cXCdD9gtAep3pCDYrwQAAAABJRU5E

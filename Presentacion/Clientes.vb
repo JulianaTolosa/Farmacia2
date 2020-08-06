@@ -20,4 +20,8 @@
     Private Sub btnBuscar_Click(sender As Object, e As EventArgs) Handles btnBuscar.Click
 
     End Sub
+
+    Private Sub btnEliminar_Click(sender As Object, e As EventArgs) Handles btnEliminar.Click
+
+    End Sub
 End Class

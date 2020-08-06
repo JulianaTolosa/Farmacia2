@@ -1,6 +1,21 @@
 ﻿Module Datos
     'pruebankjhjkhknk
 
+    Public Function ObtenerTiposProductos() As List(Of String)
+        Dim _Retorno As New List(Of String)
+        Try
+            Dim _Consulta As ConsultaSQL = New ConsultaSQL
+            _Consulta.Consulta = "SELECT tipo FROM tipo_producto"
+            Dim _DT As DataTable = _Consulta.ObtenerTabla()
+            For Each _Row As DataRow In _DT.Rows
+                _Retorno.Add(_Row("tipo").ToString())
+            Next
+        Catch ex As Exception
+
+        End Try
+        Return _Retorno
+    End Function
+
     Public Function ExisteUsuario(NombreUsuario As String) As Boolean
         Dim _Retorno As Boolean = False
 
@@ -155,15 +170,15 @@
         Try
             Dim _Consulta As New ConsultaSQL
             _Consulta.Consulta = "  INSERT INTO Producto"
-            _Consulta.Consulta &= " (nombre,descripcion,precio_venta,precio_compra,idtipoprod,cantidad)"
+            _Consulta.Consulta &= " (nombre,descripcion,precio_venta,precio_compra,idtipoprod)"
             _Consulta.Consulta &= " VALUES"
-            _Consulta.Consulta &= " (@nombre,@descripcion,@precioven,@preciocomp,@idtipoprod,@canti)"
+            _Consulta.Consulta &= " (@nombre,@descripcion,@precioven,@preciocomp,@idtipoprod)"
             _Consulta.AgregarParametro("@nombre", _Producto._nombre)
             _Consulta.AgregarParametro("@descripcion", _Producto._descripcion)
             _Consulta.AgregarParametro("@precioven", _Producto._PrecioVenta)
             _Consulta.AgregarParametro("@preciocomp", _Producto._PrecioCompra)
             _Consulta.AgregarParametro("@idtipoprod", _Producto._tipoprod)
-            '_Consulta.AgregarParametro("@canti", _Producto._cantidad)
+            '_Consulta.AgregarParametro("@canti", _Producto._Cantidad)
 
             _Consulta.Ejecutar()
         Catch ex As Exception

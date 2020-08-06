@@ -117,24 +117,7 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <metadata name="lblPosicion.GenerateMember" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>False</value>
-  </metadata>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-  <data name="btnCerrarForm.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
-        YQUAAAAgY0hSTQAAeiYAAICEAAD6AAAAgOgAAHUwAADqYAAAOpgAABdwnLpRPAAAAAlwSFlzAAAN0QAA
-        DdEBwivf4wAAANJJREFUOE+Vk0kSgjAQRbmQqHvnMzjfgaQ712LnoRTUQ9hfuxfIlLwqitRP3qcpiswR
-        3YholyUCB27mQth6oldKCc42HFlsYktasqElz6GSXtkomNd9JaOy4b1f/ZdEywYzL0WoISTLhkyywCRy
-        vZNlINJe5LsUPTzzVeM4TJZXmeCSdSXZRbeH+cp4qve5RnidHCWO+axRN12yYSVyP2nURMeuihCmGrXA
-        nk5y1OiHyXKfadQLzsjZWiY5WAAZ33xUNqwELn7nUkab6140cBxR+QFAep3pvLUoIQAAAABJRU5ErkJg
-        gg==
-</value>
-  </data>
-  <metadata name="$this.TrayHeight" type="System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>39</value>
-  </metadata>
   <data name="$this.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         AAABAAYAAAAAAAEAIABRWAAAZgAAAEBAAAABACAAKEIAALdYAAAwMAAAAQAgAKglAADfmgAAICAAAAEA
