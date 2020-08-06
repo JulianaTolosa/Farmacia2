@@ -33,6 +33,20 @@
         Return _Retorno
     End Function
 
+    Public Function ObtenerPresentacion() As List(Of String)
+        Dim _Retorno As New List(Of String)
+        Try
+            Dim _Consulta As ConsultaSQL = New ConsultaSQL
+            _Consulta.Consulta = "SELECT  presentacion FROM Producto"
+            Dim _DT As DataTable = _Consulta.ObtenerTabla()
+            For Each _Row As DataRow In _DT.Rows
+                _Retorno.Add(_Row("presentacion").ToString())
+            Next
+        Catch ex As Exception
+
+        End Try
+        Return _Retorno
+    End Function
 
     Public Function ObtenerProductos() As List(Of String)
         Dim _Retorno As New List(Of String)
@@ -42,6 +56,7 @@
             Dim _DT As DataTable = _Consulta.ObtenerTabla()
             For Each _Row As DataRow In _DT.Rows
                 _Retorno.Add(_Row("nombre").ToString())
+                '_Retorno.Add(_Row("presentacion").ToString())
             Next
         Catch ex As Exception
 

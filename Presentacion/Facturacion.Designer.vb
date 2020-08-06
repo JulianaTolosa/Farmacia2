@@ -46,13 +46,13 @@ Partial Class Facturacion
         Me.Label5 = New System.Windows.Forms.Label()
         Me.Cmbcategoria = New System.Windows.Forms.ComboBox()
         Me.BtnAgregar = New System.Windows.Forms.Button()
-        Me.txtcantidad = New System.Windows.Forms.TextBox()
+        Me.txtprecio = New System.Windows.Forms.TextBox()
         Me.GroupBox2 = New System.Windows.Forms.GroupBox()
         Me.Label11 = New System.Windows.Forms.Label()
-        Me.TextBox1 = New System.Windows.Forms.TextBox()
+        Me.txtcantidad = New System.Windows.Forms.TextBox()
         Me.Label12 = New System.Windows.Forms.Label()
         Me.Cmbproducto = New System.Windows.Forms.ComboBox()
-        Me.Btncancelar = New System.Windows.Forms.Button()
+        Me.Btnlimpiar = New System.Windows.Forms.Button()
         Me.GroupBox3 = New System.Windows.Forms.GroupBox()
         Me.RadioButton2 = New System.Windows.Forms.RadioButton()
         Me.RadioButton1 = New System.Windows.Forms.RadioButton()
@@ -230,6 +230,7 @@ Partial Class Facturacion
         '
         'Button1
         '
+        Me.Button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.Button1.Location = New System.Drawing.Point(24, 158)
         Me.Button1.Name = "Button1"
         Me.Button1.Size = New System.Drawing.Size(79, 36)
@@ -245,6 +246,7 @@ Partial Class Facturacion
         Me.Cmbtipodni.Name = "Cmbtipodni"
         Me.Cmbtipodni.Size = New System.Drawing.Size(208, 24)
         Me.Cmbtipodni.TabIndex = 29
+        Me.Cmbtipodni.Text = "Elegir"
         '
         'CmbObraSocial
         '
@@ -286,35 +288,36 @@ Partial Class Facturacion
         Me.Cmbcategoria.Name = "Cmbcategoria"
         Me.Cmbcategoria.Size = New System.Drawing.Size(227, 24)
         Me.Cmbcategoria.TabIndex = 17
+        Me.Cmbcategoria.Text = "Seleccione una categoria"
         '
         'BtnAgregar
         '
         Me.BtnAgregar.Cursor = System.Windows.Forms.Cursors.Hand
         Me.BtnAgregar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.BtnAgregar.Location = New System.Drawing.Point(730, 19)
+        Me.BtnAgregar.Location = New System.Drawing.Point(772, 59)
         Me.BtnAgregar.Name = "BtnAgregar"
         Me.BtnAgregar.Size = New System.Drawing.Size(79, 36)
         Me.BtnAgregar.TabIndex = 18
         Me.BtnAgregar.Text = "Agregar"
         Me.BtnAgregar.UseVisualStyleBackColor = True
         '
-        'txtcantidad
+        'txtprecio
         '
-        Me.txtcantidad.Location = New System.Drawing.Point(120, 59)
-        Me.txtcantidad.Name = "txtcantidad"
-        Me.txtcantidad.Size = New System.Drawing.Size(105, 20)
-        Me.txtcantidad.TabIndex = 27
+        Me.txtprecio.Location = New System.Drawing.Point(120, 59)
+        Me.txtprecio.Name = "txtprecio"
+        Me.txtprecio.Size = New System.Drawing.Size(105, 20)
+        Me.txtprecio.TabIndex = 27
         '
         'GroupBox2
         '
         Me.GroupBox2.Controls.Add(Me.Label11)
-        Me.GroupBox2.Controls.Add(Me.TextBox1)
+        Me.GroupBox2.Controls.Add(Me.txtcantidad)
         Me.GroupBox2.Controls.Add(Me.Label12)
         Me.GroupBox2.Controls.Add(Me.Cmbproducto)
-        Me.GroupBox2.Controls.Add(Me.Btncancelar)
+        Me.GroupBox2.Controls.Add(Me.Btnlimpiar)
         Me.GroupBox2.Controls.Add(Me.BtnAgregar)
         Me.GroupBox2.Controls.Add(Me.Label5)
-        Me.GroupBox2.Controls.Add(Me.txtcantidad)
+        Me.GroupBox2.Controls.Add(Me.txtprecio)
         Me.GroupBox2.Controls.Add(Me.Label6)
         Me.GroupBox2.Controls.Add(Me.Cmbcategoria)
         Me.GroupBox2.Cursor = System.Windows.Forms.Cursors.Hand
@@ -336,12 +339,12 @@ Partial Class Facturacion
         Me.Label11.TabIndex = 30
         Me.Label11.Text = "Producto"
         '
-        'TextBox1
+        'txtcantidad
         '
-        Me.TextBox1.Location = New System.Drawing.Point(473, 59)
-        Me.TextBox1.Name = "TextBox1"
-        Me.TextBox1.Size = New System.Drawing.Size(105, 20)
-        Me.TextBox1.TabIndex = 32
+        Me.txtcantidad.Location = New System.Drawing.Point(473, 59)
+        Me.txtcantidad.Name = "txtcantidad"
+        Me.txtcantidad.Size = New System.Drawing.Size(105, 20)
+        Me.txtcantidad.TabIndex = 32
         '
         'Label12
         '
@@ -359,19 +362,19 @@ Partial Class Facturacion
         Me.Cmbproducto.FormattingEnabled = True
         Me.Cmbproducto.Location = New System.Drawing.Point(473, 15)
         Me.Cmbproducto.Name = "Cmbproducto"
-        Me.Cmbproducto.Size = New System.Drawing.Size(227, 24)
+        Me.Cmbproducto.Size = New System.Drawing.Size(305, 24)
         Me.Cmbproducto.TabIndex = 31
         '
-        'Btncancelar
+        'Btnlimpiar
         '
-        Me.Btncancelar.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.Btncancelar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Btncancelar.Location = New System.Drawing.Point(730, 63)
-        Me.Btncancelar.Name = "Btncancelar"
-        Me.Btncancelar.Size = New System.Drawing.Size(79, 36)
-        Me.Btncancelar.TabIndex = 28
-        Me.Btncancelar.Text = "Cancelar"
-        Me.Btncancelar.UseVisualStyleBackColor = True
+        Me.Btnlimpiar.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.Btnlimpiar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Btnlimpiar.Location = New System.Drawing.Point(871, 59)
+        Me.Btnlimpiar.Name = "Btnlimpiar"
+        Me.Btnlimpiar.Size = New System.Drawing.Size(79, 36)
+        Me.Btnlimpiar.TabIndex = 28
+        Me.Btnlimpiar.Text = "Cancelar"
+        Me.Btnlimpiar.UseVisualStyleBackColor = True
         '
         'GroupBox3
         '
@@ -553,6 +556,7 @@ Partial Class Facturacion
         '
         'DataGridView5
         '
+        Me.DataGridView5.BackgroundColor = System.Drawing.Color.White
         Me.DataGridView5.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.DataGridView5.Location = New System.Drawing.Point(863, 45)
         Me.DataGridView5.Name = "DataGridView5"
@@ -561,6 +565,7 @@ Partial Class Facturacion
         '
         'DataGridView4
         '
+        Me.DataGridView4.BackgroundColor = System.Drawing.Color.White
         Me.DataGridView4.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.DataGridView4.Location = New System.Drawing.Point(749, 45)
         Me.DataGridView4.Name = "DataGridView4"
@@ -569,6 +574,7 @@ Partial Class Facturacion
         '
         'DataGridView3
         '
+        Me.DataGridView3.BackgroundColor = System.Drawing.Color.White
         Me.DataGridView3.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.DataGridView3.Location = New System.Drawing.Point(629, 45)
         Me.DataGridView3.Name = "DataGridView3"
@@ -577,6 +583,7 @@ Partial Class Facturacion
         '
         'DataGridView2
         '
+        Me.DataGridView2.BackgroundColor = System.Drawing.Color.White
         Me.DataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.DataGridView2.Location = New System.Drawing.Point(132, 45)
         Me.DataGridView2.Name = "DataGridView2"
@@ -585,6 +592,7 @@ Partial Class Facturacion
         '
         'DataGridView1
         '
+        Me.DataGridView1.BackgroundColor = System.Drawing.Color.White
         Me.DataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.DataGridView1.Location = New System.Drawing.Point(22, 45)
         Me.DataGridView1.Name = "DataGridView1"
@@ -595,6 +603,7 @@ Partial Class Facturacion
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
+        Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer))
         Me.ClientSize = New System.Drawing.Size(1028, 687)
         Me.Controls.Add(Me.GroupBox4)
         Me.Controls.Add(Me.Btnconfirmar)
@@ -653,9 +662,9 @@ Partial Class Facturacion
     Friend WithEvents Label5 As System.Windows.Forms.Label
     Friend WithEvents Cmbcategoria As System.Windows.Forms.ComboBox
     Friend WithEvents BtnAgregar As System.Windows.Forms.Button
-    Friend WithEvents txtcantidad As System.Windows.Forms.TextBox
+    Friend WithEvents txtprecio As System.Windows.Forms.TextBox
     Friend WithEvents GroupBox2 As System.Windows.Forms.GroupBox
-    Friend WithEvents Btncancelar As System.Windows.Forms.Button
+    Friend WithEvents Btnlimpiar As System.Windows.Forms.Button
     Friend WithEvents Button1 As System.Windows.Forms.Button
     Friend WithEvents Cmbtipodni As System.Windows.Forms.ComboBox
     Friend WithEvents GroupBox3 As System.Windows.Forms.GroupBox
@@ -667,7 +676,7 @@ Partial Class Facturacion
     Friend WithEvents RadioButton2 As System.Windows.Forms.RadioButton
     Friend WithEvents RadioButton1 As System.Windows.Forms.RadioButton
     Friend WithEvents Label11 As System.Windows.Forms.Label
-    Friend WithEvents TextBox1 As System.Windows.Forms.TextBox
+    Friend WithEvents txtcantidad As System.Windows.Forms.TextBox
     Friend WithEvents Label12 As System.Windows.Forms.Label
     Friend WithEvents Cmbproducto As System.Windows.Forms.ComboBox
     Friend WithEvents Btnconfirmar As System.Windows.Forms.Button

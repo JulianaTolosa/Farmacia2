@@ -22,15 +22,15 @@ Public Class Facturacion
 
 
     Private Sub BtnConfirmar_Click(sender As Object, e As EventArgs) Handles BtnAgregar.Click
-        If (String.IsNullOrEmpty(Cmbcategoria.Text) Or String.IsNullOrEmpty(txtcantidad.Text)) Then
+        If (String.IsNullOrEmpty(Cmbcategoria.Text) Or String.IsNullOrEmpty(txtprecio.Text)) Then
             MsgBox("Algun de los campos estan vacios,por favor seleccione o rellene para continuar", MsgBoxStyle.Information)
         Else
             Dim producto As String = Cmbcategoria.Text
-            Dim cantidad As Integer = CInt(txtcantidad.Text)
+            Dim cantidad As Integer = CInt(txtprecio.Text)
 
             Dim _Ticket As New Ticket
             _Ticket._Producto = Cmbcategoria.Text
-            _Ticket._Cantidad = CInt(txtcantidad.Text)
+            _Ticket._Cantidad = CInt(txtprecio.Text)
 
 
 
@@ -53,10 +53,14 @@ Public Class Facturacion
     Public Sub listproducto() Handles Cmbcategoria.Click
 
         Try
-            Cmbcategoria.Items.Clear()
+            Cmbproducto.Items.Clear()
             Dim _Tipos As List(Of String) = Datos.ObtenerProductos()
+            Dim _Tipos2 As List(Of String) = Datos.ObtenerPresentacion()
             For Each nombre As String In _Tipos
-                Cmbcategoria.Items.Add(nombre)
+                For Each presentacion As String In _Tipos2
+                    Cmbproducto.Items.Add(nombre + presentacion)
+                Next
+
             Next
 
 
@@ -78,6 +82,20 @@ Public Class Facturacion
     '    End Try
 
     'End Sub
+
+    Public Sub listocategoria() Handles Cmbcategoria.Click
+        Try
+            Cmbcategoria.Items.Clear()
+            Dim _Tipos As List(Of String) = Datos.ObtenerTiposProductos()
+            For Each tipo As String In _Tipos
+                Cmbcategoria.Items.Add(tipo)
+            Next
+
+        Catch ex As Exception
+
+        End Try
+    End Sub
+
     Public Sub listobra() Handles CmbObraSocial.Click
         Try
             CmbObraSocial.Items.Clear()
@@ -100,17 +118,19 @@ Public Class Facturacion
     End Sub
 
     Public Sub ventas() Handles BtnAgregar.Click
-        If (String.IsNullOrEmpty(Cmbcategoria.Text) Or String.IsNullOrEmpty(txtcantidad.Text)) Then
+        If (String.IsNullOrEmpty(Cmbcategoria.Text) Or String.IsNullOrEmpty(txtprecio.Text)) Then
             MsgBox("Algun de los campos estan vacios,por favor seleccione o rellene para continuar", MsgBoxStyle.Information)
         Else
 
         End If
     End Sub
 
-    Private Sub Btncancelar_Click(sender As Object, e As EventArgs) Handles Btncancelar.Click
+    Private Sub Btncancelar_Click(sender As Object, e As EventArgs) Handles Btnlimpiar.Click
         Cmbcategoria.Text = ""
+        Cmbproducto.Text = ""
+        txtprecio.Clear()
         txtcantidad.Clear()
-
+        Cmbcategoria.Text = "Seleccione una categoria"
     End Sub
 
 
