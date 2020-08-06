@@ -363,5 +363,7 @@ Public Class FormPrincipal
         openChildForm(New ConsultaVentas())
         hideSubmenu()
     End Sub
+
+    
 End Class
 

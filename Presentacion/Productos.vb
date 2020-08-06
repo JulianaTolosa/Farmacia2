@@ -57,12 +57,30 @@ Public Class Productos
         nombreprod.Focus()
     End Sub
 
-    
+
    
    
 
     
     Private Sub Btnborrar_Click(sender As Object, e As EventArgs) Handles Btnborrar.Click
+        Dim nombreproducto As String = nombreprod.Text
+        Dim query As String = "delete Producto where nombre = @nombre"
+        Using con As SqlConnection = New SqlConnection("Data Source=LEO-PC;Initial Catalog=Tesis;Integrated Security=True")
+            Using cmd As SqlCommand = New SqlCommand(query, con)
+                cmd.Parameters.AddWithValue("@nombre", nombreproducto)
+                con.Open()
+                cmd.ExecuteNonQuery()
+                con.Close()
+                MessageBox.Show("Producto Eliminado Satisfactorimente")
+                'bindata()
+                nombreprod.Focus()
+                nombreprod.Clear()
+                txtdescripcion.Clear()
+                Cmbtipoproducto.Text = ""
+                preciocompra.Clear()
+                precioventa.Clear()
+            End Using
+        End Using
 
     End Sub
 
