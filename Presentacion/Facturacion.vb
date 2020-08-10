@@ -159,7 +159,7 @@ Public Class Facturacion
     End Sub
 
     Private Sub Cmbproducto_SelectedIndexChanged(sender As Object, e As EventArgs) Handles CmbProducto.SelectedIndexChanged
-        txtprecio.Text = (CmbProducto.SelectedValue).ToString
+        txtprecio.Text = CDec(CmbProducto.SelectedValue).ToString("N2")
     End Sub
 
     'Private Sub Cmbproducto_SelectionChangeCommitted(sender As Object, e As EventArgs) Handles Cmbproducto.SelectionChangeCommitted

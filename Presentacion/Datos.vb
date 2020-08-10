@@ -62,21 +62,21 @@
         Return _Retorno
     End Function
 
-    'Public Function ObtenerPrecioventa() As List(Of String)
-    '    Dim _Retorno As New List(Of String)
-    '    Try
-    '        Dim _Consulta As ConsultaSQL = New ConsultaSQL
-    '        _Consulta.Consulta = "SELECT precio_venta FROM Producto"
-    '        Dim _DT As DataTable = _Consulta.ObtenerTabla()
-    '        For Each _Row As DataRow In _DT.Rows
-    '            _Retorno.Add(_Row("precio_venta").ToString())
+    Public Function ObtenerPrecioventa() As List(Of String)
+        Dim _Retorno As New List(Of String)
+        Try
+            Dim _Consulta As ConsultaSQL = New ConsultaSQL
+            _Consulta.Consulta = "SELECT precio_venta FROM Producto"
+            Dim _DT As DataTable = _Consulta.ObtenerTabla()
+            For Each _Row As DataRow In _DT.Rows
+                _Retorno.Add(_Row("precio_venta").ToString())
 
-    '        Next
-    '    Catch ex As Exception
+            Next
+        Catch ex As Exception
 
-    '    End Try
-    '    Return _Retorno
-    'End Function
+        End Try
+        Return _Retorno
+    End Function
 
     'Public Function ObtenerProductos() As List(Of String)
     '    Dim _Retorno As New List(Of String)
