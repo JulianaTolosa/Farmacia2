@@ -1,7 +1,21 @@
 ﻿Module Datos
     'pruebankjhjkhknk
 
+    Public Function ObtenerDni() As List(Of String)
+        Dim _Retorno As New List(Of String)
+        Try
+            Dim _Consulta As ConsultaSQL = New ConsultaSQL
+            _Consulta.Consulta = "SELECT Tipo_Dni FROM Dni"
+            Dim _DT As DataTable = _Consulta.ObtenerTabla()
+            For Each _Row As DataRow In _DT.Rows
+                _Retorno.Add(_Row("Tipo_Dni").ToString())
 
+            Next
+        Catch ex As Exception
+
+        End Try
+        Return _Retorno
+    End Function
 
     Public Function Obtenerobrasocial() As List(Of String)
         Dim _Retorno As New List(Of String)
@@ -37,10 +51,26 @@
         Dim _Retorno As New List(Of String)
         Try
             Dim _Consulta As ConsultaSQL = New ConsultaSQL
-            _Consulta.Consulta = "SELECT  presentacion FROM Producto"
+            _Consulta.Consulta = "SELECT presentacion FROM Producto"
             Dim _DT As DataTable = _Consulta.ObtenerTabla()
             For Each _Row As DataRow In _DT.Rows
                 _Retorno.Add(_Row("presentacion").ToString())
+            Next
+        Catch ex As Exception
+
+        End Try
+        Return _Retorno
+    End Function
+
+    Public Function ObtenerPrecioventa() As List(Of String)
+        Dim _Retorno As New List(Of String)
+        Try
+            Dim _Consulta As ConsultaSQL = New ConsultaSQL
+            _Consulta.Consulta = "SELECT precio_venta FROM Producto"
+            Dim _DT As DataTable = _Consulta.ObtenerTabla()
+            For Each _Row As DataRow In _DT.Rows
+                _Retorno.Add(_Row("precio_venta").ToString())
+
             Next
         Catch ex As Exception
 
@@ -56,7 +86,8 @@
             Dim _DT As DataTable = _Consulta.ObtenerTabla()
             For Each _Row As DataRow In _DT.Rows
                 _Retorno.Add(_Row("nombre").ToString())
-                '_Retorno.Add(_Row("presentacion").ToString())
+                '_Retorno.Add(_Row("precio_venta").ToString())
+
             Next
         Catch ex As Exception
 

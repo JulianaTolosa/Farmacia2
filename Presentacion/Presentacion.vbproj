@@ -133,6 +133,7 @@
     <Compile Include="AltaEmpleado.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="ClasesUtiles\Class1.vb" />
     <Compile Include="ClasesUtiles\Cliente.vb" />
     <Compile Include="ClasesUtiles\Mailing.vb" />
     <Compile Include="ClasesUtiles\OSocial.vb" />

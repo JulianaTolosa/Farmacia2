@@ -64,27 +64,22 @@ Partial Class Facturacion
         Me.Btnconfirmar = New System.Windows.Forms.Button()
         Me.BtnEliminar = New System.Windows.Forms.Button()
         Me.GroupBox4 = New System.Windows.Forms.GroupBox()
+        Me.ListBox5 = New System.Windows.Forms.ListBox()
+        Me.ListBox4 = New System.Windows.Forms.ListBox()
+        Me.ListBox3 = New System.Windows.Forms.ListBox()
+        Me.ListBox2 = New System.Windows.Forms.ListBox()
         Me.Label18 = New System.Windows.Forms.Label()
+        Me.ListBox1 = New System.Windows.Forms.ListBox()
         Me.Label17 = New System.Windows.Forms.Label()
         Me.Label16 = New System.Windows.Forms.Label()
         Me.Label15 = New System.Windows.Forms.Label()
         Me.Label14 = New System.Windows.Forms.Label()
-        Me.DataGridView5 = New System.Windows.Forms.DataGridView()
-        Me.DataGridView4 = New System.Windows.Forms.DataGridView()
-        Me.DataGridView3 = New System.Windows.Forms.DataGridView()
-        Me.DataGridView2 = New System.Windows.Forms.DataGridView()
-        Me.DataGridView1 = New System.Windows.Forms.DataGridView()
         Me.Panel1.SuspendLayout()
         CType(Me.btnCerrarForm, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupBox1.SuspendLayout()
         Me.GroupBox2.SuspendLayout()
         Me.GroupBox3.SuspendLayout()
         Me.GroupBox4.SuspendLayout()
-        CType(Me.DataGridView5, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.DataGridView4, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.DataGridView3, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.DataGridView2, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'Panel1
@@ -94,7 +89,7 @@ Partial Class Facturacion
         Me.Panel1.Dock = System.Windows.Forms.DockStyle.Top
         Me.Panel1.Location = New System.Drawing.Point(0, 0)
         Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(1028, 45)
+        Me.Panel1.Size = New System.Drawing.Size(1034, 45)
         Me.Panel1.TabIndex = 2
         '
         'btnCerrarForm
@@ -102,7 +97,7 @@ Partial Class Facturacion
         Me.btnCerrarForm.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.btnCerrarForm.Cursor = System.Windows.Forms.Cursors.Hand
         Me.btnCerrarForm.Image = CType(resources.GetObject("btnCerrarForm.Image"), System.Drawing.Image)
-        Me.btnCerrarForm.Location = New System.Drawing.Point(1000, 12)
+        Me.btnCerrarForm.Location = New System.Drawing.Point(1006, 12)
         Me.btnCerrarForm.Name = "btnCerrarForm"
         Me.btnCerrarForm.Size = New System.Drawing.Size(16, 16)
         Me.btnCerrarForm.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize
@@ -113,8 +108,8 @@ Partial Class Facturacion
         '
         Me.lblconsultastock.Anchor = System.Windows.Forms.AnchorStyles.Top
         Me.lblconsultastock.AutoSize = True
-        Me.lblconsultastock.Font = New System.Drawing.Font("Microsoft New Tai Lue", 14.25!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Underline), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblconsultastock.Location = New System.Drawing.Point(419, 9)
+        Me.lblconsultastock.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblconsultastock.Location = New System.Drawing.Point(456, 12)
         Me.lblconsultastock.Name = "lblconsultastock"
         Me.lblconsultastock.Size = New System.Drawing.Size(144, 25)
         Me.lblconsultastock.TabIndex = 2
@@ -135,7 +130,7 @@ Partial Class Facturacion
         '
         Me.TextBox2.Location = New System.Drawing.Point(157, 69)
         Me.TextBox2.Name = "TextBox2"
-        Me.TextBox2.Size = New System.Drawing.Size(207, 20)
+        Me.TextBox2.Size = New System.Drawing.Size(278, 20)
         Me.TextBox2.TabIndex = 6
         '
         'Label3
@@ -244,9 +239,8 @@ Partial Class Facturacion
         Me.Cmbtipodni.FormattingEnabled = True
         Me.Cmbtipodni.Location = New System.Drawing.Point(157, 27)
         Me.Cmbtipodni.Name = "Cmbtipodni"
-        Me.Cmbtipodni.Size = New System.Drawing.Size(208, 24)
+        Me.Cmbtipodni.Size = New System.Drawing.Size(165, 24)
         Me.Cmbtipodni.TabIndex = 29
-        Me.Cmbtipodni.Text = "Elegir"
         '
         'CmbObraSocial
         '
@@ -288,7 +282,6 @@ Partial Class Facturacion
         Me.Cmbcategoria.Name = "Cmbcategoria"
         Me.Cmbcategoria.Size = New System.Drawing.Size(227, 24)
         Me.Cmbcategoria.TabIndex = 17
-        Me.Cmbcategoria.Text = "Seleccione una categoria"
         '
         'BtnAgregar
         '
@@ -303,9 +296,11 @@ Partial Class Facturacion
         '
         'txtprecio
         '
+        Me.txtprecio.Enabled = False
         Me.txtprecio.Location = New System.Drawing.Point(120, 59)
         Me.txtprecio.Name = "txtprecio"
-        Me.txtprecio.Size = New System.Drawing.Size(105, 20)
+        Me.txtprecio.ReadOnly = True
+        Me.txtprecio.Size = New System.Drawing.Size(126, 20)
         Me.txtprecio.TabIndex = 27
         '
         'GroupBox2
@@ -360,9 +355,9 @@ Partial Class Facturacion
         '
         Me.Cmbproducto.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Cmbproducto.FormattingEnabled = True
-        Me.Cmbproducto.Location = New System.Drawing.Point(473, 15)
+        Me.Cmbproducto.Location = New System.Drawing.Point(441, 15)
         Me.Cmbproducto.Name = "Cmbproducto"
-        Me.Cmbproducto.Size = New System.Drawing.Size(305, 24)
+        Me.Cmbproducto.Size = New System.Drawing.Size(355, 24)
         Me.Cmbproducto.TabIndex = 31
         '
         'Btnlimpiar
@@ -487,16 +482,16 @@ Partial Class Facturacion
         '
         'GroupBox4
         '
+        Me.GroupBox4.Controls.Add(Me.ListBox5)
+        Me.GroupBox4.Controls.Add(Me.ListBox4)
+        Me.GroupBox4.Controls.Add(Me.ListBox3)
+        Me.GroupBox4.Controls.Add(Me.ListBox2)
         Me.GroupBox4.Controls.Add(Me.Label18)
+        Me.GroupBox4.Controls.Add(Me.ListBox1)
         Me.GroupBox4.Controls.Add(Me.Label17)
         Me.GroupBox4.Controls.Add(Me.Label16)
         Me.GroupBox4.Controls.Add(Me.Label15)
         Me.GroupBox4.Controls.Add(Me.Label14)
-        Me.GroupBox4.Controls.Add(Me.DataGridView5)
-        Me.GroupBox4.Controls.Add(Me.DataGridView4)
-        Me.GroupBox4.Controls.Add(Me.DataGridView3)
-        Me.GroupBox4.Controls.Add(Me.DataGridView2)
-        Me.GroupBox4.Controls.Add(Me.DataGridView1)
         Me.GroupBox4.Location = New System.Drawing.Point(48, 390)
         Me.GroupBox4.Name = "GroupBox4"
         Me.GroupBox4.Size = New System.Drawing.Size(968, 239)
@@ -504,15 +499,55 @@ Partial Class Facturacion
         Me.GroupBox4.TabStop = False
         Me.GroupBox4.Text = "Datos Detalle"
         '
+        'ListBox5
+        '
+        Me.ListBox5.FormattingEnabled = True
+        Me.ListBox5.Location = New System.Drawing.Point(852, 42)
+        Me.ListBox5.Name = "ListBox5"
+        Me.ListBox5.Size = New System.Drawing.Size(108, 186)
+        Me.ListBox5.TabIndex = 45
+        '
+        'ListBox4
+        '
+        Me.ListBox4.FormattingEnabled = True
+        Me.ListBox4.Location = New System.Drawing.Point(749, 42)
+        Me.ListBox4.Name = "ListBox4"
+        Me.ListBox4.Size = New System.Drawing.Size(91, 186)
+        Me.ListBox4.TabIndex = 44
+        '
+        'ListBox3
+        '
+        Me.ListBox3.FormattingEnabled = True
+        Me.ListBox3.Location = New System.Drawing.Point(629, 42)
+        Me.ListBox3.Name = "ListBox3"
+        Me.ListBox3.Size = New System.Drawing.Size(108, 186)
+        Me.ListBox3.TabIndex = 43
+        '
+        'ListBox2
+        '
+        Me.ListBox2.FormattingEnabled = True
+        Me.ListBox2.Location = New System.Drawing.Point(132, 42)
+        Me.ListBox2.Name = "ListBox2"
+        Me.ListBox2.Size = New System.Drawing.Size(480, 186)
+        Me.ListBox2.TabIndex = 42
+        '
         'Label18
         '
         Me.Label18.AutoSize = True
         Me.Label18.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label18.Location = New System.Drawing.Point(25, 16)
+        Me.Label18.Location = New System.Drawing.Point(21, 16)
         Me.Label18.Name = "Label18"
         Me.Label18.Size = New System.Drawing.Size(33, 16)
-        Me.Label18.TabIndex = 40
+        Me.Label18.TabIndex = 41
         Me.Label18.Text = "Item"
+        '
+        'ListBox1
+        '
+        Me.ListBox1.FormattingEnabled = True
+        Me.ListBox1.Location = New System.Drawing.Point(24, 42)
+        Me.ListBox1.Name = "ListBox1"
+        Me.ListBox1.Size = New System.Drawing.Size(76, 186)
+        Me.ListBox1.TabIndex = 40
         '
         'Label17
         '
@@ -554,57 +589,12 @@ Partial Class Facturacion
         Me.Label14.TabIndex = 33
         Me.Label14.Text = "Producto"
         '
-        'DataGridView5
-        '
-        Me.DataGridView5.BackgroundColor = System.Drawing.Color.White
-        Me.DataGridView5.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.DataGridView5.Location = New System.Drawing.Point(863, 45)
-        Me.DataGridView5.Name = "DataGridView5"
-        Me.DataGridView5.Size = New System.Drawing.Size(87, 179)
-        Me.DataGridView5.TabIndex = 36
-        '
-        'DataGridView4
-        '
-        Me.DataGridView4.BackgroundColor = System.Drawing.Color.White
-        Me.DataGridView4.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.DataGridView4.Location = New System.Drawing.Point(749, 45)
-        Me.DataGridView4.Name = "DataGridView4"
-        Me.DataGridView4.Size = New System.Drawing.Size(87, 179)
-        Me.DataGridView4.TabIndex = 35
-        '
-        'DataGridView3
-        '
-        Me.DataGridView3.BackgroundColor = System.Drawing.Color.White
-        Me.DataGridView3.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.DataGridView3.Location = New System.Drawing.Point(629, 45)
-        Me.DataGridView3.Name = "DataGridView3"
-        Me.DataGridView3.Size = New System.Drawing.Size(87, 179)
-        Me.DataGridView3.TabIndex = 34
-        '
-        'DataGridView2
-        '
-        Me.DataGridView2.BackgroundColor = System.Drawing.Color.White
-        Me.DataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.DataGridView2.Location = New System.Drawing.Point(132, 45)
-        Me.DataGridView2.Name = "DataGridView2"
-        Me.DataGridView2.Size = New System.Drawing.Size(470, 179)
-        Me.DataGridView2.TabIndex = 33
-        '
-        'DataGridView1
-        '
-        Me.DataGridView1.BackgroundColor = System.Drawing.Color.White
-        Me.DataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.DataGridView1.Location = New System.Drawing.Point(22, 45)
-        Me.DataGridView1.Name = "DataGridView1"
-        Me.DataGridView1.Size = New System.Drawing.Size(87, 179)
-        Me.DataGridView1.TabIndex = 32
-        '
         'Facturacion
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.ClientSize = New System.Drawing.Size(1028, 687)
+        Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer))
+        Me.ClientSize = New System.Drawing.Size(1034, 687)
         Me.Controls.Add(Me.GroupBox4)
         Me.Controls.Add(Me.Btnconfirmar)
         Me.Controls.Add(Me.BtnEliminar)
@@ -633,11 +623,6 @@ Partial Class Facturacion
         Me.GroupBox3.PerformLayout()
         Me.GroupBox4.ResumeLayout(False)
         Me.GroupBox4.PerformLayout()
-        CType(Me.DataGridView5, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.DataGridView4, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.DataGridView3, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.DataGridView2, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -682,14 +667,14 @@ Partial Class Facturacion
     Friend WithEvents Btnconfirmar As System.Windows.Forms.Button
     Friend WithEvents BtnEliminar As System.Windows.Forms.Button
     Friend WithEvents GroupBox4 As System.Windows.Forms.GroupBox
-    Friend WithEvents Label18 As System.Windows.Forms.Label
     Friend WithEvents Label17 As System.Windows.Forms.Label
     Friend WithEvents Label16 As System.Windows.Forms.Label
     Friend WithEvents Label15 As System.Windows.Forms.Label
     Friend WithEvents Label14 As System.Windows.Forms.Label
-    Friend WithEvents DataGridView5 As System.Windows.Forms.DataGridView
-    Friend WithEvents DataGridView4 As System.Windows.Forms.DataGridView
-    Friend WithEvents DataGridView3 As System.Windows.Forms.DataGridView
-    Friend WithEvents DataGridView2 As System.Windows.Forms.DataGridView
-    Friend WithEvents DataGridView1 As System.Windows.Forms.DataGridView
+    Friend WithEvents ListBox5 As System.Windows.Forms.ListBox
+    Friend WithEvents ListBox4 As System.Windows.Forms.ListBox
+    Friend WithEvents ListBox3 As System.Windows.Forms.ListBox
+    Friend WithEvents ListBox2 As System.Windows.Forms.ListBox
+    Friend WithEvents Label18 As System.Windows.Forms.Label
+    Friend WithEvents ListBox1 As System.Windows.Forms.ListBox
 End Class
