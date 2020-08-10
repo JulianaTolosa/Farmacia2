@@ -4,17 +4,19 @@ Imports System.Data
 
 Public Class Facturacion
 
-    Dim dni As Integer
-    Dim nombre As String
-    Dim domicilio As String
-    Dim obrasocial As String
-    Dim localidad As String
-    Dim metodopago As String
-    Dim cantidad As Integer
-    Dim producto As String
-    Dim subtotal As Double
-    Dim total As Double
-    Dim iva As Double
+
+
+    'Dim dni As Integer
+    'Dim nombre As String
+    'Dim domicilio As String
+    'Dim obrasocial As String
+    'Dim localidad As String
+    'Dim metodopago As String
+    'Dim cantidad As Integer
+    'Dim producto As String
+    'Dim subtotal As Double
+    'Dim total As Double
+    'Dim iva As Double
 
 
 
@@ -22,11 +24,11 @@ Public Class Facturacion
 
 
     Private Sub BtnConfirmar_Click(sender As Object, e As EventArgs) Handles BtnAgregar.Click
-       
+
 
     End Sub
 
-    
+
 
 
     Private Sub datelabel_Tick(sender As Object, e As EventArgs) Handles datelabel.Tick
@@ -39,6 +41,8 @@ Public Class Facturacion
         'listmediopago()
         listobra()
         listproducto()
+
+
     End Sub
     Public Sub listproducto() Handles Cmbproducto.Click
 
@@ -74,6 +78,7 @@ Public Class Facturacion
 
         End Try
     End Sub
+
 
 
     'Public Sub listmediopago() Handles CmbMediopago.Click
@@ -147,10 +152,13 @@ Public Class Facturacion
 
     End Sub
 
-    Private Sub Cmbproducto_SelectedIndexChanged(sender As Object, e As EventArgs) Handles Cmbproducto.SelectedIndexChanged
-        txtprecio.Text = Cmbproducto.SelectedValue.ToString()
-    End Sub
+    'Private Sub Cmbproducto_SelectedIndexChanged(sender As Object, e As EventArgs) Handles Cmbproducto.SelectedIndexChanged
+    '    txtprecio.Text = Cmbproducto.SelectedValue.ToString()
+    'End Sub
 
     Private Sub Cmbproducto_SelectionChangeCommitted(sender As Object, e As EventArgs) Handles Cmbproducto.SelectionChangeCommitted
-        producto = TryCast(Cmbproducto.SelectedItem.ToString, Producto)
+        'producto = TryCast(Cmbproducto.SelectedItem.ToString, Producto)
+        txtprecio.Text = ObtenerPrecioventa.ToString()
     End Sub
+
+End Class
