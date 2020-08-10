@@ -113,10 +113,10 @@ Partial Class Facturacion
         '
         Me.lblconsultastock.Anchor = System.Windows.Forms.AnchorStyles.Top
         Me.lblconsultastock.AutoSize = True
-        Me.lblconsultastock.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblconsultastock.Location = New System.Drawing.Point(453, 12)
+        Me.lblconsultastock.Font = New System.Drawing.Font("Microsoft New Tai Lue", 14.25!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Underline), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblconsultastock.Location = New System.Drawing.Point(419, 9)
         Me.lblconsultastock.Name = "lblconsultastock"
-        Me.lblconsultastock.Size = New System.Drawing.Size(145, 24)
+        Me.lblconsultastock.Size = New System.Drawing.Size(144, 25)
         Me.lblconsultastock.TabIndex = 2
         Me.lblconsultastock.Text = "FACTURACION" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10)
         Me.lblconsultastock.TextAlign = System.Drawing.ContentAlignment.TopCenter
@@ -603,7 +603,7 @@ Partial Class Facturacion
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer))
+        Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.ClientSize = New System.Drawing.Size(1028, 687)
         Me.Controls.Add(Me.GroupBox4)
         Me.Controls.Add(Me.Btnconfirmar)

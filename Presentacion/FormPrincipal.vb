@@ -189,7 +189,7 @@ Public Class FormPrincipal
 
 
     Private Sub btnIngreso_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btningreso.Click
-        'openChildForm(New Ingreso())
+        openChildForm(New Ingreso())
         hideSubmenu()
     End Sub
 

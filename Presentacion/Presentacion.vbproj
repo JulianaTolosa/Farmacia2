@@ -83,7 +83,7 @@
     <Reference Include="CrystalDecisions.ReportSource, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
     <Reference Include="CrystalDecisions.Shared, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
     <Reference Include="itextsharp">
-      <HintPath>..\..\..\Users\Leo\Desktop\progmsi\itextsharp-all-5.5.10\itextsharp.xfaworker-dll-5.5.10\itextsharp.dll</HintPath>
+      <HintPath>..\..\Users\Juli\Downloads\itextsharp.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.VisualBasic.PowerPacks, Version=9.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
     <Reference Include="System" />
@@ -193,7 +193,9 @@
     <Compile Include="Ingreso.Designer.vb">
       <DependentUpon>Ingreso.vb</DependentUpon>
     </Compile>
-    <Compile Include="Ingreso.vb" />
+    <Compile Include="Ingreso.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Inicio.Designer.vb">
       <DependentUpon>Inicio.vb</DependentUpon>
     </Compile>
