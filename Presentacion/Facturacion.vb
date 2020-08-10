@@ -147,10 +147,16 @@ Public Class Facturacion
 
     End Sub
 
-    Private Sub Cmbproducto_SelectedIndexChanged(sender As Object, e As EventArgs) Handles Cmbproducto.SelectedIndexChanged
-        txtprecio.Text = Cmbproducto.SelectedValue.ToString()
-    End Sub
+    '' Private Sub Cmbproducto_SelectedIndexChanged(sender As Object, e As EventArgs) Handles Cmbproducto.SelectedIndexChanged
+    ''   txtprecio.Text = Cmbproducto.SelectedValue.ToString()
+    '' End Sub
 
     Private Sub Cmbproducto_SelectionChangeCommitted(sender As Object, e As EventArgs) Handles Cmbproducto.SelectionChangeCommitted
-        producto = TryCast(Cmbproducto.SelectedItem.ToString, Producto)
+        'producto = TryCast(Cmbproducto.SelectedItem, Producto)
+        txtprecio.Text = Convert.ToString(Cmbproducto.SelectedItem)
+
     End Sub
+
+
+   
+End Class

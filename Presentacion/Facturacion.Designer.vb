@@ -67,7 +67,7 @@ Partial Class Facturacion
         Me.ListBox5 = New System.Windows.Forms.ListBox()
         Me.ListBox4 = New System.Windows.Forms.ListBox()
         Me.ListBox3 = New System.Windows.Forms.ListBox()
-        Me.ListBox2 = New System.Windows.Forms.ListBox()
+        Me.dgproducto = New System.Windows.Forms.ListBox()
         Me.Label18 = New System.Windows.Forms.Label()
         Me.ListBox1 = New System.Windows.Forms.ListBox()
         Me.Label17 = New System.Windows.Forms.Label()
@@ -111,7 +111,7 @@ Partial Class Facturacion
         Me.lblconsultastock.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblconsultastock.Location = New System.Drawing.Point(456, 12)
         Me.lblconsultastock.Name = "lblconsultastock"
-        Me.lblconsultastock.Size = New System.Drawing.Size(144, 25)
+        Me.lblconsultastock.Size = New System.Drawing.Size(145, 24)
         Me.lblconsultastock.TabIndex = 2
         Me.lblconsultastock.Text = "FACTURACION" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10)
         Me.lblconsultastock.TextAlign = System.Drawing.ContentAlignment.TopCenter
@@ -355,7 +355,7 @@ Partial Class Facturacion
         '
         Me.Cmbproducto.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Cmbproducto.FormattingEnabled = True
-        Me.Cmbproducto.Location = New System.Drawing.Point(441, 15)
+        Me.Cmbproducto.Location = New System.Drawing.Point(441, 19)
         Me.Cmbproducto.Name = "Cmbproducto"
         Me.Cmbproducto.Size = New System.Drawing.Size(355, 24)
         Me.Cmbproducto.TabIndex = 31
@@ -485,7 +485,7 @@ Partial Class Facturacion
         Me.GroupBox4.Controls.Add(Me.ListBox5)
         Me.GroupBox4.Controls.Add(Me.ListBox4)
         Me.GroupBox4.Controls.Add(Me.ListBox3)
-        Me.GroupBox4.Controls.Add(Me.ListBox2)
+        Me.GroupBox4.Controls.Add(Me.dgproducto)
         Me.GroupBox4.Controls.Add(Me.Label18)
         Me.GroupBox4.Controls.Add(Me.ListBox1)
         Me.GroupBox4.Controls.Add(Me.Label17)
@@ -523,13 +523,13 @@ Partial Class Facturacion
         Me.ListBox3.Size = New System.Drawing.Size(108, 186)
         Me.ListBox3.TabIndex = 43
         '
-        'ListBox2
+        'dgproducto
         '
-        Me.ListBox2.FormattingEnabled = True
-        Me.ListBox2.Location = New System.Drawing.Point(132, 42)
-        Me.ListBox2.Name = "ListBox2"
-        Me.ListBox2.Size = New System.Drawing.Size(480, 186)
-        Me.ListBox2.TabIndex = 42
+        Me.dgproducto.FormattingEnabled = True
+        Me.dgproducto.Location = New System.Drawing.Point(132, 42)
+        Me.dgproducto.Name = "dgproducto"
+        Me.dgproducto.Size = New System.Drawing.Size(480, 186)
+        Me.dgproducto.TabIndex = 42
         '
         'Label18
         '
@@ -674,7 +674,7 @@ Partial Class Facturacion
     Friend WithEvents ListBox5 As System.Windows.Forms.ListBox
     Friend WithEvents ListBox4 As System.Windows.Forms.ListBox
     Friend WithEvents ListBox3 As System.Windows.Forms.ListBox
-    Friend WithEvents ListBox2 As System.Windows.Forms.ListBox
+    Friend WithEvents dgproducto As System.Windows.Forms.ListBox
     Friend WithEvents Label18 As System.Windows.Forms.Label
     Friend WithEvents ListBox1 As System.Windows.Forms.ListBox
 End Class
