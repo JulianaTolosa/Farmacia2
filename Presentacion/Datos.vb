@@ -334,6 +334,9 @@
         Try
             Dim _Consulta As New ConsultaSQL
             _Consulta.Consulta = "SELECT * FROM Producto WHERE idproducto=@ID OR nombre LIKE '% + @PalabraBuscada + %' ORDER BY IdProducto"
+            Dim _ID As Integer = 0
+            Integer.TryParse(_PalabraBuscada, _ID)
+            _Consulta.AgregarParametro("@ID", _ID)
             _Consulta.AgregarParametro("@PalabraBuscada", _PalabraBuscada)
             Dim _DT As DataTable = _Consulta.ObtenerTabla()
             For Each _Row As DataRow In _DT.Rows
@@ -351,6 +354,55 @@
         End Try
         Return _Retorno
     End Function
+
+    ''' <summary>
+    ''' Devuelve un DataTable segun la palabra pasada como parametro.
+    ''' La palabra puede ser el ID o bien una parte del nombre del producto buscado.
+    ''' </summary>
+    Public Function ObtenerProductosEnDT(_PalabraBuscada As String) As DataTable
+        Dim _Retorno As New DataTable
+
+        Try
+            Dim _Consulta As New ConsultaSQL
+            _Consulta.Consulta = "SELECT * FROM Producto WHERE idproducto=@ID OR nombre LIKE '%' + @PalabraBuscada + '%' ORDER BY IdProducto"
+
+            Dim _ID As Integer = 0
+            Integer.TryParse(_PalabraBuscada, _ID)
+            _Consulta.AgregarParametro("@ID", _ID)
+            _Consulta.AgregarParametro("@PalabraBuscada", _PalabraBuscada)
+            _Retorno = _Consulta.ObtenerTabla()
+        Catch ex As Exception
+            _Retorno = New DataTable
+        End Try
+        Return _Retorno
+    End Function
+    ''' <summary>
+    ''' Devuelve un DataTable segun la palabra pasada como parametro.
+    ''' La palabra puede ser el ID o bien una parte del nombre del producto buscado.
+    ''' </summary>
+    Public Function ObtenerProductosParaGrilla(_PalabraBuscada As String) As DataTable
+        Dim _Retorno As New DataTable
+
+        Try
+            Dim _Consulta As New ConsultaSQL
+            _Consulta.Consulta &= " SELECT "
+            _Consulta.Consulta &= "	    P.Idproducto, P.nombre, 'Completar' as Tipo,"
+            _Consulta.Consulta &= "	    COALESCE(Pr.precio, precio_venta) as PO"
+            _Consulta.Consulta &= " FROM Producto P"
+            _Consulta.Consulta &= " LEFT JOIN Precios Pr ON P.Idproducto=Pr.Idproducto AND GETDATE() between Pr.fecha_dsde AND Pr.fecha_hst"
+            _Consulta.Consulta &= " WHERE P.idproducto=@ID OR P.nombre LIKE '%' + @PalabraBuscada + '%' ORDER BY P.IdProducto"
+
+            Dim _ID As Integer = 0
+            Integer.TryParse(_PalabraBuscada, _ID)
+            _Consulta.AgregarParametro("@ID", _ID)
+            _Consulta.AgregarParametro("@PalabraBuscada", _PalabraBuscada)
+            _Retorno = _Consulta.ObtenerTabla()
+        Catch ex As Exception
+            _Retorno = New DataTable
+        End Try
+        Return _Retorno
+    End Function
+
     ''' <summary>
     ''' Retorna NULO cuando no puede setear al producto
     ''' </summary>

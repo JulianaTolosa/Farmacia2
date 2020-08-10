@@ -43,12 +43,6 @@ Public Class Facturacion
         'listproducto()
 
 
-        CmbProducto.Items.Clear()
-        CmbProducto.DisplayMember = "nombre"
-        CmbProducto.ValueMember = "precio_venta"
-        CmbProducto.DataSource = Datos.ObtenerProductos
-
-
     End Sub
     'Public Sub listproducto() Handles Cmbproducto.Click
 
@@ -136,30 +130,8 @@ Public Class Facturacion
     End Sub
 
 
-    Private Sub Btncancelar_Click(sender As Object, e As EventArgs) Handles Btnlimpiar.Click
-        Cmbcategoria.Text = ""
-        Cmbproducto.Text = ""
-        txtprecio.Clear()
-        txtcantidad.Clear()
-        'Cmbcategoria.Text = "Seleccione una categoria"
-    End Sub
-
-
-    Private Sub Cmbcategoria_SelectedIndexChanged(sender As Object, e As EventArgs) Handles Cmbcategoria.SelectedIndexChanged
-        Dim pos As Integer
-        pos = Cmbcategoria.SelectedIndex
-        Select Case (pos)
-            ' Case 1 : listproducto()
-
-
-
-        End Select
-
-
-    End Sub
-
-    Private Sub Cmbproducto_SelectedIndexChanged(sender As Object, e As EventArgs) Handles CmbProducto.SelectedIndexChanged
-        txtprecio.Text = CDec(CmbProducto.SelectedValue).ToString("N2")
+    Private Sub Cmbproducto_SelectedIndexChanged(sender As Object, e As EventArgs)
+        'txtprecio.Text = CDec(CmbProducto.SelectedValue).ToString("N2")
     End Sub
 
     'Private Sub Cmbproducto_SelectionChangeCommitted(sender As Object, e As EventArgs) Handles Cmbproducto.SelectionChangeCommitted
@@ -170,4 +142,13 @@ Public Class Facturacion
 
 
 
+    Private Sub txtBuscador_TextChanged(sender As Object, e As EventArgs) Handles txtBuscador.KeyUp
+        Try
+            Dim _PalabraBuscada = txtBuscador.Text.Trim
+            Dim _ProductosEncontrados = Datos.ObtenerProductosParaGrilla(_PalabraBuscada)
+            dgProductos.DataSource = _ProductosEncontrados
+        Catch ex As Exception
+            Console.Write(ex.Message)
+        End Try
+    End Sub
 End Class

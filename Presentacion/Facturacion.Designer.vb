@@ -42,17 +42,10 @@ Partial Class Facturacion
         Me.Cmbtipodni = New System.Windows.Forms.ComboBox()
         Me.CmbObraSocial = New System.Windows.Forms.ComboBox()
         Me.datelabel = New System.Windows.Forms.Timer(Me.components)
-        Me.Label6 = New System.Windows.Forms.Label()
-        Me.Label5 = New System.Windows.Forms.Label()
-        Me.Cmbcategoria = New System.Windows.Forms.ComboBox()
         Me.BtnAgregar = New System.Windows.Forms.Button()
-        Me.txtprecio = New System.Windows.Forms.TextBox()
         Me.GroupBox2 = New System.Windows.Forms.GroupBox()
-        Me.CmbProducto = New System.Windows.Forms.ComboBox()
-        Me.Label11 = New System.Windows.Forms.Label()
-        Me.txtcantidad = New System.Windows.Forms.TextBox()
-        Me.Label12 = New System.Windows.Forms.Label()
-        Me.Btnlimpiar = New System.Windows.Forms.Button()
+        Me.dgProductos = New System.Windows.Forms.DataGridView()
+        Me.txtBuscador = New System.Windows.Forms.TextBox()
         Me.GroupBox3 = New System.Windows.Forms.GroupBox()
         Me.RadioButton2 = New System.Windows.Forms.RadioButton()
         Me.RadioButton1 = New System.Windows.Forms.RadioButton()
@@ -78,6 +71,7 @@ Partial Class Facturacion
         CType(Me.btnCerrarForm, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupBox1.SuspendLayout()
         Me.GroupBox2.SuspendLayout()
+        CType(Me.dgProductos, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupBox3.SuspendLayout()
         Me.GroupBox4.SuspendLayout()
         Me.SuspendLayout()
@@ -254,67 +248,22 @@ Partial Class Facturacion
         'datelabel
         '
         '
-        'Label6
-        '
-        Me.Label6.AutoSize = True
-        Me.Label6.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label6.Location = New System.Drawing.Point(20, 59)
-        Me.Label6.Name = "Label6"
-        Me.Label6.Size = New System.Drawing.Size(47, 16)
-        Me.Label6.TabIndex = 9
-        Me.Label6.Text = "Precio"
-        '
-        'Label5
-        '
-        Me.Label5.AutoSize = True
-        Me.Label5.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label5.Location = New System.Drawing.Point(20, 23)
-        Me.Label5.Name = "Label5"
-        Me.Label5.Size = New System.Drawing.Size(67, 16)
-        Me.Label5.TabIndex = 11
-        Me.Label5.Text = "Categoria"
-        '
-        'Cmbcategoria
-        '
-        Me.Cmbcategoria.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Cmbcategoria.FormattingEnabled = True
-        Me.Cmbcategoria.Location = New System.Drawing.Point(120, 15)
-        Me.Cmbcategoria.Name = "Cmbcategoria"
-        Me.Cmbcategoria.Size = New System.Drawing.Size(227, 24)
-        Me.Cmbcategoria.TabIndex = 17
-        '
         'BtnAgregar
         '
         Me.BtnAgregar.Cursor = System.Windows.Forms.Cursors.Hand
         Me.BtnAgregar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.BtnAgregar.Location = New System.Drawing.Point(772, 59)
+        Me.BtnAgregar.Location = New System.Drawing.Point(128, 45)
         Me.BtnAgregar.Name = "BtnAgregar"
         Me.BtnAgregar.Size = New System.Drawing.Size(79, 36)
         Me.BtnAgregar.TabIndex = 18
         Me.BtnAgregar.Text = "Agregar"
         Me.BtnAgregar.UseVisualStyleBackColor = True
         '
-        'txtprecio
-        '
-        Me.txtprecio.Enabled = False
-        Me.txtprecio.Location = New System.Drawing.Point(120, 59)
-        Me.txtprecio.Name = "txtprecio"
-        Me.txtprecio.ReadOnly = True
-        Me.txtprecio.Size = New System.Drawing.Size(126, 20)
-        Me.txtprecio.TabIndex = 27
-        '
         'GroupBox2
         '
-        Me.GroupBox2.Controls.Add(Me.CmbProducto)
-        Me.GroupBox2.Controls.Add(Me.Label11)
-        Me.GroupBox2.Controls.Add(Me.txtcantidad)
-        Me.GroupBox2.Controls.Add(Me.Label12)
-        Me.GroupBox2.Controls.Add(Me.Btnlimpiar)
+        Me.GroupBox2.Controls.Add(Me.dgProductos)
+        Me.GroupBox2.Controls.Add(Me.txtBuscador)
         Me.GroupBox2.Controls.Add(Me.BtnAgregar)
-        Me.GroupBox2.Controls.Add(Me.Label5)
-        Me.GroupBox2.Controls.Add(Me.txtprecio)
-        Me.GroupBox2.Controls.Add(Me.Label6)
-        Me.GroupBox2.Controls.Add(Me.Cmbcategoria)
         Me.GroupBox2.Cursor = System.Windows.Forms.Cursors.Hand
         Me.GroupBox2.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.GroupBox2.Location = New System.Drawing.Point(48, 264)
@@ -324,51 +273,25 @@ Partial Class Facturacion
         Me.GroupBox2.TabStop = False
         Me.GroupBox2.Text = "Detalle del Producto"
         '
-        'CmbProducto
+        'dgProductos
         '
-        Me.CmbProducto.FormattingEnabled = True
-        Me.CmbProducto.Location = New System.Drawing.Point(473, 20)
-        Me.CmbProducto.Name = "CmbProducto"
-        Me.CmbProducto.Size = New System.Drawing.Size(350, 21)
-        Me.CmbProducto.TabIndex = 33
+        Me.dgProductos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.dgProductos.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically
+        Me.dgProductos.Location = New System.Drawing.Point(213, 19)
+        Me.dgProductos.MultiSelect = False
+        Me.dgProductos.Name = "dgProductos"
+        Me.dgProductos.ReadOnly = True
+        Me.dgProductos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
+        Me.dgProductos.Size = New System.Drawing.Size(724, 95)
+        Me.dgProductos.TabIndex = 30
         '
-        'Label11
+        'txtBuscador
         '
-        Me.Label11.AutoSize = True
-        Me.Label11.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label11.Location = New System.Drawing.Point(373, 23)
-        Me.Label11.Name = "Label11"
-        Me.Label11.Size = New System.Drawing.Size(62, 16)
-        Me.Label11.TabIndex = 30
-        Me.Label11.Text = "Producto"
-        '
-        'txtcantidad
-        '
-        Me.txtcantidad.Location = New System.Drawing.Point(473, 59)
-        Me.txtcantidad.Name = "txtcantidad"
-        Me.txtcantidad.Size = New System.Drawing.Size(105, 20)
-        Me.txtcantidad.TabIndex = 32
-        '
-        'Label12
-        '
-        Me.Label12.AutoSize = True
-        Me.Label12.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label12.Location = New System.Drawing.Point(373, 59)
-        Me.Label12.Name = "Label12"
-        Me.Label12.Size = New System.Drawing.Size(62, 16)
-        Me.Label12.TabIndex = 29
-        Me.Label12.Text = "Cantidad"
-        '
-        'Btnlimpiar
-        '
-        Me.Btnlimpiar.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.Btnlimpiar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Btnlimpiar.Location = New System.Drawing.Point(871, 59)
-        Me.Btnlimpiar.Name = "Btnlimpiar"
-        Me.Btnlimpiar.Size = New System.Drawing.Size(79, 36)
-        Me.Btnlimpiar.TabIndex = 28
-        Me.Btnlimpiar.Text = "Cancelar"
-        Me.Btnlimpiar.UseVisualStyleBackColor = True
+        Me.txtBuscador.Location = New System.Drawing.Point(24, 19)
+        Me.txtBuscador.Multiline = True
+        Me.txtBuscador.Name = "txtBuscador"
+        Me.txtBuscador.Size = New System.Drawing.Size(183, 20)
+        Me.txtBuscador.TabIndex = 29
         '
         'GroupBox3
         '
@@ -618,6 +541,7 @@ Partial Class Facturacion
         Me.GroupBox1.PerformLayout()
         Me.GroupBox2.ResumeLayout(False)
         Me.GroupBox2.PerformLayout()
+        CType(Me.dgProductos, System.ComponentModel.ISupportInitialize).EndInit()
         Me.GroupBox3.ResumeLayout(False)
         Me.GroupBox3.PerformLayout()
         Me.GroupBox4.ResumeLayout(False)
@@ -642,13 +566,8 @@ Partial Class Facturacion
     Friend WithEvents CmbObraSocial As System.Windows.Forms.ComboBox
     Friend WithEvents datelabel As System.Windows.Forms.Timer
     Friend WithEvents btnCerrarForm As System.Windows.Forms.PictureBox
-    Friend WithEvents Label6 As System.Windows.Forms.Label
-    Friend WithEvents Label5 As System.Windows.Forms.Label
-    Friend WithEvents Cmbcategoria As System.Windows.Forms.ComboBox
     Friend WithEvents BtnAgregar As System.Windows.Forms.Button
-    Friend WithEvents txtprecio As System.Windows.Forms.TextBox
     Friend WithEvents GroupBox2 As System.Windows.Forms.GroupBox
-    Friend WithEvents Btnlimpiar As System.Windows.Forms.Button
     Friend WithEvents Button1 As System.Windows.Forms.Button
     Friend WithEvents Cmbtipodni As System.Windows.Forms.ComboBox
     Friend WithEvents GroupBox3 As System.Windows.Forms.GroupBox
@@ -659,9 +578,6 @@ Partial Class Facturacion
     Friend WithEvents Label7 As System.Windows.Forms.Label
     Friend WithEvents RadioButton2 As System.Windows.Forms.RadioButton
     Friend WithEvents RadioButton1 As System.Windows.Forms.RadioButton
-    Friend WithEvents Label11 As System.Windows.Forms.Label
-    Friend WithEvents txtcantidad As System.Windows.Forms.TextBox
-    Friend WithEvents Label12 As System.Windows.Forms.Label
     Friend WithEvents Btnconfirmar As System.Windows.Forms.Button
     Friend WithEvents BtnEliminar As System.Windows.Forms.Button
     Friend WithEvents GroupBox4 As System.Windows.Forms.GroupBox
@@ -675,5 +591,6 @@ Partial Class Facturacion
     Friend WithEvents dgproducto As System.Windows.Forms.ListBox
     Friend WithEvents Label18 As System.Windows.Forms.Label
     Friend WithEvents ListBox1 As System.Windows.Forms.ListBox
-    Friend WithEvents CmbProducto As System.Windows.Forms.ComboBox
+    Friend WithEvents txtBuscador As System.Windows.Forms.TextBox
+    Friend WithEvents dgProductos As System.Windows.Forms.DataGridView
 End Class
