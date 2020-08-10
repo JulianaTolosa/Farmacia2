@@ -4,17 +4,19 @@ Imports System.Data
 
 Public Class Facturacion
 
-    Dim dni As Integer
-    Dim nombre As String
-    Dim domicilio As String
-    Dim obrasocial As String
-    Dim localidad As String
-    Dim metodopago As String
-    Dim cantidad As Integer
-    Dim producto As String
-    Dim subtotal As Double
-    Dim total As Double
-    Dim iva As Double
+
+
+    'Dim dni As Integer
+    'Dim nombre As String
+    'Dim domicilio As String
+    'Dim obrasocial As String
+    'Dim localidad As String
+    'Dim metodopago As String
+    'Dim cantidad As Integer
+    'Dim producto As String
+    'Dim subtotal As Double
+    'Dim total As Double
+    'Dim iva As Double
 
 
 
@@ -38,27 +40,35 @@ Public Class Facturacion
         datelabel.Start()
         'listmediopago()
         listobra()
-        listproducto()
+        'listproducto()
+
+
+        CmbProducto.Items.Clear()
+        CmbProducto.DisplayMember = "nombre"
+        CmbProducto.ValueMember = "precio_venta"
+        CmbProducto.DataSource = Datos.ObtenerProductos
+
+
     End Sub
-    Public Sub listproducto() Handles Cmbproducto.Click
+    'Public Sub listproducto() Handles Cmbproducto.Click
 
-        Try
-            Cmbproducto.Items.Clear()
-            Dim _Tipos As List(Of String) = Datos.ObtenerProductos()
-            'Dim _Tipos2 As List(Of String) = Datos.ObtenerPresentacion()
-            For Each nombre As String In _Tipos
-                Cmbproducto.Items.Add(nombre)
-                'For Each presentacion As String In _Tipos2
-                'Cmbproducto.Items.Add(nombre + Presentacion)
-                'Next
+    '    Try
+    '        Cmbproducto.Items.Clear()
+    '        Dim _Tipos As List(Of String) = Datos.ObtenerProductos()
+    '        'Dim _Tipos2 As List(Of String) = Datos.ObtenerPresentacion()
+    '        For Each nombre As String In _Tipos
+    '            CmbProducto.Items.Add(nombre)
+    '            'For Each presentacion As String In _Tipos2
+    '            'CmbProducto.Items.Add(nombre & Presentacion)
+    '            ' Next
 
-            Next
+    '        Next
 
 
-        Catch ex As Exception
+    '    Catch ex As Exception
 
-        End Try
-    End Sub
+    '    End Try
+    'End Sub
 
     Public Sub listDni() Handles Cmbtipodni.Click
 
@@ -76,6 +86,7 @@ Public Class Facturacion
     End Sub
 
 
+
     'Public Sub listmediopago() Handles CmbMediopago.Click
     '    Try
     '        CmbMediopago.Items.Clear()
@@ -90,18 +101,18 @@ Public Class Facturacion
 
     'End Sub
 
-    Public Sub listocategoria() Handles Cmbcategoria.Click
-        Try
-            Cmbcategoria.Items.Clear()
-            Dim _Tipos As List(Of String) = Datos.ObtenerTiposProductos()
-            For Each tipo As String In _Tipos
-                Cmbcategoria.Items.Add(tipo)
-            Next
+    'Public Sub listocategoria() Handles Cmbcategoria.Click
+    '    Try
+    '        Cmbcategoria.Items.Clear()
+    '        Dim _Tipos As List(Of String) = Datos.ObtenerTiposProductos()
+    '        For Each tipo As String In _Tipos
+    '            Cmbcategoria.Items.Add(tipo)
+    '        Next
 
-        Catch ex As Exception
+    '    Catch ex As Exception
 
-        End Try
-    End Sub
+    '    End Try
+    'End Sub
 
     Public Sub listobra() Handles CmbObraSocial.Click
         Try
@@ -130,7 +141,7 @@ Public Class Facturacion
         Cmbproducto.Text = ""
         txtprecio.Clear()
         txtcantidad.Clear()
-        Cmbcategoria.Text = "Seleccione una categoria"
+        'Cmbcategoria.Text = "Seleccione una categoria"
     End Sub
 
 
@@ -138,7 +149,7 @@ Public Class Facturacion
         Dim pos As Integer
         pos = Cmbcategoria.SelectedIndex
         Select Case (pos)
-            Case 1 : listproducto()
+            ' Case 1 : listproducto()
 
 
 
@@ -147,16 +158,16 @@ Public Class Facturacion
 
     End Sub
 
-    '' Private Sub Cmbproducto_SelectedIndexChanged(sender As Object, e As EventArgs) Handles Cmbproducto.SelectedIndexChanged
-    ''   txtprecio.Text = Cmbproducto.SelectedValue.ToString()
-    '' End Sub
-
-    Private Sub Cmbproducto_SelectionChangeCommitted(sender As Object, e As EventArgs) Handles Cmbproducto.SelectionChangeCommitted
-        'producto = TryCast(Cmbproducto.SelectedItem, Producto)
-        txtprecio.Text = Convert.ToString(Cmbproducto.SelectedItem)
-
+    Private Sub Cmbproducto_SelectedIndexChanged(sender As Object, e As EventArgs) Handles CmbProducto.SelectedIndexChanged
+        txtprecio.Text = (CmbProducto.SelectedValue).ToString
     End Sub
 
+    'Private Sub Cmbproducto_SelectionChangeCommitted(sender As Object, e As EventArgs) Handles Cmbproducto.SelectionChangeCommitted
+    '    Productos = TryCast(Cmbproducto.SelectedItem.ToString, Producto)
+    '    'txtprecio.Text = Productos.precio.ToString()
+    'End Sub
 
-   
+
+
+
 End Class

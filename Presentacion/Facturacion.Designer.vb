@@ -48,10 +48,10 @@ Partial Class Facturacion
         Me.BtnAgregar = New System.Windows.Forms.Button()
         Me.txtprecio = New System.Windows.Forms.TextBox()
         Me.GroupBox2 = New System.Windows.Forms.GroupBox()
+        Me.CmbProducto = New System.Windows.Forms.ComboBox()
         Me.Label11 = New System.Windows.Forms.Label()
         Me.txtcantidad = New System.Windows.Forms.TextBox()
         Me.Label12 = New System.Windows.Forms.Label()
-        Me.Cmbproducto = New System.Windows.Forms.ComboBox()
         Me.Btnlimpiar = New System.Windows.Forms.Button()
         Me.GroupBox3 = New System.Windows.Forms.GroupBox()
         Me.RadioButton2 = New System.Windows.Forms.RadioButton()
@@ -89,7 +89,7 @@ Partial Class Facturacion
         Me.Panel1.Dock = System.Windows.Forms.DockStyle.Top
         Me.Panel1.Location = New System.Drawing.Point(0, 0)
         Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(1034, 45)
+        Me.Panel1.Size = New System.Drawing.Size(1044, 45)
         Me.Panel1.TabIndex = 2
         '
         'btnCerrarForm
@@ -97,7 +97,7 @@ Partial Class Facturacion
         Me.btnCerrarForm.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.btnCerrarForm.Cursor = System.Windows.Forms.Cursors.Hand
         Me.btnCerrarForm.Image = CType(resources.GetObject("btnCerrarForm.Image"), System.Drawing.Image)
-        Me.btnCerrarForm.Location = New System.Drawing.Point(1006, 12)
+        Me.btnCerrarForm.Location = New System.Drawing.Point(1016, 12)
         Me.btnCerrarForm.Name = "btnCerrarForm"
         Me.btnCerrarForm.Size = New System.Drawing.Size(16, 16)
         Me.btnCerrarForm.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize
@@ -109,7 +109,7 @@ Partial Class Facturacion
         Me.lblconsultastock.Anchor = System.Windows.Forms.AnchorStyles.Top
         Me.lblconsultastock.AutoSize = True
         Me.lblconsultastock.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblconsultastock.Location = New System.Drawing.Point(456, 12)
+        Me.lblconsultastock.Location = New System.Drawing.Point(461, 12)
         Me.lblconsultastock.Name = "lblconsultastock"
         Me.lblconsultastock.Size = New System.Drawing.Size(145, 24)
         Me.lblconsultastock.TabIndex = 2
@@ -218,7 +218,7 @@ Partial Class Facturacion
         Me.GroupBox1.Controls.Add(Me.Label4)
         Me.GroupBox1.Location = New System.Drawing.Point(48, 51)
         Me.GroupBox1.Name = "GroupBox1"
-        Me.GroupBox1.Size = New System.Drawing.Size(700, 207)
+        Me.GroupBox1.Size = New System.Drawing.Size(707, 207)
         Me.GroupBox1.TabIndex = 24
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "Datos de Clientes"
@@ -305,10 +305,10 @@ Partial Class Facturacion
         '
         'GroupBox2
         '
+        Me.GroupBox2.Controls.Add(Me.CmbProducto)
         Me.GroupBox2.Controls.Add(Me.Label11)
         Me.GroupBox2.Controls.Add(Me.txtcantidad)
         Me.GroupBox2.Controls.Add(Me.Label12)
-        Me.GroupBox2.Controls.Add(Me.Cmbproducto)
         Me.GroupBox2.Controls.Add(Me.Btnlimpiar)
         Me.GroupBox2.Controls.Add(Me.BtnAgregar)
         Me.GroupBox2.Controls.Add(Me.Label5)
@@ -323,6 +323,14 @@ Partial Class Facturacion
         Me.GroupBox2.TabIndex = 25
         Me.GroupBox2.TabStop = False
         Me.GroupBox2.Text = "Detalle del Producto"
+        '
+        'CmbProducto
+        '
+        Me.CmbProducto.FormattingEnabled = True
+        Me.CmbProducto.Location = New System.Drawing.Point(473, 20)
+        Me.CmbProducto.Name = "CmbProducto"
+        Me.CmbProducto.Size = New System.Drawing.Size(350, 21)
+        Me.CmbProducto.TabIndex = 33
         '
         'Label11
         '
@@ -350,15 +358,6 @@ Partial Class Facturacion
         Me.Label12.Size = New System.Drawing.Size(62, 16)
         Me.Label12.TabIndex = 29
         Me.Label12.Text = "Cantidad"
-        '
-        'Cmbproducto
-        '
-        Me.Cmbproducto.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Cmbproducto.FormattingEnabled = True
-        Me.Cmbproducto.Location = New System.Drawing.Point(441, 19)
-        Me.Cmbproducto.Name = "Cmbproducto"
-        Me.Cmbproducto.Size = New System.Drawing.Size(355, 24)
-        Me.Cmbproducto.TabIndex = 31
         '
         'Btnlimpiar
         '
@@ -594,7 +593,7 @@ Partial Class Facturacion
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer))
-        Me.ClientSize = New System.Drawing.Size(1034, 687)
+        Me.ClientSize = New System.Drawing.Size(1044, 687)
         Me.Controls.Add(Me.GroupBox4)
         Me.Controls.Add(Me.Btnconfirmar)
         Me.Controls.Add(Me.BtnEliminar)
@@ -663,7 +662,6 @@ Partial Class Facturacion
     Friend WithEvents Label11 As System.Windows.Forms.Label
     Friend WithEvents txtcantidad As System.Windows.Forms.TextBox
     Friend WithEvents Label12 As System.Windows.Forms.Label
-    Friend WithEvents Cmbproducto As System.Windows.Forms.ComboBox
     Friend WithEvents Btnconfirmar As System.Windows.Forms.Button
     Friend WithEvents BtnEliminar As System.Windows.Forms.Button
     Friend WithEvents GroupBox4 As System.Windows.Forms.GroupBox
@@ -677,4 +675,5 @@ Partial Class Facturacion
     Friend WithEvents dgproducto As System.Windows.Forms.ListBox
     Friend WithEvents Label18 As System.Windows.Forms.Label
     Friend WithEvents ListBox1 As System.Windows.Forms.ListBox
+    Friend WithEvents CmbProducto As System.Windows.Forms.ComboBox
 End Class
