@@ -24,6 +24,14 @@ Partial Class Facturacion
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Facturacion))
+        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle4 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle5 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle6 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle7 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle8 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.btnCerrarForm = New System.Windows.Forms.PictureBox()
         Me.lblconsultastock = New System.Windows.Forms.Label()
@@ -57,16 +65,12 @@ Partial Class Facturacion
         Me.Btnconfirmar = New System.Windows.Forms.Button()
         Me.BtnEliminar = New System.Windows.Forms.Button()
         Me.GroupBox4 = New System.Windows.Forms.GroupBox()
-        Me.ListBox5 = New System.Windows.Forms.ListBox()
-        Me.ListBox4 = New System.Windows.Forms.ListBox()
-        Me.ListBox3 = New System.Windows.Forms.ListBox()
-        Me.dgproducto = New System.Windows.Forms.ListBox()
         Me.Label18 = New System.Windows.Forms.Label()
-        Me.ListBox1 = New System.Windows.Forms.ListBox()
         Me.Label17 = New System.Windows.Forms.Label()
         Me.Label16 = New System.Windows.Forms.Label()
         Me.Label15 = New System.Windows.Forms.Label()
         Me.Label14 = New System.Windows.Forms.Label()
+        Me.dgDetalles = New System.Windows.Forms.DataGridView()
         Me.Panel1.SuspendLayout()
         CType(Me.btnCerrarForm, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupBox1.SuspendLayout()
@@ -74,6 +78,7 @@ Partial Class Facturacion
         CType(Me.dgProductos, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupBox3.SuspendLayout()
         Me.GroupBox4.SuspendLayout()
+        CType(Me.dgDetalles, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'Panel1
@@ -275,12 +280,49 @@ Partial Class Facturacion
         '
         'dgProductos
         '
-        Me.dgProductos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.dgProductos.AllowUserToAddRows = False
+        Me.dgProductos.AllowUserToResizeColumns = False
+        Me.dgProductos.AllowUserToResizeRows = False
+        DataGridViewCellStyle1.BackColor = System.Drawing.Color.Lavender
+        DataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        Me.dgProductos.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle1
+        Me.dgProductos.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
+        Me.dgProductos.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells
+        Me.dgProductos.BackgroundColor = System.Drawing.SystemColors.ActiveCaption
+        Me.dgProductos.BorderStyle = System.Windows.Forms.BorderStyle.None
+        Me.dgProductos.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None
+        DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle2.BackColor = System.Drawing.Color.SlateGray
+        DataGridViewCellStyle2.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.Window
+        DataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.RosyBrown
+        DataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.dgProductos.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle2
+        Me.dgProductos.ColumnHeadersHeight = 30
         Me.dgProductos.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically
+        Me.dgProductos.EnableHeadersVisualStyles = False
+        Me.dgProductos.GridColor = System.Drawing.SystemColors.ControlDarkDark
         Me.dgProductos.Location = New System.Drawing.Point(213, 19)
         Me.dgProductos.MultiSelect = False
         Me.dgProductos.Name = "dgProductos"
         Me.dgProductos.ReadOnly = True
+        Me.dgProductos.RightToLeft = System.Windows.Forms.RightToLeft.No
+        Me.dgProductos.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.[Single]
+        DataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.ButtonHighlight
+        DataGridViewCellStyle3.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText
+        DataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.dgProductos.RowHeadersDefaultCellStyle = DataGridViewCellStyle3
+        Me.dgProductos.RowHeadersVisible = False
+        DataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.ButtonHighlight
+        DataGridViewCellStyle4.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.dgProductos.RowsDefaultCellStyle = DataGridViewCellStyle4
+        Me.dgProductos.RowTemplate.DefaultCellStyle.BackColor = System.Drawing.SystemColors.Control
+        Me.dgProductos.RowTemplate.DefaultCellStyle.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(128, Byte), Integer), CType(CType(128, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.dgProductos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
         Me.dgProductos.Size = New System.Drawing.Size(724, 95)
         Me.dgProductos.TabIndex = 30
@@ -404,12 +446,8 @@ Partial Class Facturacion
         '
         'GroupBox4
         '
-        Me.GroupBox4.Controls.Add(Me.ListBox5)
-        Me.GroupBox4.Controls.Add(Me.ListBox4)
-        Me.GroupBox4.Controls.Add(Me.ListBox3)
-        Me.GroupBox4.Controls.Add(Me.dgproducto)
+        Me.GroupBox4.Controls.Add(Me.dgDetalles)
         Me.GroupBox4.Controls.Add(Me.Label18)
-        Me.GroupBox4.Controls.Add(Me.ListBox1)
         Me.GroupBox4.Controls.Add(Me.Label17)
         Me.GroupBox4.Controls.Add(Me.Label16)
         Me.GroupBox4.Controls.Add(Me.Label15)
@@ -421,38 +459,6 @@ Partial Class Facturacion
         Me.GroupBox4.TabStop = False
         Me.GroupBox4.Text = "Datos Detalle"
         '
-        'ListBox5
-        '
-        Me.ListBox5.FormattingEnabled = True
-        Me.ListBox5.Location = New System.Drawing.Point(852, 42)
-        Me.ListBox5.Name = "ListBox5"
-        Me.ListBox5.Size = New System.Drawing.Size(108, 186)
-        Me.ListBox5.TabIndex = 45
-        '
-        'ListBox4
-        '
-        Me.ListBox4.FormattingEnabled = True
-        Me.ListBox4.Location = New System.Drawing.Point(749, 42)
-        Me.ListBox4.Name = "ListBox4"
-        Me.ListBox4.Size = New System.Drawing.Size(91, 186)
-        Me.ListBox4.TabIndex = 44
-        '
-        'ListBox3
-        '
-        Me.ListBox3.FormattingEnabled = True
-        Me.ListBox3.Location = New System.Drawing.Point(629, 42)
-        Me.ListBox3.Name = "ListBox3"
-        Me.ListBox3.Size = New System.Drawing.Size(108, 186)
-        Me.ListBox3.TabIndex = 43
-        '
-        'dgproducto
-        '
-        Me.dgproducto.FormattingEnabled = True
-        Me.dgproducto.Location = New System.Drawing.Point(132, 42)
-        Me.dgproducto.Name = "dgproducto"
-        Me.dgproducto.Size = New System.Drawing.Size(480, 186)
-        Me.dgproducto.TabIndex = 42
-        '
         'Label18
         '
         Me.Label18.AutoSize = True
@@ -462,14 +468,6 @@ Partial Class Facturacion
         Me.Label18.Size = New System.Drawing.Size(33, 16)
         Me.Label18.TabIndex = 41
         Me.Label18.Text = "Item"
-        '
-        'ListBox1
-        '
-        Me.ListBox1.FormattingEnabled = True
-        Me.ListBox1.Location = New System.Drawing.Point(24, 42)
-        Me.ListBox1.Name = "ListBox1"
-        Me.ListBox1.Size = New System.Drawing.Size(76, 186)
-        Me.ListBox1.TabIndex = 40
         '
         'Label17
         '
@@ -511,11 +509,58 @@ Partial Class Facturacion
         Me.Label14.TabIndex = 33
         Me.Label14.Text = "Producto"
         '
+        'dgDetalles
+        '
+        Me.dgDetalles.AllowUserToAddRows = False
+        DataGridViewCellStyle5.BackColor = System.Drawing.Color.Lavender
+        DataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        Me.dgDetalles.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle5
+        Me.dgDetalles.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
+        Me.dgDetalles.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells
+        Me.dgDetalles.BackgroundColor = System.Drawing.SystemColors.ActiveCaption
+        Me.dgDetalles.BorderStyle = System.Windows.Forms.BorderStyle.None
+        Me.dgDetalles.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None
+        DataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle6.BackColor = System.Drawing.Color.SlateGray
+        DataGridViewCellStyle6.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.Window
+        DataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.RosyBrown
+        DataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.dgDetalles.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle6
+        Me.dgDetalles.ColumnHeadersHeight = 30
+        Me.dgDetalles.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically
+        Me.dgDetalles.EnableHeadersVisualStyles = False
+        Me.dgDetalles.GridColor = System.Drawing.SystemColors.ControlDarkDark
+        Me.dgDetalles.Location = New System.Drawing.Point(24, 35)
+        Me.dgDetalles.MultiSelect = False
+        Me.dgDetalles.Name = "dgDetalles"
+        Me.dgDetalles.ReadOnly = True
+        Me.dgDetalles.RightToLeft = System.Windows.Forms.RightToLeft.No
+        Me.dgDetalles.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.[Single]
+        DataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle7.BackColor = System.Drawing.SystemColors.ButtonHighlight
+        DataGridViewCellStyle7.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle7.ForeColor = System.Drawing.SystemColors.WindowText
+        DataGridViewCellStyle7.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle7.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.dgDetalles.RowHeadersDefaultCellStyle = DataGridViewCellStyle7
+        Me.dgDetalles.RowHeadersVisible = False
+        DataGridViewCellStyle8.BackColor = System.Drawing.SystemColors.ButtonHighlight
+        DataGridViewCellStyle8.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.dgDetalles.RowsDefaultCellStyle = DataGridViewCellStyle8
+        Me.dgDetalles.RowTemplate.DefaultCellStyle.BackColor = System.Drawing.SystemColors.Control
+        Me.dgDetalles.RowTemplate.DefaultCellStyle.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(128, Byte), Integer), CType(CType(128, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.dgDetalles.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
+        Me.dgDetalles.Size = New System.Drawing.Size(913, 198)
+        Me.dgDetalles.TabIndex = 31
+        '
         'Facturacion
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer))
+        Me.BackColor = System.Drawing.Color.LightSteelBlue
         Me.ClientSize = New System.Drawing.Size(1044, 687)
         Me.Controls.Add(Me.GroupBox4)
         Me.Controls.Add(Me.Btnconfirmar)
@@ -546,6 +591,7 @@ Partial Class Facturacion
         Me.GroupBox3.PerformLayout()
         Me.GroupBox4.ResumeLayout(False)
         Me.GroupBox4.PerformLayout()
+        CType(Me.dgDetalles, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -585,12 +631,8 @@ Partial Class Facturacion
     Friend WithEvents Label16 As System.Windows.Forms.Label
     Friend WithEvents Label15 As System.Windows.Forms.Label
     Friend WithEvents Label14 As System.Windows.Forms.Label
-    Friend WithEvents ListBox5 As System.Windows.Forms.ListBox
-    Friend WithEvents ListBox4 As System.Windows.Forms.ListBox
-    Friend WithEvents ListBox3 As System.Windows.Forms.ListBox
-    Friend WithEvents dgproducto As System.Windows.Forms.ListBox
     Friend WithEvents Label18 As System.Windows.Forms.Label
-    Friend WithEvents ListBox1 As System.Windows.Forms.ListBox
     Friend WithEvents txtBuscador As System.Windows.Forms.TextBox
     Friend WithEvents dgProductos As System.Windows.Forms.DataGridView
+    Friend WithEvents dgDetalles As System.Windows.Forms.DataGridView
 End Class

@@ -386,7 +386,7 @@
         Try
             Dim _Consulta As New ConsultaSQL
             _Consulta.Consulta &= " SELECT "
-            _Consulta.Consulta &= "	    P.Idproducto, P.nombre, 'Completar' as Tipo,"
+            _Consulta.Consulta &= "	    P.IdProducto, P.Nombre, 'Completar' as Tipo,"
             _Consulta.Consulta &= "	    COALESCE(Pr.precio, precio_venta) as PO"
             _Consulta.Consulta &= " FROM Producto P"
             _Consulta.Consulta &= " LEFT JOIN Precios Pr ON P.Idproducto=Pr.Idproducto AND GETDATE() between Pr.fecha_dsde AND Pr.fecha_hst"
