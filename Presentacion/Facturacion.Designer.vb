@@ -47,8 +47,8 @@ Partial Class Facturacion
         Me.dgProductos = New System.Windows.Forms.DataGridView()
         Me.txtBuscador = New System.Windows.Forms.TextBox()
         Me.GroupBox3 = New System.Windows.Forms.GroupBox()
-        Me.RadioButton2 = New System.Windows.Forms.RadioButton()
-        Me.RadioButton1 = New System.Windows.Forms.RadioButton()
+        Me.Btnfactura = New System.Windows.Forms.RadioButton()
+        Me.Btnboleta = New System.Windows.Forms.RadioButton()
         Me.Label13 = New System.Windows.Forms.Label()
         Me.lblfecha = New System.Windows.Forms.Label()
         Me.lblhora = New System.Windows.Forms.Label()
@@ -57,12 +57,12 @@ Partial Class Facturacion
         Me.Btnconfirmar = New System.Windows.Forms.Button()
         Me.BtnEliminar = New System.Windows.Forms.Button()
         Me.GroupBox4 = New System.Windows.Forms.GroupBox()
-        Me.ListBox5 = New System.Windows.Forms.ListBox()
-        Me.ListBox4 = New System.Windows.Forms.ListBox()
-        Me.ListBox3 = New System.Windows.Forms.ListBox()
-        Me.dgproducto = New System.Windows.Forms.ListBox()
+        Me.LbxSubtotal = New System.Windows.Forms.ListBox()
+        Me.Lbxcantidad = New System.Windows.Forms.ListBox()
+        Me.Lbxprecio = New System.Windows.Forms.ListBox()
+        Me.Lbxproducto = New System.Windows.Forms.ListBox()
         Me.Label18 = New System.Windows.Forms.Label()
-        Me.ListBox1 = New System.Windows.Forms.ListBox()
+        Me.Lbxitem = New System.Windows.Forms.ListBox()
         Me.Label17 = New System.Windows.Forms.Label()
         Me.Label16 = New System.Windows.Forms.Label()
         Me.Label15 = New System.Windows.Forms.Label()
@@ -252,7 +252,7 @@ Partial Class Facturacion
         '
         Me.BtnAgregar.Cursor = System.Windows.Forms.Cursors.Hand
         Me.BtnAgregar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.BtnAgregar.Location = New System.Drawing.Point(128, 45)
+        Me.BtnAgregar.Location = New System.Drawing.Point(81, 68)
         Me.BtnAgregar.Name = "BtnAgregar"
         Me.BtnAgregar.Size = New System.Drawing.Size(79, 36)
         Me.BtnAgregar.TabIndex = 18
@@ -275,19 +275,20 @@ Partial Class Facturacion
         '
         'dgProductos
         '
+        Me.dgProductos.AllowUserToAddRows = False
+        Me.dgProductos.BorderStyle = System.Windows.Forms.BorderStyle.None
         Me.dgProductos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.dgProductos.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically
-        Me.dgProductos.Location = New System.Drawing.Point(213, 19)
+        Me.dgProductos.Location = New System.Drawing.Point(223, 19)
         Me.dgProductos.MultiSelect = False
         Me.dgProductos.Name = "dgProductos"
-        Me.dgProductos.ReadOnly = True
         Me.dgProductos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
         Me.dgProductos.Size = New System.Drawing.Size(724, 95)
         Me.dgProductos.TabIndex = 30
         '
         'txtBuscador
         '
-        Me.txtBuscador.Location = New System.Drawing.Point(24, 19)
+        Me.txtBuscador.Location = New System.Drawing.Point(24, 33)
         Me.txtBuscador.Multiline = True
         Me.txtBuscador.Name = "txtBuscador"
         Me.txtBuscador.Size = New System.Drawing.Size(183, 20)
@@ -295,8 +296,8 @@ Partial Class Facturacion
         '
         'GroupBox3
         '
-        Me.GroupBox3.Controls.Add(Me.RadioButton2)
-        Me.GroupBox3.Controls.Add(Me.RadioButton1)
+        Me.GroupBox3.Controls.Add(Me.Btnfactura)
+        Me.GroupBox3.Controls.Add(Me.Btnboleta)
         Me.GroupBox3.Controls.Add(Me.Label13)
         Me.GroupBox3.Controls.Add(Me.lblfecha)
         Me.GroupBox3.Controls.Add(Me.lblhora)
@@ -308,27 +309,27 @@ Partial Class Facturacion
         Me.GroupBox3.TabIndex = 26
         Me.GroupBox3.TabStop = False
         '
-        'RadioButton2
+        'Btnfactura
         '
-        Me.RadioButton2.AutoSize = True
-        Me.RadioButton2.Location = New System.Drawing.Point(66, 174)
-        Me.RadioButton2.Name = "RadioButton2"
-        Me.RadioButton2.Size = New System.Drawing.Size(61, 17)
-        Me.RadioButton2.TabIndex = 18
-        Me.RadioButton2.TabStop = True
-        Me.RadioButton2.Text = "Factura"
-        Me.RadioButton2.UseVisualStyleBackColor = True
+        Me.Btnfactura.AutoSize = True
+        Me.Btnfactura.Location = New System.Drawing.Point(66, 174)
+        Me.Btnfactura.Name = "Btnfactura"
+        Me.Btnfactura.Size = New System.Drawing.Size(61, 17)
+        Me.Btnfactura.TabIndex = 18
+        Me.Btnfactura.TabStop = True
+        Me.Btnfactura.Text = "Factura"
+        Me.Btnfactura.UseVisualStyleBackColor = True
         '
-        'RadioButton1
+        'Btnboleta
         '
-        Me.RadioButton1.AutoSize = True
-        Me.RadioButton1.Location = New System.Drawing.Point(66, 142)
-        Me.RadioButton1.Name = "RadioButton1"
-        Me.RadioButton1.Size = New System.Drawing.Size(55, 17)
-        Me.RadioButton1.TabIndex = 17
-        Me.RadioButton1.TabStop = True
-        Me.RadioButton1.Text = "Boleta"
-        Me.RadioButton1.UseVisualStyleBackColor = True
+        Me.Btnboleta.AutoSize = True
+        Me.Btnboleta.Location = New System.Drawing.Point(66, 142)
+        Me.Btnboleta.Name = "Btnboleta"
+        Me.Btnboleta.Size = New System.Drawing.Size(55, 17)
+        Me.Btnboleta.TabIndex = 17
+        Me.Btnboleta.TabStop = True
+        Me.Btnboleta.Text = "Boleta"
+        Me.Btnboleta.UseVisualStyleBackColor = True
         '
         'Label13
         '
@@ -404,12 +405,12 @@ Partial Class Facturacion
         '
         'GroupBox4
         '
-        Me.GroupBox4.Controls.Add(Me.ListBox5)
-        Me.GroupBox4.Controls.Add(Me.ListBox4)
-        Me.GroupBox4.Controls.Add(Me.ListBox3)
-        Me.GroupBox4.Controls.Add(Me.dgproducto)
+        Me.GroupBox4.Controls.Add(Me.LbxSubtotal)
+        Me.GroupBox4.Controls.Add(Me.Lbxcantidad)
+        Me.GroupBox4.Controls.Add(Me.Lbxprecio)
+        Me.GroupBox4.Controls.Add(Me.Lbxproducto)
         Me.GroupBox4.Controls.Add(Me.Label18)
-        Me.GroupBox4.Controls.Add(Me.ListBox1)
+        Me.GroupBox4.Controls.Add(Me.Lbxitem)
         Me.GroupBox4.Controls.Add(Me.Label17)
         Me.GroupBox4.Controls.Add(Me.Label16)
         Me.GroupBox4.Controls.Add(Me.Label15)
@@ -421,37 +422,37 @@ Partial Class Facturacion
         Me.GroupBox4.TabStop = False
         Me.GroupBox4.Text = "Datos Detalle"
         '
-        'ListBox5
+        'LbxSubtotal
         '
-        Me.ListBox5.FormattingEnabled = True
-        Me.ListBox5.Location = New System.Drawing.Point(852, 42)
-        Me.ListBox5.Name = "ListBox5"
-        Me.ListBox5.Size = New System.Drawing.Size(108, 186)
-        Me.ListBox5.TabIndex = 45
+        Me.LbxSubtotal.FormattingEnabled = True
+        Me.LbxSubtotal.Location = New System.Drawing.Point(852, 42)
+        Me.LbxSubtotal.Name = "LbxSubtotal"
+        Me.LbxSubtotal.Size = New System.Drawing.Size(108, 186)
+        Me.LbxSubtotal.TabIndex = 45
         '
-        'ListBox4
+        'Lbxcantidad
         '
-        Me.ListBox4.FormattingEnabled = True
-        Me.ListBox4.Location = New System.Drawing.Point(749, 42)
-        Me.ListBox4.Name = "ListBox4"
-        Me.ListBox4.Size = New System.Drawing.Size(91, 186)
-        Me.ListBox4.TabIndex = 44
+        Me.Lbxcantidad.FormattingEnabled = True
+        Me.Lbxcantidad.Location = New System.Drawing.Point(749, 42)
+        Me.Lbxcantidad.Name = "Lbxcantidad"
+        Me.Lbxcantidad.Size = New System.Drawing.Size(91, 186)
+        Me.Lbxcantidad.TabIndex = 44
         '
-        'ListBox3
+        'Lbxprecio
         '
-        Me.ListBox3.FormattingEnabled = True
-        Me.ListBox3.Location = New System.Drawing.Point(629, 42)
-        Me.ListBox3.Name = "ListBox3"
-        Me.ListBox3.Size = New System.Drawing.Size(108, 186)
-        Me.ListBox3.TabIndex = 43
+        Me.Lbxprecio.FormattingEnabled = True
+        Me.Lbxprecio.Location = New System.Drawing.Point(629, 42)
+        Me.Lbxprecio.Name = "Lbxprecio"
+        Me.Lbxprecio.Size = New System.Drawing.Size(108, 186)
+        Me.Lbxprecio.TabIndex = 43
         '
-        'dgproducto
+        'Lbxproducto
         '
-        Me.dgproducto.FormattingEnabled = True
-        Me.dgproducto.Location = New System.Drawing.Point(132, 42)
-        Me.dgproducto.Name = "dgproducto"
-        Me.dgproducto.Size = New System.Drawing.Size(480, 186)
-        Me.dgproducto.TabIndex = 42
+        Me.Lbxproducto.FormattingEnabled = True
+        Me.Lbxproducto.Location = New System.Drawing.Point(132, 42)
+        Me.Lbxproducto.Name = "Lbxproducto"
+        Me.Lbxproducto.Size = New System.Drawing.Size(480, 186)
+        Me.Lbxproducto.TabIndex = 42
         '
         'Label18
         '
@@ -463,13 +464,13 @@ Partial Class Facturacion
         Me.Label18.TabIndex = 41
         Me.Label18.Text = "Item"
         '
-        'ListBox1
+        'Lbxitem
         '
-        Me.ListBox1.FormattingEnabled = True
-        Me.ListBox1.Location = New System.Drawing.Point(24, 42)
-        Me.ListBox1.Name = "ListBox1"
-        Me.ListBox1.Size = New System.Drawing.Size(76, 186)
-        Me.ListBox1.TabIndex = 40
+        Me.Lbxitem.FormattingEnabled = True
+        Me.Lbxitem.Location = New System.Drawing.Point(24, 42)
+        Me.Lbxitem.Name = "Lbxitem"
+        Me.Lbxitem.Size = New System.Drawing.Size(76, 186)
+        Me.Lbxitem.TabIndex = 40
         '
         'Label17
         '
@@ -576,8 +577,8 @@ Partial Class Facturacion
     Friend WithEvents lblhora As System.Windows.Forms.Label
     Friend WithEvents Label2 As System.Windows.Forms.Label
     Friend WithEvents Label7 As System.Windows.Forms.Label
-    Friend WithEvents RadioButton2 As System.Windows.Forms.RadioButton
-    Friend WithEvents RadioButton1 As System.Windows.Forms.RadioButton
+    Friend WithEvents Btnfactura As System.Windows.Forms.RadioButton
+    Friend WithEvents Btnboleta As System.Windows.Forms.RadioButton
     Friend WithEvents Btnconfirmar As System.Windows.Forms.Button
     Friend WithEvents BtnEliminar As System.Windows.Forms.Button
     Friend WithEvents GroupBox4 As System.Windows.Forms.GroupBox
@@ -585,12 +586,12 @@ Partial Class Facturacion
     Friend WithEvents Label16 As System.Windows.Forms.Label
     Friend WithEvents Label15 As System.Windows.Forms.Label
     Friend WithEvents Label14 As System.Windows.Forms.Label
-    Friend WithEvents ListBox5 As System.Windows.Forms.ListBox
-    Friend WithEvents ListBox4 As System.Windows.Forms.ListBox
-    Friend WithEvents ListBox3 As System.Windows.Forms.ListBox
-    Friend WithEvents dgproducto As System.Windows.Forms.ListBox
+    Friend WithEvents LbxSubtotal As System.Windows.Forms.ListBox
+    Friend WithEvents Lbxcantidad As System.Windows.Forms.ListBox
+    Friend WithEvents Lbxprecio As System.Windows.Forms.ListBox
+    Friend WithEvents Lbxproducto As System.Windows.Forms.ListBox
     Friend WithEvents Label18 As System.Windows.Forms.Label
-    Friend WithEvents ListBox1 As System.Windows.Forms.ListBox
+    Friend WithEvents Lbxitem As System.Windows.Forms.ListBox
     Friend WithEvents txtBuscador As System.Windows.Forms.TextBox
     Friend WithEvents dgProductos As System.Windows.Forms.DataGridView
 End Class

@@ -4,7 +4,7 @@ Imports System.Data
 
 Public Class Facturacion
 
-
+    Dim item As Integer
 
     'Dim dni As Integer
     'Dim nombre As String
@@ -23,10 +23,7 @@ Public Class Facturacion
 
 
 
-    Private Sub BtnConfirmar_Click(sender As Object, e As EventArgs) Handles BtnAgregar.Click
-
-
-    End Sub
+    
 
 
 
@@ -151,4 +148,37 @@ Public Class Facturacion
             Console.Write(ex.Message)
         End Try
     End Sub
+
+    Private Sub BtnAgregar_Click(sender As Object, e As EventArgs) Handles BtnAgregar.Click
+        If (txtBuscador.Text = "") Then
+            MsgBox("Por Favor seleccione un producto", MsgBoxStyle.Exclamation, MsgBoxStyle.OkOnly)
+            txtBuscador.Focus()
+
+        ElseIf (txtBuscador.Text <> "") Then
+            Lbxitem.Items.Clear()
+            Lbxproducto.Items.Clear()
+            Lbxprecio.Items.Clear()
+            For Each row As DataGridViewRow In dgProductos.SelectedRows
+                item = (item + 1)
+                Lbxitem.Items.Add(item)
+                Lbxproducto.Items.Add(Convert.ToString(row.Cells("nombre").Value))
+                Lbxprecio.Items.Add(Convert.ToString(row.Cells("PO").Value))
+                'Lbx.Items.Add(Convert.ToString(row.Cells("precio_venta").Value))
+
+                LbxSubtotal.Items.Add(Lbxprecio)
+
+            Next
+
+            'If (Btnboleta.Checked = True) Then
+            '    calcular()
+            'Else
+            '    impuesto()
+            'End If
+            'Else
+            '    MsgBox("Ingrese cantidad valida!", MsgBoxStyle.Exclamation, MsgBoxStyle.OkOnly)
+        End If
+
+    End Sub
+
+
 End Class
