@@ -115,14 +115,6 @@ Public Class Facturacion
         'txtprecio.Text = CDec(CmbProducto.SelectedValue).ToString("N2")
     End Sub
 
-    'Private Sub Cmbproducto_SelectionChangeCommitted(sender As Object, e As EventArgs) Handles Cmbproducto.SelectionChangeCommitted
-    '    Productos = TryCast(Cmbproducto.SelectedItem.ToString, Producto)
-    '    'txtprecio.Text = Productos.precio.ToString()
-    'End Sub
-
-
-
-
     Private Sub txtBuscador_TextChanged(sender As Object, e As EventArgs) Handles txtBuscador.KeyUp
         BuscarProductos()
     End Sub
