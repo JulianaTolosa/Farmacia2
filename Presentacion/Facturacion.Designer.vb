@@ -55,8 +55,8 @@ Partial Class Facturacion
         Me.dgProductos = New System.Windows.Forms.DataGridView()
         Me.txtBuscador = New System.Windows.Forms.TextBox()
         Me.GroupBox3 = New System.Windows.Forms.GroupBox()
-        Me.RadioButton2 = New System.Windows.Forms.RadioButton()
-        Me.RadioButton1 = New System.Windows.Forms.RadioButton()
+        Me.Btnfactura = New System.Windows.Forms.RadioButton()
+        Me.Btnboleta = New System.Windows.Forms.RadioButton()
         Me.Label13 = New System.Windows.Forms.Label()
         Me.lblfecha = New System.Windows.Forms.Label()
         Me.lblhora = New System.Windows.Forms.Label()
@@ -65,12 +65,12 @@ Partial Class Facturacion
         Me.Btnconfirmar = New System.Windows.Forms.Button()
         Me.BtnEliminar = New System.Windows.Forms.Button()
         Me.GroupBox4 = New System.Windows.Forms.GroupBox()
+        Me.dgDetalles = New System.Windows.Forms.DataGridView()
         Me.Label18 = New System.Windows.Forms.Label()
         Me.Label17 = New System.Windows.Forms.Label()
         Me.Label16 = New System.Windows.Forms.Label()
         Me.Label15 = New System.Windows.Forms.Label()
         Me.Label14 = New System.Windows.Forms.Label()
-        Me.dgDetalles = New System.Windows.Forms.DataGridView()
         Me.Panel1.SuspendLayout()
         CType(Me.btnCerrarForm, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupBox1.SuspendLayout()
@@ -257,7 +257,7 @@ Partial Class Facturacion
         '
         Me.BtnAgregar.Cursor = System.Windows.Forms.Cursors.Hand
         Me.BtnAgregar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.BtnAgregar.Location = New System.Drawing.Point(128, 45)
+        Me.BtnAgregar.Location = New System.Drawing.Point(81, 68)
         Me.BtnAgregar.Name = "BtnAgregar"
         Me.BtnAgregar.Size = New System.Drawing.Size(79, 36)
         Me.BtnAgregar.TabIndex = 18
@@ -329,7 +329,7 @@ Partial Class Facturacion
         '
         'txtBuscador
         '
-        Me.txtBuscador.Location = New System.Drawing.Point(24, 19)
+        Me.txtBuscador.Location = New System.Drawing.Point(24, 33)
         Me.txtBuscador.Multiline = True
         Me.txtBuscador.Name = "txtBuscador"
         Me.txtBuscador.Size = New System.Drawing.Size(183, 20)
@@ -337,8 +337,8 @@ Partial Class Facturacion
         '
         'GroupBox3
         '
-        Me.GroupBox3.Controls.Add(Me.RadioButton2)
-        Me.GroupBox3.Controls.Add(Me.RadioButton1)
+        Me.GroupBox3.Controls.Add(Me.Btnfactura)
+        Me.GroupBox3.Controls.Add(Me.Btnboleta)
         Me.GroupBox3.Controls.Add(Me.Label13)
         Me.GroupBox3.Controls.Add(Me.lblfecha)
         Me.GroupBox3.Controls.Add(Me.lblhora)
@@ -350,27 +350,27 @@ Partial Class Facturacion
         Me.GroupBox3.TabIndex = 26
         Me.GroupBox3.TabStop = False
         '
-        'RadioButton2
+        'Btnfactura
         '
-        Me.RadioButton2.AutoSize = True
-        Me.RadioButton2.Location = New System.Drawing.Point(66, 174)
-        Me.RadioButton2.Name = "RadioButton2"
-        Me.RadioButton2.Size = New System.Drawing.Size(61, 17)
-        Me.RadioButton2.TabIndex = 18
-        Me.RadioButton2.TabStop = True
-        Me.RadioButton2.Text = "Factura"
-        Me.RadioButton2.UseVisualStyleBackColor = True
+        Me.Btnfactura.AutoSize = True
+        Me.Btnfactura.Location = New System.Drawing.Point(66, 174)
+        Me.Btnfactura.Name = "Btnfactura"
+        Me.Btnfactura.Size = New System.Drawing.Size(61, 17)
+        Me.Btnfactura.TabIndex = 18
+        Me.Btnfactura.TabStop = True
+        Me.Btnfactura.Text = "Factura"
+        Me.Btnfactura.UseVisualStyleBackColor = True
         '
-        'RadioButton1
+        'Btnboleta
         '
-        Me.RadioButton1.AutoSize = True
-        Me.RadioButton1.Location = New System.Drawing.Point(66, 142)
-        Me.RadioButton1.Name = "RadioButton1"
-        Me.RadioButton1.Size = New System.Drawing.Size(55, 17)
-        Me.RadioButton1.TabIndex = 17
-        Me.RadioButton1.TabStop = True
-        Me.RadioButton1.Text = "Boleta"
-        Me.RadioButton1.UseVisualStyleBackColor = True
+        Me.Btnboleta.AutoSize = True
+        Me.Btnboleta.Location = New System.Drawing.Point(66, 142)
+        Me.Btnboleta.Name = "Btnboleta"
+        Me.Btnboleta.Size = New System.Drawing.Size(55, 17)
+        Me.Btnboleta.TabIndex = 17
+        Me.Btnboleta.TabStop = True
+        Me.Btnboleta.Text = "Boleta"
+        Me.Btnboleta.UseVisualStyleBackColor = True
         '
         'Label13
         '
@@ -459,6 +459,53 @@ Partial Class Facturacion
         Me.GroupBox4.TabStop = False
         Me.GroupBox4.Text = "Datos Detalle"
         '
+        'dgDetalles
+        '
+        Me.dgDetalles.AllowUserToAddRows = False
+        DataGridViewCellStyle5.BackColor = System.Drawing.Color.Lavender
+        DataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        Me.dgDetalles.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle5
+        Me.dgDetalles.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
+        Me.dgDetalles.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells
+        Me.dgDetalles.BackgroundColor = System.Drawing.SystemColors.ActiveCaption
+        Me.dgDetalles.BorderStyle = System.Windows.Forms.BorderStyle.None
+        Me.dgDetalles.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None
+        DataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle6.BackColor = System.Drawing.Color.SlateGray
+        DataGridViewCellStyle6.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.Window
+        DataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.RosyBrown
+        DataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.dgDetalles.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle6
+        Me.dgDetalles.ColumnHeadersHeight = 30
+        Me.dgDetalles.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically
+        Me.dgDetalles.EnableHeadersVisualStyles = False
+        Me.dgDetalles.GridColor = System.Drawing.SystemColors.ControlDarkDark
+        Me.dgDetalles.Location = New System.Drawing.Point(24, 35)
+        Me.dgDetalles.MultiSelect = False
+        Me.dgDetalles.Name = "dgDetalles"
+        Me.dgDetalles.ReadOnly = True
+        Me.dgDetalles.RightToLeft = System.Windows.Forms.RightToLeft.No
+        Me.dgDetalles.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.[Single]
+        DataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle7.BackColor = System.Drawing.SystemColors.ButtonHighlight
+        DataGridViewCellStyle7.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle7.ForeColor = System.Drawing.SystemColors.WindowText
+        DataGridViewCellStyle7.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle7.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.dgDetalles.RowHeadersDefaultCellStyle = DataGridViewCellStyle7
+        Me.dgDetalles.RowHeadersVisible = False
+        DataGridViewCellStyle8.BackColor = System.Drawing.SystemColors.ButtonHighlight
+        DataGridViewCellStyle8.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.dgDetalles.RowsDefaultCellStyle = DataGridViewCellStyle8
+        Me.dgDetalles.RowTemplate.DefaultCellStyle.BackColor = System.Drawing.SystemColors.Control
+        Me.dgDetalles.RowTemplate.DefaultCellStyle.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(128, Byte), Integer), CType(CType(128, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.dgDetalles.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
+        Me.dgDetalles.Size = New System.Drawing.Size(913, 198)
+        Me.dgDetalles.TabIndex = 31
+        '
         'Label18
         '
         Me.Label18.AutoSize = True
@@ -508,53 +555,6 @@ Partial Class Facturacion
         Me.Label14.Size = New System.Drawing.Size(62, 16)
         Me.Label14.TabIndex = 33
         Me.Label14.Text = "Producto"
-        '
-        'dgDetalles
-        '
-        Me.dgDetalles.AllowUserToAddRows = False
-        DataGridViewCellStyle5.BackColor = System.Drawing.Color.Lavender
-        DataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        Me.dgDetalles.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle5
-        Me.dgDetalles.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
-        Me.dgDetalles.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells
-        Me.dgDetalles.BackgroundColor = System.Drawing.SystemColors.ActiveCaption
-        Me.dgDetalles.BorderStyle = System.Windows.Forms.BorderStyle.None
-        Me.dgDetalles.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None
-        DataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle6.BackColor = System.Drawing.Color.SlateGray
-        DataGridViewCellStyle6.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.Window
-        DataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.RosyBrown
-        DataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.dgDetalles.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle6
-        Me.dgDetalles.ColumnHeadersHeight = 30
-        Me.dgDetalles.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically
-        Me.dgDetalles.EnableHeadersVisualStyles = False
-        Me.dgDetalles.GridColor = System.Drawing.SystemColors.ControlDarkDark
-        Me.dgDetalles.Location = New System.Drawing.Point(24, 35)
-        Me.dgDetalles.MultiSelect = False
-        Me.dgDetalles.Name = "dgDetalles"
-        Me.dgDetalles.ReadOnly = True
-        Me.dgDetalles.RightToLeft = System.Windows.Forms.RightToLeft.No
-        Me.dgDetalles.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.[Single]
-        DataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle7.BackColor = System.Drawing.SystemColors.ButtonHighlight
-        DataGridViewCellStyle7.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle7.ForeColor = System.Drawing.SystemColors.WindowText
-        DataGridViewCellStyle7.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle7.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.dgDetalles.RowHeadersDefaultCellStyle = DataGridViewCellStyle7
-        Me.dgDetalles.RowHeadersVisible = False
-        DataGridViewCellStyle8.BackColor = System.Drawing.SystemColors.ButtonHighlight
-        DataGridViewCellStyle8.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.dgDetalles.RowsDefaultCellStyle = DataGridViewCellStyle8
-        Me.dgDetalles.RowTemplate.DefaultCellStyle.BackColor = System.Drawing.SystemColors.Control
-        Me.dgDetalles.RowTemplate.DefaultCellStyle.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(128, Byte), Integer), CType(CType(128, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.dgDetalles.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.dgDetalles.Size = New System.Drawing.Size(913, 198)
-        Me.dgDetalles.TabIndex = 31
         '
         'Facturacion
         '
@@ -622,8 +622,8 @@ Partial Class Facturacion
     Friend WithEvents lblhora As System.Windows.Forms.Label
     Friend WithEvents Label2 As System.Windows.Forms.Label
     Friend WithEvents Label7 As System.Windows.Forms.Label
-    Friend WithEvents RadioButton2 As System.Windows.Forms.RadioButton
-    Friend WithEvents RadioButton1 As System.Windows.Forms.RadioButton
+    Friend WithEvents Btnfactura As System.Windows.Forms.RadioButton
+    Friend WithEvents Btnboleta As System.Windows.Forms.RadioButton
     Friend WithEvents Btnconfirmar As System.Windows.Forms.Button
     Friend WithEvents BtnEliminar As System.Windows.Forms.Button
     Friend WithEvents GroupBox4 As System.Windows.Forms.GroupBox

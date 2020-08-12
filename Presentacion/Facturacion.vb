@@ -3,33 +3,7 @@ Imports System.Data.DataTable
 Imports System.Data
 
 Public Class Facturacion
-
-
-
-    'Dim dni As Integer
-    'Dim nombre As String
-    'Dim domicilio As String
-    'Dim obrasocial As String
-    'Dim localidad As String
-    'Dim metodopago As String
-    'Dim cantidad As Integer
-    'Dim producto As String
-    'Dim subtotal As Double
-    'Dim total As Double
-    'Dim iva As Double
-
-
-
-
-
-
-    Private Sub BtnConfirmar_Click(sender As Object, e As EventArgs) Handles BtnAgregar.Click
-
-
-    End Sub
-
-
-
+    Dim item As Integer
 
     Private Sub datelabel_Tick(sender As Object, e As EventArgs) Handles datelabel.Tick
         lblfecha.Text = DateTime.Now.ToString("dd/MM/yyyy")
@@ -40,6 +14,13 @@ Public Class Facturacion
         datelabel.Start()
         'listmediopago()
         listobra()
+        BuscarProductos()
+
+        dgDetalles.Columns.Clear 
+
+        For Each col As DataGridViewColumn In dgProductos.Columns
+            dgDetalles.Columns.Add(DirectCast(col.Clone(), DataGridViewColumn))
+        Next
         'listproducto()
 
 
@@ -143,6 +124,10 @@ Public Class Facturacion
 
 
     Private Sub txtBuscador_TextChanged(sender As Object, e As EventArgs) Handles txtBuscador.KeyUp
+        BuscarProductos()
+    End Sub
+
+    Private Sub BuscarProductos()
         Try
             Dim _PalabraBuscada = txtBuscador.Text.Trim
             Dim _ProductosEncontrados = Datos.ObtenerProductosParaGrilla(_PalabraBuscada)
@@ -150,5 +135,51 @@ Public Class Facturacion
         Catch ex As Exception
             Console.Write(ex.Message)
         End Try
+    End Sub
+
+    Private Sub BtnAgregar_Click(sender As Object, e As EventArgs) Handles BtnAgregar.Click
+        
+            For Each row As DataGridViewRow In
+        dgProductos.SelectedRows.Cast(Of DataGridViewRow)().Reverse()
+
+                Dim index As Integer = dgDetalles.Rows.Add(DirectCast(row.Clone(), DataGridViewRow))
+
+                For Each cell As DataGridViewCell In row.Cells
+                    dgDetalles.Rows(index).Cells(cell.ColumnIndex).Value = cell.Value
+                Next
+            Next
+
+
+            '    If (txtBuscador.Text = "") Then
+            '        MsgBox("Por Favor seleccione un producto", MsgBoxStyle.Exclamation, MsgBoxStyle.OkOnly)
+            '        txtBuscador.Focus()
+
+            '    ElseIf (txtBuscador.Text <> "") Then
+            '        dgDetalles.Items.Clear()
+            '        For Each row As DataGridViewRow In dgProductos.SelectedRows
+            '            item = (item + 1)
+            '            Lbxitem.Items.Add(item)
+            '            Lbxproducto.Items.Add(Convert.ToString(row.Cells("nombre").Value))
+            '            Lbxprecio.Items.Add(Convert.ToString(row.Cells("PO").Value))
+            '            'Lbx.Items.Add(Convert.ToString(row.Cells("precio_venta").Value))
+
+            '            LbxSubtotal.Items.Add(Lbxprecio)
+
+            '        Next
+
+            'If (Btnboleta.Checked = True) Then
+            '    calcular()
+            'Else
+            '    impuesto()
+            'End If
+            'Else
+            '    MsgBox("Ingrese cantidad valida!", MsgBoxStyle.Exclamation, MsgBoxStyle.OkOnly)
+
+
+    End Sub
+
+
+    Private Sub dgProductos_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles dgProductos.CellContentClick
+        
     End Sub
 End Class
