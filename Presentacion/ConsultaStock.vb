@@ -13,8 +13,10 @@ Public Class ConsultaStock
 
     Private Sub Btnbuscar_Click(sender As Object, e As EventArgs) Handles Btnbuscar.Click
         Try
-            Dim _ListaProductos = Datos.ObtenerProductos(Txtbuscar.Text.Trim())
+            Dim _ListaProductos = Datos.ConsultaStock(Txtbuscar.Text.Trim())
             '_ListaProductos tiene la lista de productos buscados
+            DgProducto.DataSource = _ListaProductos
+
         Catch ex As Exception
 
         End Try

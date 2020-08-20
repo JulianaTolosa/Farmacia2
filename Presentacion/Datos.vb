@@ -431,6 +431,23 @@
         Return _Retorno
     End Function
 
+    Public Function ConsultaStock(_PalabraBuscada As String) As DataTable
+        Dim _Retorno As New DataTable
+
+        Try
+            Dim _Consulta As New ConsultaSQL
+            _Consulta.Consulta = "SELECT Nombre, Presentacion FROM Producto WHERE  nombre LIKE '%' + @PalabraBuscada + '%' ORDER BY IdProducto"
+            Dim _ID As Integer = 0
+            Integer.TryParse(_PalabraBuscada, _ID)
+            '_Consulta.AgregarParametro("@ID", _ID)
+            _Consulta.AgregarParametro("@PalabraBuscada", _PalabraBuscada)
+            _Retorno = _Consulta.ObtenerTabla()
+        Catch ex As Exception
+            _Retorno = New DataTable
+        End Try
+        Return _Retorno
+    End Function
+
 #Region "DatosUsuarios"
 
     ''' <summary>
