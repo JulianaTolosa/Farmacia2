@@ -39,11 +39,11 @@ Partial Class Facturacion
         Me.TextBox2 = New System.Windows.Forms.TextBox()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.Label4 = New System.Windows.Forms.Label()
-        Me.TextBox8 = New System.Windows.Forms.TextBox()
+        Me.Totaltxt = New System.Windows.Forms.TextBox()
         Me.Label8 = New System.Windows.Forms.Label()
-        Me.TextBox9 = New System.Windows.Forms.TextBox()
+        Me.Subtotaltxt = New System.Windows.Forms.TextBox()
         Me.Label9 = New System.Windows.Forms.Label()
-        Me.TextBox10 = New System.Windows.Forms.TextBox()
+        Me.Descuentotxt = New System.Windows.Forms.TextBox()
         Me.Label10 = New System.Windows.Forms.Label()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
         Me.Button1 = New System.Windows.Forms.Button()
@@ -147,14 +147,14 @@ Partial Class Facturacion
         Me.Label4.TabIndex = 13
         Me.Label4.Text = "Obra Social"
         '
-        'TextBox8
+        'Totaltxt
         '
-        Me.TextBox8.Enabled = False
-        Me.TextBox8.Location = New System.Drawing.Point(667, 639)
-        Me.TextBox8.Name = "TextBox8"
-        Me.TextBox8.ReadOnly = True
-        Me.TextBox8.Size = New System.Drawing.Size(118, 20)
-        Me.TextBox8.TabIndex = 22
+        Me.Totaltxt.Enabled = False
+        Me.Totaltxt.Location = New System.Drawing.Point(667, 639)
+        Me.Totaltxt.Name = "Totaltxt"
+        Me.Totaltxt.ReadOnly = True
+        Me.Totaltxt.Size = New System.Drawing.Size(118, 20)
+        Me.Totaltxt.TabIndex = 22
         '
         'Label8
         '
@@ -165,14 +165,14 @@ Partial Class Facturacion
         Me.Label8.TabIndex = 21
         Me.Label8.Text = "TOTAL:"
         '
-        'TextBox9
+        'Subtotaltxt
         '
-        Me.TextBox9.Enabled = False
-        Me.TextBox9.Location = New System.Drawing.Point(129, 643)
-        Me.TextBox9.Name = "TextBox9"
-        Me.TextBox9.ReadOnly = True
-        Me.TextBox9.Size = New System.Drawing.Size(144, 20)
-        Me.TextBox9.TabIndex = 20
+        Me.Subtotaltxt.Enabled = False
+        Me.Subtotaltxt.Location = New System.Drawing.Point(129, 643)
+        Me.Subtotaltxt.Name = "Subtotaltxt"
+        Me.Subtotaltxt.ReadOnly = True
+        Me.Subtotaltxt.Size = New System.Drawing.Size(144, 20)
+        Me.Subtotaltxt.TabIndex = 20
         '
         'Label9
         '
@@ -183,14 +183,14 @@ Partial Class Facturacion
         Me.Label9.TabIndex = 19
         Me.Label9.Text = "SUBTOTAL:"
         '
-        'TextBox10
+        'Descuentotxt
         '
-        Me.TextBox10.Enabled = False
-        Me.TextBox10.Location = New System.Drawing.Point(424, 640)
-        Me.TextBox10.Name = "TextBox10"
-        Me.TextBox10.ReadOnly = True
-        Me.TextBox10.Size = New System.Drawing.Size(95, 20)
-        Me.TextBox10.TabIndex = 18
+        Me.Descuentotxt.Enabled = False
+        Me.Descuentotxt.Location = New System.Drawing.Point(424, 640)
+        Me.Descuentotxt.Name = "Descuentotxt"
+        Me.Descuentotxt.ReadOnly = True
+        Me.Descuentotxt.Size = New System.Drawing.Size(95, 20)
+        Me.Descuentotxt.TabIndex = 18
         '
         'Label10
         '
@@ -508,11 +508,11 @@ Partial Class Facturacion
         Me.Controls.Add(Me.GroupBox3)
         Me.Controls.Add(Me.GroupBox2)
         Me.Controls.Add(Me.GroupBox1)
-        Me.Controls.Add(Me.TextBox8)
+        Me.Controls.Add(Me.Totaltxt)
         Me.Controls.Add(Me.Label8)
-        Me.Controls.Add(Me.TextBox9)
+        Me.Controls.Add(Me.Subtotaltxt)
         Me.Controls.Add(Me.Label9)
-        Me.Controls.Add(Me.TextBox10)
+        Me.Controls.Add(Me.Descuentotxt)
         Me.Controls.Add(Me.Label10)
         Me.Controls.Add(Me.Panel1)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
@@ -541,11 +541,11 @@ Partial Class Facturacion
     Friend WithEvents TextBox2 As System.Windows.Forms.TextBox
     Friend WithEvents Label3 As System.Windows.Forms.Label
     Friend WithEvents Label4 As System.Windows.Forms.Label
-    Friend WithEvents TextBox8 As System.Windows.Forms.TextBox
+    Friend WithEvents Totaltxt As System.Windows.Forms.TextBox
     Friend WithEvents Label8 As System.Windows.Forms.Label
-    Friend WithEvents TextBox9 As System.Windows.Forms.TextBox
+    Friend WithEvents Subtotaltxt As System.Windows.Forms.TextBox
     Friend WithEvents Label9 As System.Windows.Forms.Label
-    Friend WithEvents TextBox10 As System.Windows.Forms.TextBox
+    Friend WithEvents Descuentotxt As System.Windows.Forms.TextBox
     Friend WithEvents Label10 As System.Windows.Forms.Label
     Friend WithEvents GroupBox1 As System.Windows.Forms.GroupBox
     Friend WithEvents CmbObraSocial As System.Windows.Forms.ComboBox

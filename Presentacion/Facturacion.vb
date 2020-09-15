@@ -140,33 +140,15 @@ Public Class Facturacion
                     dgDetalles.Rows(index).Cells(cell.ColumnIndex).Value = cell.Value
                 Next
             Next
-
-
-            '    If (txtBuscador.Text = "") Then
-            '        MsgBox("Por Favor seleccione un producto", MsgBoxStyle.Exclamation, MsgBoxStyle.OkOnly)
-            '        txtBuscador.Focus()
-
-            '    ElseIf (txtBuscador.Text <> "") Then
-            '        dgDetalles.Items.Clear()
-            '        For Each row As DataGridViewRow In dgProductos.SelectedRows
-            '            item = (item + 1)
-            '            Lbxitem.Items.Add(item)
-            '            Lbxproducto.Items.Add(Convert.ToString(row.Cells("nombre").Value))
-            '            Lbxprecio.Items.Add(Convert.ToString(row.Cells("PO").Value))
-            '            'Lbx.Items.Add(Convert.ToString(row.Cells("precio_venta").Value))
-
-            '            LbxSubtotal.Items.Add(Lbxprecio)
-
-            '        Next
-
-            'If (Btnboleta.Checked = True) Then
-            '    calcular()
-            'Else
-            '    impuesto()
-            'End If
-            'Else
-            '    MsgBox("Ingrese cantidad valida!", MsgBoxStyle.Exclamation, MsgBoxStyle.OkOnly)
-
+        Dim Subtotal As Double = 0
+        Dim Fila As DataGridViewRow = New DataGridViewRow()
+        Dim Descuento As Double = 10
+        For Each Fila In dgDetalles.Rows
+            Subtotal += Convert.ToDouble(Fila.Cells("PO").Value)
+        Next
+        Subtotaltxt.Text = Convert.ToString(Subtotal)
+        Descuentotxt.Text = CStr(((CDbl(Convert.ToString(Subtotal)) * 10) / 100))
+        Totaltxt.Text = CStr(CDbl(Convert.ToString(Subtotal)) - CDbl(Convert.ToString(Descuento)))
 
     End Sub
 
