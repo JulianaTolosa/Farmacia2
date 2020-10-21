@@ -73,6 +73,9 @@
     <OptionInfer>On</OptionInfer>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Bunifu_UI_v1.5.3">
+      <HintPath>..\..\..\Users\Leo\Desktop\itextsharp-all-5.5.10\Bunifu_UI_v1.5.3.dll</HintPath>
+    </Reference>
     <Reference Include="CircularProgressBar">
       <HintPath>..\..\..\Users\Leo\Desktop\progmsi\Libraries\Libraries\CircularProgressBar.dll</HintPath>
     </Reference>
@@ -83,7 +86,7 @@
     <Reference Include="CrystalDecisions.ReportSource, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
     <Reference Include="CrystalDecisions.Shared, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
     <Reference Include="Guna.UI">
-      <HintPath>..\..\Users\Juli\Documents\Visual Studio 2013\Guna.UI.dll</HintPath>
+      <HintPath>..\..\..\Users\Leo\Desktop\itextsharp-all-5.5.10\Guna.UI.dll</HintPath>
     </Reference>
     <Reference Include="itextsharp">
       <HintPath>..\..\..\Users\Leo\Desktop\progmsi\itextsharp-all-5.5.10\itextsharp.xfaworker-dll-5.5.10\itextsharp.dll</HintPath>
@@ -207,6 +210,12 @@
     <Compile Include="Inicio.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Listados.Designer.vb">
+      <DependentUpon>Listados.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Listados.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="MediosdePago.Designer.vb">
       <DependentUpon>MediosdePago.vb</DependentUpon>
     </Compile>
@@ -318,6 +327,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Inicio.resx">
       <DependentUpon>Inicio.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Listados.resx">
+      <DependentUpon>Listados.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MediosdePago.resx">
       <DependentUpon>MediosdePago.vb</DependentUpon>

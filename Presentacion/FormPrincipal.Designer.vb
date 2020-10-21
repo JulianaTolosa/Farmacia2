@@ -30,7 +30,7 @@ Partial Class FormPrincipal
         Me.lblhora = New System.Windows.Forms.Label()
         Me.PanelLateral = New System.Windows.Forms.Panel()
         Me.Panelbotones = New System.Windows.Forms.Panel()
-        Me.btnDrogueria = New System.Windows.Forms.Button()
+        Me.btnListados = New System.Windows.Forms.Button()
         Me.btnMediospago = New System.Windows.Forms.Button()
         Me.btnOSocial = New System.Windows.Forms.Button()
         Me.btnProductos = New System.Windows.Forms.Button()
@@ -40,13 +40,12 @@ Partial Class FormPrincipal
         Me.btnVentas = New System.Windows.Forms.Button()
         Me.btnSalir = New System.Windows.Forms.Button()
         Me.PanelsubmenuStock = New System.Windows.Forms.Panel()
-        Me.btnconsultastock = New System.Windows.Forms.Button()
-        Me.btningreso = New System.Windows.Forms.Button()
-        Me.btnDepositos = New System.Windows.Forms.Button()
+        Me.Btnconsultastock = New System.Windows.Forms.Button()
+        Me.Btningreso = New System.Windows.Forms.Button()
+        Me.btnStock = New System.Windows.Forms.Button()
         Me.btnEmpleados = New System.Windows.Forms.Button()
         Me.btnClientes = New System.Windows.Forms.Button()
         Me.PanelUsuario = New System.Windows.Forms.Panel()
-        Me.btnmenu = New System.Windows.Forms.PictureBox()
         Me.lblCorreo = New System.Windows.Forms.Label()
         Me.lblNombre = New System.Windows.Forms.Label()
         Me.lblPosicion = New System.Windows.Forms.Label()
@@ -82,7 +81,6 @@ Partial Class FormPrincipal
         Me.PanelsubmenuVentas.SuspendLayout()
         Me.PanelsubmenuStock.SuspendLayout()
         Me.PanelUsuario.SuspendLayout()
-        CType(Me.btnmenu, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.PanelBarraTitulo.SuspendLayout()
         CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -152,7 +150,7 @@ Partial Class FormPrincipal
         'Panelbotones
         '
         Me.Panelbotones.AutoScroll = True
-        Me.Panelbotones.Controls.Add(Me.btnDrogueria)
+        Me.Panelbotones.Controls.Add(Me.btnListados)
         Me.Panelbotones.Controls.Add(Me.btnMediospago)
         Me.Panelbotones.Controls.Add(Me.btnOSocial)
         Me.Panelbotones.Controls.Add(Me.btnProductos)
@@ -160,7 +158,7 @@ Partial Class FormPrincipal
         Me.Panelbotones.Controls.Add(Me.btnVentas)
         Me.Panelbotones.Controls.Add(Me.btnSalir)
         Me.Panelbotones.Controls.Add(Me.PanelsubmenuStock)
-        Me.Panelbotones.Controls.Add(Me.btnDepositos)
+        Me.Panelbotones.Controls.Add(Me.btnStock)
         Me.Panelbotones.Controls.Add(Me.btnEmpleados)
         Me.Panelbotones.Controls.Add(Me.btnClientes)
         Me.Panelbotones.Dock = System.Windows.Forms.DockStyle.Fill
@@ -169,25 +167,25 @@ Partial Class FormPrincipal
         Me.Panelbotones.Size = New System.Drawing.Size(230, 449)
         Me.Panelbotones.TabIndex = 1
         '
-        'btnDrogueria
+        'btnListados
         '
-        Me.btnDrogueria.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.btnDrogueria.Dock = System.Windows.Forms.DockStyle.Top
-        Me.btnDrogueria.FlatAppearance.BorderSize = 0
-        Me.btnDrogueria.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnDrogueria.ForeColor = System.Drawing.Color.Gainsboro
-        Me.btnDrogueria.Image = CType(resources.GetObject("btnDrogueria.Image"), System.Drawing.Image)
-        Me.btnDrogueria.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.btnDrogueria.Location = New System.Drawing.Point(0, 550)
-        Me.btnDrogueria.Name = "btnDrogueria"
-        Me.btnDrogueria.Size = New System.Drawing.Size(213, 50)
-        Me.btnDrogueria.TabIndex = 8
-        Me.btnDrogueria.Text = "DROGUERIAS"
-        Me.btnDrogueria.TextAlign = System.Drawing.ContentAlignment.MiddleRight
-        Me.btnDrogueria.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
-        Me.ToolTip13.SetToolTip(Me.btnDrogueria, "DROGUERIAS")
-        Me.btnDrogueria.UseCompatibleTextRendering = True
-        Me.btnDrogueria.UseVisualStyleBackColor = True
+        Me.btnListados.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.btnListados.Dock = System.Windows.Forms.DockStyle.Top
+        Me.btnListados.FlatAppearance.BorderSize = 0
+        Me.btnListados.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnListados.ForeColor = System.Drawing.Color.Gainsboro
+        Me.btnListados.Image = CType(resources.GetObject("btnListados.Image"), System.Drawing.Image)
+        Me.btnListados.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.btnListados.Location = New System.Drawing.Point(0, 550)
+        Me.btnListados.Name = "btnListados"
+        Me.btnListados.Size = New System.Drawing.Size(213, 50)
+        Me.btnListados.TabIndex = 8
+        Me.btnListados.Text = "LISTADOS"
+        Me.btnListados.TextAlign = System.Drawing.ContentAlignment.MiddleRight
+        Me.btnListados.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
+        Me.ToolTip13.SetToolTip(Me.btnListados, "DROGUERIAS")
+        Me.btnListados.UseCompatibleTextRendering = True
+        Me.btnListados.UseVisualStyleBackColor = True
         '
         'btnMediospago
         '
@@ -335,65 +333,67 @@ Partial Class FormPrincipal
         '
         'PanelsubmenuStock
         '
-        Me.PanelsubmenuStock.Controls.Add(Me.btnconsultastock)
-        Me.PanelsubmenuStock.Controls.Add(Me.btningreso)
+        Me.PanelsubmenuStock.Controls.Add(Me.Btnconsultastock)
+        Me.PanelsubmenuStock.Controls.Add(Me.Btningreso)
         Me.PanelsubmenuStock.Dock = System.Windows.Forms.DockStyle.Top
         Me.PanelsubmenuStock.Location = New System.Drawing.Point(0, 150)
         Me.PanelsubmenuStock.Name = "PanelsubmenuStock"
         Me.PanelsubmenuStock.Size = New System.Drawing.Size(213, 100)
         Me.PanelsubmenuStock.TabIndex = 0
         '
-        'btnconsultastock
+        'Btnconsultastock
         '
-        Me.btnconsultastock.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.btnconsultastock.FlatAppearance.BorderSize = 0
-        Me.btnconsultastock.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnconsultastock.ForeColor = System.Drawing.Color.Gainsboro
-        Me.btnconsultastock.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.btnconsultastock.Location = New System.Drawing.Point(0, 50)
-        Me.btnconsultastock.Name = "btnconsultastock"
-        Me.btnconsultastock.Size = New System.Drawing.Size(220, 50)
-        Me.btnconsultastock.TabIndex = 1
-        Me.btnconsultastock.Text = "CONSULTA"
-        Me.btnconsultastock.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
-        Me.ToolTip5.SetToolTip(Me.btnconsultastock, "CONSULTA STOCK")
-        Me.btnconsultastock.UseVisualStyleBackColor = True
+        Me.Btnconsultastock.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.Btnconsultastock.Dock = System.Windows.Forms.DockStyle.Top
+        Me.Btnconsultastock.FlatAppearance.BorderSize = 0
+        Me.Btnconsultastock.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Btnconsultastock.ForeColor = System.Drawing.Color.Gainsboro
+        Me.Btnconsultastock.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.Btnconsultastock.Location = New System.Drawing.Point(0, 50)
+        Me.Btnconsultastock.Name = "Btnconsultastock"
+        Me.Btnconsultastock.Size = New System.Drawing.Size(213, 50)
+        Me.Btnconsultastock.TabIndex = 4
+        Me.Btnconsultastock.Text = "     CONSULTAS"
+        Me.Btnconsultastock.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
+        Me.ToolTip8.SetToolTip(Me.Btnconsultastock, "CONSULTAS")
+        Me.Btnconsultastock.UseVisualStyleBackColor = True
         '
-        'btningreso
+        'Btningreso
         '
-        Me.btningreso.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.btningreso.FlatAppearance.BorderSize = 0
-        Me.btningreso.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btningreso.ForeColor = System.Drawing.Color.Gainsboro
-        Me.btningreso.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.btningreso.Location = New System.Drawing.Point(0, 0)
-        Me.btningreso.Name = "btningreso"
-        Me.btningreso.Size = New System.Drawing.Size(220, 50)
-        Me.btningreso.TabIndex = 0
-        Me.btningreso.Text = "INGRESOS"
-        Me.btningreso.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
-        Me.ToolTip4.SetToolTip(Me.btningreso, "INGRESO STOCK")
-        Me.btningreso.UseVisualStyleBackColor = True
+        Me.Btningreso.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.Btningreso.Dock = System.Windows.Forms.DockStyle.Top
+        Me.Btningreso.FlatAppearance.BorderSize = 0
+        Me.Btningreso.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Btningreso.ForeColor = System.Drawing.Color.Gainsboro
+        Me.Btningreso.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.Btningreso.Location = New System.Drawing.Point(0, 0)
+        Me.Btningreso.Name = "Btningreso"
+        Me.Btningreso.Size = New System.Drawing.Size(213, 50)
+        Me.Btningreso.TabIndex = 3
+        Me.Btningreso.Text = "INGRESO"
+        Me.Btningreso.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
+        Me.ToolTip8.SetToolTip(Me.Btningreso, "FACTURACION VENTA")
+        Me.Btningreso.UseVisualStyleBackColor = True
         '
-        'btnDepositos
+        'btnStock
         '
-        Me.btnDepositos.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.btnDepositos.Dock = System.Windows.Forms.DockStyle.Top
-        Me.btnDepositos.FlatAppearance.BorderSize = 0
-        Me.btnDepositos.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btnDepositos.ForeColor = System.Drawing.Color.Gainsboro
-        Me.btnDepositos.Image = CType(resources.GetObject("btnDepositos.Image"), System.Drawing.Image)
-        Me.btnDepositos.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.btnDepositos.Location = New System.Drawing.Point(0, 100)
-        Me.btnDepositos.Name = "btnDepositos"
-        Me.btnDepositos.Size = New System.Drawing.Size(213, 50)
-        Me.btnDepositos.TabIndex = 3
-        Me.btnDepositos.Text = "   STOCK"
-        Me.btnDepositos.TextAlign = System.Drawing.ContentAlignment.MiddleRight
-        Me.btnDepositos.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
-        Me.ToolTip3.SetToolTip(Me.btnDepositos, "STOCK")
-        Me.btnDepositos.UseCompatibleTextRendering = True
-        Me.btnDepositos.UseVisualStyleBackColor = True
+        Me.btnStock.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.btnStock.Dock = System.Windows.Forms.DockStyle.Top
+        Me.btnStock.FlatAppearance.BorderSize = 0
+        Me.btnStock.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnStock.ForeColor = System.Drawing.Color.Gainsboro
+        Me.btnStock.Image = CType(resources.GetObject("btnStock.Image"), System.Drawing.Image)
+        Me.btnStock.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.btnStock.Location = New System.Drawing.Point(0, 100)
+        Me.btnStock.Name = "btnStock"
+        Me.btnStock.Size = New System.Drawing.Size(213, 50)
+        Me.btnStock.TabIndex = 3
+        Me.btnStock.Text = "   STOCK"
+        Me.btnStock.TextAlign = System.Drawing.ContentAlignment.MiddleRight
+        Me.btnStock.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
+        Me.ToolTip3.SetToolTip(Me.btnStock, "STOCK")
+        Me.btnStock.UseCompatibleTextRendering = True
+        Me.btnStock.UseVisualStyleBackColor = True
         '
         'btnEmpleados
         '
@@ -441,7 +441,6 @@ Partial Class FormPrincipal
         'PanelUsuario
         '
         Me.PanelUsuario.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(64, Byte), Integer))
-        Me.PanelUsuario.Controls.Add(Me.btnmenu)
         Me.PanelUsuario.Controls.Add(Me.lblCorreo)
         Me.PanelUsuario.Controls.Add(Me.lblNombre)
         Me.PanelUsuario.Controls.Add(Me.lblPosicion)
@@ -451,18 +450,6 @@ Partial Class FormPrincipal
         Me.PanelUsuario.Name = "PanelUsuario"
         Me.PanelUsuario.Size = New System.Drawing.Size(230, 123)
         Me.PanelUsuario.TabIndex = 0
-        '
-        'btnmenu
-        '
-        Me.btnmenu.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.btnmenu.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.btnmenu.Image = CType(resources.GetObject("btnmenu.Image"), System.Drawing.Image)
-        Me.btnmenu.Location = New System.Drawing.Point(190, 4)
-        Me.btnmenu.Name = "btnmenu"
-        Me.btnmenu.Size = New System.Drawing.Size(32, 32)
-        Me.btnmenu.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize
-        Me.btnmenu.TabIndex = 0
-        Me.btnmenu.TabStop = False
         '
         'lblCorreo
         '
@@ -549,6 +536,7 @@ Partial Class FormPrincipal
         'btnRestaurar
         '
         Me.btnRestaurar.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.btnRestaurar.Cursor = System.Windows.Forms.Cursors.Hand
         Me.btnRestaurar.Image = CType(resources.GetObject("btnRestaurar.Image"), System.Drawing.Image)
         Me.btnRestaurar.Location = New System.Drawing.Point(839, 12)
         Me.btnRestaurar.Name = "btnRestaurar"
@@ -561,6 +549,7 @@ Partial Class FormPrincipal
         'btnMinimizar
         '
         Me.btnMinimizar.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.btnMinimizar.Cursor = System.Windows.Forms.Cursors.Hand
         Me.btnMinimizar.Image = CType(resources.GetObject("btnMinimizar.Image"), System.Drawing.Image)
         Me.btnMinimizar.Location = New System.Drawing.Point(808, 12)
         Me.btnMinimizar.Name = "btnMinimizar"
@@ -572,6 +561,7 @@ Partial Class FormPrincipal
         'btnMaximizar
         '
         Me.btnMaximizar.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.btnMaximizar.Cursor = System.Windows.Forms.Cursors.Hand
         Me.btnMaximizar.Image = CType(resources.GetObject("btnMaximizar.Image"), System.Drawing.Image)
         Me.btnMaximizar.Location = New System.Drawing.Point(839, 12)
         Me.btnMaximizar.Name = "btnMaximizar"
@@ -583,6 +573,7 @@ Partial Class FormPrincipal
         'btnCerrar
         '
         Me.btnCerrar.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.btnCerrar.Cursor = System.Windows.Forms.Cursors.Hand
         Me.btnCerrar.Image = CType(resources.GetObject("btnCerrar.Image"), System.Drawing.Image)
         Me.btnCerrar.Location = New System.Drawing.Point(871, 12)
         Me.btnCerrar.Name = "btnCerrar"
@@ -624,7 +615,6 @@ Partial Class FormPrincipal
         Me.PanelsubmenuStock.ResumeLayout(False)
         Me.PanelUsuario.ResumeLayout(False)
         Me.PanelUsuario.PerformLayout()
-        CType(Me.btnmenu, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.PanelBarraTitulo.ResumeLayout(False)
         Me.PanelBarraTitulo.PerformLayout()
@@ -651,14 +641,11 @@ Partial Class FormPrincipal
     Friend WithEvents lblPosicion As System.Windows.Forms.Label
     Friend WithEvents Panelbotones As System.Windows.Forms.Panel
     Friend WithEvents btnClientes As System.Windows.Forms.Button
-    Friend WithEvents btnmenu As System.Windows.Forms.PictureBox
     Friend WithEvents btnEmpleados As System.Windows.Forms.Button
     Friend WithEvents PanelsubmenuStock As System.Windows.Forms.Panel
-    Friend WithEvents btnconsultastock As System.Windows.Forms.Button
-    Friend WithEvents btningreso As System.Windows.Forms.Button
     Friend WithEvents TmOcultarMenu As System.Windows.Forms.Timer
     Friend WithEvents tmMostrarMenu As System.Windows.Forms.Timer
-    Friend WithEvents btnDepositos As System.Windows.Forms.Button
+    Friend WithEvents btnStock As System.Windows.Forms.Button
     Friend WithEvents PictureBox2 As System.Windows.Forms.PictureBox
     Friend WithEvents Label1 As System.Windows.Forms.Label
     Friend WithEvents btnSalir As System.Windows.Forms.Button
@@ -675,9 +662,8 @@ Partial Class FormPrincipal
     Friend WithEvents ToolTip8 As System.Windows.Forms.ToolTip
     Friend WithEvents ToolTip7 As System.Windows.Forms.ToolTip
     Friend WithEvents ToolTip6 As System.Windows.Forms.ToolTip
-    Friend WithEvents btnDrogueria As System.Windows.Forms.Button
+    Friend WithEvents btnListados As System.Windows.Forms.Button
     Friend WithEvents btnMediospago As System.Windows.Forms.Button
-    Friend WithEvents btnOSocial As System.Windows.Forms.Button
     Friend WithEvents btnProductos As System.Windows.Forms.Button
     Friend WithEvents ToolTip10 As System.Windows.Forms.ToolTip
     Friend WithEvents ToolTip11 As System.Windows.Forms.ToolTip
@@ -687,5 +673,8 @@ Partial Class FormPrincipal
     Friend WithEvents lblfecha As System.Windows.Forms.Label
     Friend WithEvents lblhora As System.Windows.Forms.Label
     Friend WithEvents horafecha As System.Windows.Forms.Timer
+    Friend WithEvents btnOSocial As System.Windows.Forms.Button
+    Friend WithEvents Btningreso As System.Windows.Forms.Button
+    Friend WithEvents Btnconsultastock As System.Windows.Forms.Button
 
 End Class

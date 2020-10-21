@@ -4,6 +4,11 @@ Imports System.Data
 
 Public Class Facturacion
     Dim item As Integer
+    Dim Subtotal As Double = 0
+    Dim Fila As DataGridViewRow = New DataGridViewRow()
+    Dim Descuento As Double = 10
+    Dim Total As Double
+
 
     Private Sub datelabel_Tick(sender As Object, e As EventArgs) Handles datelabel.Tick
         lblfecha.Text = DateTime.Now.ToString("dd/MM/yyyy")
@@ -18,7 +23,7 @@ Public Class Facturacion
 
         dgDetalles.Columns.Clear 
 
-        For Each col As DataGridViewColumn In dgProductos.Columns
+        For Each col As DataGridViewColumn In DgProducto.Columns
             dgDetalles.Columns.Add(DirectCast(col.Clone(), DataGridViewColumn))
         Next
         'listproducto()
@@ -123,27 +128,27 @@ Public Class Facturacion
         Try
             Dim _PalabraBuscada = txtBuscador.Text.Trim
             Dim _ProductosEncontrados = Datos.ObtenerProductosParaGrilla(_PalabraBuscada)
-            dgProductos.DataSource = _ProductosEncontrados
+            DgProducto.DataSource = _ProductosEncontrados
         Catch ex As Exception
             Console.Write(ex.Message)
         End Try
     End Sub
 
-    Private Sub BtnAgregar_Click(sender As Object, e As EventArgs) Handles BtnAgregar.Click
-        
-            For Each row As DataGridViewRow In
-        dgProductos.SelectedRows.Cast(Of DataGridViewRow)().Reverse()
+    Private Sub BtnAgregar_Click(sender As Object, e As EventArgs)
 
-                Dim index As Integer = dgDetalles.Rows.Add(DirectCast(row.Clone(), DataGridViewRow))
+        For Each row As DataGridViewRow In
+    DgProducto.SelectedRows.Cast(Of DataGridViewRow)().Reverse()
 
-                For Each cell As DataGridViewCell In row.Cells
-                    dgDetalles.Rows(index).Cells(cell.ColumnIndex).Value = cell.Value
-                Next
+            Dim index As Integer = DgDetalles.Rows.Add(DirectCast(row.Clone(), DataGridViewRow))
+
+            For Each cell As DataGridViewCell In row.Cells
+                DgDetalles.Rows(index).Cells(cell.ColumnIndex).Value = cell.Value
             Next
-        Dim Subtotal As Double = 0
+        Next
+        'Dim Subtotal As Double = 0
         Dim Fila As DataGridViewRow = New DataGridViewRow()
-        Dim Descuento As Double = 10
-        For Each Fila In dgDetalles.Rows
+        Dim Descuento As Double
+        For Each Fila In DgDetalles.Rows
             Subtotal += Convert.ToDouble(Fila.Cells("PO").Value)
         Next
         Subtotaltxt.Text = Convert.ToString(Subtotal)
@@ -153,7 +158,64 @@ Public Class Facturacion
     End Sub
 
 
-    Private Sub dgProductos_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles dgProductos.CellContentClick
-        
+    Private Sub dgProductos_CellContentClick(sender As Object, e As DataGridViewCellEventArgs)
+
+    End Sub
+
+
+
+
+
+    Private Sub Btn_Click(sender As Object, e As EventArgs) Handles Btn.Click
+        For Each row As DataGridViewRow In
+    DgProducto.SelectedRows.Cast(Of DataGridViewRow)().Reverse()
+
+            Dim index As Integer = DgDetalles.Rows.Add(DirectCast(row.Clone(), DataGridViewRow))
+
+            For Each cell As DataGridViewCell In row.Cells
+                DgDetalles.Rows(index).Cells(cell.ColumnIndex).Value = cell.Value
+            Next
+        Next
+        Dim Subtotal As Double = 0
+        Dim Fila As DataGridViewRow = New DataGridViewRow()
+        Dim Descuento As Double = 10
+        For Each Fila In DgDetalles.Rows
+            Subtotal += Convert.ToDouble(Fila.Cells("PO").Value)
+        Next
+        Subtotaltxt.Text = Convert.ToString(Subtotal)
+        Descuentotxt.Text = CStr(((CDbl(Convert.ToString(Subtotal)) * 10) / 100))
+        Totaltxt.Text = CStr(CDbl(Convert.ToString(Subtotal)) - CDbl(Convert.ToString(Descuento)))
+    End Sub
+
+    
+    
+    Private Sub listobra(sender As Object, e As EventArgs) Handles CmbObraSocial.Click
+
+    End Sub
+    Private Sub listDni(sender As Object, e As EventArgs) Handles Cmbtipodni.Click
+
+    End Sub
+
+    
+
+
+    Private Sub BtnEliminar_Click(sender As Object, e As EventArgs) Handles BtnEliminar.Click
+        If DgDetalles.RowCount > 0 Then
+            DgDetalles.Rows.Remove(DgDetalles.CurrentRow)
+            'Subtotaltxt.Text = (Convert.ToString(Subtotal)))
+            'Descuentotxt.Text = CStr(((CDbl(Convert.ToString(Subtotal)) * 0) / 100))
+            'Totaltxt.Text = CStr(CDbl(Convert.ToString(Subtotal)) - CDbl(Convert.ToString(Descuento)))
+        End If
+    End Sub
+
+    Private Sub BtnLimpiar_Click(sender As Object, e As EventArgs) Handles BtnLimpiar.Click
+        Cmbtipodni.Text = ""
+        CmbObraSocial.Text = ""
+        TxtNombre.Text = ""
+    End Sub
+
+   
+    Private Sub txtBuscador_TextChanged(sender As Object, e As KeyEventArgs)
+
     End Sub
 End Class

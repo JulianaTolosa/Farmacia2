@@ -174,31 +174,31 @@ Public Class FormPrincipal
     Private Sub managePermissions()
         If Utilidades._UsuarioLogueado._Posicion = Positions.Encargado Then
             btnClientes.Enabled = True
-            btnDepositos.Enabled = False
+            btnStock.Enabled = False
             btnEmpleados.Enabled = True
 
         End If
 
         If Utilidades._UsuarioLogueado._Posicion = Positions.Vendedor Then
             btnClientes.Enabled = True
-            btnDepositos.Enabled = False
+            btnStock.Enabled = False
             btnEmpleados.Enabled = True
 
         End If
     End Sub
 
 
-    Private Sub btnIngreso_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btningreso.Click
+    Private Sub btnIngreso_Click(ByVal sender As System.Object, ByVal e As System.EventArgs)
         openChildForm(New Ingreso())
         hideSubmenu()
     End Sub
 
-    Private Sub btnConsultas_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnconsultastock.Click
+    Private Sub btnConsultas_Click(ByVal sender As System.Object, ByVal e As System.EventArgs)
         openChildForm(New ConsultaStock())
         hideSubmenu()
     End Sub
 
-    Private Sub btnDepositos_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnDepositos.Click
+    Private Sub btnDepositos_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnStock.Click
         showSubmenu(PanelsubmenuStock)
     End Sub
 
@@ -217,7 +217,7 @@ Public Class FormPrincipal
         childForm.Show()
     End Sub
 
-    Private Sub btnmenu_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnmenu.Click
+    Private Sub btnmenu_Click(ByVal sender As System.Object, ByVal e As System.EventArgs)
         If PanelLateral.Width = 230 Then
             Me.TmOcultarMenu.Enabled = True
         ElseIf PanelLateral.Width = 70 Then
@@ -235,19 +235,17 @@ Public Class FormPrincipal
             Me.TmOcultarMenu.Enabled = False
             btnClientes.Text = ""
             btnEmpleados.Text = ""
-            btnDepositos.Text = ""
+            btnStock.Text = ""
             btningreso.Text = ""
             btnconsultastock.Text = ""
-            btnVentas.Text = ""
             btnVentas.Text = ""
             btnfacturacion.Text = ""
             btnconsultaventa.Text = ""
             btnProductos.Text = ""
             btnOSocial.Text = ""
             btnMediospago.Text = ""
-            btnDrogueria.Text = ""
+            btnListados.Text = ""
             btnSalir.Text = ""
-
         Else
             Me.PanelLateral.Width = PanelLateral.Width - 20
         End If
@@ -258,20 +256,17 @@ Public Class FormPrincipal
             Me.tmMostrarMenu.Enabled = False
             btnClientes.Text = "CLIENTES"
             btnEmpleados.Text = "EMPLEADOS"
-            btnDepositos.Text = "DEPOSITOS"
-            btningreso.Text = "DEPOSITO 1"
-            btnconsultastock.Text = "DEPOSITO 2"
+            btnStock.Text = "STOCK"
+            btningreso.Text = "INGRESO"
+            btnconsultastock.Text = "CONSULTAS STOCK"
             btnVentas.Text = "VENTAS"
-            btnVentas.Text = "REPORTES"
-            btnfacturacion.Text = "REPORTE 1"
-            btnconsultaventa.Text = "REPORTE 2"
+            btnfacturacion.Text = "FACTURACION"
+            btnconsultaventa.Text = "CONSULTAS"
             btnProductos.Text = "PRODUCTOS"
             btnOSocial.Text = "OBRA SOCIAL"
             btnMediospago.Text = "MEDIOS DE PAGO"
-            btnDrogueria.Text = "DROGUERIAS"
+            btnListados.Text = "LISTADOS"
             btnSalir.Text = "SALIR"
-
-
         Else
             Me.PanelLateral.Width = PanelLateral.Width + 20
 
@@ -329,8 +324,8 @@ Public Class FormPrincipal
         hideSubmenu()
     End Sub
 
-    Private Sub btnDrogueria_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnDrogueria.Click
-        openChildForm(New Droguerias())
+    Private Sub btnDrogueria_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnListados.Click
+        openChildForm(New Listados())
         hideSubmenu()
     End Sub
 
@@ -364,6 +359,14 @@ Public Class FormPrincipal
         hideSubmenu()
     End Sub
 
-    
+    Private Sub Btningreso_Click_1(sender As Object, e As EventArgs) Handles Btningreso.Click
+        openChildForm(New Ingreso())
+        hideSubmenu()
+    End Sub
+
+    Private Sub Btnconsultastock_Click(sender As Object, e As EventArgs) Handles Btnconsultastock.Click
+        openChildForm(New ConsultaStock())
+        hideSubmenu()
+    End Sub
 End Class
 

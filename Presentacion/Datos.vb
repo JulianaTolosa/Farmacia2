@@ -159,6 +159,16 @@
         Return _Retorno
     End Function
 
+    Public Function ObtenerDataTableStock() As DataTable
+        Dim _Retorno As New DataTable
+
+        Dim _Consulta As New ConsultaSQL
+        _Consulta.Consulta = "SELECT * FROM Stock"
+        _Retorno = _Consulta.ObtenerTabla()
+
+        Return _Retorno
+    End Function
+
     Public Function ObtenerDataTableEmpleados() As DataTable
         Dim _Retorno As New DataTable
 
@@ -386,7 +396,7 @@
         Try
             Dim _Consulta As New ConsultaSQL
             _Consulta.Consulta &= " SELECT "
-            _Consulta.Consulta &= "	    P.IdProducto, P.Nombre,P.Presentacion, IdTipoProd as Tipo,"
+            _Consulta.Consulta &= "	    P.IdProducto, P.Nombre,P.Presentacion,IdTipoprod as tipo,"
             _Consulta.Consulta &= "	    COALESCE(Pr.precio, precio_venta) as PO"
             _Consulta.Consulta &= " FROM Producto P"
             _Consulta.Consulta &= " LEFT JOIN Precios Pr ON P.Idproducto=Pr.Idproducto AND GETDATE() between Pr.fecha_dsde AND Pr.fecha_hst"
@@ -436,7 +446,7 @@
 
         Try
             Dim _Consulta As New ConsultaSQL
-            _Consulta.Consulta = "SELECT Nombre, Presentacion FROM Producto WHERE  nombre LIKE '%' + @PalabraBuscada + '%' ORDER BY IdProducto"
+            _Consulta.Consulta = "SELECT IdProducto,Nombre, Presentacion FROM Producto WHERE  nombre LIKE '%' + @PalabraBuscada + '%' ORDER BY IdProducto"
             Dim _ID As Integer = 0
             Integer.TryParse(_PalabraBuscada, _ID)
             '_Consulta.AgregarParametro("@ID", _ID)
@@ -447,6 +457,23 @@
         End Try
         Return _Retorno
     End Function
+
+    'Public Function ConsultaMovimientos(_ID As Integer) As DataTable
+    '    Dim _Retorno As New DataTable
+
+    '    Try
+    '        Dim _Consulta As New ConsultaSQL
+    '        _Consulta.Consulta = "select * from Movimientos_Stock"
+    '        Dim _ID As Integer = 0
+    '        'Integer.TryParse(_ID)
+    '        _Consulta.AgregarParametro("@ID", _ID)
+    '        '_Consulta.AgregarParametro("@PalabraBuscada", _PalabraBuscada)
+    '        _Retorno = _Consulta.ObtenerTabla()
+    '    Catch ex As Exception
+    '        _Retorno = New DataTable
+    '    End Try
+    '    Return _Retorno
+    'End Function
 
 #Region "DatosUsuarios"
 
@@ -510,6 +537,8 @@
         Return _Retorno
     End Function
 #End Region
+
+    
 
 
 End Module

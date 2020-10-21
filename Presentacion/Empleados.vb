@@ -16,7 +16,7 @@ Public Class Empleados
     End Sub
 
 
-    Private Sub Btnnuevo_Click_1(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Btnnuevo.Click
+    Private Sub Btnnuevo_Click_1(ByVal sender As System.Object, ByVal e As System.EventArgs)
         If (String.IsNullOrEmpty(Txtnombreusuario.Text) Or String.IsNullOrEmpty(Txtcontrasena.Text) Or String.IsNullOrEmpty(Txtnombre.Text) Or String.IsNullOrEmpty(Txtapellido.Text) Or String.IsNullOrEmpty(cmbposicion.Text) Or String.IsNullOrEmpty(Txtcorreo.Text)) Then
             MsgBox("Por Favor, rellene los campos vacios")
         ElseIf validar_Mail(Txtcorreo.Text) = False Then
@@ -194,7 +194,7 @@ Public Class Empleados
     End Function
 
 
-    Private Sub Btnborrar_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Btnborrar.Click
+    Private Sub Btnborrar_Click(ByVal sender As System.Object, ByVal e As System.EventArgs)
         Dim nombreusuario As String = Txtnombreusuario.Text
         Dim query As String = "delete Usuario where nombreusuario = @nombreusuario"
         Using con As SqlConnection = New SqlConnection("Data Source=LEO-PC;Initial Catalog=Tesis;Integrated Security=True")
@@ -211,18 +211,18 @@ Public Class Empleados
         End Using
     End Sub
 
-    Private Sub BtnEditar_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles BtnEditar.Click
-        'Editarempleado.Show()
-        If _IdUsuarioSeleccionado <= 0 Then
-            MsgBox("Debe seleccioar un Usuario")
-            Exit Sub
-        End If
+    'Private Sub BtnEditar_Click(ByVal sender As System.Object, ByVal e As System.EventArgs)
+    '    'Editarempleado.Show()
+    '    If _IdUsuarioSeleccionado <= 0 Then
+    '        MsgBox("Debe seleccioar un Usuario")
+    '        Exit Sub
+    '    End If
 
-        'Cargo el formulario Editar
-        Editarempleado.Mostrar(Datos.ObtenerUsuario(_IdUsuarioSeleccionado))
-    End Sub
+    '    'Cargo el formulario Editar
+    '    Editarempleado.Mostrar(Datos.ObtenerUsuario(_IdUsuarioSeleccionado))
+    'End Sub
 
-    Private Sub DgEmpleados_CellClick(sender As Object, e As DataGridViewCellEventArgs) Handles DgEmpleados.CellClick
+    Private Sub DgEmpleados_CellClick(sender As Object, e As DataGridViewCellEventArgs)
         Try
             If e.RowIndex >= 0 Then
                 Dim Row As DataGridViewRow = DgEmpleados.Rows(e.RowIndex)
@@ -235,9 +235,21 @@ Public Class Empleados
     End Sub
 
 
-    Private Sub DgEmpleados_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles DgEmpleados.CellDoubleClick
+    Private Sub DgEmpleados_CellContentClick(sender As Object, e As DataGridViewCellEventArgs)
         Editarempleado.Mostrar(Datos.ObtenerUsuario(_IdUsuarioSeleccionado))
     End Sub
 
     
+    
+  
+    Private Sub BtnEditar_Click(sender As Object, e As EventArgs) Handles BtnEditar.Click
+        'Editarempleado.Show()
+        If _IdUsuarioSeleccionado <= 0 Then
+            MsgBox("Debe seleccioar un Usuario")
+            Exit Sub
+        End If
+
+        'Cargo el formulario Editar
+        Editarempleado.Mostrar(Datos.ObtenerUsuario(_IdUsuarioSeleccionado))
+    End Sub
 End Class

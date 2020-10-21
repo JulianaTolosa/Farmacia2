@@ -14,28 +14,26 @@ Public Class Productos
     End Sub
 
     Private Sub Btnagregar_Click(sender As Object, e As EventArgs) Handles Btnagregar.Click
-        If (String.IsNullOrEmpty(nombreprod.Text) Or String.IsNullOrEmpty(precioventa.Text) Or String.IsNullOrEmpty(preciocompra.Text) Or String.IsNullOrEmpty(txtcantidad.Text) Or String.IsNullOrEmpty(Cmbtipoproducto.Text) Or String.IsNullOrEmpty(txtdescripcion.Text)) Then
+        If (String.IsNullOrEmpty(TxtNombre.Text) Or String.IsNullOrEmpty(Txtprecioventa.Text) Or String.IsNullOrEmpty(Txtpreciocompra.Text) Or String.IsNullOrEmpty(Txtlaboratorio.Text) Or String.IsNullOrEmpty(CmbTipoproducto.Text) Or String.IsNullOrEmpty(Txtdescripcion.Text)) Then
             MsgBox("Por Favor, rellene los campos vacios")
         Else
             'limpiar()
 
-            Dim nombre As String = nombreprod.Text
-            Dim precioven As Double = Val(precioventa.Text)
-            Dim preciocomp As Double = Val((preciocompra.Text))
-
-            ' Dim cantidad As Integer = CInt(Val((txtcantidad.Text)))
-
-            Dim cantidad As Integer = CInt((Val((txtcantidad.Text))))
-            Dim tipoprod As String = (Cmbtipoproducto.Text)
-            Dim descripcion As String = txtdescripcion.Text
+            Dim nombre As String = TxtNombre.Text
+            Dim precioven As Double = Val(Txtprecioventa.Text)
+            Dim preciocomp As Double = Val((Txtpreciocompra.Text))
+            Dim cantidad As Integer = CInt(Val((Txtcantidad.Text)))
+            'Dim cantidad As Integer = (Val((cantidadTxt.Text)))
+            Dim tipoprod As String = (CmbTipoproducto.Text)
+            Dim descripcion As String = Txtdescripcion.Text
 
             Dim _Producto As New Producto()
-            _Producto._nombre = nombreprod.Text
-            _Producto._PrecioVenta = Val(precioventa.Text)
-            _Producto._PrecioCompra = Val(preciocompra.Text)
-            '_Producto._cantidad = CInt(Val((txtcantidad.Text)))
-            _Producto._tipoprod = (Cmbtipoproducto.Text)
-            _Producto._descripcion = txtdescripcion.Text
+            _Producto._Nombre = TxtNombre.Text
+            _Producto._PrecioVenta = Val(Txtprecioventa.Text)
+            _Producto._PrecioCompra = Val(Txtpreciocompra.Text)
+            _Producto._cantidad = CInt((Val((Txtcantidad.Text))))
+            _Producto._TipoProd = (CmbTipoproducto.Text)
+            _Producto._Descripcion = Txtdescripcion.Text
 
 
             If Datos.AgregarProducto(_Producto) Then
@@ -43,18 +41,18 @@ Public Class Productos
             Else
                 MsgBox("Error al agregar Producto!")
             End If
-            'limpiar()
+            limpiar()
         End If
     End Sub
 
     Public Sub limpiar()
-        nombreprod.Text = ""
-        precioventa.Text = ""
-        preciocompra.Text = ""
-        txtcantidad.Text = ""
+        TxtNombre.Text = ""
+        Txtprecioventa.Text = ""
+        Txtpreciocompra.Text = ""
+        Txtcantidad.Text = ""
         Cmbtipoproducto.Text = ""
-        txtdescripcion.Text = ""
-        nombreprod.Focus()
+        Txtdescripcion.Text = ""
+        TxtNombre.Focus()
     End Sub
 
 
@@ -63,7 +61,7 @@ Public Class Productos
 
     
     Private Sub Btnborrar_Click(sender As Object, e As EventArgs) Handles Btnborrar.Click
-        Dim nombreproducto As String = nombreprod.Text
+        Dim nombreproducto As String = TxtNombre.Text
         Dim query As String = "delete Producto where nombre = @nombre"
         Using con As SqlConnection = New SqlConnection("Data Source=LEO-PC;Initial Catalog=Tesis;Integrated Security=True")
             Using cmd As SqlCommand = New SqlCommand(query, con)
@@ -73,12 +71,9 @@ Public Class Productos
                 con.Close()
                 MessageBox.Show("Producto Eliminado Satisfactorimente")
                 'bindata()
-                nombreprod.Focus()
-                nombreprod.Clear()
-                txtdescripcion.Clear()
-                Cmbtipoproducto.Text = ""
-                preciocompra.Clear()
-                precioventa.Clear()
+                limpiar()
+                TxtNombre.Focus()
+                
             End Using
         End Using
 
@@ -97,4 +92,28 @@ Public Class Productos
 
     '    End Try
     'End Sub
+
+   
+    Private Sub Productos_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+
+    End Sub
+
+   
+    Private Sub GunaButton2_Click(sender As Object, e As EventArgs) Handles GunaButton2.Click
+        Dim nombreproducto As String = TxtNombre.Text
+        Dim query As String = "delete Producto where nombre = @nombre"
+        Using con As SqlConnection = New SqlConnection("Data Source=LEO-PC;Initial Catalog=Tesis;Integrated Security=True")
+            Using cmd As SqlCommand = New SqlCommand(query, con)
+                cmd.Parameters.AddWithValue("@nombre", nombreproducto)
+                con.Open()
+                cmd.ExecuteNonQuery()
+                con.Close()
+                MessageBox.Show("Producto Eliminado Satisfactorimente")
+                'bindata()
+                limpiar()
+                TxtNombre.Focus()
+
+            End Using
+        End Using
+    End Sub
 End Class

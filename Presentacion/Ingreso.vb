@@ -1,30 +1,38 @@
-﻿Public Class Ingreso
+﻿Imports System.Data.SqlClient
+Imports System.Data.Sql
 
-    Private Sub Label1_Click(sender As Object, e As EventArgs) Handles Label1.Click
+Public Class Ingreso
+
+    Dim prod As String
+    Dim cantidad As Integer
+    Dim fecha As DateTime
+
+
+
+    'Private Sub TextBox1_TextChanged(sender As Object, e As EventArgs)
+    '    Try
+    '        Dim _ListaProductos = Datos.ConsultaStock(Textproducto.Text.Trim())
+    '        '_ListaProductos tiene la lista de productos buscados
+    '        dgProductos.DataSource = _ListaProductos
+
+    '    Catch ex As Exception
+
+    '    End Try
+    'End Sub
+
+
+    Public Sub RefrescarListaStock()
+        Dgdetalleprod.DataSource = Datos.ObtenerDataTableStock()
+    End Sub
+
+
+    Private Sub Btnagregar_Click(sender As Object, e As EventArgs) Handles Btnagregar.Click
+
 
     End Sub
 
-    Private Sub Label3_Click(sender As Object, e As EventArgs) Handles Label3.Click
-
+    Private Sub Ingreso_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        RefrescarListaStock()
+        Dgdetalleprod.Columns(0).Visible = False
     End Sub
-
-    Private Sub DateTimePicker1_ValueChanged(sender As Object, e As EventArgs) Handles DateTimePicker1.ValueChanged
-
-
-
-
-    End Sub
-
-    Private Sub TextBox1_TextChanged(sender As Object, e As EventArgs) Handles TextBuscar.TextChanged
-        Try
-            Dim _ListaProductos = Datos.ConsultaStock(TextBuscar.Text.Trim())
-            '_ListaProductos tiene la lista de productos buscados
-            dgProductos.DataSource = _ListaProductos
-
-        Catch ex As Exception
-
-        End Try
-    End Sub
-
-   
 End Class

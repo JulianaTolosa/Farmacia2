@@ -24,41 +24,46 @@ Partial Class Empleados
     Private Sub InitializeComponent()
         Dim lblPosicion As System.Windows.Forms.Label
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Empleados))
+        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.btnCerrarForm = New System.Windows.Forms.PictureBox()
         Me.lblEmpleados = New System.Windows.Forms.Label()
-        Me.Btnnuevo = New System.Windows.Forms.Button()
-        Me.BtnEditar = New System.Windows.Forms.Button()
-        Me.Btnborrar = New System.Windows.Forms.Button()
-        Me.BtnImprimir = New System.Windows.Forms.Button()
-        Me.Txtcorreo = New System.Windows.Forms.TextBox()
-        Me.cmbposicion = New System.Windows.Forms.ComboBox()
-        Me.Txtapellido = New System.Windows.Forms.TextBox()
-        Me.Txtnombre = New System.Windows.Forms.TextBox()
-        Me.Txtcontrasena = New System.Windows.Forms.TextBox()
-        Me.Txtnombreusuario = New System.Windows.Forms.TextBox()
-        Me.Panelcentro = New System.Windows.Forms.Panel()
+        Me.GunaGroupBox1 = New Guna.UI.WinForms.GunaGroupBox()
+        Me.DgEmpleados = New Guna.UI.WinForms.GunaDataGridView()
+        Me.GunaGroupBox2 = New Guna.UI.WinForms.GunaGroupBox()
         Me.LblCorreo = New System.Windows.Forms.Label()
         Me.LblApellido = New System.Windows.Forms.Label()
         Me.Lblnombre = New System.Windows.Forms.Label()
         Me.Lblcontrasena = New System.Windows.Forms.Label()
         Me.Lblnombreusuario = New System.Windows.Forms.Label()
-        Me.DgEmpleados = New System.Windows.Forms.DataGridView()
+        Me.Txtnombreusuario = New System.Windows.Forms.TextBox()
+        Me.Txtcontrasena = New System.Windows.Forms.TextBox()
+        Me.Txtnombre = New System.Windows.Forms.TextBox()
+        Me.Txtapellido = New System.Windows.Forms.TextBox()
+        Me.cmbposicion = New System.Windows.Forms.ComboBox()
+        Me.Txtcorreo = New System.Windows.Forms.TextBox()
+        Me.BtnImprimir = New System.Windows.Forms.Button()
+        Me.Btnborrar = New System.Windows.Forms.Button()
+        Me.BtnEditar = New System.Windows.Forms.Button()
+        Me.Btnnuevo = New System.Windows.Forms.Button()
         lblPosicion = New System.Windows.Forms.Label()
         Me.Panel1.SuspendLayout()
         CType(Me.btnCerrarForm, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.Panelcentro.SuspendLayout()
+        Me.GunaGroupBox1.SuspendLayout()
         CType(Me.DgEmpleados, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.GunaGroupBox2.SuspendLayout()
         Me.SuspendLayout()
         '
         'lblPosicion
         '
         lblPosicion.AutoSize = True
         lblPosicion.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        lblPosicion.Location = New System.Drawing.Point(20, 170)
+        lblPosicion.Location = New System.Drawing.Point(30, 196)
         lblPosicion.Name = "lblPosicion"
         lblPosicion.Size = New System.Drawing.Size(72, 20)
-        lblPosicion.TabIndex = 15
+        lblPosicion.TabIndex = 34
         lblPosicion.Text = "Posicion:"
         '
         'Panel1
@@ -68,7 +73,7 @@ Partial Class Empleados
         Me.Panel1.Dock = System.Windows.Forms.DockStyle.Top
         Me.Panel1.Location = New System.Drawing.Point(0, 0)
         Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(1020, 45)
+        Me.Panel1.Size = New System.Drawing.Size(1020, 50)
         Me.Panel1.TabIndex = 0
         '
         'btnCerrarForm
@@ -95,63 +100,222 @@ Partial Class Empleados
         Me.lblEmpleados.Text = "EMPLEADOS"
         Me.lblEmpleados.TextAlign = System.Drawing.ContentAlignment.TopCenter
         '
-        'Btnnuevo
+        'GunaGroupBox1
         '
-        Me.Btnnuevo.Anchor = System.Windows.Forms.AnchorStyles.None
-        Me.Btnnuevo.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.Btnnuevo.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Btnnuevo.Location = New System.Drawing.Point(540, 22)
-        Me.Btnnuevo.Name = "Btnnuevo"
-        Me.Btnnuevo.Size = New System.Drawing.Size(90, 40)
-        Me.Btnnuevo.TabIndex = 6
-        Me.Btnnuevo.Text = "CREAR"
-        Me.Btnnuevo.UseVisualStyleBackColor = True
+        Me.GunaGroupBox1.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+            Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.GunaGroupBox1.BackColor = System.Drawing.Color.Transparent
+        Me.GunaGroupBox1.BaseColor = System.Drawing.SystemColors.ActiveCaption
+        Me.GunaGroupBox1.BorderColor = System.Drawing.Color.Gainsboro
+        Me.GunaGroupBox1.Controls.Add(Me.DgEmpleados)
+        Me.GunaGroupBox1.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.GunaGroupBox1.ForeColor = System.Drawing.Color.WhiteSmoke
+        Me.GunaGroupBox1.LineBottom = 1
+        Me.GunaGroupBox1.LineColor = System.Drawing.Color.Blue
+        Me.GunaGroupBox1.LineLeft = 1
+        Me.GunaGroupBox1.LineRight = 1
+        Me.GunaGroupBox1.Location = New System.Drawing.Point(24, 323)
+        Me.GunaGroupBox1.Name = "GunaGroupBox1"
+        Me.GunaGroupBox1.Padding = New System.Windows.Forms.Padding(0, 20, 0, 0)
+        Me.GunaGroupBox1.Size = New System.Drawing.Size(976, 243)
+        Me.GunaGroupBox1.TabIndex = 2
+        Me.GunaGroupBox1.Text = "EMPLEADOS"
+        Me.GunaGroupBox1.TextLocation = New System.Drawing.Point(430, 5)
         '
-        'BtnEditar
+        'DgEmpleados
         '
-        Me.BtnEditar.Anchor = System.Windows.Forms.AnchorStyles.None
-        Me.BtnEditar.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.BtnEditar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.BtnEditar.Location = New System.Drawing.Point(540, 72)
-        Me.BtnEditar.Name = "BtnEditar"
-        Me.BtnEditar.Size = New System.Drawing.Size(90, 40)
-        Me.BtnEditar.TabIndex = 7
-        Me.BtnEditar.Text = "EDITAR"
-        Me.BtnEditar.UseVisualStyleBackColor = True
+        Me.DgEmpleados.AllowUserToAddRows = False
+        DataGridViewCellStyle1.BackColor = System.Drawing.Color.White
+        DataGridViewCellStyle1.ForeColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(64, Byte), Integer))
+        Me.DgEmpleados.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle1
+        Me.DgEmpleados.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+            Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.DgEmpleados.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
+        Me.DgEmpleados.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells
+        Me.DgEmpleados.BackgroundColor = System.Drawing.SystemColors.ActiveCaption
+        Me.DgEmpleados.BorderStyle = System.Windows.Forms.BorderStyle.None
+        Me.DgEmpleados.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal
+        Me.DgEmpleados.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None
+        DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(CType(CType(100, Byte), Integer), CType(CType(88, Byte), Integer), CType(CType(255, Byte), Integer))
+        DataGridViewCellStyle2.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle2.ForeColor = System.Drawing.Color.White
+        DataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.DgEmpleados.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle2
+        Me.DgEmpleados.ColumnHeadersHeight = 26
+        Me.DgEmpleados.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing
+        DataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle3.BackColor = System.Drawing.Color.White
+        DataGridViewCellStyle3.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle3.ForeColor = System.Drawing.Color.Black
+        DataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(231, Byte), Integer), CType(CType(229, Byte), Integer), CType(CType(255, Byte), Integer))
+        DataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.FromArgb(CType(CType(71, Byte), Integer), CType(CType(69, Byte), Integer), CType(CType(94, Byte), Integer))
+        DataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
+        Me.DgEmpleados.DefaultCellStyle = DataGridViewCellStyle3
+        Me.DgEmpleados.EnableHeadersVisualStyles = False
+        Me.DgEmpleados.GridColor = System.Drawing.Color.FromArgb(CType(CType(231, Byte), Integer), CType(CType(229, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.DgEmpleados.Location = New System.Drawing.Point(34, 42)
+        Me.DgEmpleados.Name = "DgEmpleados"
+        Me.DgEmpleados.ReadOnly = True
+        Me.DgEmpleados.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.[Single]
+        Me.DgEmpleados.RowHeadersVisible = False
+        Me.DgEmpleados.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing
+        Me.DgEmpleados.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
+        Me.DgEmpleados.Size = New System.Drawing.Size(907, 188)
+        Me.DgEmpleados.TabIndex = 37
+        Me.DgEmpleados.Theme = Guna.UI.WinForms.GunaDataGridViewPresetThemes.Guna
+        Me.DgEmpleados.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White
+        Me.DgEmpleados.ThemeStyle.AlternatingRowsStyle.Font = Nothing
+        Me.DgEmpleados.ThemeStyle.AlternatingRowsStyle.ForeColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(64, Byte), Integer))
+        Me.DgEmpleados.ThemeStyle.AlternatingRowsStyle.SelectionBackColor = System.Drawing.Color.Empty
+        Me.DgEmpleados.ThemeStyle.AlternatingRowsStyle.SelectionForeColor = System.Drawing.Color.Empty
+        Me.DgEmpleados.ThemeStyle.BackColor = System.Drawing.SystemColors.ActiveCaption
+        Me.DgEmpleados.ThemeStyle.GridColor = System.Drawing.Color.FromArgb(CType(CType(231, Byte), Integer), CType(CType(229, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.DgEmpleados.ThemeStyle.HeaderStyle.BackColor = System.Drawing.Color.FromArgb(CType(CType(100, Byte), Integer), CType(CType(88, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.DgEmpleados.ThemeStyle.HeaderStyle.BorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None
+        Me.DgEmpleados.ThemeStyle.HeaderStyle.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.DgEmpleados.ThemeStyle.HeaderStyle.ForeColor = System.Drawing.Color.White
+        Me.DgEmpleados.ThemeStyle.HeaderStyle.HeaightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing
+        Me.DgEmpleados.ThemeStyle.HeaderStyle.Height = 26
+        Me.DgEmpleados.ThemeStyle.ReadOnly = True
+        Me.DgEmpleados.ThemeStyle.RowsStyle.BackColor = System.Drawing.Color.White
+        Me.DgEmpleados.ThemeStyle.RowsStyle.BorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal
+        Me.DgEmpleados.ThemeStyle.RowsStyle.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.DgEmpleados.ThemeStyle.RowsStyle.ForeColor = System.Drawing.Color.Black
+        Me.DgEmpleados.ThemeStyle.RowsStyle.Height = 22
+        Me.DgEmpleados.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(231, Byte), Integer), CType(CType(229, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.DgEmpleados.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.FromArgb(CType(CType(71, Byte), Integer), CType(CType(69, Byte), Integer), CType(CType(94, Byte), Integer))
         '
-        'Btnborrar
+        'GunaGroupBox2
         '
-        Me.Btnborrar.Anchor = System.Windows.Forms.AnchorStyles.None
-        Me.Btnborrar.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.Btnborrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Btnborrar.Location = New System.Drawing.Point(540, 122)
-        Me.Btnborrar.Name = "Btnborrar"
-        Me.Btnborrar.Size = New System.Drawing.Size(90, 40)
-        Me.Btnborrar.TabIndex = 8
-        Me.Btnborrar.Text = "BORRAR"
-        Me.Btnborrar.UseVisualStyleBackColor = True
+        Me.GunaGroupBox2.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.GunaGroupBox2.BackColor = System.Drawing.Color.Transparent
+        Me.GunaGroupBox2.BaseColor = System.Drawing.SystemColors.ActiveCaption
+        Me.GunaGroupBox2.BorderColor = System.Drawing.Color.Gainsboro
+        Me.GunaGroupBox2.Controls.Add(Me.LblCorreo)
+        Me.GunaGroupBox2.Controls.Add(Me.LblApellido)
+        Me.GunaGroupBox2.Controls.Add(Me.Lblnombre)
+        Me.GunaGroupBox2.Controls.Add(Me.Lblcontrasena)
+        Me.GunaGroupBox2.Controls.Add(Me.Lblnombreusuario)
+        Me.GunaGroupBox2.Controls.Add(Me.Txtnombreusuario)
+        Me.GunaGroupBox2.Controls.Add(Me.Txtcontrasena)
+        Me.GunaGroupBox2.Controls.Add(Me.Txtnombre)
+        Me.GunaGroupBox2.Controls.Add(Me.Txtapellido)
+        Me.GunaGroupBox2.Controls.Add(lblPosicion)
+        Me.GunaGroupBox2.Controls.Add(Me.cmbposicion)
+        Me.GunaGroupBox2.Controls.Add(Me.Txtcorreo)
+        Me.GunaGroupBox2.Controls.Add(Me.BtnImprimir)
+        Me.GunaGroupBox2.Controls.Add(Me.Btnborrar)
+        Me.GunaGroupBox2.Controls.Add(Me.BtnEditar)
+        Me.GunaGroupBox2.Controls.Add(Me.Btnnuevo)
+        Me.GunaGroupBox2.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.GunaGroupBox2.ForeColor = System.Drawing.Color.WhiteSmoke
+        Me.GunaGroupBox2.LineBottom = 1
+        Me.GunaGroupBox2.LineColor = System.Drawing.Color.Blue
+        Me.GunaGroupBox2.LineLeft = 1
+        Me.GunaGroupBox2.LineRight = 1
+        Me.GunaGroupBox2.Location = New System.Drawing.Point(24, 67)
+        Me.GunaGroupBox2.Name = "GunaGroupBox2"
+        Me.GunaGroupBox2.Padding = New System.Windows.Forms.Padding(0, 0, 0, 10)
+        Me.GunaGroupBox2.Size = New System.Drawing.Size(976, 240)
+        Me.GunaGroupBox2.TabIndex = 3
+        Me.GunaGroupBox2.Text = "DATOS EMPLEADOS"
+        Me.GunaGroupBox2.TextLocation = New System.Drawing.Point(400, 5)
         '
-        'BtnImprimir
+        'LblCorreo
         '
-        Me.BtnImprimir.Anchor = System.Windows.Forms.AnchorStyles.None
-        Me.BtnImprimir.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.BtnImprimir.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.BtnImprimir.Location = New System.Drawing.Point(540, 172)
-        Me.BtnImprimir.Name = "BtnImprimir"
-        Me.BtnImprimir.Size = New System.Drawing.Size(90, 40)
-        Me.BtnImprimir.TabIndex = 9
-        Me.BtnImprimir.Text = "IMPRIMIR"
-        Me.BtnImprimir.UseVisualStyleBackColor = True
+        Me.LblCorreo.AutoSize = True
+        Me.LblCorreo.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.LblCorreo.Location = New System.Drawing.Point(30, 166)
+        Me.LblCorreo.Name = "LblCorreo"
+        Me.LblCorreo.Size = New System.Drawing.Size(61, 20)
+        Me.LblCorreo.TabIndex = 39
+        Me.LblCorreo.Text = "Correo:"
         '
-        'Txtcorreo
+        'LblApellido
         '
-        Me.Txtcorreo.BorderStyle = System.Windows.Forms.BorderStyle.None
-        Me.Txtcorreo.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.Txtcorreo.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Txtcorreo.Location = New System.Drawing.Point(140, 140)
-        Me.Txtcorreo.Name = "Txtcorreo"
-        Me.Txtcorreo.Size = New System.Drawing.Size(250, 19)
-        Me.Txtcorreo.TabIndex = 4
+        Me.LblApellido.AutoSize = True
+        Me.LblApellido.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.LblApellido.Location = New System.Drawing.Point(30, 136)
+        Me.LblApellido.Name = "LblApellido"
+        Me.LblApellido.Size = New System.Drawing.Size(69, 20)
+        Me.LblApellido.TabIndex = 38
+        Me.LblApellido.Text = "Apellido:"
+        '
+        'Lblnombre
+        '
+        Me.Lblnombre.AutoSize = True
+        Me.Lblnombre.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Lblnombre.Location = New System.Drawing.Point(30, 106)
+        Me.Lblnombre.Name = "Lblnombre"
+        Me.Lblnombre.Size = New System.Drawing.Size(69, 20)
+        Me.Lblnombre.TabIndex = 37
+        Me.Lblnombre.Text = "Nombre:"
+        '
+        'Lblcontrasena
+        '
+        Me.Lblcontrasena.AutoSize = True
+        Me.Lblcontrasena.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Lblcontrasena.Location = New System.Drawing.Point(30, 76)
+        Me.Lblcontrasena.Name = "Lblcontrasena"
+        Me.Lblcontrasena.Size = New System.Drawing.Size(96, 20)
+        Me.Lblcontrasena.TabIndex = 36
+        Me.Lblcontrasena.Text = "Contraseña:"
+        '
+        'Lblnombreusuario
+        '
+        Me.Lblnombreusuario.AutoSize = True
+        Me.Lblnombreusuario.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Lblnombreusuario.Location = New System.Drawing.Point(30, 46)
+        Me.Lblnombreusuario.Name = "Lblnombreusuario"
+        Me.Lblnombreusuario.Size = New System.Drawing.Size(68, 20)
+        Me.Lblnombreusuario.TabIndex = 35
+        Me.Lblnombreusuario.Text = "Usuario:"
+        '
+        'Txtnombreusuario
+        '
+        Me.Txtnombreusuario.BorderStyle = System.Windows.Forms.BorderStyle.None
+        Me.Txtnombreusuario.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.Txtnombreusuario.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Txtnombreusuario.Location = New System.Drawing.Point(150, 46)
+        Me.Txtnombreusuario.Name = "Txtnombreusuario"
+        Me.Txtnombreusuario.Size = New System.Drawing.Size(150, 19)
+        Me.Txtnombreusuario.TabIndex = 24
+        '
+        'Txtcontrasena
+        '
+        Me.Txtcontrasena.BorderStyle = System.Windows.Forms.BorderStyle.None
+        Me.Txtcontrasena.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.Txtcontrasena.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Txtcontrasena.Location = New System.Drawing.Point(150, 76)
+        Me.Txtcontrasena.Name = "Txtcontrasena"
+        Me.Txtcontrasena.Size = New System.Drawing.Size(150, 19)
+        Me.Txtcontrasena.TabIndex = 25
+        '
+        'Txtnombre
+        '
+        Me.Txtnombre.BorderStyle = System.Windows.Forms.BorderStyle.None
+        Me.Txtnombre.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.Txtnombre.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Txtnombre.Location = New System.Drawing.Point(150, 106)
+        Me.Txtnombre.Name = "Txtnombre"
+        Me.Txtnombre.Size = New System.Drawing.Size(250, 19)
+        Me.Txtnombre.TabIndex = 26
+        '
+        'Txtapellido
+        '
+        Me.Txtapellido.BorderStyle = System.Windows.Forms.BorderStyle.None
+        Me.Txtapellido.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.Txtapellido.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Txtapellido.Location = New System.Drawing.Point(150, 136)
+        Me.Txtapellido.Name = "Txtapellido"
+        Me.Txtapellido.Size = New System.Drawing.Size(250, 19)
+        Me.Txtapellido.TabIndex = 27
         '
         'cmbposicion
         '
@@ -160,154 +324,90 @@ Partial Class Empleados
         Me.cmbposicion.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.cmbposicion.FormattingEnabled = True
         Me.cmbposicion.Items.AddRange(New Object() {"Administrador", "Encargado", "Vendedor"})
-        Me.cmbposicion.Location = New System.Drawing.Point(140, 170)
+        Me.cmbposicion.Location = New System.Drawing.Point(150, 196)
         Me.cmbposicion.Name = "cmbposicion"
         Me.cmbposicion.Size = New System.Drawing.Size(150, 28)
-        Me.cmbposicion.TabIndex = 5
+        Me.cmbposicion.TabIndex = 29
         '
-        'Txtapellido
+        'Txtcorreo
         '
-        Me.Txtapellido.BorderStyle = System.Windows.Forms.BorderStyle.None
-        Me.Txtapellido.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.Txtapellido.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Txtapellido.Location = New System.Drawing.Point(140, 110)
-        Me.Txtapellido.Name = "Txtapellido"
-        Me.Txtapellido.Size = New System.Drawing.Size(250, 19)
-        Me.Txtapellido.TabIndex = 3
+        Me.Txtcorreo.BorderStyle = System.Windows.Forms.BorderStyle.None
+        Me.Txtcorreo.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.Txtcorreo.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Txtcorreo.Location = New System.Drawing.Point(150, 166)
+        Me.Txtcorreo.Name = "Txtcorreo"
+        Me.Txtcorreo.Size = New System.Drawing.Size(250, 19)
+        Me.Txtcorreo.TabIndex = 28
         '
-        'Txtnombre
+        'BtnImprimir
         '
-        Me.Txtnombre.BorderStyle = System.Windows.Forms.BorderStyle.None
-        Me.Txtnombre.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.Txtnombre.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Txtnombre.Location = New System.Drawing.Point(140, 80)
-        Me.Txtnombre.Name = "Txtnombre"
-        Me.Txtnombre.Size = New System.Drawing.Size(250, 19)
-        Me.Txtnombre.TabIndex = 2
+        Me.BtnImprimir.Anchor = System.Windows.Forms.AnchorStyles.None
+        Me.BtnImprimir.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.BtnImprimir.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.BtnImprimir.Location = New System.Drawing.Point(569, 193)
+        Me.BtnImprimir.Name = "BtnImprimir"
+        Me.BtnImprimir.Size = New System.Drawing.Size(90, 40)
+        Me.BtnImprimir.TabIndex = 33
+        Me.BtnImprimir.Text = "IMPRIMIR"
+        Me.BtnImprimir.UseVisualStyleBackColor = True
         '
-        'Txtcontrasena
+        'Btnborrar
         '
-        Me.Txtcontrasena.BorderStyle = System.Windows.Forms.BorderStyle.None
-        Me.Txtcontrasena.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.Txtcontrasena.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Txtcontrasena.Location = New System.Drawing.Point(140, 50)
-        Me.Txtcontrasena.Name = "Txtcontrasena"
-        Me.Txtcontrasena.Size = New System.Drawing.Size(150, 19)
-        Me.Txtcontrasena.TabIndex = 1
+        Me.Btnborrar.Anchor = System.Windows.Forms.AnchorStyles.None
+        Me.Btnborrar.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.Btnborrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Btnborrar.Location = New System.Drawing.Point(569, 143)
+        Me.Btnborrar.Name = "Btnborrar"
+        Me.Btnborrar.Size = New System.Drawing.Size(90, 40)
+        Me.Btnborrar.TabIndex = 32
+        Me.Btnborrar.Text = "BORRAR"
+        Me.Btnborrar.UseVisualStyleBackColor = True
         '
-        'Txtnombreusuario
+        'BtnEditar
         '
-        Me.Txtnombreusuario.BorderStyle = System.Windows.Forms.BorderStyle.None
-        Me.Txtnombreusuario.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.Txtnombreusuario.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Txtnombreusuario.Location = New System.Drawing.Point(140, 20)
-        Me.Txtnombreusuario.Name = "Txtnombreusuario"
-        Me.Txtnombreusuario.Size = New System.Drawing.Size(150, 19)
-        Me.Txtnombreusuario.TabIndex = 0
+        Me.BtnEditar.Anchor = System.Windows.Forms.AnchorStyles.None
+        Me.BtnEditar.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.BtnEditar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.BtnEditar.Location = New System.Drawing.Point(569, 93)
+        Me.BtnEditar.Name = "BtnEditar"
+        Me.BtnEditar.Size = New System.Drawing.Size(90, 40)
+        Me.BtnEditar.TabIndex = 31
+        Me.BtnEditar.Text = "EDITAR"
+        Me.BtnEditar.UseVisualStyleBackColor = True
         '
-        'Panelcentro
+        'Btnnuevo
         '
-        Me.Panelcentro.Controls.Add(Me.LblCorreo)
-        Me.Panelcentro.Controls.Add(Me.LblApellido)
-        Me.Panelcentro.Controls.Add(Me.Lblnombre)
-        Me.Panelcentro.Controls.Add(Me.Lblcontrasena)
-        Me.Panelcentro.Controls.Add(Me.Lblnombreusuario)
-        Me.Panelcentro.Controls.Add(Me.Txtnombreusuario)
-        Me.Panelcentro.Controls.Add(Me.Txtcontrasena)
-        Me.Panelcentro.Controls.Add(Me.Txtnombre)
-        Me.Panelcentro.Controls.Add(Me.Txtapellido)
-        Me.Panelcentro.Controls.Add(lblPosicion)
-        Me.Panelcentro.Controls.Add(Me.cmbposicion)
-        Me.Panelcentro.Controls.Add(Me.Txtcorreo)
-        Me.Panelcentro.Controls.Add(Me.BtnImprimir)
-        Me.Panelcentro.Controls.Add(Me.Btnborrar)
-        Me.Panelcentro.Controls.Add(Me.BtnEditar)
-        Me.Panelcentro.Controls.Add(Me.Btnnuevo)
-        Me.Panelcentro.Location = New System.Drawing.Point(0, 45)
-        Me.Panelcentro.Name = "Panelcentro"
-        Me.Panelcentro.Size = New System.Drawing.Size(1000, 228)
-        Me.Panelcentro.TabIndex = 1
-        '
-        'LblCorreo
-        '
-        Me.LblCorreo.AutoSize = True
-        Me.LblCorreo.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LblCorreo.Location = New System.Drawing.Point(20, 140)
-        Me.LblCorreo.Name = "LblCorreo"
-        Me.LblCorreo.Size = New System.Drawing.Size(61, 20)
-        Me.LblCorreo.TabIndex = 23
-        Me.LblCorreo.Text = "Correo:"
-        '
-        'LblApellido
-        '
-        Me.LblApellido.AutoSize = True
-        Me.LblApellido.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LblApellido.Location = New System.Drawing.Point(20, 110)
-        Me.LblApellido.Name = "LblApellido"
-        Me.LblApellido.Size = New System.Drawing.Size(69, 20)
-        Me.LblApellido.TabIndex = 22
-        Me.LblApellido.Text = "Apellido:"
-        '
-        'Lblnombre
-        '
-        Me.Lblnombre.AutoSize = True
-        Me.Lblnombre.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Lblnombre.Location = New System.Drawing.Point(20, 80)
-        Me.Lblnombre.Name = "Lblnombre"
-        Me.Lblnombre.Size = New System.Drawing.Size(69, 20)
-        Me.Lblnombre.TabIndex = 21
-        Me.Lblnombre.Text = "Nombre:"
-        '
-        'Lblcontrasena
-        '
-        Me.Lblcontrasena.AutoSize = True
-        Me.Lblcontrasena.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Lblcontrasena.Location = New System.Drawing.Point(20, 50)
-        Me.Lblcontrasena.Name = "Lblcontrasena"
-        Me.Lblcontrasena.Size = New System.Drawing.Size(96, 20)
-        Me.Lblcontrasena.TabIndex = 20
-        Me.Lblcontrasena.Text = "Contraseña:"
-        '
-        'Lblnombreusuario
-        '
-        Me.Lblnombreusuario.AutoSize = True
-        Me.Lblnombreusuario.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Lblnombreusuario.Location = New System.Drawing.Point(20, 20)
-        Me.Lblnombreusuario.Name = "Lblnombreusuario"
-        Me.Lblnombreusuario.Size = New System.Drawing.Size(68, 20)
-        Me.Lblnombreusuario.TabIndex = 19
-        Me.Lblnombreusuario.Text = "Usuario:"
-        '
-        'DgEmpleados
-        '
-        Me.DgEmpleados.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.DgEmpleados.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically
-        Me.DgEmpleados.Location = New System.Drawing.Point(20, 290)
-        Me.DgEmpleados.MultiSelect = False
-        Me.DgEmpleados.Name = "DgEmpleados"
-        Me.DgEmpleados.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.DgEmpleados.Size = New System.Drawing.Size(729, 230)
-        Me.DgEmpleados.TabIndex = 2
+        Me.Btnnuevo.Anchor = System.Windows.Forms.AnchorStyles.None
+        Me.Btnnuevo.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.Btnnuevo.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Btnnuevo.Location = New System.Drawing.Point(569, 47)
+        Me.Btnnuevo.Name = "Btnnuevo"
+        Me.Btnnuevo.Size = New System.Drawing.Size(90, 40)
+        Me.Btnnuevo.TabIndex = 30
+        Me.Btnnuevo.Text = "CREAR"
+        Me.Btnnuevo.UseVisualStyleBackColor = True
         '
         'Empleados
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.ClientSize = New System.Drawing.Size(1020, 540)
-        Me.Controls.Add(Me.DgEmpleados)
-        Me.Controls.Add(Me.Panelcentro)
+        Me.ClientSize = New System.Drawing.Size(1020, 578)
+        Me.Controls.Add(Me.GunaGroupBox2)
+        Me.Controls.Add(Me.GunaGroupBox1)
         Me.Controls.Add(Me.Panel1)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "Empleados"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent
         Me.Text = "Empleados"
         Me.Panel1.ResumeLayout(False)
         Me.Panel1.PerformLayout()
         CType(Me.btnCerrarForm, System.ComponentModel.ISupportInitialize).EndInit()
-        Me.Panelcentro.ResumeLayout(False)
-        Me.Panelcentro.PerformLayout()
+        Me.GunaGroupBox1.ResumeLayout(False)
         CType(Me.DgEmpleados, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.GunaGroupBox2.ResumeLayout(False)
+        Me.GunaGroupBox2.PerformLayout()
         Me.ResumeLayout(False)
 
     End Sub
@@ -315,27 +415,28 @@ Partial Class Empleados
     Friend WithEvents lblEmpleados As System.Windows.Forms.Label
     Friend WithEvents btnCerrarForm As System.Windows.Forms.PictureBox
     Friend WithEvents NombreusuarioDataGridViewTextBoxColumn As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents Btnnuevo As System.Windows.Forms.Button
-    Friend WithEvents BtnEditar As System.Windows.Forms.Button
-    Friend WithEvents Btnborrar As System.Windows.Forms.Button
-    Friend WithEvents BtnImprimir As System.Windows.Forms.Button
-    Friend WithEvents Txtcorreo As System.Windows.Forms.TextBox
-    Friend WithEvents cmbposicion As System.Windows.Forms.ComboBox
-    Friend WithEvents Txtapellido As System.Windows.Forms.TextBox
-    Friend WithEvents Txtnombre As System.Windows.Forms.TextBox
-    Friend WithEvents Txtcontrasena As System.Windows.Forms.TextBox
-    Friend WithEvents Txtnombreusuario As System.Windows.Forms.TextBox
-    Friend WithEvents Panelcentro As System.Windows.Forms.Panel
-    Friend WithEvents LblCorreo As System.Windows.Forms.Label
-    Friend WithEvents LblApellido As System.Windows.Forms.Label
-    Friend WithEvents Lblnombre As System.Windows.Forms.Label
-    Friend WithEvents Lblcontrasena As System.Windows.Forms.Label
-    Friend WithEvents Lblnombreusuario As System.Windows.Forms.Label
-    Friend WithEvents DgEmpleados As System.Windows.Forms.DataGridView
     Friend WithEvents DataGridViewTextBoxColumn1 As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents ContrasenaDataGridViewTextBoxColumn As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents NombreDataGridViewTextBoxColumn As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents ApellidoDataGridViewTextBoxColumn As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents PosicionDataGridViewTextBoxColumn As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents CorreoDataGridViewTextBoxColumn As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents GunaGroupBox1 As Guna.UI.WinForms.GunaGroupBox
+    Friend WithEvents GunaGroupBox2 As Guna.UI.WinForms.GunaGroupBox
+    Friend WithEvents LblCorreo As System.Windows.Forms.Label
+    Friend WithEvents LblApellido As System.Windows.Forms.Label
+    Friend WithEvents Lblnombre As System.Windows.Forms.Label
+    Friend WithEvents Lblcontrasena As System.Windows.Forms.Label
+    Friend WithEvents Lblnombreusuario As System.Windows.Forms.Label
+    Friend WithEvents Txtnombreusuario As System.Windows.Forms.TextBox
+    Friend WithEvents Txtcontrasena As System.Windows.Forms.TextBox
+    Friend WithEvents Txtnombre As System.Windows.Forms.TextBox
+    Friend WithEvents Txtapellido As System.Windows.Forms.TextBox
+    Friend WithEvents cmbposicion As System.Windows.Forms.ComboBox
+    Friend WithEvents Txtcorreo As System.Windows.Forms.TextBox
+    Friend WithEvents BtnImprimir As System.Windows.Forms.Button
+    Friend WithEvents Btnborrar As System.Windows.Forms.Button
+    Friend WithEvents BtnEditar As System.Windows.Forms.Button
+    Friend WithEvents Btnnuevo As System.Windows.Forms.Button
+    Friend WithEvents DgEmpleados As Guna.UI.WinForms.GunaDataGridView
 End Class

@@ -6,25 +6,39 @@
 
    
     
-    Private Sub Btnagregar_Click(sender As Object, e As EventArgs) Handles Btnagregar.Click
-        If (String.IsNullOrEmpty(txtnombre.Text) Or String.IsNullOrEmpty(txtdireccion.Text) Or String.IsNullOrEmpty(txttelefono.Text)) Then
+    Private Sub Btnagregar_Click(sender As Object, e As EventArgs)
+
+    End Sub
+
+
+    Public Sub limpiar()
+        txtnombre.Text = ""
+        txtdireccion.Text = ""
+        Txttelefono.Text = ""
+        TxtLocalidad.Text = ""
+        TxtProvincia.Text = ""
+        TxtDescuento.Text = ""
+        txtnombre.Focus()
+    End Sub
+
+    Private Sub GBagregar_Click(sender As Object, e As EventArgs) Handles GBagregar.Click
+        If (String.IsNullOrEmpty(TxtNombre.Text) Or String.IsNullOrEmpty(Txtdireccion.Text) Or String.IsNullOrEmpty(Txttelefono.Text) Or String.IsNullOrEmpty(TxtLocalidad.Text) Or String.IsNullOrEmpty(TxtProvincia.Text) Or String.IsNullOrEmpty(TxtDescuento.Text)) Then
             MsgBox("Por Favor, rellene los campos vacios")
         Else
-            'limpiar()
-            Dim nombre As String = txtnombre.Text
-            'Dim precioven As Double = Val(precioventa.Text)
-            'Dim preciocomp As Double = Val((preciocompra.Text))
-            Dim telefono As Integer = CInt((Val((txttelefono.Text))))
-            'Dim tipoprod As String = (Cmbtipoproducto.Text)
-            Dim direccion As String = txtdireccion.Text
+            Dim nombre As String = TxtNombre.Text
+            Dim telefono As Integer = CInt((Val((Txttelefono.Text))))
+            Dim direccion As String = Txtdireccion.Text
+            Dim Localidad As String = TxtLocalidad.Text
+            Dim Provincia As String = TxtProvincia.Text
+            Dim Descuento As Double = CDbl(TxtDescuento.Text)
 
             Dim _OSocial As New OSocial()
-            _OSocial._nombre = txtnombre.Text
-            _OSocial._direccion = (txtdireccion.Text)
-            _OSocial._telefono = (txttelefono.Text)
-            '_Producto._telefono = Val(txttelefono.Text)
-            '_Producto._tipoprod = (Cmbtipoproducto.Text)
-            '_Producto._descripcion = txtdescripcion.Text
+            _OSocial._nombre = TxtNombre.Text
+            _OSocial._direccion = (Txtdireccion.Text)
+            _OSocial._telefono = (Txttelefono.Text)
+            _OSocial._localidad = (Txtlocalidad.Text)
+            _OSocial._provincia = (TxtProvincia.Text)
+            _OSocial._descuento = CStr(Val(TxtDescuento.Text))
 
 
             If Datos.AgregarOSocial(_OSocial) Then
@@ -35,11 +49,10 @@
         End If
     End Sub
 
+    
+    Private Sub TxtProvincia_TextChanged(sender As Object, e As EventArgs)
 
-    Public Sub limpiar()
-        txtnombre.Text = ""
-        txtdireccion.Text = ""
-        txttelefono.Text = ""
-        txtnombre.Focus()
     End Sub
+
+   
 End Class

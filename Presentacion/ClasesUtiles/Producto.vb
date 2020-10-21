@@ -5,7 +5,7 @@
     Public _PrecioCompra As Double
     Public _Descripcion As String
     Public _TipoProd As String
-    'Public _Cantidad As Integer
+    Public _cantidad As Integer
 
     'Public Function GuardarProducto() As Boolean
     '    Dim _Retorno As Boolean = False

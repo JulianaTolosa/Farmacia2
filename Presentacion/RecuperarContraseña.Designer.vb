@@ -25,11 +25,11 @@ Partial Class RecuperarContraseña
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(RecuperarContraseña))
         Me.btnSend = New System.Windows.Forms.Button()
         Me.TextBox1 = New System.Windows.Forms.TextBox()
-        Me.Label1 = New System.Windows.Forms.Label()
         Me.lblresult = New System.Windows.Forms.Label()
         Me.PanelBarraTitulo = New System.Windows.Forms.Panel()
         Me.btnMinimizar = New System.Windows.Forms.PictureBox()
         Me.btnCerrar = New System.Windows.Forms.PictureBox()
+        Me.GunaLabel1 = New Guna.UI.WinForms.GunaLabel()
         Me.PanelBarraTitulo.SuspendLayout()
         CType(Me.btnMinimizar, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.btnCerrar, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -55,17 +55,6 @@ Partial Class RecuperarContraseña
         Me.TextBox1.Name = "TextBox1"
         Me.TextBox1.Size = New System.Drawing.Size(423, 20)
         Me.TextBox1.TabIndex = 1
-        '
-        'Label1
-        '
-        Me.Label1.Anchor = System.Windows.Forms.AnchorStyles.None
-        Me.Label1.AutoSize = True
-        Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Underline), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label1.Location = New System.Drawing.Point(123, 59)
-        Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(296, 24)
-        Me.Label1.TabIndex = 2
-        Me.Label1.Text = "Ingresa tu Nombre de Usuario:"
         '
         'lblresult
         '
@@ -111,14 +100,26 @@ Partial Class RecuperarContraseña
         Me.btnCerrar.TabIndex = 4
         Me.btnCerrar.TabStop = False
         '
+        'GunaLabel1
+        '
+        Me.GunaLabel1.AutoSize = True
+        Me.GunaLabel1.Font = New System.Drawing.Font("Segoe UI", 15.75!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Underline), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.GunaLabel1.ForeColor = System.Drawing.Color.White
+        Me.GunaLabel1.Location = New System.Drawing.Point(151, 56)
+        Me.GunaLabel1.Name = "GunaLabel1"
+        Me.GunaLabel1.Size = New System.Drawing.Size(316, 30)
+        Me.GunaLabel1.TabIndex = 5
+        Me.GunaLabel1.Text = "Ingresa tu Nombre de Usuario:"
+        '
         'RecuperarContraseña
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
+        Me.BackColor = System.Drawing.SystemColors.ActiveCaption
         Me.ClientSize = New System.Drawing.Size(640, 300)
+        Me.Controls.Add(Me.GunaLabel1)
         Me.Controls.Add(Me.PanelBarraTitulo)
         Me.Controls.Add(Me.lblresult)
-        Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.TextBox1)
         Me.Controls.Add(Me.btnSend)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
@@ -136,9 +137,9 @@ Partial Class RecuperarContraseña
     End Sub
     Friend WithEvents btnSend As System.Windows.Forms.Button
     Friend WithEvents TextBox1 As System.Windows.Forms.TextBox
-    Friend WithEvents Label1 As System.Windows.Forms.Label
     Friend WithEvents lblresult As System.Windows.Forms.Label
     Friend WithEvents PanelBarraTitulo As System.Windows.Forms.Panel
     Friend WithEvents btnMinimizar As System.Windows.Forms.PictureBox
     Friend WithEvents btnCerrar As System.Windows.Forms.PictureBox
+    Friend WithEvents GunaLabel1 As Guna.UI.WinForms.GunaLabel
 End Class
