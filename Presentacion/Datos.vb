@@ -21,10 +21,10 @@
         Dim _Retorno As New List(Of String)
         Try
             Dim _Consulta As ConsultaSQL = New ConsultaSQL
-            _Consulta.Consulta = "SELECT nombre FROM ObraSocial"
+            _Consulta.Consulta = "SELECT Nombre FROM ObraSocial"
             Dim _DT As DataTable = _Consulta.ObtenerTabla()
             For Each _Row As DataRow In _DT.Rows
-                _Retorno.Add(_Row("nombre").ToString())
+                _Retorno.Add(_Row("Nombre").ToString())
             Next
         Catch ex As Exception
 
@@ -117,6 +117,20 @@
         Return _Consulta.ObtenerTabla
     End Function
 
+    Public Function ExisteObraSocial(Nombre As String) As Boolean
+        Dim _Retorno As Boolean = False
+
+        Dim _Consulta As New ConsultaSQL
+        _Consulta.Consulta = "SELECT * FROM ObraSocial WHERE nombre=@Nombre"
+        _Consulta.AgregarParametro("@Nombre", Nombre)
+        Dim _Resultado As DataTable = _Consulta.ObtenerTabla()
+        If _Resultado.Rows.Count > 0 Then
+            _Retorno = True
+        End If
+
+        Return _Retorno
+    End Function
+
     Public Function ExisteUsuario(NombreUsuario As String) As Boolean
         Dim _Retorno As Boolean = False
 
@@ -159,11 +173,31 @@
         Return _Retorno
     End Function
 
+    Public Function ObtenerDataTableCliente() As DataTable
+        Dim _Retorno As New DataTable
+
+        Dim _Consulta As New ConsultaSQL
+        _Consulta.Consulta = "SELECT * FROM Clientes"
+        _Retorno = _Consulta.ObtenerTabla()
+
+        Return _Retorno
+    End Function
+
     Public Function ObtenerDataTableStock() As DataTable
         Dim _Retorno As New DataTable
 
         Dim _Consulta As New ConsultaSQL
         _Consulta.Consulta = "SELECT * FROM Stock"
+        _Retorno = _Consulta.ObtenerTabla()
+
+        Return _Retorno
+    End Function
+
+    Public Function ObtenerDataTableObraS() As DataTable
+        Dim _Retorno As New DataTable
+
+        Dim _Consulta As New ConsultaSQL
+        _Consulta.Consulta = "SELECT * FROM ObraSocial"
         _Retorno = _Consulta.ObtenerTabla()
 
         Return _Retorno
@@ -316,16 +350,16 @@
         Try
             Dim _Consulta As New ConsultaSQL
             _Consulta.Consulta = "  INSERT INTO ObraSocial"
-            _Consulta.Consulta &= " (nombre,direccion,telefono)"
+            _Consulta.Consulta &= " (Nombre,Direccion,Localidad,Provincia,Telefono,Descuento)"
             _Consulta.Consulta &= " VALUES"
-            _Consulta.Consulta &= " (@nombre,@direccion,@telefono)"
-            _Consulta.AgregarParametro("@nombre", _OSocial._nombre)
-            _Consulta.AgregarParametro("@direccion", _OSocial._direccion)
+            _Consulta.Consulta &= " (@Nombre,@Direccion,@Localidad,@Provincia,@Telefono,@Descuento)"
+            _Consulta.AgregarParametro("@Nombre", _OSocial._nombre)
+            _Consulta.AgregarParametro("@Direccion", _OSocial._direccion)
+            _Consulta.AgregarParametro("@Localidad", _OSocial._localidad)
+            _Consulta.AgregarParametro("@Provincia", _OSocial._provincia)
             _Consulta.AgregarParametro("@telefono", _OSocial._telefono)
-            '_Consulta.AgregarParametro("@preciocomp", _Producto._preciocomp)
-            '_Consulta.AgregarParametro("@idtipoprod", _Producto._tipoprod)
-            '_Consulta.AgregarParametro("@canti", _Producto._cantidad)
-
+            _Consulta.AgregarParametro("@Descuento", _OSocial._descuento)
+           
             _Consulta.Ejecutar()
         Catch ex As Exception
             _Retorno = False
@@ -536,9 +570,45 @@
         End Try
         Return _Retorno
     End Function
+
+    'Public Function GuardarClientes(_Cliente As Usuario) As Boolean
+    'Dim _Retorno As Boolean = False
+    '    Try
+    'Dim _Consulta As New ConsultaSQL
+    '        _Consulta.Consulta = "  UPDATE Clientes SET "
+    '        _Consulta.Consulta &= " Nombre = @Nombre,"
+    '        _Consulta.Consulta &= " Apellido = @Apellido, "
+    '        _Consulta.Consulta &= " Direccion = @Direccion, "
+    '        _Consulta.Consulta &= " DNI = @DNI,  "
+    '        _Consulta.Consulta &= " Telefono=@Telefono "
+    '        _Consulta.Consulta &= " Celular=@Celular "
+    '        _Consulta.Consulta &= " FechaNa=@FechaNa "
+    '        _Consulta.Consulta &= " Localidad=@Localidad "
+    '        _Consulta.Consulta &= " Provincia=@Provincia "
+    '        _Consulta.Consulta &= " IdObraSocial=@IdObraSocial "
+    '        _Consulta.Consulta &= " tipo_dni=@tipo_dni "
+    '        _Consulta.Consulta &= " WHERE idusuario=@IdUsuario"
+    '        _Consulta.AgregarParametro("@Nombre", _Cliente._Nombre)
+    '        _Consulta.AgregarParametro("@Apellido", _Cliente._Apellido)
+    '        _Consulta.AgregarParametro("@Direccion", _Cliente._Direccion)
+    '        _Consulta.AgregarParametro("@DNI", _Cliente._DNI)
+    '        _Consulta.AgregarParametro("@Telefono", _Cliente._Telefono)
+    '        _Consulta.AgregarParametro("@Celular", _Cliente._Celular)
+    '        _Consulta.AgregarParametro("@Correo", _Cliente._Correo)
+    '        _Consulta.AgregarParametro("@IdUsuario", _Cliente._Id)
+
+    '        _Consulta.Ejecutar()
+    '        _Retorno = True
+    '    Catch ex As Exception
+
+    '    End Try
+    '    Return _Retorno
+    'End Function
 #End Region
 
-    
+
+
+
 
 
 End Module

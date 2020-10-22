@@ -33,6 +33,10 @@ Partial Class Empleados
         Me.GunaGroupBox1 = New Guna.UI.WinForms.GunaGroupBox()
         Me.DgEmpleados = New Guna.UI.WinForms.GunaDataGridView()
         Me.GunaGroupBox2 = New Guna.UI.WinForms.GunaGroupBox()
+        Me.Btnborrar = New Guna.UI.WinForms.GunaButton()
+        Me.Btneditar = New Guna.UI.WinForms.GunaButton()
+        Me.Btnagregar = New Guna.UI.WinForms.GunaButton()
+        Me.Btnlimpiar = New Guna.UI.WinForms.GunaButton()
         Me.LblCorreo = New System.Windows.Forms.Label()
         Me.LblApellido = New System.Windows.Forms.Label()
         Me.Lblnombre = New System.Windows.Forms.Label()
@@ -45,9 +49,6 @@ Partial Class Empleados
         Me.cmbposicion = New System.Windows.Forms.ComboBox()
         Me.Txtcorreo = New System.Windows.Forms.TextBox()
         Me.BtnImprimir = New System.Windows.Forms.Button()
-        Me.Btnborrar = New System.Windows.Forms.Button()
-        Me.BtnEditar = New System.Windows.Forms.Button()
-        Me.Btnnuevo = New System.Windows.Forms.Button()
         lblPosicion = New System.Windows.Forms.Label()
         Me.Panel1.SuspendLayout()
         CType(Me.btnCerrarForm, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -93,6 +94,7 @@ Partial Class Empleados
         Me.lblEmpleados.Anchor = System.Windows.Forms.AnchorStyles.Top
         Me.lblEmpleados.AutoSize = True
         Me.lblEmpleados.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblEmpleados.ForeColor = System.Drawing.Color.WhiteSmoke
         Me.lblEmpleados.Location = New System.Drawing.Point(450, 10)
         Me.lblEmpleados.Name = "lblEmpleados"
         Me.lblEmpleados.Size = New System.Drawing.Size(127, 24)
@@ -121,7 +123,7 @@ Partial Class Empleados
         Me.GunaGroupBox1.Size = New System.Drawing.Size(976, 243)
         Me.GunaGroupBox1.TabIndex = 2
         Me.GunaGroupBox1.Text = "EMPLEADOS"
-        Me.GunaGroupBox1.TextLocation = New System.Drawing.Point(430, 5)
+        Me.GunaGroupBox1.TextLocation = New System.Drawing.Point(488, 5)
         '
         'DgEmpleados
         '
@@ -197,6 +199,10 @@ Partial Class Empleados
         Me.GunaGroupBox2.BackColor = System.Drawing.Color.Transparent
         Me.GunaGroupBox2.BaseColor = System.Drawing.SystemColors.ActiveCaption
         Me.GunaGroupBox2.BorderColor = System.Drawing.Color.Gainsboro
+        Me.GunaGroupBox2.Controls.Add(Me.Btnborrar)
+        Me.GunaGroupBox2.Controls.Add(Me.Btneditar)
+        Me.GunaGroupBox2.Controls.Add(Me.Btnagregar)
+        Me.GunaGroupBox2.Controls.Add(Me.Btnlimpiar)
         Me.GunaGroupBox2.Controls.Add(Me.LblCorreo)
         Me.GunaGroupBox2.Controls.Add(Me.LblApellido)
         Me.GunaGroupBox2.Controls.Add(Me.Lblnombre)
@@ -210,9 +216,6 @@ Partial Class Empleados
         Me.GunaGroupBox2.Controls.Add(Me.cmbposicion)
         Me.GunaGroupBox2.Controls.Add(Me.Txtcorreo)
         Me.GunaGroupBox2.Controls.Add(Me.BtnImprimir)
-        Me.GunaGroupBox2.Controls.Add(Me.Btnborrar)
-        Me.GunaGroupBox2.Controls.Add(Me.BtnEditar)
-        Me.GunaGroupBox2.Controls.Add(Me.Btnnuevo)
         Me.GunaGroupBox2.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.GunaGroupBox2.ForeColor = System.Drawing.Color.WhiteSmoke
         Me.GunaGroupBox2.LineBottom = 1
@@ -225,7 +228,107 @@ Partial Class Empleados
         Me.GunaGroupBox2.Size = New System.Drawing.Size(976, 240)
         Me.GunaGroupBox2.TabIndex = 3
         Me.GunaGroupBox2.Text = "DATOS EMPLEADOS"
-        Me.GunaGroupBox2.TextLocation = New System.Drawing.Point(400, 5)
+        Me.GunaGroupBox2.TextLocation = New System.Drawing.Point(488, 5)
+        '
+        'Btnborrar
+        '
+        Me.Btnborrar.AnimationHoverSpeed = 0.07!
+        Me.Btnborrar.AnimationSpeed = 0.03!
+        Me.Btnborrar.BaseColor = System.Drawing.Color.FromArgb(CType(CType(100, Byte), Integer), CType(CType(88, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.Btnborrar.BorderColor = System.Drawing.Color.Black
+        Me.Btnborrar.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.Btnborrar.DialogResult = System.Windows.Forms.DialogResult.None
+        Me.Btnborrar.FocusedColor = System.Drawing.Color.Empty
+        Me.Btnborrar.Font = New System.Drawing.Font("Segoe UI", 9.0!)
+        Me.Btnborrar.ForeColor = System.Drawing.Color.White
+        Me.Btnborrar.Image = Nothing
+        Me.Btnborrar.ImageSize = New System.Drawing.Size(20, 20)
+        Me.Btnborrar.Location = New System.Drawing.Point(731, 139)
+        Me.Btnborrar.Name = "Btnborrar"
+        Me.Btnborrar.OnHoverBaseColor = System.Drawing.Color.FromArgb(CType(CType(151, Byte), Integer), CType(CType(143, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.Btnborrar.OnHoverBorderColor = System.Drawing.Color.Black
+        Me.Btnborrar.OnHoverForeColor = System.Drawing.Color.White
+        Me.Btnborrar.OnHoverImage = Nothing
+        Me.Btnborrar.OnPressedColor = System.Drawing.Color.Black
+        Me.Btnborrar.Size = New System.Drawing.Size(125, 42)
+        Me.Btnborrar.TabIndex = 43
+        Me.Btnborrar.Text = "BORRAR"
+        Me.Btnborrar.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        '
+        'Btneditar
+        '
+        Me.Btneditar.AnimationHoverSpeed = 0.07!
+        Me.Btneditar.AnimationSpeed = 0.03!
+        Me.Btneditar.BaseColor = System.Drawing.Color.FromArgb(CType(CType(100, Byte), Integer), CType(CType(88, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.Btneditar.BorderColor = System.Drawing.Color.Black
+        Me.Btneditar.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.Btneditar.DialogResult = System.Windows.Forms.DialogResult.None
+        Me.Btneditar.FocusedColor = System.Drawing.Color.Empty
+        Me.Btneditar.Font = New System.Drawing.Font("Segoe UI", 9.0!)
+        Me.Btneditar.ForeColor = System.Drawing.Color.White
+        Me.Btneditar.Image = Nothing
+        Me.Btneditar.ImageSize = New System.Drawing.Size(20, 20)
+        Me.Btneditar.Location = New System.Drawing.Point(731, 91)
+        Me.Btneditar.Name = "Btneditar"
+        Me.Btneditar.OnHoverBaseColor = System.Drawing.Color.FromArgb(CType(CType(151, Byte), Integer), CType(CType(143, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.Btneditar.OnHoverBorderColor = System.Drawing.Color.Black
+        Me.Btneditar.OnHoverForeColor = System.Drawing.Color.White
+        Me.Btneditar.OnHoverImage = Nothing
+        Me.Btneditar.OnPressedColor = System.Drawing.Color.Black
+        Me.Btneditar.Size = New System.Drawing.Size(125, 42)
+        Me.Btneditar.TabIndex = 42
+        Me.Btneditar.Text = "EDITAR"
+        Me.Btneditar.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        '
+        'Btnagregar
+        '
+        Me.Btnagregar.AnimationHoverSpeed = 0.07!
+        Me.Btnagregar.AnimationSpeed = 0.03!
+        Me.Btnagregar.BaseColor = System.Drawing.Color.FromArgb(CType(CType(100, Byte), Integer), CType(CType(88, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.Btnagregar.BorderColor = System.Drawing.Color.Black
+        Me.Btnagregar.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.Btnagregar.DialogResult = System.Windows.Forms.DialogResult.None
+        Me.Btnagregar.FocusedColor = System.Drawing.Color.Empty
+        Me.Btnagregar.Font = New System.Drawing.Font("Segoe UI", 9.0!)
+        Me.Btnagregar.ForeColor = System.Drawing.Color.White
+        Me.Btnagregar.Image = Nothing
+        Me.Btnagregar.ImageSize = New System.Drawing.Size(20, 20)
+        Me.Btnagregar.Location = New System.Drawing.Point(731, 45)
+        Me.Btnagregar.Name = "Btnagregar"
+        Me.Btnagregar.OnHoverBaseColor = System.Drawing.Color.FromArgb(CType(CType(151, Byte), Integer), CType(CType(143, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.Btnagregar.OnHoverBorderColor = System.Drawing.Color.Black
+        Me.Btnagregar.OnHoverForeColor = System.Drawing.Color.White
+        Me.Btnagregar.OnHoverImage = Nothing
+        Me.Btnagregar.OnPressedColor = System.Drawing.Color.Black
+        Me.Btnagregar.Size = New System.Drawing.Size(125, 42)
+        Me.Btnagregar.TabIndex = 41
+        Me.Btnagregar.Text = "AGREGAR"
+        Me.Btnagregar.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        '
+        'Btnlimpiar
+        '
+        Me.Btnlimpiar.AnimationHoverSpeed = 0.07!
+        Me.Btnlimpiar.AnimationSpeed = 0.03!
+        Me.Btnlimpiar.BaseColor = System.Drawing.Color.FromArgb(CType(CType(100, Byte), Integer), CType(CType(88, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.Btnlimpiar.BorderColor = System.Drawing.Color.Black
+        Me.Btnlimpiar.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.Btnlimpiar.DialogResult = System.Windows.Forms.DialogResult.None
+        Me.Btnlimpiar.FocusedColor = System.Drawing.Color.Empty
+        Me.Btnlimpiar.Font = New System.Drawing.Font("Segoe UI", 9.0!)
+        Me.Btnlimpiar.ForeColor = System.Drawing.Color.White
+        Me.Btnlimpiar.Image = Nothing
+        Me.Btnlimpiar.ImageSize = New System.Drawing.Size(20, 20)
+        Me.Btnlimpiar.Location = New System.Drawing.Point(731, 185)
+        Me.Btnlimpiar.Name = "Btnlimpiar"
+        Me.Btnlimpiar.OnHoverBaseColor = System.Drawing.Color.FromArgb(CType(CType(151, Byte), Integer), CType(CType(143, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.Btnlimpiar.OnHoverBorderColor = System.Drawing.Color.Black
+        Me.Btnlimpiar.OnHoverForeColor = System.Drawing.Color.White
+        Me.Btnlimpiar.OnHoverImage = Nothing
+        Me.Btnlimpiar.OnPressedColor = System.Drawing.Color.Black
+        Me.Btnlimpiar.Size = New System.Drawing.Size(125, 42)
+        Me.Btnlimpiar.TabIndex = 40
+        Me.Btnlimpiar.Text = "LIMPIAR"
+        Me.Btnlimpiar.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
         'LblCorreo
         '
@@ -280,7 +383,7 @@ Partial Class Empleados
         'Txtnombreusuario
         '
         Me.Txtnombreusuario.BorderStyle = System.Windows.Forms.BorderStyle.None
-        Me.Txtnombreusuario.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.Txtnombreusuario.Cursor = System.Windows.Forms.Cursors.IBeam
         Me.Txtnombreusuario.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Txtnombreusuario.Location = New System.Drawing.Point(150, 46)
         Me.Txtnombreusuario.Name = "Txtnombreusuario"
@@ -290,7 +393,7 @@ Partial Class Empleados
         'Txtcontrasena
         '
         Me.Txtcontrasena.BorderStyle = System.Windows.Forms.BorderStyle.None
-        Me.Txtcontrasena.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.Txtcontrasena.Cursor = System.Windows.Forms.Cursors.IBeam
         Me.Txtcontrasena.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Txtcontrasena.Location = New System.Drawing.Point(150, 76)
         Me.Txtcontrasena.Name = "Txtcontrasena"
@@ -300,7 +403,7 @@ Partial Class Empleados
         'Txtnombre
         '
         Me.Txtnombre.BorderStyle = System.Windows.Forms.BorderStyle.None
-        Me.Txtnombre.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.Txtnombre.Cursor = System.Windows.Forms.Cursors.IBeam
         Me.Txtnombre.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Txtnombre.Location = New System.Drawing.Point(150, 106)
         Me.Txtnombre.Name = "Txtnombre"
@@ -310,7 +413,7 @@ Partial Class Empleados
         'Txtapellido
         '
         Me.Txtapellido.BorderStyle = System.Windows.Forms.BorderStyle.None
-        Me.Txtapellido.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.Txtapellido.Cursor = System.Windows.Forms.Cursors.IBeam
         Me.Txtapellido.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Txtapellido.Location = New System.Drawing.Point(150, 136)
         Me.Txtapellido.Name = "Txtapellido"
@@ -332,7 +435,7 @@ Partial Class Empleados
         'Txtcorreo
         '
         Me.Txtcorreo.BorderStyle = System.Windows.Forms.BorderStyle.None
-        Me.Txtcorreo.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.Txtcorreo.Cursor = System.Windows.Forms.Cursors.IBeam
         Me.Txtcorreo.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Txtcorreo.Location = New System.Drawing.Point(150, 166)
         Me.Txtcorreo.Name = "Txtcorreo"
@@ -350,42 +453,6 @@ Partial Class Empleados
         Me.BtnImprimir.TabIndex = 33
         Me.BtnImprimir.Text = "IMPRIMIR"
         Me.BtnImprimir.UseVisualStyleBackColor = True
-        '
-        'Btnborrar
-        '
-        Me.Btnborrar.Anchor = System.Windows.Forms.AnchorStyles.None
-        Me.Btnborrar.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.Btnborrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Btnborrar.Location = New System.Drawing.Point(569, 143)
-        Me.Btnborrar.Name = "Btnborrar"
-        Me.Btnborrar.Size = New System.Drawing.Size(90, 40)
-        Me.Btnborrar.TabIndex = 32
-        Me.Btnborrar.Text = "BORRAR"
-        Me.Btnborrar.UseVisualStyleBackColor = True
-        '
-        'BtnEditar
-        '
-        Me.BtnEditar.Anchor = System.Windows.Forms.AnchorStyles.None
-        Me.BtnEditar.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.BtnEditar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.BtnEditar.Location = New System.Drawing.Point(569, 93)
-        Me.BtnEditar.Name = "BtnEditar"
-        Me.BtnEditar.Size = New System.Drawing.Size(90, 40)
-        Me.BtnEditar.TabIndex = 31
-        Me.BtnEditar.Text = "EDITAR"
-        Me.BtnEditar.UseVisualStyleBackColor = True
-        '
-        'Btnnuevo
-        '
-        Me.Btnnuevo.Anchor = System.Windows.Forms.AnchorStyles.None
-        Me.Btnnuevo.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.Btnnuevo.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Btnnuevo.Location = New System.Drawing.Point(569, 47)
-        Me.Btnnuevo.Name = "Btnnuevo"
-        Me.Btnnuevo.Size = New System.Drawing.Size(90, 40)
-        Me.Btnnuevo.TabIndex = 30
-        Me.Btnnuevo.Text = "CREAR"
-        Me.Btnnuevo.UseVisualStyleBackColor = True
         '
         'Empleados
         '
@@ -435,8 +502,9 @@ Partial Class Empleados
     Friend WithEvents cmbposicion As System.Windows.Forms.ComboBox
     Friend WithEvents Txtcorreo As System.Windows.Forms.TextBox
     Friend WithEvents BtnImprimir As System.Windows.Forms.Button
-    Friend WithEvents Btnborrar As System.Windows.Forms.Button
-    Friend WithEvents BtnEditar As System.Windows.Forms.Button
-    Friend WithEvents Btnnuevo As System.Windows.Forms.Button
     Friend WithEvents DgEmpleados As Guna.UI.WinForms.GunaDataGridView
+    Friend WithEvents Btnlimpiar As Guna.UI.WinForms.GunaButton
+    Friend WithEvents Btnborrar As Guna.UI.WinForms.GunaButton
+    Friend WithEvents Btneditar As Guna.UI.WinForms.GunaButton
+    Friend WithEvents Btnagregar As Guna.UI.WinForms.GunaButton
 End Class

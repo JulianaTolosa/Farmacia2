@@ -236,8 +236,8 @@ Public Class FormPrincipal
             btnClientes.Text = ""
             btnEmpleados.Text = ""
             btnStock.Text = ""
-            btningreso.Text = ""
-            btnconsultastock.Text = ""
+            Btningreso.Text = ""
+            Btnconsultastock.Text = ""
             btnVentas.Text = ""
             btnfacturacion.Text = ""
             btnconsultaventa.Text = ""
@@ -257,8 +257,8 @@ Public Class FormPrincipal
             btnClientes.Text = "CLIENTES"
             btnEmpleados.Text = "EMPLEADOS"
             btnStock.Text = "STOCK"
-            btningreso.Text = "INGRESO"
-            btnconsultastock.Text = "CONSULTAS STOCK"
+            Btningreso.Text = "INGRESO"
+            Btnconsultastock.Text = "CONSULTAS STOCK"
             btnVentas.Text = "VENTAS"
             btnfacturacion.Text = "FACTURACION"
             btnconsultaventa.Text = "CONSULTAS"
@@ -336,9 +336,7 @@ Public Class FormPrincipal
 
 
 
-    Private Sub PanelFormularios_Paint(ByVal sender As System.Object, ByVal e As System.Windows.Forms.PaintEventArgs) Handles PanelFormularios.Paint
 
-    End Sub
 
     Protected Overrides Sub Finalize()
         MyBase.Finalize()
@@ -368,5 +366,11 @@ Public Class FormPrincipal
         openChildForm(New ConsultaStock())
         hideSubmenu()
     End Sub
+
+
+
+    
+
+    
 End Class
 

@@ -108,7 +108,7 @@ Partial Class ConsultaVentas
         Me.GunaGroupBox3.Size = New System.Drawing.Size(972, 119)
         Me.GunaGroupBox3.TabIndex = 40
         Me.GunaGroupBox3.Text = "BUSQUEDA POR FECHAS"
-        Me.GunaGroupBox3.TextLocation = New System.Drawing.Point(420, 5)
+        Me.GunaGroupBox3.TextLocation = New System.Drawing.Point(486, 5)
         '
         'GunaDateTimePicker2
         '
@@ -222,7 +222,7 @@ Partial Class ConsultaVentas
         Me.GunaGroupBox1.Size = New System.Drawing.Size(972, 243)
         Me.GunaGroupBox1.TabIndex = 41
         Me.GunaGroupBox1.Text = "DETALLE VENTAS"
-        Me.GunaGroupBox1.TextLocation = New System.Drawing.Point(420, 5)
+        Me.GunaGroupBox1.TextLocation = New System.Drawing.Point(486, 5)
         '
         'Dgdetalleventas
         '
@@ -313,7 +313,7 @@ Partial Class ConsultaVentas
         Me.GunaGroupBox2.Size = New System.Drawing.Size(972, 119)
         Me.GunaGroupBox2.TabIndex = 41
         Me.GunaGroupBox2.Text = "BUSQUEDA POR CLIENTES"
-        Me.GunaGroupBox2.TextLocation = New System.Drawing.Point(420, 5)
+        Me.GunaGroupBox2.TextLocation = New System.Drawing.Point(486, 5)
         '
         'TextBox1
         '

@@ -116,4 +116,8 @@ Public Class Productos
             End Using
         End Using
     End Sub
+
+    Private Sub Btn_Click(sender As Object, e As EventArgs) Handles Btn.Click
+
+    End Sub
 End Class

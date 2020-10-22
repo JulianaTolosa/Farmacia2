@@ -74,6 +74,7 @@ Partial Class FormPrincipal
         Me.ToolTip13 = New System.Windows.Forms.ToolTip(Me.components)
         Me.ToolTip14 = New System.Windows.Forms.ToolTip(Me.components)
         Me.horafecha = New System.Windows.Forms.Timer(Me.components)
+        Me.Timerclima = New System.Windows.Forms.Timer(Me.components)
         Me.PanelContenedor.SuspendLayout()
         Me.PanelFormularios.SuspendLayout()
         Me.PanelLateral.SuspendLayout()
@@ -118,7 +119,7 @@ Partial Class FormPrincipal
         Me.lblfecha.Anchor = System.Windows.Forms.AnchorStyles.None
         Me.lblfecha.AutoSize = True
         Me.lblfecha.Font = New System.Drawing.Font("Microsoft Sans Serif", 24.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblfecha.Location = New System.Drawing.Point(206, 196)
+        Me.lblfecha.Location = New System.Drawing.Point(267, 111)
         Me.lblfecha.Name = "lblfecha"
         Me.lblfecha.Size = New System.Drawing.Size(113, 37)
         Me.lblfecha.TabIndex = 1
@@ -129,7 +130,7 @@ Partial Class FormPrincipal
         Me.lblhora.Anchor = System.Windows.Forms.AnchorStyles.None
         Me.lblhora.AutoSize = True
         Me.lblhora.Font = New System.Drawing.Font("Microsoft Sans Serif", 48.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblhora.Location = New System.Drawing.Point(263, 85)
+        Me.lblhora.Location = New System.Drawing.Point(251, 21)
         Me.lblhora.Name = "lblhora"
         Me.lblhora.Size = New System.Drawing.Size(226, 73)
         Me.lblhora.TabIndex = 0
@@ -676,5 +677,6 @@ Partial Class FormPrincipal
     Friend WithEvents btnOSocial As System.Windows.Forms.Button
     Friend WithEvents Btningreso As System.Windows.Forms.Button
     Friend WithEvents Btnconsultastock As System.Windows.Forms.Button
+    Friend WithEvents Timerclima As System.Windows.Forms.Timer
 
 End Class

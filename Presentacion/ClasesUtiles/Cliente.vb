@@ -8,9 +8,18 @@
     Public _FechaNacimiento As Date
     Public _Localidad As String
     Public _Provincia As String
-    Public _IdObraSocial As Integer
+    Public _IdObraSocial As String
+    Public _tipodni As String
 
+    'Public Function Guardar() As Boolean
+    '    Dim _Retorno As Boolean = False
+    '    Try
+    '        _Retorno = Datos.GuardarClientes(Me)
+    '    Catch ex As Exception
 
+    '    End Try
+    '    Return _Retorno
+    'End Function
 
 
 End Class

@@ -30,6 +30,13 @@ Partial Class ObraSocial
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.lbLObraSocial = New System.Windows.Forms.Label()
         Me.DetalleGBx = New Guna.UI.WinForms.GunaGroupBox()
+        Me.Btncancelar = New Guna.UI.WinForms.GunaButton()
+        Me.BtnEditar = New Guna.UI.WinForms.GunaButton()
+        Me.BtnBorrar = New Guna.UI.WinForms.GunaButton()
+        Me.Txtdescuento = New System.Windows.Forms.TextBox()
+        Me.Txttelefono = New System.Windows.Forms.TextBox()
+        Me.Txtlocalidad = New System.Windows.Forms.TextBox()
+        Me.Txtprovincia = New System.Windows.Forms.TextBox()
         Me.Txtdireccion = New System.Windows.Forms.TextBox()
         Me.TxtNombre = New System.Windows.Forms.TextBox()
         Me.GunaLabel1 = New Guna.UI.WinForms.GunaLabel()
@@ -38,14 +45,10 @@ Partial Class ObraSocial
         Me.LblDireccion = New Guna.UI.WinForms.GunaLabel()
         Me.LblNombre = New Guna.UI.WinForms.GunaLabel()
         Me.LocalidadLbl = New Guna.UI.WinForms.GunaLabel()
-        Me.GBagregar = New Guna.UI.WinForms.GunaButton()
+        Me.Btnagregar = New Guna.UI.WinForms.GunaButton()
         Me.Lbldescuento = New Guna.UI.WinForms.GunaLabel()
         Me.ListadoOSGBx = New Guna.UI.WinForms.GunaGroupBox()
         Me.DgListadoOB = New Guna.UI.WinForms.GunaDataGridView()
-        Me.Txttelefono = New System.Windows.Forms.TextBox()
-        Me.Txtlocalidad = New System.Windows.Forms.TextBox()
-        Me.Txtprovincia = New System.Windows.Forms.TextBox()
-        Me.Txtdescuento = New System.Windows.Forms.TextBox()
         CType(Me.btnCerrarForm, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel1.SuspendLayout()
         Me.DetalleGBx.SuspendLayout()
@@ -80,6 +83,7 @@ Partial Class ObraSocial
         Me.lbLObraSocial.Anchor = System.Windows.Forms.AnchorStyles.Top
         Me.lbLObraSocial.AutoSize = True
         Me.lbLObraSocial.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lbLObraSocial.ForeColor = System.Drawing.Color.WhiteSmoke
         Me.lbLObraSocial.Location = New System.Drawing.Point(446, 10)
         Me.lbLObraSocial.Name = "lbLObraSocial"
         Me.lbLObraSocial.Size = New System.Drawing.Size(135, 24)
@@ -94,10 +98,13 @@ Partial Class ObraSocial
         Me.DetalleGBx.BackColor = System.Drawing.Color.Transparent
         Me.DetalleGBx.BaseColor = System.Drawing.Color.Transparent
         Me.DetalleGBx.BorderColor = System.Drawing.Color.Gainsboro
+        Me.DetalleGBx.Controls.Add(Me.Btncancelar)
+        Me.DetalleGBx.Controls.Add(Me.BtnEditar)
+        Me.DetalleGBx.Controls.Add(Me.BtnBorrar)
         Me.DetalleGBx.Controls.Add(Me.Txtdescuento)
-        Me.DetalleGBx.Controls.Add(Me.Txtprovincia)
-        Me.DetalleGBx.Controls.Add(Me.Txtlocalidad)
         Me.DetalleGBx.Controls.Add(Me.Txttelefono)
+        Me.DetalleGBx.Controls.Add(Me.Txtlocalidad)
+        Me.DetalleGBx.Controls.Add(Me.Txtprovincia)
         Me.DetalleGBx.Controls.Add(Me.Txtdireccion)
         Me.DetalleGBx.Controls.Add(Me.TxtNombre)
         Me.DetalleGBx.Controls.Add(Me.GunaLabel1)
@@ -106,7 +113,7 @@ Partial Class ObraSocial
         Me.DetalleGBx.Controls.Add(Me.LblDireccion)
         Me.DetalleGBx.Controls.Add(Me.LblNombre)
         Me.DetalleGBx.Controls.Add(Me.LocalidadLbl)
-        Me.DetalleGBx.Controls.Add(Me.GBagregar)
+        Me.DetalleGBx.Controls.Add(Me.Btnagregar)
         Me.DetalleGBx.Controls.Add(Me.Lbldescuento)
         Me.DetalleGBx.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.DetalleGBx.ForeColor = System.Drawing.Color.WhiteSmoke
@@ -121,6 +128,109 @@ Partial Class ObraSocial
         Me.DetalleGBx.TabIndex = 59
         Me.DetalleGBx.Text = "DETALLES"
         Me.DetalleGBx.TextLocation = New System.Drawing.Point(488, 5)
+        '
+        'Btncancelar
+        '
+        Me.Btncancelar.AnimationHoverSpeed = 0.07!
+        Me.Btncancelar.AnimationSpeed = 0.03!
+        Me.Btncancelar.BaseColor = System.Drawing.Color.FromArgb(CType(CType(100, Byte), Integer), CType(CType(88, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.Btncancelar.BorderColor = System.Drawing.Color.Black
+        Me.Btncancelar.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.Btncancelar.DialogResult = System.Windows.Forms.DialogResult.None
+        Me.Btncancelar.FocusedColor = System.Drawing.Color.Empty
+        Me.Btncancelar.Font = New System.Drawing.Font("Segoe UI", 9.0!)
+        Me.Btncancelar.ForeColor = System.Drawing.Color.White
+        Me.Btncancelar.Image = Nothing
+        Me.Btncancelar.ImageSize = New System.Drawing.Size(20, 20)
+        Me.Btncancelar.Location = New System.Drawing.Point(704, 181)
+        Me.Btncancelar.Name = "Btncancelar"
+        Me.Btncancelar.OnHoverBaseColor = System.Drawing.Color.FromArgb(CType(CType(151, Byte), Integer), CType(CType(143, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.Btncancelar.OnHoverBorderColor = System.Drawing.Color.Black
+        Me.Btncancelar.OnHoverForeColor = System.Drawing.Color.White
+        Me.Btncancelar.OnHoverImage = Nothing
+        Me.Btncancelar.OnPressedColor = System.Drawing.Color.Black
+        Me.Btncancelar.Size = New System.Drawing.Size(141, 42)
+        Me.Btncancelar.TabIndex = 83
+        Me.Btncancelar.Text = "CANCELAR"
+        Me.Btncancelar.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        '
+        'BtnEditar
+        '
+        Me.BtnEditar.AnimationHoverSpeed = 0.07!
+        Me.BtnEditar.AnimationSpeed = 0.03!
+        Me.BtnEditar.BaseColor = System.Drawing.Color.FromArgb(CType(CType(100, Byte), Integer), CType(CType(88, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.BtnEditar.BorderColor = System.Drawing.Color.Black
+        Me.BtnEditar.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.BtnEditar.DialogResult = System.Windows.Forms.DialogResult.None
+        Me.BtnEditar.FocusedColor = System.Drawing.Color.Empty
+        Me.BtnEditar.Font = New System.Drawing.Font("Segoe UI", 9.0!)
+        Me.BtnEditar.ForeColor = System.Drawing.Color.White
+        Me.BtnEditar.Image = Nothing
+        Me.BtnEditar.ImageSize = New System.Drawing.Size(20, 20)
+        Me.BtnEditar.Location = New System.Drawing.Point(704, 85)
+        Me.BtnEditar.Name = "BtnEditar"
+        Me.BtnEditar.OnHoverBaseColor = System.Drawing.Color.FromArgb(CType(CType(151, Byte), Integer), CType(CType(143, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.BtnEditar.OnHoverBorderColor = System.Drawing.Color.Black
+        Me.BtnEditar.OnHoverForeColor = System.Drawing.Color.White
+        Me.BtnEditar.OnHoverImage = Nothing
+        Me.BtnEditar.OnPressedColor = System.Drawing.Color.Black
+        Me.BtnEditar.Size = New System.Drawing.Size(141, 42)
+        Me.BtnEditar.TabIndex = 82
+        Me.BtnEditar.Text = "EDITAR"
+        Me.BtnEditar.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        '
+        'BtnBorrar
+        '
+        Me.BtnBorrar.AnimationHoverSpeed = 0.07!
+        Me.BtnBorrar.AnimationSpeed = 0.03!
+        Me.BtnBorrar.BaseColor = System.Drawing.Color.FromArgb(CType(CType(100, Byte), Integer), CType(CType(88, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.BtnBorrar.BorderColor = System.Drawing.Color.Black
+        Me.BtnBorrar.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.BtnBorrar.DialogResult = System.Windows.Forms.DialogResult.None
+        Me.BtnBorrar.FocusedColor = System.Drawing.Color.Empty
+        Me.BtnBorrar.Font = New System.Drawing.Font("Segoe UI", 9.0!)
+        Me.BtnBorrar.ForeColor = System.Drawing.Color.White
+        Me.BtnBorrar.Image = Nothing
+        Me.BtnBorrar.ImageSize = New System.Drawing.Size(20, 20)
+        Me.BtnBorrar.Location = New System.Drawing.Point(704, 133)
+        Me.BtnBorrar.Name = "BtnBorrar"
+        Me.BtnBorrar.OnHoverBaseColor = System.Drawing.Color.FromArgb(CType(CType(151, Byte), Integer), CType(CType(143, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.BtnBorrar.OnHoverBorderColor = System.Drawing.Color.Black
+        Me.BtnBorrar.OnHoverForeColor = System.Drawing.Color.White
+        Me.BtnBorrar.OnHoverImage = Nothing
+        Me.BtnBorrar.OnPressedColor = System.Drawing.Color.Black
+        Me.BtnBorrar.Size = New System.Drawing.Size(141, 42)
+        Me.BtnBorrar.TabIndex = 81
+        Me.BtnBorrar.Text = "BORRAR"
+        Me.BtnBorrar.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        '
+        'Txtdescuento
+        '
+        Me.Txtdescuento.Location = New System.Drawing.Point(150, 194)
+        Me.Txtdescuento.Name = "Txtdescuento"
+        Me.Txtdescuento.Size = New System.Drawing.Size(87, 26)
+        Me.Txtdescuento.TabIndex = 80
+        '
+        'Txttelefono
+        '
+        Me.Txttelefono.Location = New System.Drawing.Point(149, 160)
+        Me.Txttelefono.Name = "Txttelefono"
+        Me.Txttelefono.Size = New System.Drawing.Size(374, 26)
+        Me.Txttelefono.TabIndex = 79
+        '
+        'Txtlocalidad
+        '
+        Me.Txtlocalidad.Location = New System.Drawing.Point(149, 99)
+        Me.Txtlocalidad.Name = "Txtlocalidad"
+        Me.Txtlocalidad.Size = New System.Drawing.Size(374, 26)
+        Me.Txtlocalidad.TabIndex = 78
+        '
+        'Txtprovincia
+        '
+        Me.Txtprovincia.Location = New System.Drawing.Point(149, 130)
+        Me.Txtprovincia.Name = "Txtprovincia"
+        Me.Txtprovincia.Size = New System.Drawing.Size(374, 26)
+        Me.Txtprovincia.TabIndex = 77
         '
         'Txtdireccion
         '
@@ -140,7 +250,7 @@ Partial Class ObraSocial
         '
         Me.GunaLabel1.AutoSize = True
         Me.GunaLabel1.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.GunaLabel1.ForeColor = System.Drawing.Color.Black
+        Me.GunaLabel1.ForeColor = System.Drawing.Color.WhiteSmoke
         Me.GunaLabel1.Location = New System.Drawing.Point(250, 195)
         Me.GunaLabel1.Name = "GunaLabel1"
         Me.GunaLabel1.Size = New System.Drawing.Size(23, 21)
@@ -151,8 +261,8 @@ Partial Class ObraSocial
         '
         Me.LblProvincia.AutoSize = True
         Me.LblProvincia.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LblProvincia.ForeColor = System.Drawing.Color.Black
-        Me.LblProvincia.Location = New System.Drawing.Point(29, 169)
+        Me.LblProvincia.ForeColor = System.Drawing.Color.WhiteSmoke
+        Me.LblProvincia.Location = New System.Drawing.Point(29, 138)
         Me.LblProvincia.Name = "LblProvincia"
         Me.LblProvincia.Size = New System.Drawing.Size(77, 21)
         Me.LblProvincia.TabIndex = 70
@@ -162,8 +272,8 @@ Partial Class ObraSocial
         '
         Me.LblTelefono.AutoSize = True
         Me.LblTelefono.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LblTelefono.ForeColor = System.Drawing.Color.Black
-        Me.LblTelefono.Location = New System.Drawing.Point(29, 103)
+        Me.LblTelefono.ForeColor = System.Drawing.Color.WhiteSmoke
+        Me.LblTelefono.Location = New System.Drawing.Point(29, 165)
         Me.LblTelefono.Name = "LblTelefono"
         Me.LblTelefono.Size = New System.Drawing.Size(73, 21)
         Me.LblTelefono.TabIndex = 69
@@ -173,7 +283,7 @@ Partial Class ObraSocial
         '
         Me.LblDireccion.AutoSize = True
         Me.LblDireccion.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LblDireccion.ForeColor = System.Drawing.Color.Black
+        Me.LblDireccion.ForeColor = System.Drawing.Color.WhiteSmoke
         Me.LblDireccion.Location = New System.Drawing.Point(29, 73)
         Me.LblDireccion.Name = "LblDireccion"
         Me.LblDireccion.Size = New System.Drawing.Size(78, 21)
@@ -184,7 +294,7 @@ Partial Class ObraSocial
         '
         Me.LblNombre.AutoSize = True
         Me.LblNombre.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LblNombre.ForeColor = System.Drawing.Color.Black
+        Me.LblNombre.ForeColor = System.Drawing.Color.WhiteSmoke
         Me.LblNombre.Location = New System.Drawing.Point(29, 44)
         Me.LblNombre.Name = "LblNombre"
         Me.LblNombre.Size = New System.Drawing.Size(71, 21)
@@ -195,43 +305,43 @@ Partial Class ObraSocial
         '
         Me.LocalidadLbl.AutoSize = True
         Me.LocalidadLbl.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LocalidadLbl.ForeColor = System.Drawing.Color.Black
-        Me.LocalidadLbl.Location = New System.Drawing.Point(29, 135)
+        Me.LocalidadLbl.ForeColor = System.Drawing.Color.WhiteSmoke
+        Me.LocalidadLbl.Location = New System.Drawing.Point(29, 104)
         Me.LocalidadLbl.Name = "LocalidadLbl"
         Me.LocalidadLbl.Size = New System.Drawing.Size(79, 21)
         Me.LocalidadLbl.TabIndex = 62
         Me.LocalidadLbl.Text = "Localidad:"
         '
-        'GBagregar
+        'Btnagregar
         '
-        Me.GBagregar.AnimationHoverSpeed = 0.07!
-        Me.GBagregar.AnimationSpeed = 0.03!
-        Me.GBagregar.BaseColor = System.Drawing.Color.FromArgb(CType(CType(100, Byte), Integer), CType(CType(88, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.GBagregar.BorderColor = System.Drawing.Color.Black
-        Me.GBagregar.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.GBagregar.DialogResult = System.Windows.Forms.DialogResult.None
-        Me.GBagregar.FocusedColor = System.Drawing.Color.Empty
-        Me.GBagregar.Font = New System.Drawing.Font("Segoe UI", 9.0!)
-        Me.GBagregar.ForeColor = System.Drawing.Color.White
-        Me.GBagregar.Image = CType(resources.GetObject("GBagregar.Image"), System.Drawing.Image)
-        Me.GBagregar.ImageSize = New System.Drawing.Size(20, 20)
-        Me.GBagregar.Location = New System.Drawing.Point(704, 37)
-        Me.GBagregar.Name = "GBagregar"
-        Me.GBagregar.OnHoverBaseColor = System.Drawing.Color.FromArgb(CType(CType(151, Byte), Integer), CType(CType(143, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.GBagregar.OnHoverBorderColor = System.Drawing.Color.Black
-        Me.GBagregar.OnHoverForeColor = System.Drawing.Color.White
-        Me.GBagregar.OnHoverImage = Nothing
-        Me.GBagregar.OnPressedColor = System.Drawing.Color.Black
-        Me.GBagregar.Size = New System.Drawing.Size(141, 42)
-        Me.GBagregar.TabIndex = 61
-        Me.GBagregar.Text = "AGREGAR"
-        Me.GBagregar.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        Me.Btnagregar.AnimationHoverSpeed = 0.07!
+        Me.Btnagregar.AnimationSpeed = 0.03!
+        Me.Btnagregar.BaseColor = System.Drawing.Color.FromArgb(CType(CType(100, Byte), Integer), CType(CType(88, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.Btnagregar.BorderColor = System.Drawing.Color.Black
+        Me.Btnagregar.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.Btnagregar.DialogResult = System.Windows.Forms.DialogResult.None
+        Me.Btnagregar.FocusedColor = System.Drawing.Color.Empty
+        Me.Btnagregar.Font = New System.Drawing.Font("Segoe UI", 9.0!)
+        Me.Btnagregar.ForeColor = System.Drawing.Color.White
+        Me.Btnagregar.Image = Nothing
+        Me.Btnagregar.ImageSize = New System.Drawing.Size(20, 20)
+        Me.Btnagregar.Location = New System.Drawing.Point(704, 37)
+        Me.Btnagregar.Name = "Btnagregar"
+        Me.Btnagregar.OnHoverBaseColor = System.Drawing.Color.FromArgb(CType(CType(151, Byte), Integer), CType(CType(143, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.Btnagregar.OnHoverBorderColor = System.Drawing.Color.Black
+        Me.Btnagregar.OnHoverForeColor = System.Drawing.Color.White
+        Me.Btnagregar.OnHoverImage = Nothing
+        Me.Btnagregar.OnPressedColor = System.Drawing.Color.Black
+        Me.Btnagregar.Size = New System.Drawing.Size(141, 42)
+        Me.Btnagregar.TabIndex = 61
+        Me.Btnagregar.Text = "AGREGAR"
+        Me.Btnagregar.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
         'Lbldescuento
         '
         Me.Lbldescuento.AutoSize = True
         Me.Lbldescuento.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Lbldescuento.ForeColor = System.Drawing.Color.Black
+        Me.Lbldescuento.ForeColor = System.Drawing.Color.WhiteSmoke
         Me.Lbldescuento.Location = New System.Drawing.Point(29, 198)
         Me.Lbldescuento.Name = "Lbldescuento"
         Me.Lbldescuento.Size = New System.Drawing.Size(86, 21)
@@ -263,12 +373,15 @@ Partial Class ObraSocial
         '
         'DgListadoOB
         '
+        Me.DgListadoOB.AllowUserToAddRows = False
         DataGridViewCellStyle1.BackColor = System.Drawing.Color.White
+        DataGridViewCellStyle1.ForeColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(64, Byte), Integer))
         Me.DgListadoOB.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle1
         Me.DgListadoOB.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
             Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.DgListadoOB.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
+        Me.DgListadoOB.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells
         Me.DgListadoOB.BackgroundColor = System.Drawing.SystemColors.ActiveCaption
         Me.DgListadoOB.BorderStyle = System.Windows.Forms.BorderStyle.None
         Me.DgListadoOB.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal
@@ -281,27 +394,32 @@ Partial Class ObraSocial
         DataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText
         DataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
         Me.DgListadoOB.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle2
-        Me.DgListadoOB.ColumnHeadersHeight = 4
+        Me.DgListadoOB.ColumnHeadersHeight = 26
+        Me.DgListadoOB.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing
+        Me.DgListadoOB.Cursor = System.Windows.Forms.Cursors.Hand
         DataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
         DataGridViewCellStyle3.BackColor = System.Drawing.Color.White
         DataGridViewCellStyle3.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle3.ForeColor = System.Drawing.Color.WhiteSmoke
+        DataGridViewCellStyle3.ForeColor = System.Drawing.Color.Black
         DataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(231, Byte), Integer), CType(CType(229, Byte), Integer), CType(CType(255, Byte), Integer))
         DataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.FromArgb(CType(CType(71, Byte), Integer), CType(CType(69, Byte), Integer), CType(CType(94, Byte), Integer))
         DataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
         Me.DgListadoOB.DefaultCellStyle = DataGridViewCellStyle3
         Me.DgListadoOB.EnableHeadersVisualStyles = False
         Me.DgListadoOB.GridColor = System.Drawing.Color.FromArgb(CType(CType(231, Byte), Integer), CType(CType(229, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.DgListadoOB.Location = New System.Drawing.Point(33, 42)
+        Me.DgListadoOB.Location = New System.Drawing.Point(27, 43)
         Me.DgListadoOB.Name = "DgListadoOB"
+        Me.DgListadoOB.ReadOnly = True
+        Me.DgListadoOB.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.[Single]
         Me.DgListadoOB.RowHeadersVisible = False
+        Me.DgListadoOB.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing
         Me.DgListadoOB.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
         Me.DgListadoOB.Size = New System.Drawing.Size(907, 188)
-        Me.DgListadoOB.TabIndex = 0
+        Me.DgListadoOB.TabIndex = 38
         Me.DgListadoOB.Theme = Guna.UI.WinForms.GunaDataGridViewPresetThemes.Guna
         Me.DgListadoOB.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White
         Me.DgListadoOB.ThemeStyle.AlternatingRowsStyle.Font = Nothing
-        Me.DgListadoOB.ThemeStyle.AlternatingRowsStyle.ForeColor = System.Drawing.Color.Empty
+        Me.DgListadoOB.ThemeStyle.AlternatingRowsStyle.ForeColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(64, Byte), Integer))
         Me.DgListadoOB.ThemeStyle.AlternatingRowsStyle.SelectionBackColor = System.Drawing.Color.Empty
         Me.DgListadoOB.ThemeStyle.AlternatingRowsStyle.SelectionForeColor = System.Drawing.Color.Empty
         Me.DgListadoOB.ThemeStyle.BackColor = System.Drawing.SystemColors.ActiveCaption
@@ -310,44 +428,16 @@ Partial Class ObraSocial
         Me.DgListadoOB.ThemeStyle.HeaderStyle.BorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None
         Me.DgListadoOB.ThemeStyle.HeaderStyle.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.DgListadoOB.ThemeStyle.HeaderStyle.ForeColor = System.Drawing.Color.White
-        Me.DgListadoOB.ThemeStyle.HeaderStyle.HeaightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing
-        Me.DgListadoOB.ThemeStyle.HeaderStyle.Height = 4
-        Me.DgListadoOB.ThemeStyle.ReadOnly = False
+        Me.DgListadoOB.ThemeStyle.HeaderStyle.HeaightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing
+        Me.DgListadoOB.ThemeStyle.HeaderStyle.Height = 26
+        Me.DgListadoOB.ThemeStyle.ReadOnly = True
         Me.DgListadoOB.ThemeStyle.RowsStyle.BackColor = System.Drawing.Color.White
         Me.DgListadoOB.ThemeStyle.RowsStyle.BorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal
         Me.DgListadoOB.ThemeStyle.RowsStyle.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.DgListadoOB.ThemeStyle.RowsStyle.ForeColor = System.Drawing.Color.WhiteSmoke
+        Me.DgListadoOB.ThemeStyle.RowsStyle.ForeColor = System.Drawing.Color.Black
         Me.DgListadoOB.ThemeStyle.RowsStyle.Height = 22
         Me.DgListadoOB.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(231, Byte), Integer), CType(CType(229, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.DgListadoOB.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.FromArgb(CType(CType(71, Byte), Integer), CType(CType(69, Byte), Integer), CType(CType(94, Byte), Integer))
-        '
-        'Txttelefono
-        '
-        Me.Txttelefono.Location = New System.Drawing.Point(149, 98)
-        Me.Txttelefono.Name = "Txttelefono"
-        Me.Txttelefono.Size = New System.Drawing.Size(374, 26)
-        Me.Txttelefono.TabIndex = 77
-        '
-        'Txtlocalidad
-        '
-        Me.Txtlocalidad.Location = New System.Drawing.Point(149, 130)
-        Me.Txtlocalidad.Name = "Txtlocalidad"
-        Me.Txtlocalidad.Size = New System.Drawing.Size(374, 26)
-        Me.Txtlocalidad.TabIndex = 78
-        '
-        'Txtprovincia
-        '
-        Me.Txtprovincia.Location = New System.Drawing.Point(149, 161)
-        Me.Txtprovincia.Name = "Txtprovincia"
-        Me.Txtprovincia.Size = New System.Drawing.Size(374, 26)
-        Me.Txtprovincia.TabIndex = 79
-        '
-        'Txtdescuento
-        '
-        Me.Txtdescuento.Location = New System.Drawing.Point(150, 194)
-        Me.Txtdescuento.Name = "Txtdescuento"
-        Me.Txtdescuento.Size = New System.Drawing.Size(87, 26)
-        Me.Txtdescuento.TabIndex = 80
         '
         'ObraSocial
         '
@@ -379,9 +469,8 @@ Partial Class ObraSocial
     Friend WithEvents lbLObraSocial As System.Windows.Forms.Label
     Friend WithEvents DetalleGBx As Guna.UI.WinForms.GunaGroupBox
     Friend WithEvents ListadoOSGBx As Guna.UI.WinForms.GunaGroupBox
-    Friend WithEvents DgListadoOB As Guna.UI.WinForms.GunaDataGridView
     Friend WithEvents Lbldescuento As Guna.UI.WinForms.GunaLabel
-    Friend WithEvents GBagregar As Guna.UI.WinForms.GunaButton
+    Friend WithEvents Btnagregar As Guna.UI.WinForms.GunaButton
     Friend WithEvents LblProvincia As Guna.UI.WinForms.GunaLabel
     Friend WithEvents LblTelefono As Guna.UI.WinForms.GunaLabel
     Friend WithEvents LblDireccion As Guna.UI.WinForms.GunaLabel
@@ -391,7 +480,11 @@ Partial Class ObraSocial
     Friend WithEvents Txtdireccion As System.Windows.Forms.TextBox
     Friend WithEvents TxtNombre As System.Windows.Forms.TextBox
     Friend WithEvents Txtlocalidad As System.Windows.Forms.TextBox
-    Friend WithEvents Txttelefono As System.Windows.Forms.TextBox
     Friend WithEvents Txtprovincia As System.Windows.Forms.TextBox
+    Friend WithEvents Txttelefono As System.Windows.Forms.TextBox
     Friend WithEvents Txtdescuento As System.Windows.Forms.TextBox
+    Friend WithEvents BtnBorrar As Guna.UI.WinForms.GunaButton
+    Friend WithEvents Btncancelar As Guna.UI.WinForms.GunaButton
+    Friend WithEvents BtnEditar As Guna.UI.WinForms.GunaButton
+    Friend WithEvents DgListadoOB As Guna.UI.WinForms.GunaDataGridView
 End Class

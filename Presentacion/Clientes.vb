@@ -8,76 +8,36 @@
     Private Sub Clientes_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
         'TODO: esta línea de código carga datos en la tabla 'TesisDataSet.Clientes' Puede moverla o quitarla según sea necesario.
         'ghjggjgjgjjgj()
-
+        RefrescarListaclientes()
+        listdni()
+        listobra()
     End Sub
 
    
     
-    Private Sub btnNuevo_Click(ByVal sender As System.Object, ByVal e As System.EventArgs)
-        AltaCliente.Show()
+    
+
+    Public Sub RefrescarListaclientes()
+        DgDetalleClientes.DataSource = Datos.ObtenerDataTableCliente()
+        DgDetalleClientes.Columns(0).Visible = False
+        DgDetalleClientes.Columns(10).Visible = False
     End Sub
 
-    Private Sub btnBuscar_Click(sender As Object, e As EventArgs)
-
-    End Sub
-
-    Private Sub btnEliminar_Click(sender As Object, e As EventArgs)
-
-    End Sub
-
-    Private Sub btnGuardar_Click(sender As Object, e As EventArgs)
-        If (String.IsNullOrEmpty(NombreTextBox.Text) Or String.IsNullOrEmpty(ApellidoTextBox.Text) Or String.IsNullOrEmpty(DireccionTextBox.Text) Or String.IsNullOrEmpty(DniTextBox.Text) Or String.IsNullOrEmpty(TelefonoTextBox.Text) Or String.IsNullOrEmpty(CelularTextBox.Text) Or String.IsNullOrEmpty(NacimientoTextBox.Text) Or String.IsNullOrEmpty(LocalidadTextBox.Text) Or String.IsNullOrEmpty(ProvinciaTextBox.Text) Or String.IsNullOrEmpty(ObraSocialcmb.Text)) Then
-            MsgBox("Por Favor, rellene los campos vacios")
-        ElseIf Datos.ExisteCliente(CInt(DniTextBox.Text)) Then
-            MessageBox.Show("El Cliente ya existe con este Documento, por favor intente nuevamente")
-            limpiar()
-        Else
-
-            Dim Nombre As String = NombreTextBox.Text
-            Dim Apellido As String = ApellidoTextBox.Text
-            Dim Direccion As String = DireccionTextBox.Text
-            Dim DNI As Integer = CInt(DniTextBox.Text)
-            Dim Telefono As String = TelefonoTextBox.Text
-            Dim Celular As String = CelularTextBox.Text
-            Dim FechaNacimiento As Date = CDate(NacimientoTextBox.Text)
-            Dim Localidad As String = LocalidadTextBox.Text
-            Dim Provincia As String = ProvinciaTextBox.Text
-            Dim IdObraSocial As String = ObraSocialcmb.Text
-
-            Dim _Cliente As New Cliente()
-            _Cliente._Nombre = NombreTextBox.Text
-            _Cliente._Apellido = ApellidoTextBox.Text
-            _Cliente._Direccion = DireccionTextBox.Text
-            _Cliente._DNI = CInt(DniTextBox.Text)
-            _Cliente._Telefono = TelefonoTextBox.Text
-            _Cliente._Celular = CelularTextBox.Text
-            _Cliente._FechaNacimiento = CDate(NacimientoTextBox.Text)
-            _Cliente._Localidad = LocalidadTextBox.Text
-            _Cliente._Provincia = ProvinciaTextBox.Text
-            _Cliente._IdObraSocial = CInt(ObraSocialcmb.Text)
-
-            If Datos.AgregarCliente(_Cliente) Then
-                MsgBox("Cliente agregado correctamente!")
-            Else
-                MsgBox("Error al agregar Cliente!")
-            End If
-
-            limpiar()
-        End If
-    End Sub
+    
+   
 
     Public Sub limpiar()
-        NombreTextBox.Text = ""
-        ApellidoTextBox.Text = ""
-        DireccionTextBox.Text = ""
-        DniTextBox.Text = ""
-        NacimientoTextBox.Text = ""
-        CelularTextBox.Text = ""
-        TelefonoTextBox.Text = ""
-        LocalidadTextBox.Text = ""
-        ProvinciaTextBox.Text = ""
+        nombretxt.Text = ""
+        apellidotxt.Text = ""
+        direcciontxt.Text = ""
+        dnitxt.Text = ""
+        fechadate.Text = ""
+        Celulartxt.Text = ""
+        telefonotxt.Text = ""
+        localidadtxt.Text = ""
+        provinciatxt.Text = ""
         ObraSocialcmb.Text = ""
-        DniTextBox.Focus()
+        Dnicmb.Focus()
     End Sub
 
 
@@ -87,39 +47,66 @@
         End If
     End Sub
 
+    Public Sub listdni() Handles Dnicmb.Click
+        Try
+            Dnicmb.Items.Clear()
+            Dim _Tipos As List(Of String) = Datos.ObtenerDni()
+            For Each nombre As String In _Tipos
+                Dnicmb.Items.Add(nombre)
+            Next
+
+        Catch ex As Exception
+
+        End Try
+    End Sub
+
+    Public Sub listobra() Handles ObraSocialcmb.Click
+        Try
+            ObraSocialcmb.Items.Clear()
+            Dim _Tipos As List(Of String) = Datos.Obtenerobrasocial()
+            For Each nombre As String In _Tipos
+                ObraSocialcmb.Items.Add(nombre)
+            Next
+
+        Catch ex As Exception
+
+        End Try
+    End Sub
 
     
    
     Private Sub btnGuardar_Click_1(sender As Object, e As EventArgs) Handles btnGuardar.Click
-        If (String.IsNullOrEmpty(NombreTextBox.Text) Or String.IsNullOrEmpty(ApellidoTextBox.Text) Or String.IsNullOrEmpty(DireccionTextBox.Text) Or String.IsNullOrEmpty(DniTextBox.Text) Or String.IsNullOrEmpty(TelefonoTextBox.Text) Or String.IsNullOrEmpty(CelularTextBox.Text) Or String.IsNullOrEmpty(NacimientoTextBox.Text) Or String.IsNullOrEmpty(LocalidadTextBox.Text) Or String.IsNullOrEmpty(ProvinciaTextBox.Text) Or String.IsNullOrEmpty(ObraSocialcmb.Text)) Then
+        If (String.IsNullOrEmpty(Dnicmb.Text) Or String.IsNullOrEmpty(dnitxt.Text) Or String.IsNullOrEmpty(nombretxt.Text) Or String.IsNullOrEmpty(apellidotxt.Text) Or String.IsNullOrEmpty(direcciontxt.Text) Or String.IsNullOrEmpty(dnitxt.Text) Or String.IsNullOrEmpty(telefonotxt.Text) Or String.IsNullOrEmpty(Celulartxt.Text) Or String.IsNullOrEmpty(fechadate.Text) Or String.IsNullOrEmpty(localidadtxt.Text) Or String.IsNullOrEmpty(provinciatxt.Text) Or String.IsNullOrEmpty(ObraSocialcmb.Text)) Then
             MsgBox("Por Favor, rellene los campos vacios")
-        ElseIf Datos.ExisteCliente(CInt(DniTextBox.Text)) Then
+        ElseIf Datos.ExisteCliente(CInt(dnitxt.Text)) Then
             MessageBox.Show("El Cliente ya existe con este Documento, por favor intente nuevamente")
             limpiar()
         Else
-
-            Dim Nombre As String = NombreTextBox.Text
-            Dim Apellido As String = ApellidoTextBox.Text
-            Dim Direccion As String = DireccionTextBox.Text
-            Dim DNI As Integer = CInt(DniTextBox.Text)
-            Dim Telefono As String = TelefonoTextBox.Text
-            Dim Celular As String = CelularTextBox.Text
-            Dim FechaNacimiento As Date = CDate(NacimientoTextBox.Text)
-            Dim Localidad As String = LocalidadTextBox.Text
-            Dim Provincia As String = ProvinciaTextBox.Text
+            Dim tipo_dni As String = Dnicmb.Text
+            Dim Nombre As String = nombretxt.Text
+            Dim Apellido As String = apellidotxt.Text
+            Dim Direccion As String = direcciontxt.Text
+            Dim TipoDni As String = Dnicmb.Text
+            Dim DNI As Integer = CInt(dnitxt.Text)
+            Dim Telefono As String = telefonotxt.Text
+            Dim Celular As String = Celulartxt.Text
+            Dim FechaNacimiento As Date = CDate(fechadate.Text)
+            Dim Localidad As String = localidadtxt.Text
+            Dim Provincia As String = provinciatxt.Text
             Dim IdObraSocial As String = ObraSocialcmb.Text
 
             Dim _Cliente As New Cliente()
-            _Cliente._Nombre = NombreTextBox.Text
-            _Cliente._Apellido = ApellidoTextBox.Text
-            _Cliente._Direccion = DireccionTextBox.Text
-            _Cliente._DNI = CInt(DniTextBox.Text)
-            _Cliente._Telefono = TelefonoTextBox.Text
-            _Cliente._Celular = CelularTextBox.Text
-            _Cliente._FechaNacimiento = CDate(NacimientoTextBox.Text)
-            _Cliente._Localidad = LocalidadTextBox.Text
-            _Cliente._Provincia = ProvinciaTextBox.Text
-            _Cliente._IdObraSocial = CInt(ObraSocialcmb.Text)
+            _Cliente._Nombre = nombretxt.Text
+            _Cliente._Apellido = apellidotxt.Text
+            _Cliente._Direccion = direcciontxt.Text
+            _Cliente._DNI = CInt(dnitxt.Text)
+            _Cliente._Telefono = telefonotxt.Text
+            _Cliente._Celular = Celulartxt.Text
+            _Cliente._FechaNacimiento = CDate(fechadate.Text)
+            _Cliente._Localidad = localidadtxt.Text
+            _Cliente._Provincia = provinciatxt.Text
+            _Cliente._IdObraSocial = (ObraSocialcmb.Text)
+            _Cliente._tipodni = (Dnicmb.Text)
 
             If Datos.AgregarCliente(_Cliente) Then
                 MsgBox("Cliente agregado correctamente!")
