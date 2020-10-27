@@ -26,6 +26,9 @@ Partial Class Ingreso
         Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Ingreso))
+        Dim DataGridViewCellStyle4 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle5 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle6 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.btnCerrarForm = New System.Windows.Forms.PictureBox()
         Me.lblMediosdePago = New System.Windows.Forms.Label()
@@ -42,11 +45,13 @@ Partial Class Ingreso
         Me.Btncancelar = New Guna.UI.WinForms.GunaButton()
         Me.Btncancel = New Guna.UI.WinForms.GunaButton()
         Me.Btnguardar = New Guna.UI.WinForms.GunaButton()
+        Me.DgProducto = New Guna.UI.WinForms.GunaDataGridView()
         Me.Panel1.SuspendLayout()
         CType(Me.btnCerrarForm, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GBxDetalle.SuspendLayout()
         CType(Me.Dgdetalleprod, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GunaGroupBox1.SuspendLayout()
+        CType(Me.DgProducto, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'Panel1
@@ -181,6 +186,7 @@ Partial Class Ingreso
         Me.GunaGroupBox1.BackColor = System.Drawing.Color.Transparent
         Me.GunaGroupBox1.BaseColor = System.Drawing.SystemColors.ActiveCaption
         Me.GunaGroupBox1.BorderColor = System.Drawing.Color.Gainsboro
+        Me.GunaGroupBox1.Controls.Add(Me.DgProducto)
         Me.GunaGroupBox1.Controls.Add(Me.Txtcantidad)
         Me.GunaGroupBox1.Controls.Add(Me.Txtproducto)
         Me.GunaGroupBox1.Controls.Add(Me.fechaDT)
@@ -375,6 +381,75 @@ Partial Class Ingreso
         Me.Btnguardar.Text = "GUARDAR"
         Me.Btnguardar.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
+        'DgProducto
+        '
+        Me.DgProducto.AllowUserToAddRows = False
+        DataGridViewCellStyle4.BackColor = System.Drawing.Color.White
+        DataGridViewCellStyle4.ForeColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(64, Byte), Integer))
+        Me.DgProducto.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle4
+        Me.DgProducto.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+            Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.DgProducto.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
+        Me.DgProducto.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells
+        Me.DgProducto.BackgroundColor = System.Drawing.SystemColors.ActiveCaption
+        Me.DgProducto.BorderStyle = System.Windows.Forms.BorderStyle.None
+        Me.DgProducto.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal
+        Me.DgProducto.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None
+        DataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        DataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(CType(CType(100, Byte), Integer), CType(CType(88, Byte), Integer), CType(CType(255, Byte), Integer))
+        DataGridViewCellStyle5.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle5.ForeColor = System.Drawing.Color.White
+        DataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.DgProducto.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle5
+        Me.DgProducto.ColumnHeadersHeight = 26
+        Me.DgProducto.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing
+        Me.DgProducto.ColumnHeadersVisible = False
+        Me.DgProducto.Cursor = System.Windows.Forms.Cursors.Hand
+        DataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle6.BackColor = System.Drawing.Color.White
+        DataGridViewCellStyle6.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle6.ForeColor = System.Drawing.Color.Black
+        DataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(231, Byte), Integer), CType(CType(229, Byte), Integer), CType(CType(255, Byte), Integer))
+        DataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.FromArgb(CType(CType(71, Byte), Integer), CType(CType(69, Byte), Integer), CType(CType(94, Byte), Integer))
+        DataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
+        Me.DgProducto.DefaultCellStyle = DataGridViewCellStyle6
+        Me.DgProducto.EnableHeadersVisualStyles = False
+        Me.DgProducto.GridColor = System.Drawing.Color.FromArgb(CType(CType(231, Byte), Integer), CType(CType(229, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.DgProducto.Location = New System.Drawing.Point(375, 40)
+        Me.DgProducto.Name = "DgProducto"
+        Me.DgProducto.ReadOnly = True
+        Me.DgProducto.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.[Single]
+        Me.DgProducto.RowHeadersVisible = False
+        Me.DgProducto.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing
+        Me.DgProducto.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
+        Me.DgProducto.Size = New System.Drawing.Size(575, 26)
+        Me.DgProducto.TabIndex = 39
+        Me.DgProducto.Theme = Guna.UI.WinForms.GunaDataGridViewPresetThemes.Guna
+        Me.DgProducto.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White
+        Me.DgProducto.ThemeStyle.AlternatingRowsStyle.Font = Nothing
+        Me.DgProducto.ThemeStyle.AlternatingRowsStyle.ForeColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(64, Byte), Integer))
+        Me.DgProducto.ThemeStyle.AlternatingRowsStyle.SelectionBackColor = System.Drawing.Color.Empty
+        Me.DgProducto.ThemeStyle.AlternatingRowsStyle.SelectionForeColor = System.Drawing.Color.Empty
+        Me.DgProducto.ThemeStyle.BackColor = System.Drawing.SystemColors.ActiveCaption
+        Me.DgProducto.ThemeStyle.GridColor = System.Drawing.Color.FromArgb(CType(CType(231, Byte), Integer), CType(CType(229, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.DgProducto.ThemeStyle.HeaderStyle.BackColor = System.Drawing.Color.FromArgb(CType(CType(100, Byte), Integer), CType(CType(88, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.DgProducto.ThemeStyle.HeaderStyle.BorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None
+        Me.DgProducto.ThemeStyle.HeaderStyle.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.DgProducto.ThemeStyle.HeaderStyle.ForeColor = System.Drawing.Color.White
+        Me.DgProducto.ThemeStyle.HeaderStyle.HeaightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing
+        Me.DgProducto.ThemeStyle.HeaderStyle.Height = 26
+        Me.DgProducto.ThemeStyle.ReadOnly = True
+        Me.DgProducto.ThemeStyle.RowsStyle.BackColor = System.Drawing.Color.White
+        Me.DgProducto.ThemeStyle.RowsStyle.BorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal
+        Me.DgProducto.ThemeStyle.RowsStyle.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.DgProducto.ThemeStyle.RowsStyle.ForeColor = System.Drawing.Color.Black
+        Me.DgProducto.ThemeStyle.RowsStyle.Height = 22
+        Me.DgProducto.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(231, Byte), Integer), CType(CType(229, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.DgProducto.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.FromArgb(CType(CType(71, Byte), Integer), CType(CType(69, Byte), Integer), CType(CType(94, Byte), Integer))
+        '
         'Ingreso
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -399,6 +474,7 @@ Partial Class Ingreso
         CType(Me.Dgdetalleprod, System.ComponentModel.ISupportInitialize).EndInit()
         Me.GunaGroupBox1.ResumeLayout(False)
         Me.GunaGroupBox1.PerformLayout()
+        CType(Me.DgProducto, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
@@ -418,4 +494,5 @@ Partial Class Ingreso
     Friend WithEvents Btnguardar As Guna.UI.WinForms.GunaButton
     Friend WithEvents Txtcantidad As System.Windows.Forms.TextBox
     Friend WithEvents Txtproducto As System.Windows.Forms.TextBox
+    Friend WithEvents DgProducto As Guna.UI.WinForms.GunaDataGridView
 End Class

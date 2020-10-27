@@ -9,20 +9,20 @@ Public Class Ingreso
 
 
 
-    'Private Sub TextBox1_TextChanged(sender As Object, e As EventArgs)
-    '    Try
-    '        Dim _ListaProductos = Datos.ConsultaStock(Textproducto.Text.Trim())
-    '        '_ListaProductos tiene la lista de productos buscados
-    '        dgProductos.DataSource = _ListaProductos
+    Private Sub TextBox1_TextChanged(sender As Object, e As EventArgs) Handles Txtproducto.TextChanged
+        Try
+            Dim _ListaProductos = Datos.ConsultaStock(Txtproducto.Text.Trim())
+            '_ListaProductos tiene la lista de productos buscados
+            DgProducto.DataSource = _ListaProductos
 
-    '    Catch ex As Exception
+        Catch ex As Exception
 
-    '    End Try
-    'End Sub
+        End Try
+    End Sub
 
 
     Public Sub RefrescarListaStock()
-        Dgdetalleprod.DataSource = Datos.ObtenerDataTableStock()
+        'Dgdetalleprod.DataSource = Datos.ObtenerDataTableStock()
     End Sub
 
 
@@ -32,7 +32,11 @@ Public Class Ingreso
     End Sub
 
     Private Sub Ingreso_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        RefrescarListaStock()
-        Dgdetalleprod.Columns(0).Visible = False
+        'RefrescarListaStock()
+        'Dgdetalleprod.Columns(0).Visible = False
+    End Sub
+
+    Private Sub Txtproducto_TextChanged(sender As Object, e As EventArgs)
+
     End Sub
 End Class

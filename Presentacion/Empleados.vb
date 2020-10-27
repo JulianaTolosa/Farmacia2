@@ -51,27 +51,6 @@ Public Class Empleados
             End If
 
             limpiar()
-
-
-
-
-            'Dim query As String = "insert into Usuario values (@nombreusuario, @contrasena,@nombre,@apellido,@posicion,@correo)"
-            'Using con As SqlConnection = New SqlConnection("Data Source=Juli-PC\Juli;Initial Catalog=Tesis;Integrated Security=True")
-            '    Using cmd As SqlCommand = New SqlCommand(query, con)
-            '        cmd.Parameters.AddWithValue("@nombreusuario", nombreusuario)
-            '        cmd.Parameters.AddWithValue("@contrasena", contrasena)
-            '        cmd.Parameters.AddWithValue("@nombre", nombre)
-            '        cmd.Parameters.AddWithValue("@apellido", apellido)
-            '        cmd.Parameters.AddWithValue("@posicion", posicion)
-            '        cmd.Parameters.AddWithValue("@correo", correo)
-            '        con.Open()
-            '        cmd.ExecuteNonQuery()
-            '        con.Close()
-            '        MessageBox.Show("Usuario Agregado Satisfactorimente")
-            '        bindata()
-            '        limpiar()
-            '    End Using
-            'End Using
         End If
 
     End Sub
@@ -91,9 +70,9 @@ Public Class Empleados
         End Using
     End Sub
 
-    Public Sub RefrescarGridEmpleados(_DT As DataTable)
-        DgEmpleados.DataSource = _DT
-    End Sub
+    'Public Sub RefrescarGridEmpleados(_DT As DataTable)
+    '    DgEmpleados.DataSource = _DT
+    'End Sub
 
 
     Public Sub limpiar()
@@ -120,11 +99,7 @@ Public Class Empleados
 
 
     Public Sub Empleados_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
-        'TODO: esta línea de código carga datos en la tabla 'TesisDataSet.Usuario' Puede moverla o quitarla según sea necesario.
-        'Me.UsuarioTableAdapter.Fill(Me.TesisDataSet.Usuario)
-        'Me.dtUsuario = Me.taUsuario.GetData()
-        'DgEmpleados.DataSource = Me.dtUsuario
-        'bindata()
+    
         _IdUsuarioSeleccionado = 0
         RefrescarListaEmpleados()
 
@@ -133,59 +108,6 @@ Public Class Empleados
     Public Sub RefrescarListaEmpleados()
         DgEmpleados.DataSource = Datos.ObtenerDataTableEmpleados()
     End Sub
-
-    'Public Sub ExportarDatosPDF(ByVal document As Document)
-
-
-    '    Dim datatable As New PdfPTable(DgEmpleados.ColumnCount)
-
-    '    datatable.DefaultCell.Padding = 3
-    '    Dim headerwidths As Single() = GetColumnasSize(DgEmpleados)
-    '    datatable.SetWidths(headerwidths)
-    '    datatable.WidthPercentage = 100
-    '    datatable.DefaultCell.BorderWidth = 2
-    '    datatable.DefaultCell.HorizontalAlignment = Element.ALIGN_CENTER
-    '    Dim encabezado As New Paragraph("REPORTE EMPLEADOS", New Font(Font.Name = "Tahoma", 20, Font.Bold))
-
-    '    Dim texto As New Phrase("Reporte empleados agregados hasta la fecha :" + Now.Date(), New Font(Font.Name = "Tahoma", 14, Font.Bold))
-
-    '    For i As Integer = 0 To DgEmpleados.ColumnCount - 1
-    '        datatable.AddCell(DgEmpleados.Columns(i).HeaderText)
-    '    Next
-    '    datatable.HeaderRows = 1
-    '    datatable.DefaultCell.BorderWidth = 1
-
-    '    For i As Integer = 0 To DgEmpleados.RowCount = 1
-    '        For j As Integer = 0 To DgEmpleados.ColumnCount - 1
-    '            datatable.AddCell(DgEmpleados(j, i).Value.ToString())
-    '        Next
-    '        datatable.CompleteRow()
-    '    Next
-    '    document.Add(encabezado)
-    '    document.Add(texto)
-    '    document.Add(datatable)
-    'End Sub
-
-
-    'Private Sub BtnImprimir_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles BtnImprimir.Click
-    '    Try
-    '        Dim doc As New Document(PageSize.A4.Rotate(), 10, 10, 10, 10)
-
-    '        Dim filename As String = Environment.GetFolderPath(Environment.SpecialFolder.DesktopDirectory) + "\Lista de empleados.pdf"
-    '        Dim file As New FileStream(filename, FileMode.Create, FileAccess.Write, FileShare.ReadWrite)
-    '        PdfWriter.GetInstance(doc, file)
-    '        doc.Open()
-    '        ExportarDatosPDF(doc)
-    '        doc.Close()
-    '        Process.Start(filename)
-    '    Catch ex As Exception
-    '        MessageBox.Show("No se puede generar el documento PDF.", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error)
-
-    '    End Try
-    'End Sub
-
-
-
     Public Function GetColumnasSize(ByVal dg As DataGridView) As Single()
         Dim values As Single() = New Single(dg.ColumnCount - 1) {}
         For i As Integer = 0 To dg.ColumnCount - 1
@@ -195,19 +117,7 @@ Public Class Empleados
     End Function
 
 
-
-    'Private Sub BtnEditar_Click(ByVal sender As System.Object, ByVal e As System.EventArgs)
-    '    'Editarempleado.Show()
-    '    If _IdUsuarioSeleccionado <= 0 Then
-    '        MsgBox("Debe seleccioar un Usuario")
-    '        Exit Sub
-    '    End If
-
-    '    'Cargo el formulario Editar
-    '    Editarempleado.Mostrar(Datos.ObtenerUsuario(_IdUsuarioSeleccionado))
-    'End Sub
-
-    Private Sub DgEmpleados_CellClick(sender As Object, e As DataGridViewCellEventArgs)
+    Private Sub DgEmpleados_CellClick(sender As Object, e As DataGridViewCellEventArgs) Handles DgEmpleados.CellClick
         Try
             If e.RowIndex >= 0 Then
                 Dim Row As DataGridViewRow = DgEmpleados.Rows(e.RowIndex)
@@ -258,7 +168,7 @@ Public Class Empleados
 
    
     Private Sub Btneditar_Click_1(sender As Object, e As EventArgs) Handles Btneditar.Click
-        'Editarempleado.Show()
+        ' Editarempleado.Show()
         If _IdUsuarioSeleccionado <= 0 Then
             MsgBox("Debe seleccionar un Usuario")
             Exit Sub

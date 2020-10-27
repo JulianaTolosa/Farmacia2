@@ -218,4 +218,5 @@ Public Class Facturacion
     Private Sub txtBuscador_TextChanged(sender As Object, e As KeyEventArgs)
 
     End Sub
+
 End Class
