@@ -194,13 +194,7 @@ Public Class Empleados
                     con.Close()
                     MessageBox.Show("Usuario Eliminado Satisfactorimente")
                     bindata()
-                    'Txtnombreusuario.Text = ""
-                    'Txtcontrasena.Text = ""
-                    'Txtnombre.Text = ""
-                    'Txtapellido.Text = ""
-                    'cmbposicion.Text = ""
-                    'Txtcorreo.Text = ""
-                    'Txtnombreusuario.Focus()
+                   
                 End Using
             End Using
             limpiar()

@@ -1,21 +1,24 @@
 ﻿Public Class Clientes
+    Private _IdClienteSeleccionado As Integer = 0
+
     'Prueba Lucas
     Private Sub btnCerrarForm_Click_1(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnCerrarForm.Click
         Me.Close()
     End Sub
 
-    
+
     Private Sub Clientes_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
         'TODO: esta línea de código carga datos en la tabla 'TesisDataSet.Clientes' Puede moverla o quitarla según sea necesario.
         'ghjggjgjgjjgj()
         RefrescarListaclientes()
         listdni()
         listobra()
+        _IdClienteSeleccionado = 0
     End Sub
 
-   
-    
-    
+
+
+
 
     Public Sub RefrescarListaclientes()
         DgDetalleClientes.DataSource = Datos.ObtenerDataTableCliente()
@@ -23,8 +26,8 @@
         DgDetalleClientes.Columns(10).Visible = False
     End Sub
 
-    
-   
+
+
 
     Public Sub limpiar()
         nombretxt.Text = ""
@@ -73,8 +76,8 @@
         End Try
     End Sub
 
-    
-   
+
+
     Private Sub btnGuardar_Click_1(sender As Object, e As EventArgs) Handles btnGuardar.Click
         If (String.IsNullOrEmpty(Dnicmb.Text) Or String.IsNullOrEmpty(dnitxt.Text) Or String.IsNullOrEmpty(nombretxt.Text) Or String.IsNullOrEmpty(apellidotxt.Text) Or String.IsNullOrEmpty(direcciontxt.Text) Or String.IsNullOrEmpty(dnitxt.Text) Or String.IsNullOrEmpty(telefonotxt.Text) Or String.IsNullOrEmpty(Celulartxt.Text) Or String.IsNullOrEmpty(fechadate.Text) Or String.IsNullOrEmpty(localidadtxt.Text) Or String.IsNullOrEmpty(provinciatxt.Text) Or String.IsNullOrEmpty(ObraSocialcmb.Text)) Then
             MsgBox("Por Favor, rellene los campos vacios")
@@ -118,5 +121,15 @@
         End If
     End Sub
 
-    
+
+    Private Sub Btneditar_Click(sender As Object, e As EventArgs) Handles Btneditar.Click
+        ' EditarCliente.Show()
+        If _IdClienteSeleccionado <= 0 Then
+            MsgBox("Debe seleccionar un Cliente")
+            Exit Sub
+        End If
+
+        'Cargo el formulario Editar
+        EditarCliente.Mostrar(Datos.ObtenerCliente(_IdClienteSeleccionado))
+    End Sub
 End Class

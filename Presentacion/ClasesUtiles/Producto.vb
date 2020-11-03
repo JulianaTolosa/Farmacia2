@@ -7,13 +7,13 @@
     Public _TipoProd As String
     Public _cantidad As Integer
 
-    'Public Function GuardarProducto() As Boolean
-    '    Dim _Retorno As Boolean = False
-    '    Try
-    '        _Retorno = Datos.GuardarUsuario(Me)
-    '    Catch ex As Exception
+    Public Function GuardarProducto() As Boolean
+        Dim _Retorno As Boolean = False
+        Try
+            _Retorno = Datos.GuardarProducto(Me)
+        Catch ex As Exception
 
-    '    End Try
-    '    Return _Retorno
-    'End Function
+        End Try
+        Return _Retorno
+    End Function
 End Class

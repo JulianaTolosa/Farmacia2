@@ -320,6 +320,37 @@
         Return _Retorno
     End Function
 
+    Public Function ObtenerCliente(Nombre As String) As Cliente
+        Dim _Retorno As Cliente = Nothing
+
+        Try
+            Dim _Consulta As New ConsultaSQL
+            _Consulta.Consulta = "SELECT * FROM Clientes WHERE Nombre=@Nombre"
+            _Consulta.AgregarParametro("@Nombre", Nombre)
+            Dim _Resultado As DataTable = _Consulta.ObtenerTabla()
+            If _Resultado.Rows.Count > 0 Then
+                Dim _Row As DataRow = _Resultado.Rows(0)
+                _Retorno = New Cliente
+                _Retorno._ID = Convert.ToInt32(_Row("idcliente"))
+                _Retorno._Nombre = Convert.ToString(_Row("Nombre"))
+                _Retorno._Apellido = Convert.ToString(_Row("Apellido"))
+                _Retorno._Direccion = Convert.ToString(_Row("Direccion"))
+                _Retorno._DNI = Convert.ToInt32(_Row("DNI"))
+                _Retorno._Telefono = Convert.ToString(_Row("Telefono"))
+                _Retorno._Celular = Convert.ToString(_Row("Celular"))
+                _Retorno._FechaNacimiento = Convert.ToDateTime(_Row("FechaNacimiento"))
+                _Retorno._Localidad = Convert.ToString(_Row("Localidad"))
+                _Retorno._Provincia = Convert.ToString(_Row("Provincia"))
+                _Retorno._Correo = Convert.ToString(_Row("Correo"))
+
+            End If
+        Catch ex As Exception
+            _Retorno = Nothing
+        End Try
+
+        Return _Retorno
+    End Function
+
     Public Function AgregarProducto(_Producto As Producto) As Boolean
         Dim _Retorno As Boolean = True
 
@@ -571,39 +602,74 @@
         Return _Retorno
     End Function
 
-    'Public Function GuardarClientes(_Cliente As Usuario) As Boolean
-    'Dim _Retorno As Boolean = False
-    '    Try
-    'Dim _Consulta As New ConsultaSQL
-    '        _Consulta.Consulta = "  UPDATE Clientes SET "
-    '        _Consulta.Consulta &= " Nombre = @Nombre,"
-    '        _Consulta.Consulta &= " Apellido = @Apellido, "
-    '        _Consulta.Consulta &= " Direccion = @Direccion, "
-    '        _Consulta.Consulta &= " DNI = @DNI,  "
-    '        _Consulta.Consulta &= " Telefono=@Telefono "
-    '        _Consulta.Consulta &= " Celular=@Celular "
-    '        _Consulta.Consulta &= " FechaNa=@FechaNa "
-    '        _Consulta.Consulta &= " Localidad=@Localidad "
-    '        _Consulta.Consulta &= " Provincia=@Provincia "
-    '        _Consulta.Consulta &= " IdObraSocial=@IdObraSocial "
-    '        _Consulta.Consulta &= " tipo_dni=@tipo_dni "
-    '        _Consulta.Consulta &= " WHERE idusuario=@IdUsuario"
-    '        _Consulta.AgregarParametro("@Nombre", _Cliente._Nombre)
-    '        _Consulta.AgregarParametro("@Apellido", _Cliente._Apellido)
-    '        _Consulta.AgregarParametro("@Direccion", _Cliente._Direccion)
-    '        _Consulta.AgregarParametro("@DNI", _Cliente._DNI)
-    '        _Consulta.AgregarParametro("@Telefono", _Cliente._Telefono)
-    '        _Consulta.AgregarParametro("@Celular", _Cliente._Celular)
-    '        _Consulta.AgregarParametro("@Correo", _Cliente._Correo)
-    '        _Consulta.AgregarParametro("@IdUsuario", _Cliente._Id)
+    Public Function GuardarClientes(_Cliente As Cliente) As Boolean
+        Dim _Retorno As Boolean = False
+        Try
+            Dim _Consulta As New ConsultaSQL
+            _Consulta.Consulta = "  UPDATE Clientes SET "
+            _Consulta.Consulta &= " Nombre = @Nombre,"
+            _Consulta.Consulta &= " Apellido = @Apellido, "
+            _Consulta.Consulta &= " Direccion = @Direccion, "
+            _Consulta.Consulta &= " DNI = @DNI,  "
+            _Consulta.Consulta &= " Telefono=@Telefono "
+            _Consulta.Consulta &= " Celular=@Celular "
+            _Consulta.Consulta &= " FechaNa=@FechaNa "
+            _Consulta.Consulta &= " Localidad=@Localidad "
+            _Consulta.Consulta &= " Provincia=@Provincia "
+            _Consulta.Consulta &= " IdObraSocial=@IdObraSocial "
+            _Consulta.Consulta &= " tipo_dni=@tipo_dni "
+            _Consulta.Consulta &= " WHERE idusuario=@IdUsuario"
+            _Consulta.AgregarParametro("@Nombre", _Cliente._Nombre)
+            _Consulta.AgregarParametro("@Apellido", _Cliente._Apellido)
+            _Consulta.AgregarParametro("@Direccion", _Cliente._Direccion)
+            _Consulta.AgregarParametro("@DNI", _Cliente._DNI)
+            _Consulta.AgregarParametro("@Telefono", _Cliente._Telefono)
+            _Consulta.AgregarParametro("@Celular", _Cliente._Celular)
+            _Consulta.AgregarParametro("@Correo", _Cliente._Correo)
+            '_Consulta.AgregarParametro("@IdUsuario", _Cliente._Id)
 
-    '        _Consulta.Ejecutar()
-    '        _Retorno = True
-    '    Catch ex As Exception
+            _Consulta.Ejecutar()
+            _Retorno = True
+        Catch ex As Exception
 
-    '    End Try
-    '    Return _Retorno
-    'End Function
+        End Try
+        Return _Retorno
+    End Function
+
+    Public Function GuardarProducto(_Producto As Producto) As Boolean
+        Dim _Retorno As Boolean = False
+        Try
+            Dim _Consulta As New ConsultaSQL
+            _Consulta.Consulta = "  UPDATE Producto SET "
+            _Consulta.Consulta &= " Nombre = @Nombre,"
+            _Consulta.Consulta &= " Apellido = @Apellido, "
+            _Consulta.Consulta &= " Direccion = @Direccion, "
+            _Consulta.Consulta &= " DNI = @DNI,  "
+            _Consulta.Consulta &= " Telefono=@Telefono "
+            _Consulta.Consulta &= " Celular=@Celular "
+            _Consulta.Consulta &= " FechaNa=@FechaNa "
+            _Consulta.Consulta &= " Localidad=@Localidad "
+            _Consulta.Consulta &= " Provincia=@Provincia "
+            _Consulta.Consulta &= " IdObraSocial=@IdObraSocial "
+            _Consulta.Consulta &= " tipo_dni=@tipo_dni "
+            _Consulta.Consulta &= " WHERE idusuario=@IdUsuario"
+            '_Consulta.AgregarParametro("@Nombre", _Producto._Nombre)
+            '_Consulta.AgregarParametro("@Apellido", _Producto._Apellido)
+            '_Consulta.AgregarParametro("@Direccion", _Producto._Direccion)
+            '_Consulta.AgregarParametro("@DNI", _Producto._DNI)
+            '_Consulta.AgregarParametro("@Telefono", _Producto._Telefono)
+            '_Consulta.AgregarParametro("@Celular", _Producto._Celular)
+            '_Consulta.AgregarParametro("@Correo", _Producto._Correo)
+            '_Consulta.AgregarParametro("@IdUsuario", _Producto._Id)
+
+            _Consulta.Ejecutar()
+            _Retorno = True
+        Catch ex As Exception
+
+        End Try
+        Return _Retorno
+    End Function
+
 #End Region
 
 

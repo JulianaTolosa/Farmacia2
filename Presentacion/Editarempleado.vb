@@ -33,9 +33,11 @@ Public Class Editarempleado
     End Sub
 
     
+    Private Sub BtnCancelar_Click(sender As Object, e As EventArgs) Handles BtnCancelar.Click
+        Me.Hide()
+    End Sub
 
-
-    Private Sub BtnGuardar_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles BtnGuardar.Click
+    Private Sub BtnGuardar_Click_1(sender As Object, e As EventArgs) Handles BtnGuardar.Click
         Try
             _UsuarioPorEditar._NombreUsuario = Txtnomusuario.Text
             _UsuarioPorEditar._Nombre = Txtnombre.Text
@@ -43,6 +45,7 @@ Public Class Editarempleado
             _UsuarioPorEditar._Correo = Txtcorreo.Text
             If _UsuarioPorEditar.Guardar() Then
                 Empleados.RefrescarListaEmpleados()
+                MsgBox("Datos Modificados correctamente")
                 Me.Hide()
             Else
                 MsgBox("Error al Guardar")
@@ -52,10 +55,4 @@ Public Class Editarempleado
 
         End Try
     End Sub
-
-    Private Sub BtnCancelar_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles BtnCancelar.Click
-        Me.Hide()
-    End Sub
-
-
 End Class

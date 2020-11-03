@@ -56,6 +56,7 @@ Partial Class Ventas
         Me.lbLVentas.Anchor = System.Windows.Forms.AnchorStyles.Top
         Me.lbLVentas.AutoSize = True
         Me.lbLVentas.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lbLVentas.ForeColor = System.Drawing.Color.WhiteSmoke
         Me.lbLVentas.Location = New System.Drawing.Point(386, 9)
         Me.lbLVentas.Name = "lbLVentas"
         Me.lbLVentas.Size = New System.Drawing.Size(87, 24)
@@ -67,9 +68,11 @@ Partial Class Ventas
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(845, 479)
+        Me.BackColor = System.Drawing.SystemColors.ActiveCaption
+        Me.ClientSize = New System.Drawing.Size(845, 505)
         Me.Controls.Add(Me.Panel1)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "Ventas"
         Me.Text = "Ventas"
         CType(Me.btnCerrarForm, System.ComponentModel.ISupportInitialize).EndInit()

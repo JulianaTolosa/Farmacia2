@@ -589,7 +589,7 @@ Partial Class Clientes
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "Clientes"
-        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent
         Me.Text = "Clientes"
         Me.Paneltitulo.ResumeLayout(False)
         Me.Paneltitulo.PerformLayout()

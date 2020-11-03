@@ -168,6 +168,12 @@
     <Compile Include="Droguerias.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="EditarCliente.Designer.vb">
+      <DependentUpon>EditarCliente.vb</DependentUpon>
+    </Compile>
+    <Compile Include="EditarCliente.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Editarempleado.Designer.vb">
       <DependentUpon>Editarempleado.vb</DependentUpon>
     </Compile>
@@ -306,6 +312,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Droguerias.resx">
       <DependentUpon>Droguerias.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EditarCliente.resx">
+      <DependentUpon>EditarCliente.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Editarempleado.resx">
       <DependentUpon>Editarempleado.vb</DependentUpon>
